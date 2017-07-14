@@ -193,7 +193,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00795">795</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00792">792</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aac8bd9ab59d0ad7253f739302a69405d"></a>
 <div class="memitem">
@@ -239,12 +239,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00799">799</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;        {</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Gopen2(loc_id, name, gapl_id);</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to open group: &quot;</span>+std::string(name));</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00796">796</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;        {</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Gopen2(loc_id, name, gapl_id);</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to open group: &quot;</span>+std::string(name));</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -304,12 +304,12 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00805">805</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;        {</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Gcreate2(loc_id, name, lcpl_id, gcpl_id, gapl_id);</div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to create group: &quot;</span>+std::string(name));</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;        }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00802">802</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;        {</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Gcreate2(loc_id, name, lcpl_id, gcpl_id, gapl_id);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to create group: &quot;</span>+std::string(name));</div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -334,9 +334,9 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00813">813</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;: <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>() {}</div>
-<div class="ttc" id="classh5cpp_1_1_object_html_ad33dd5f705b1ac71aea5361a73a3cc98"><div class="ttname"><a href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">h5cpp::Object::Object</a></div><div class="ttdeci">Object()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00218">hdf_wrapper.h:218</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00810">810</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;: <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>() {}</div>
+<div class="ttc" id="classh5cpp_1_1_object_html_ad33dd5f705b1ac71aea5361a73a3cc98"><div class="ttname"><a href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">h5cpp::Object::Object</a></div><div class="ttdeci">Object()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00215">hdf_wrapper.h:215</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -362,10 +362,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00814">814</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;: <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>(<span class="keywordtype">id</span>) { <a class="code" href="classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0">Object::inc_ref</a>(); }</div>
-<div class="ttc" id="classh5cpp_1_1_object_html_ad33dd5f705b1ac71aea5361a73a3cc98"><div class="ttname"><a href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">h5cpp::Object::Object</a></div><div class="ttdeci">Object()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00218">hdf_wrapper.h:218</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_object_html_aef6c1b620091d2665e37d0762cfbbce0"><div class="ttname"><a href="classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0">h5cpp::Object::inc_ref</a></div><div class="ttdeci">void inc_ref()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00270">hdf_wrapper.h:270</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00811">811</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;: <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>(<span class="keywordtype">id</span>) { <a class="code" href="classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0">Object::inc_ref</a>(); }</div>
+<div class="ttc" id="classh5cpp_1_1_object_html_ad33dd5f705b1ac71aea5361a73a3cc98"><div class="ttname"><a href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">h5cpp::Object::Object</a></div><div class="ttdeci">Object()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00215">hdf_wrapper.h:215</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_object_html_aef6c1b620091d2665e37d0762cfbbce0"><div class="ttname"><a href="classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0">h5cpp::Object::inc_ref</a></div><div class="ttdeci">void inc_ref()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00267">hdf_wrapper.h:267</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -391,10 +391,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00868">868</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;        {</div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;      <span class="keywordflow">return</span> Attributes(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00865">865</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;        {</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;      <span class="keywordflow">return</span> Attributes(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -419,10 +419,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00918">918</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;{</div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;  <span class="keywordflow">return</span> iterator(0, *<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;}</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00915">915</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;{</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;  <span class="keywordflow">return</span> iterator(0, *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -448,11 +448,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00844">844</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;        {</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">Group</a>(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT, internal::TagCreate());</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        }</div>
-<div class="ttc" id="classh5cpp_1_1_group_html_aaeadd371586b6eeb75b503c5fa35c3d5"><div class="ttname"><a href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">h5cpp::Group::Group</a></div><div class="ttdeci">Group()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00813">hdf_wrapper.h:813</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00841">841</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;        {</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">Group</a>(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT, H5P_DEFAULT, H5P_DEFAULT, internal::TagCreate());</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;        }</div>
+<div class="ttc" id="classh5cpp_1_1_group_html_aaeadd371586b6eeb75b503c5fa35c3d5"><div class="ttname"><a href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">h5cpp::Group::Group</a></div><div class="ttdeci">Group()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00810">hdf_wrapper.h:810</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -477,11 +477,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00923">923</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;{</div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;  <span class="keywordflow">return</span> iterator(this-&gt;<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(), *<span class="keyword">this</span>);</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;}</div>
-<div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00825">hdf_wrapper.h:825</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00920">920</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;{</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;  <span class="keywordflow">return</span> iterator(this-&gt;<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(), *<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;}</div>
+<div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00822">hdf_wrapper.h:822</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,13 +507,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00816">816</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;    {</div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;      htri_t res = H5Lexists(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT);</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;      <span class="keywordflow">if</span> (res &lt; 0)</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot determine existence of link&quot;</span>);</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;      <span class="keywordflow">return</span> res &gt; 0;</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00813">813</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;    {</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;      htri_t res = H5Lexists(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT);</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;      <span class="keywordflow">if</span> (res &lt; 0)</div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot determine existence of link&quot;</span>);</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;      <span class="keywordflow">return</span> res &gt; 0;</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -539,14 +539,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00835">835</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;    {</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;      <span class="keywordtype">char</span> buffer[4096];</div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;      ssize_t n = H5Lget_name_by_idx(this-&gt;<span class="keywordtype">id</span>, <span class="stringliteral">&quot;.&quot;</span>, H5_INDEX_NAME, H5_ITER_NATIVE, (hsize_t)idx, buffer, 4096, H5P_DEFAULT);</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;      <span class="keywordflow">if</span> (n &lt; 0)</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get name of link in group&quot;</span>);</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;      <span class="keywordflow">return</span> std::string(buffer, n);</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00832">832</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;    {</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;      <span class="keywordtype">char</span> buffer[4096];</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;      ssize_t n = H5Lget_name_by_idx(this-&gt;<span class="keywordtype">id</span>, <span class="stringliteral">&quot;.&quot;</span>, H5_INDEX_NAME, H5_ITER_NATIVE, (hsize_t)idx, buffer, 4096, H5P_DEFAULT);</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;      <span class="keywordflow">if</span> (n &lt; 0)</div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get name of link in group&quot;</span>);</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;      <span class="keywordflow">return</span> std::string(buffer, n);</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -572,10 +572,10 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01160">1160</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01161"></a><span class="lineno"> 1161</span>&#160;{</div>
-<div class="line"><a name="l01162"></a><span class="lineno"> 1162</span>&#160;  <span class="keywordflow">return</span> Dataset(this-&gt;<span class="keywordtype">id</span>, name, H5P_DEFAULT, internal::TagOpen()); </div>
-<div class="line"><a name="l01163"></a><span class="lineno"> 1163</span>&#160;}</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01157">1157</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01158"></a><span class="lineno"> 1158</span>&#160;{</div>
+<div class="line"><a name="l01159"></a><span class="lineno"> 1159</span>&#160;  <span class="keywordflow">return</span> Dataset(this-&gt;<span class="keywordtype">id</span>, name, H5P_DEFAULT, internal::TagOpen()); </div>
+<div class="line"><a name="l01160"></a><span class="lineno"> 1160</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -601,11 +601,11 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00849">849</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;        {</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">Group</a>(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT, internal::TagOpen());</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        }</div>
-<div class="ttc" id="classh5cpp_1_1_group_html_aaeadd371586b6eeb75b503c5fa35c3d5"><div class="ttname"><a href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">h5cpp::Group::Group</a></div><div class="ttdeci">Group()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00813">hdf_wrapper.h:813</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00846">846</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;        {</div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">Group</a>(this-&gt;<span class="keywordtype">id</span>, name.c_str(), H5P_DEFAULT, internal::TagOpen());</div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;        }</div>
+<div class="ttc" id="classh5cpp_1_1_group_html_aaeadd371586b6eeb75b503c5fa35c3d5"><div class="ttname"><a href="classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5">h5cpp::Group::Group</a></div><div class="ttdeci">Group()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00810">hdf_wrapper.h:810</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -631,13 +631,13 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00879">879</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;    {</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;      herr_t err = H5Ldelete(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), name.c_str(), H5P_DEFAULT);</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;      <span class="keywordflow">if</span> (err &lt; 0)</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot remove link from group&quot;</span>);</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;    }</div>
-<div class="ttc" id="classh5cpp_1_1_object_html_a8aafdfbac1c33ca9f820b3ab12a89bde"><div class="ttname"><a href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">h5cpp::Object::get_id</a></div><div class="ttdeci">hid_t get_id() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00213">hdf_wrapper.h:213</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00876">876</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;    {</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;      herr_t err = H5Ldelete(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), name.c_str(), H5P_DEFAULT);</div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;      <span class="keywordflow">if</span> (err &lt; 0)</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot remove link from group&quot;</span>);</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;    }</div>
+<div class="ttc" id="classh5cpp_1_1_object_html_a8aafdfbac1c33ca9f820b3ab12a89bde"><div class="ttname"><a href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">h5cpp::Object::get_id</a></div><div class="ttdeci">hid_t get_id() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00210">hdf_wrapper.h:210</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -673,22 +673,22 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00854">854</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        {</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classh5cpp_1_1_group.html#a18ddb088ea567107d8fee372f03d9c66">exists</a>(name))</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;      {</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;        <span class="keywordflow">if</span> (had_group) *had_group = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(name);</div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;      }</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;      <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;      {</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;        <span class="keywordflow">if</span> (had_group) *had_group = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#a1cb03c1d6377016ed3128a1cd9f3b25d">create_group</a>(name);</div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;      }</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;    }</div>
-<div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00849">hdf_wrapper.h:849</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_group_html_a18ddb088ea567107d8fee372f03d9c66"><div class="ttname"><a href="classh5cpp_1_1_group.html#a18ddb088ea567107d8fee372f03d9c66">h5cpp::Group::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00816">hdf_wrapper.h:816</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_group_html_a1cb03c1d6377016ed3128a1cd9f3b25d"><div class="ttname"><a href="classh5cpp_1_1_group.html#a1cb03c1d6377016ed3128a1cd9f3b25d">h5cpp::Group::create_group</a></div><div class="ttdeci">Group create_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00844">hdf_wrapper.h:844</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00851">851</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;        {</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;      <span class="keywordflow">if</span> (<a class="code" href="classh5cpp_1_1_group.html#a18ddb088ea567107d8fee372f03d9c66">exists</a>(name))</div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;      {</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;        <span class="keywordflow">if</span> (had_group) *had_group = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(name);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;      }</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;      <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;      {</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;        <span class="keywordflow">if</span> (had_group) *had_group = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_group.html#a1cb03c1d6377016ed3128a1cd9f3b25d">create_group</a>(name);</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;      }</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;    }</div>
+<div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00846">hdf_wrapper.h:846</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_group_html_a18ddb088ea567107d8fee372f03d9c66"><div class="ttname"><a href="classh5cpp_1_1_group.html#a18ddb088ea567107d8fee372f03d9c66">h5cpp::Group::exists</a></div><div class="ttdeci">bool exists(const std::string &amp;name) const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00813">hdf_wrapper.h:813</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_group_html_a1cb03c1d6377016ed3128a1cd9f3b25d"><div class="ttname"><a href="classh5cpp_1_1_group.html#a1cb03c1d6377016ed3128a1cd9f3b25d">h5cpp::Group::create_group</a></div><div class="ttdeci">Group create_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00841">hdf_wrapper.h:841</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -713,14 +713,14 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00825">825</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;    {</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;      H5G_info_t info;</div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;      herr_t res = H5Gget_info(this-&gt;<span class="keywordtype">id</span>, &amp;info);</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;      <span class="keywordflow">if</span> (res &lt; 0)</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get info of group&quot;</span>);</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;      <span class="keywordflow">return</span> info.nlinks;</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00822">822</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;    {</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;      H5G_info_t info;</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;      herr_t res = H5Gget_info(this-&gt;<span class="keywordtype">id</span>, &amp;info);</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;      <span class="keywordflow">if</span> (res &lt; 0)</div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get info of group&quot;</span>);</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;      <span class="keywordflow">return</span> info.nlinks;</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -743,7 +743,7 @@ Additional Inherited Members</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00797">797</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00794">794</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
 
 </div>
 </div>
