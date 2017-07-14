@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QString>
+#include <QString>
 #include <string>
 #include <set>
 
