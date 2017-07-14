@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['username',['userName',['../class_back_end.html#aaac80f5560840cc4d294d38ed4e806ed',1,'BackEnd']]]
+  ['foldername',['folderName',['../class_back_end.html#a1ce9aa04c4552bb8c9d4f2b51049cd99',1,'BackEnd']]]
 ];

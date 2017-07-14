@@ -1,7 +1,7 @@
 var searchData=
 [
   ['inc_5fref',['inc_ref',['../classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0',1,'h5cpp::Object']]],
-  ['init',['init',['../class_database_reader.html#a58c5d7789896918bef02829c37d8f5de',1,'DatabaseReader::init()'],['../class_decom.html#ac43113071af9a3bbe5f0c503fa7a142c',1,'Decom::init()'],['../classh5_decode.html#a10a58ecf29631b89d6d171e2c23375a9',1,'h5Decode::init()']]],
+  ['init',['init',['../class_database_reader.html#a58c5d7789896918bef02829c37d8f5de',1,'DatabaseReader::init()'],['../class_decom.html#a4328215d51697cbce525896fbc42d0f2',1,'Decom::init()'],['../classh5_decode.html#a10a58ecf29631b89d6d171e2c23375a9',1,'h5Decode::init()']]],
   ['is_5fequal',['is_equal',['../classh5cpp_1_1_datatype.html#a3d2f34589b77df33fcb4b32ce44d5c73',1,'h5cpp::Datatype']]],
   ['is_5fextent_5fequal',['is_extent_equal',['../classh5cpp_1_1_dataspace.html#ad932db6d54b824af42f6a75878d068a3',1,'h5cpp::Dataspace']]],
   ['is_5freadonly',['is_readonly',['../classh5cpp_1_1_file.html#a55792bd14743578a0e9bf9b3253717b1',1,'h5cpp::File']]],

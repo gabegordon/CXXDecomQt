@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['secondaryheader',['SecondaryHeader',['../namespace_data_types.html#struct_data_types_1_1_secondary_header',1,'DataTypes']]]
+  ['rw',['RW',['../classh5cpp_1_1_r_w.html',1,'h5cpp']]],
+  ['rwattribute',['RWattribute',['../classh5cpp_1_1_r_wattribute.html',1,'h5cpp']]],
+  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html',1,'h5cpp']]]
 ];

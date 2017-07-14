@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['foldername',['folderName',['../class_back_end.html#a1ce9aa04c4552bb8c9d4f2b51049cd99',1,'BackEnd']]]
+  ['currentfile',['currentFile',['../class_back_end.html#aca1d6fd50f5b8c0707c85f2bc9445841',1,'BackEnd']]]
 ];

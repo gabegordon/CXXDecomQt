@@ -2,6 +2,8 @@ var searchData=
 [
   ['object',['Object',['../classh5cpp_1_1_object.html',1,'h5cpp']]],
   ['object',['Object',['../classh5cpp_1_1_file.html#a0720b5f434e636e22a3ed34f847eec57',1,'h5cpp::File::Object()'],['../classh5cpp_1_1_object.html#a5b7e1f78a4e933dad29c052c225ff732',1,'h5cpp::Object::Object(const Object &amp;o)'],['../classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98',1,'h5cpp::Object::Object()'],['../classh5cpp_1_1_object.html#a3d6566991b8404ba9942804eeaa47c37',1,'h5cpp::Object::Object(hid_t id)'],['../classh5cpp_1_1_object.html#a763da10fc61f44b98f277eb290ace435',1,'h5cpp::Object::Object(hid_t id, internal::IncRC)']]],
+  ['ofiles',['ofiles',['../class_back_end.html#af2a592f15f1cfd00bad53421949d6e7a',1,'BackEnd::ofiles()'],['../class_back_end.html#ac9066ff2e9e86bd249d2a15f6b26ebb7',1,'BackEnd::ofiles()']]],
+  ['ofileschanged',['ofilesChanged',['../class_back_end.html#a72052c1cbdaf85f57f8c36ae3cf600f4',1,'BackEnd']]],
   ['one',['ONE',['../class_data_decode.html#a532e492a353aa3218722fad9626b8fd1acb033824fb97f64e6959bffe95634cbf',1,'DataDecode']]],
   ['open',['open',['../classh5cpp_1_1_attributes.html#a66e510b8f4055dc43acb7e0b6bb1a9fb',1,'h5cpp::Attributes::open()'],['../classh5cpp_1_1_file.html#ac1cd6ef6771a670142272d44cec13fbd',1,'h5cpp::File::open()']]],
   ['open_5fdataset',['open_dataset',['../classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c',1,'h5cpp::Group']]],
@@ -15,6 +17,5 @@ var searchData=
   ['operator_3d_3d',['operator==',['../classh5cpp_1_1iterator.html#ae3ac0e3e77efb1fd58b9136f03363eaa',1,'h5cpp::iterator']]],
   ['operator_3e_3e',['operator&gt;&gt;',['../_database_reader_8cpp.html#ac2c0b2d1ccc5f44ad4a24f6411cc1d34',1,'operator&gt;&gt;():&#160;DatabaseReader.cpp'],['../namespace_instrument_format.html#a14b96f126903351cbcbc6e164faddb5b',1,'InstrumentFormat::operator&gt;&gt;()']]],
   ['operator_5b_5d',['operator[]',['../class_c_s_v_row.html#aacb579d99c6f033c24e1d49d63f7fac9',1,'CSVRow']]],
-  ['out',['out',['../class_progress_bar.html#a037918f48f22bb6414ef2b8f277bb370',1,'ProgressBar']]],
   ['out_5fpack',['out_pack',['../_instrument_format_8cpp.html#structout__pack',1,'']]]
 ];

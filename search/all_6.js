@@ -25,7 +25,6 @@ var searchData=
   ['get_5fsize',['get_size',['../classh5cpp_1_1_datatype.html#abf9f8216493af5bf8af9a5089315cb9c',1,'h5cpp::Datatype']]],
   ['getbarlength',['GetBarLength',['../class_progress_bar.html#ad2a2ed554d62ba570e2683facc52b677',1,'ProgressBar']]],
   ['getbytebit',['getByteBit',['../class_database_reader.html#ae709e4fd62b68ae640a3ce0d97dab71d',1,'DatabaseReader']]],
-  ['getconsolewidth',['GetConsoleWidth',['../class_progress_bar.html#a6e08c6ec24fb4c0b5e72a3d6e81fe685',1,'ProgressBar']]],
   ['getentries',['getEntries',['../class_database_reader.html#abc73304f520dccd0557b254a3fb4333b',1,'DatabaseReader::getEntries()'],['../class_decom.html#a75977045379b8485544e598f8f0a8c17',1,'Decom::getEntries()']]],
   ['getfiles',['getFiles',['../namespaceget_files.html',1,'']]],
   ['getfiles_2eh',['getFiles.h',['../get_files_8h.html',1,'']]],

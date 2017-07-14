@@ -1,17 +1,16 @@
 var searchData=
 [
-  ['c',['c',['../class_thread_safe_listener_queue.html#a9bfe4d4cf3b623755a44196d40fc5444',1,'ThreadSafeListenerQueue']]],
+  ['c',['c',['../class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f',1,'ProgressQueue::c()'],['../class_thread_safe_listener_queue.html#a9bfe4d4cf3b623755a44196d40fc5444',1,'ThreadSafeListenerQueue::c()']]],
   ['ccsds',['CCSDS',['../namespace_data_types.html#aebabfe6158de48322dedfc75bacc9061',1,'DataTypes::PrimaryHeader']]],
   ['chans',['chans',['../_instrument_format_8cpp.html#a32d368d0b7fc2ee75b45e57078cd0f5d',1,'atms_pack::chans()'],['../_instrument_format_8cpp.html#a80c68ae9a22e1dc3f54687c72f96a236',1,'out_pack::chans()']]],
   ['character_5fwidth_5fpercentage',['CHARACTER_WIDTH_PERCENTAGE',['../_progress_bar_8h.html#a6fb5d754f9d3dbb760a3df730f184649',1,'ProgressBar.h']]],
   ['chararray',['CharArray',['../structh5cpp_1_1h5traits_3_01char[n]_4.html#ab237d0b99b9ef0796d84cd5c50eddda7',1,'h5cpp::h5traits&lt; char[n]&gt;']]],
   ['check_5fvalid_5fthrow',['check_valid_throw',['../classh5cpp_1_1_object.html#a43a1c182159b24eb4967147dd7607838',1,'h5cpp::Object']]],
-  ['checkfile',['checkFile',['../namespace_read_file.html#a9423ed74e8e0de70c1afbc6c94cd885e',1,'ReadFile']]],
+  ['checkfile',['checkFile',['../namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef',1,'ReadFiles']]],
   ['checkpackentries',['checkPackEntries',['../class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723',1,'DataDecode']]],
   ['checkvalidheader',['checkValidHeader',['../namespace_header_decode.html#ad5d2f691de2e3d775a26c52ac3f346f9',1,'HeaderDecode']]],
   ['chunked',['chunked',['../classh5cpp_1_1_properties.html#afbb8ea2a8098823295744b83051593fa',1,'h5cpp::Properties']]],
   ['chunked_5fwith_5festimated_5fsize',['chunked_with_estimated_size',['../classh5cpp_1_1_properties.html#a3847d97cf6e5f5f6b35f52a7e3e418ca',1,'h5cpp::Properties']]],
-  ['clearbarfield',['ClearBarField',['../class_progress_bar.html#a2f4ce86f697a3f473639e67972a61c57',1,'ProgressBar']]],
   ['client_5fdata',['client_data',['../classh5cpp_1_1_auto_error_reporting_guard.html#ab8b7113845d4e3aed75fa31080a19abb',1,'h5cpp::AutoErrorReportingGuard']]],
   ['close',['close',['../classh5cpp_1_1_file.html#ad9bf59d2594e6dff05c0e50120d92744',1,'h5cpp::File']]],
   ['copy',['copy',['../classh5cpp_1_1_datatype.html#a1436ac1dce553c84672e40209da9583e',1,'h5cpp::Datatype']]],
@@ -29,5 +28,7 @@ var searchData=
   ['csvrow',['CSVRow',['../class_c_s_v_row.html',1,'CSVRow'],['../class_c_s_v_row.html#abccf397691dfb9223b0ed83e3526cfeb',1,'CSVRow::CSVRow()']]],
   ['csvrow_2ecpp',['CSVRow.cpp',['../_c_s_v_row_8cpp.html',1,'']]],
   ['csvrow_2eh',['CSVRow.h',['../_c_s_v_row_8h.html',1,'']]],
+  ['currentfile',['currentFile',['../class_back_end.html#aca1d6fd50f5b8c0707c85f2bc9445841',1,'BackEnd::currentFile()'],['../class_back_end.html#ab0049711a7910f543293c98a576231ab',1,'BackEnd::currentFile()']]],
+  ['currentfilechanged',['currentFileChanged',['../class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9',1,'BackEnd']]],
   ['custom_5fprint_5fcb',['custom_print_cb',['../namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866',1,'h5cpp::internal']]]
 ];
