@@ -52,9 +52,6 @@ THE SOFTWARE.
   #include <boost/optional.hpp>
 #endif
 
-/** 
- * @brief Things are in here.
-*/
 namespace h5cpp
 {
 
