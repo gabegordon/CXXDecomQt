@@ -1,0 +1,2 @@
+set(AM_MOC_OLD_SETTINGS "QT_CORE_LIB;QT_GUI_LIB;QT_NETWORK_LIB;QT_NO_DEBUG;QT_QML_LIB;QT_QUICK_LIB ~~~ /home/gabe/CXXDecomQt/build;/home/gabe/CXXDecomQt;/home/gabe/CXXDecomQt/build/CXXDecomQt_autogen/include;/home/gabe/CXXDecomQt/include;/usr/include/qt;/usr/include/qt/QtCore;/usr/lib/qt/mkspecs/linux-g++;/usr/include/qt/QtQuick;/usr/include/qt/QtQml;/usr/include/qt/QtNetwork;/usr/include/qt/QtGui;/usr/include ~~~  ~~~ FALSE ~~~ ")
+set(AM_RCC_OLD_SETTINGS " ~~~ ")

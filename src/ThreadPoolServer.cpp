@@ -15,7 +15,7 @@
  */
 void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue& queue, const std::string& instrument, const uint32_t apid)
 {
-    std::ofstream outfile("output/" + instrument + "_" + std::to_string(apid) + ".txt", std::ios::ate);
+    std::ofstream outfile("output/" + instrument + "_" + std::to_string(apid) + ".txt");
     bool firstRun = true;
 
     while (true)  // Loop until return due to empty queue
@@ -66,6 +66,10 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue& queue, const std::str
  */
 void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack)
 {
+    if(!pack)
+    {
+        return;
+    }
     if(pack->ignored)
     {
         return;

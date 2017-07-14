@@ -109,7 +109,7 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
             if (!outfile.is_open())
             {
                 std::string filename = "output/ATMS_CHAN" + std::to_string(channelNumber) + ".txt";
-                outfile.open(filename, std::ios::app);
+                outfile.open(filename);
             }
 
             auto out = outpacks.at(channelNumber - 1);
