@@ -35,6 +35,7 @@ addons:
       - qt*5-dev
       - build-essential
       - libgl1-mesa-dev
+      - boost
 script:
   # Export CC and CXX to tell cmake which compiler to use
   - export CC=/usr/bin/gcc-6
