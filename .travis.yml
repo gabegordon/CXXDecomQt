@@ -44,7 +44,7 @@ script:
   # Run your build commands next
   - mkdir -p build && cd build
   - cmake ..
-  - cmake --build .. --target all
+  - cmake --build . --target all
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
