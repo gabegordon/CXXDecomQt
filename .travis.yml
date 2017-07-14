@@ -43,8 +43,7 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   - mkdir -p build && cd build
-  - cmake ..
-  - make
+  - cmake --build .. --target all
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
