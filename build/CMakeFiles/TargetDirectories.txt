@@ -1,4 +1,0 @@
-/home/gabe/CXXDecomQt/build/CMakeFiles/rebuild_cache.dir
-/home/gabe/CXXDecomQt/build/CMakeFiles/CXXDecomQt.dir
-/home/gabe/CXXDecomQt/build/CMakeFiles/edit_cache.dir
-/home/gabe/CXXDecomQt/build/CMakeFiles/CXXDecomQt_autogen.dir
