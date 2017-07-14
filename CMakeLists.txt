@@ -7,7 +7,7 @@ project(CXXDecomQt)
 
 set(CMAKE_CXX_STANDARD 14)
 
-find_package (HDF5) # Find non-cmake built HDF5
+find_package (HDF5 REQUIRED) # Find non-cmake built HDF5
 
 include_directories(include)
 file(GLOB SOURCES "src/*.cpp")
