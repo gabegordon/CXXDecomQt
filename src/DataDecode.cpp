@@ -144,7 +144,7 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
     {
         if (!loadData(buf, m_entries.at(entryIndex)) || m_entries.at(entryIndex).byte - m_offset >= buf.size())  // Make sure we don't go past array bounds (entries not contained in packet)
         {
-            std::cout << "Went out of bounds for entry: " << m_entries.at(entryIndex).mnemonic << "," << m_entries.at(entryIndex).byte << std::endl;
+            std::cerr << "Went out of bounds for entry: " << m_entries.at(entryIndex).mnemonic << "," << m_entries.at(entryIndex).byte << std::endl;
             continue;
         }
         DataTypes::DataType dtype = m_entries.at(entryIndex).type;

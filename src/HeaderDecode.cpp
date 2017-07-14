@@ -40,7 +40,7 @@ std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHea
  */
 void debugPrinter(const DataTypes::PrimaryHeader& ph)
 {
-    std::cout << ph.secondaryHeader << "," << ph.APID << "," << std::bitset<2>(ph.sequenceFlag) << "," << ph.packetSequence << "," << ph.packetLength << "\n";
+    std::cerr << ph.secondaryHeader << "," << ph.APID << "," << std::bitset<2>(ph.sequenceFlag) << "," << ph.packetSequence << "," << ph.packetLength << "\n";
 }
 
 /**

@@ -146,7 +146,7 @@ void DatabaseReader::readDatabase(const std::string& filename)
         }
         catch (...)
         {
-            std::cout << "i_APID stoul failed for: " << s_APID << std::endl;
+            std::cerr << "i_APID stoul failed for: " << s_APID << std::endl;
         }
 
         if(!m_allAPIDs)  // If filtering APIDs
@@ -190,7 +190,7 @@ void DatabaseReader::printDataBase() const
 {
     for (const auto& entry : m_entries)
     {
-        std::cout << entry.mnemonic << "," << entry.type << "," << entry.i_APID << "," << entry.byte << "," << entry.bitLower << "," << entry.bitUpper << "\n";
+        std::cerr << entry.mnemonic << "," << entry.type << "," << entry.i_APID << "," << entry.byte << "," << entry.bitLower << "," << entry.bitUpper << "\n";
     }
 }
 

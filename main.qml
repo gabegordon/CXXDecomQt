@@ -27,6 +27,12 @@ ApplicationWindow {
             text: "Run h5 Decode"
             onClicked: backend.decodeh5()
         }
+
+        Button {
+            id: mainRunButton
+            text: "Run Decom"
+            onClicked: backend.runDecom()
+        }
     }
 
     FileDialog {

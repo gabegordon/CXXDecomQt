@@ -19,7 +19,7 @@ std::set<std::string> h5Decode::init()
     auto files = getFiles::h5InFolder(m_directory);
     if(files.size() == 0)
     {
-        std::cout << "No .h5 files found" << std::endl;
+        std::cerr << "No .h5 files found" << std::endl;
         exit(0);
     }
 

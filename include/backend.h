@@ -13,15 +13,16 @@ class BackEnd : public QObject
     Q_PROPERTY(QString folderName WRITE setFolderName NOTIFY folderNameChanged)
 
 public:
-    explicit BackEnd(QObject *parent = nullptr);
+    explicit BackEnd(QObject *parent = nullptr, const bool debug = false);
     virtual ~BackEnd() {}
 
     QString userName();
     void setFolderName(const QString& folderName);
     void setUserName(const QString& userName);
+
 public slots:
     void decodeh5();
-
+    void runDecom();
 
 signals:
     void userNameChanged();
@@ -32,5 +33,7 @@ private:
     QString m_folderName;
     bool m_allAPIDs;
     std::set<std::string> m_ofiles;
+    std::string m_instrument;
+    bool m_debug;
 };
 #endif // BACKEND_H
