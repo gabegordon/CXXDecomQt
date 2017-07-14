@@ -16,28 +16,25 @@ BackEnd::BackEnd(QObject *parent, const bool debug) :
 {
 }
 
-QString BackEnd::userName()
-{
-    return m_userName;
-}
-
 void BackEnd::setFolderName(const QString &folderName)
 {
     if (folderName == m_folderName)
         return;
 
     m_folderName = folderName;
-    emit folderNameChanged();
 }
 
-void BackEnd::setUserName(const QString &userName)
+QStringList BackEnd::ofiles()
 {
-    if (userName == m_userName)
-        return;
+    QStringList tQList;
 
-    m_userName = userName;
-    emit userNameChanged();
+    for(const std::string& s : m_ofiles)
+    {
+        tQList.append(QString::fromStdString(s));
+    }
+    return tQList;
 }
+
 
 void BackEnd::decodeh5()
 {
@@ -46,6 +43,7 @@ void BackEnd::decodeh5()
 
     h5Decode h5Dec(m_folderName.toStdString().substr(6));
     m_ofiles = h5Dec.init();
+    emit ofilesChanged();
 }
 
 void BackEnd::runDecom()

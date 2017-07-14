@@ -6,7 +6,7 @@
 #include "DataTypes.h"
 #include "CSVRow.h"
 #include "ReadFile.h"
-
+#include "LogFile.h"
 
 /**
  * Overide stream operator for reading from our CSVRow class.
@@ -55,7 +55,7 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
     }
     catch(...)
     {
-        std::cerr << "stoi failed for i_byte: " << bytebit << std::endl;
+        LogFile::logError("stoi failed for i_byte: " + bytebit);
     }
     if (bytebit.length() > 4)  // If longer than 4, then we have a bit range
     {
@@ -72,7 +72,7 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
                 }
                 catch(...)
                 {
-                    std::cerr << "stoi failed for i_bitLower or i_bitUpper: " << bytebit << std::endl;
+                    LogFile::logError("stoi failed for i_bitLower or i_bitUpper: " + bytebit);
                 }
             }
         }
@@ -84,7 +84,7 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
             }
             catch (...)
             {
-                std::cerr << "i_bitLower stoi failed with: " << bytebit << std::endl;
+                LogFile::logError("i_bitLower stoi failed with: " + bytebit);
             }
             i_bitUpper = i_bitLower;
         }
@@ -100,7 +100,7 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
 void DatabaseReader::readAPIDList()
 {
     std::ifstream CXXParams(m_paramsFile);
-    ReadFile::checkFile(CXXParams, m_paramsFile);
+    ReadFiles::checkFile(CXXParams, m_paramsFile);
 
     CSVRow apidRow;
     while (CXXParams >> apidRow)
@@ -121,7 +121,7 @@ void DatabaseReader::readAPIDList()
 void DatabaseReader::readDatabase(const std::string& filename)
 {
     std::ifstream database(filename);
-    ReadFile::checkFile(database, filename);
+    ReadFiles::checkFile(database, filename);
 
     CSVRow dataRow;
     while (database >> dataRow)
@@ -146,7 +146,7 @@ void DatabaseReader::readDatabase(const std::string& filename)
         }
         catch (...)
         {
-            std::cerr << "i_APID stoul failed for: " << s_APID << std::endl;
+            LogFile::logError("i_APID stoul failed for: " + s_APID);
         }
 
         if(!m_allAPIDs)  // If filtering APIDs

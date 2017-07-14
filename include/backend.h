@@ -9,24 +9,21 @@
 class BackEnd : public QObject
 {
     Q_OBJECT
-    Q_PROPERTY(QString userName READ userName WRITE setUserName NOTIFY userNameChanged)
-    Q_PROPERTY(QString folderName WRITE setFolderName NOTIFY folderNameChanged)
-
+    Q_PROPERTY(QString folderName WRITE setFolderName)
+    Q_PROPERTY(QStringList ofiles READ ofiles NOTIFY ofilesChanged)
 public:
     explicit BackEnd(QObject *parent = nullptr, const bool debug = false);
     virtual ~BackEnd() {}
 
-    QString userName();
     void setFolderName(const QString& folderName);
-    void setUserName(const QString& userName);
+    QStringList ofiles();
 
 public slots:
     void decodeh5();
     void runDecom();
 
 signals:
-    void userNameChanged();
-    void folderNameChanged();
+    void ofilesChanged();
 
 private:
     QString m_userName;

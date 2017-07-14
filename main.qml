@@ -1,4 +1,4 @@
-import QtQuick 2.6
+import QtQuick 2.7
 import QtQuick.Controls 2.0
 import QtQuick.Dialogs 1.2
 import QtGraphicalEffects 1.0
@@ -24,10 +24,55 @@ ApplicationWindow {
     }
 
     Label {
-        x: 325
-        y: 47
+        x: 290
+        y: 45
         text: "Decom Utility"
-        font.pixelSize: 22
+        font.pixelSize: 32
+        font.bold: true
+    }
+
+    Popup {
+       id: runSelectWindow
+       x: 210
+       y: 133
+       width: 380
+       height: 334
+       modal: true
+       focus: true
+       Column {
+           Text { text: "Select files to Decom" }
+
+           ListView {
+               width: 100; height: 100
+
+               model: backend.ofiles
+               delegate: CheckBox {
+                   anchors.left: parent.left
+                   text: modelData
+               }
+           }
+       }
+
+       Button {
+           text: "Execute"
+           anchors.right: parent.right
+           anchors.bottom: parent.bottom
+           onClicked: {
+               backend.runDecom()
+               parent.close()
+               progress.open()
+           }
+       }
+    }
+
+    Popup {
+        id: progress
+        x: 210
+        y: 133
+        width: 380
+        height: 334
+        modal: true
+        focus: true
     }
 
     Column {
@@ -45,14 +90,10 @@ ApplicationWindow {
             id: h5DecodeButton
             text: "Run h5 Decode"
             scale: 2
-            onClicked: backend.decodeh5()
-        }
-
-        Button {
-            id: mainRunButton
-            text: "Run Decom"
-            scale: 2
-            onClicked: backend.runDecom()
+            onClicked: {
+                backend.decodeh5()
+                runSelectWindow.open()
+            }
         }
     }
 
@@ -70,4 +111,5 @@ ApplicationWindow {
             visible: false
         }
     }
+
 }

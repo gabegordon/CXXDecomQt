@@ -7,10 +7,8 @@
 #include "ProgressBar.h"
 #include "InstrumentFormat.h"
 #include "CSVRow.h"
-namespace Local
-{
 #include "ReadFile.h"
-}
+
 
 struct atms_pack
 {
@@ -135,7 +133,7 @@ void formatATMS()
     CSVRow atms_row;
     std::ifstream m_infile;
     m_infile.open("output/ATMS_528.txt", std::ios::in | std::ios::ate);
-    Local::ReadFile::checkFile(m_infile, "output/ATMS_528.txt");
+    ReadFiles::checkFile(m_infile, "output/ATMS_528.txt");
 
     uint64_t fileSize = m_infile.tellg();
     m_infile.seekg(0, std::ios::beg);  // Seek to beginning because we opened at end
@@ -165,7 +163,6 @@ void formatATMS()
         }
         buf.emplace_back(pack);
     }
-    std::cout << std::endl;
     writeChans(buf);
 }
 

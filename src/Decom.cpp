@@ -12,10 +12,8 @@
 #include "DataDecode.h"
 #include "InstrumentFormat.h"
 #include "ThreadPoolServer.h"
-namespace Local
-{
 #include "ReadFile.h"
-}
+#include "LogFile.h"
 
 
 /**
@@ -28,7 +26,7 @@ namespace Local
 void Decom::init(const std::string& infile)
 {
     m_infile.open(infile, std::ios::binary | std::ios::in);  //Open file as binary for reading
-    Local::ReadFile::checkFile(m_infile, ".pkt");
+    ReadFiles::checkFile(m_infile, ".pkt");
 
     uint64_t fileSize = getFileSize();
     ProgressBar readProgress(fileSize, "Parsing");  // Create progress bar
@@ -85,7 +83,7 @@ void Decom::getEntries(const uint32_t& APID)
         if (!foundEntry)
         {
             m_missingAPIDs.emplace_back(APID);
-            std::cerr << "Couldn't find matching APID in database: " << APID << "\n";
+            LogFile::logError("Couldn't find matching APID in database: " + std::to_string(APID));
         }
     }
 }

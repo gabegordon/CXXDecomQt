@@ -5,6 +5,7 @@
 #include "DataDecode.h"
 #include "ByteManipulation.h"
 #include "ReadFile.h"
+#include "LogFile.h"
 
 using namespace ByteManipulation;
 
@@ -144,7 +145,7 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
     {
         if (!loadData(buf, m_entries.at(entryIndex)) || m_entries.at(entryIndex).byte - m_offset >= buf.size())  // Make sure we don't go past array bounds (entries not contained in packet)
         {
-            std::cerr << "Went out of bounds for entry: " << m_entries.at(entryIndex).mnemonic << "," << m_entries.at(entryIndex).byte << std::endl;
+            LogFile::logError("Went out of bounds for entry: " + m_entries.at(entryIndex).mnemonic + "," + std::to_string(m_entries.at(entryIndex).byte));
             continue;
         }
         DataTypes::DataType dtype = m_entries.at(entryIndex).type;
@@ -196,9 +197,9 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     uint16_t versionNum;
     uint8_t contCount;
     uint8_t contFlag;
-    ReadFile::read(versionNum, infile);
-    ReadFile::read(contCount, infile);
-    ReadFile::read(contFlag, infile);
+    ReadFiles::read(versionNum, infile);
+    ReadFiles::read(contCount, infile);
+    ReadFiles::read(contFlag, infile);
     versionNum = ByteManipulation::swapEndian16(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
@@ -225,7 +226,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
                     m_pHeader = std::get<0>(headers);
                     m_pHeader.packetLength -= 4;
                     uint64_t ompsHeader;
-                    ReadFile::read(ompsHeader, infile);
+                    ReadFiles::read(ompsHeader, infile);
                 }
                 DataTypes::Packet tmpPack = decodeDataSegmented(infile, true);
                 segPack.data.insert(std::end(segPack.data), std::begin(tmpPack.data), std::end(tmpPack.data));

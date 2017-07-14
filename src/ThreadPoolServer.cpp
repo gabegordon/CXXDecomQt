@@ -3,6 +3,7 @@
 #include <memory>
 #include <iostream>
 #include "ThreadPoolServer.h"
+#include "LogFile.h"
 
 /**
  * Writer thread's main loop. Thread waits until it can pull a packet from the queue and then writes the packet contents to an output file.
@@ -88,7 +89,7 @@ void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack)
  */
 void ThreadPoolServer::join()
 {
-    std::cerr << std::endl << "Waiting for writer threads to finish...\n";
+    LogFile::logError("Waiting for writer threads to finish...");
     for (auto& q : m_queues)
         q.second.setInactive();
     for (auto& thread : m_threads)

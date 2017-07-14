@@ -5,6 +5,7 @@
 #include "h5Decode.h"
 #include "getFiles.h"
 #include "hdf_wrapper.h"
+#include "LogFile.h"
 
 namespace h5 = h5cpp;
 
@@ -19,7 +20,7 @@ std::set<std::string> h5Decode::init()
     auto files = getFiles::h5InFolder(m_directory);
     if(files.size() == 0)
     {
-        std::cerr << "No .h5 files found" << std::endl;
+        LogFile::logError("No .h5 files found");
         exit(0);
     }
 

@@ -1,8 +1,9 @@
 #pragma once
 #include <fstream>
 #include <string>
+#include "LogFile.h"
 
-namespace ReadFile
+namespace ReadFiles
 {
     template <typename T>
     /**
@@ -29,8 +30,7 @@ namespace ReadFile
     {
         if (!stream || !stream.is_open())
         {
-            std::cerr << "Failed to open " << name << " file." << std::endl;
-            system("pause");
+            LogFile::logError("Failed to open " + name + " file.");
             exit(0);
         }
     }

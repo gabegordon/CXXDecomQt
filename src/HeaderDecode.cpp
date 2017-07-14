@@ -4,6 +4,7 @@
 #include "HeaderDecode.h"
 #include "ReadFile.h"
 #include "ByteManipulation.h"
+#include "LogFile.h"
 
 namespace HeaderDecode
 {
@@ -25,7 +26,7 @@ std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHea
 
     if (!isValid)
     {
-        std::cerr << "Invalid header: " << std::endl;
+        LogFile::logError("Invalid header: ");
         debugPrinter(ph);
     }
 
@@ -40,7 +41,7 @@ std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHea
  */
 void debugPrinter(const DataTypes::PrimaryHeader& ph)
 {
-    std::cerr << ph.secondaryHeader << "," << ph.APID << "," << std::bitset<2>(ph.sequenceFlag) << "," << ph.packetSequence << "," << ph.packetLength << "\n";
+    LogFile::logError(std::to_string(ph.secondaryHeader) + "," + std::to_string(ph.APID) + "," + std::bitset<2>(ph.sequenceFlag).to_string() + "," + std::to_string(ph.packetSequence) + "," + std::to_string(ph.packetLength));
 }
 
 /**
@@ -55,8 +56,8 @@ DataTypes::PrimaryHeader decodePrimary(std::ifstream& infile, const bool& debug)
     DataTypes::PrimaryHeader ph = p_defaults;
     uint32_t firstFourBytes;
     uint16_t fifthSixByte;
-    ReadFile::read(firstFourBytes, infile);
-    ReadFile::read(fifthSixByte, infile);
+    ReadFiles::read(firstFourBytes, infile);
+    ReadFiles::read(fifthSixByte, infile);
     firstFourBytes = ByteManipulation::swapEndian32(firstFourBytes);
     fifthSixByte = ByteManipulation::swapEndian16(fifthSixByte);
     // Set CCSDS from bits 0-3
@@ -110,9 +111,9 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
         uint32_t millis;
         uint16_t micros;
 
-        ReadFile::read(day, infile);
-        ReadFile::read(millis, infile);
-        ReadFile::read(micros, infile);
+        ReadFiles::read(day, infile);
+        ReadFiles::read(millis, infile);
+        ReadFiles::read(micros, infile);
 
         sh.day = ByteManipulation::swapEndian16(day);
         sh.millis = ByteManipulation::swapEndian32(millis);
@@ -121,7 +122,7 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
         {
             // If first segmented packet, then bits 0-7 are segment count
             uint16_t packetSegments;
-            ReadFile::read(packetSegments, infile);
+            ReadFiles::read(packetSegments, infile);
             packetSegments = ByteManipulation::swapEndian16(packetSegments);
             sh.segments = ByteManipulation::extract16(packetSegments, 0, 8);
         }
