@@ -18,8 +18,7 @@ var indexSectionsWithContent =
   8: "cfilmnostu",
   9: "fu",
   10: "adfgor",
-  11: "cht",
-  12: "h"
+  11: "cht"
 };
 
 var indexSectionNames =
@@ -35,8 +34,7 @@ var indexSectionNames =
   8: "enumvalues",
   9: "properties",
   10: "related",
-  11: "defines",
-  12: "pages"
+  11: "defines"
 };
 
 function convertToId(search)
