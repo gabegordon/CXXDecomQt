@@ -13,9 +13,9 @@ compiler:
 
 env:
   global:
-    - GH_REPO_NAME: CXXDecom
+    - GH_REPO_NAME: CXXDecomQt
     - DOXYFILE: $TRAVIS_BUILD_DIR/doxygen/config
-    - GH_REPO_REF: github.com/gabegordon/CXXDecom.git
+    - GH_REPO_REF: github.com/gabegordon/CXXDecomQt.git
 
 addons:
   apt:
