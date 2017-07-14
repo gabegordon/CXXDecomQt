@@ -32,7 +32,7 @@ addons:
       - graphviz
       - libhdf5-serial-dev
       - libhdf5-7
-      - qt5-default
+      - qt*5-dev
       - build-essential
       - libgl1-mesa-dev
 script:
