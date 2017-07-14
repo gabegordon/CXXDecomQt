@@ -30,8 +30,9 @@ addons:
       - doxygen-latex
       - doxygen-gui
       - graphviz
-      - hdf5
-      - qt5
+      - libhdf5-serial-dev
+      - libhdf5-7
+      - qt5-default
       - build-essential
       - libgl1-mesa-dev
 script:
