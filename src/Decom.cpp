@@ -14,7 +14,7 @@
 #include "ThreadPoolServer.h"
 #include "ReadFile.h"
 #include "LogFile.h"
-
+#include "backend.h"
 
 /**
  * Decom engine initializer. Main event loop for calling all Decom helper functions. Stops reading upon reaching end of input file. Writes data once finished reading.
@@ -23,7 +23,7 @@
  * @param infile File to read from
  * @return N/A
  */
-void Decom::init(const std::string& infile)
+void Decom::init(const std::string& infile, BackEnd* backend)
 {
     m_infile.open(infile, std::ios::binary | std::ios::in);  //Open file as binary for reading
     ReadFiles::checkFile(m_infile, ".pkt");
@@ -36,7 +36,7 @@ void Decom::init(const std::string& infile)
     while (true)  // Loop until error or we reach end of file
     {
         m_progress = m_infile.tellg();  // Get current progress
-        readProgress.Progressed(m_progress);
+        readProgress.Progressed(m_progress, backend);
         if (m_infile.eof() || m_progress >= fileSize)  // If reached end of file
             break;
 
@@ -51,7 +51,7 @@ void Decom::init(const std::string& infile)
 
     m_infile.close(); // Close input file
     pool.join();  // Wait for writer threads to join
-    formatInstruments(); // Check if we need to format instrument data
+    formatInstruments(backend); // Check if we need to format instrument data
 }
 
 /**
@@ -93,10 +93,10 @@ void Decom::getEntries(const uint32_t& APID)
  *
  * @return N/A
  */
-void Decom::formatInstruments() const
+void Decom::formatInstruments(BackEnd* backend) const
 {
     if(m_APIDs.count(528))
-        InstrumentFormat::formatATMS();
+        InstrumentFormat::formatATMS(backend);
 }
 
 /**

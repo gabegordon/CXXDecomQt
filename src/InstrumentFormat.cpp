@@ -8,6 +8,7 @@
 #include "InstrumentFormat.h"
 #include "CSVRow.h"
 #include "ReadFile.h"
+#include "backend.h"
 
 
 struct atms_pack
@@ -50,7 +51,7 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
  * @param buf Buffer of atms_pack read in from output file
  * @return N/A
  */
-void writeChans(const std::vector<atms_pack>& buf)
+void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
 {
     uint64_t i = 0;
     uint64_t bufSize = buf.size();
@@ -64,7 +65,7 @@ void writeChans(const std::vector<atms_pack>& buf)
 
     while (i < bufSize)  // Loop until we reach end of buffer
     {
-        writeProgress.Progressed(i);
+        writeProgress.Progressed(i, backend);
         uint8_t packCounter = 0;
 
         for (auto& pack : outpacks)  // Add time info to outpacks
@@ -120,7 +121,7 @@ void writeChans(const std::vector<atms_pack>& buf)
             outfile << "\n";
         }
     }
-    writeProgress.Progressed(bufSize);
+    writeProgress.Progressed(bufSize, backend);
 }
 
 /**
@@ -128,7 +129,7 @@ void writeChans(const std::vector<atms_pack>& buf)
  *
  * @return N/A
  */
-void formatATMS()
+void formatATMS(BackEnd* backend)
 {
     CSVRow atms_row;
     std::ifstream m_infile;
@@ -144,7 +145,7 @@ void formatATMS()
 
     while (m_infile >> atms_row)  // Read rows into atms_pack structs
     {
-        readProgress.Progressed(m_infile.tellg());
+        readProgress.Progressed(m_infile.tellg(), backend);
         if (firstRow)
         {
             firstRow = false;
@@ -163,11 +164,11 @@ void formatATMS()
         }
         buf.emplace_back(pack);
     }
-    writeChans(buf);
+    writeChans(buf, backend);
 }
 
 
-void formatOMPS()
+void formatOMPS(BackEnd* backend)
 {
     CSVRow omps_row;
     std::ifstream m_infile;

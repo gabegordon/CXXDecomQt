@@ -1,5 +1,7 @@
+class BackEnd;
+
 namespace InstrumentFormat
 {
-    void formatATMS();
-    void formatOMPS();
+    void formatATMS(BackEnd* backend);
+    void formatOMPS(BackEnd* backend);
 }

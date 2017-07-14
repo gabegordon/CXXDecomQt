@@ -2,6 +2,7 @@
 #include <vector>
 #include <cstdint>
 #include <set>
+#include <algorithm>
 #include "h5Decode.h"
 #include "getFiles.h"
 #include "hdf_wrapper.h"
@@ -24,7 +25,8 @@ std::set<std::string> h5Decode::init()
         exit(0);
     }
 
-    // TODO  Sort Files
+    sortFiles(files);
+
     for (const auto& filename : files)
     {
         h5::File h5File(filename, "r");
@@ -86,4 +88,14 @@ std::ofstream& h5Decode::getStream(const std::string& child)
         ofile.open("output/" + child, std::ios::binary);
     }
     return ofile;
+}
+
+/**
+ * @brief Sorts h5 files
+ *
+ * @param files Vector of files to sort
+ */
+void h5Decode::sortFiles(std::vector<std::string>& files)
+{
+    std::sort(std::begin(files), std::end(files));
 }

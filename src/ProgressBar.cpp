@@ -1,4 +1,5 @@
 #include "ProgressBar.h"
+#include "backend.h"
 
 void ProgressBar::SetStyle(const char* unit_bar_, const char* unit_space_)
 {
@@ -6,42 +7,16 @@ void ProgressBar::SetStyle(const char* unit_bar_, const char* unit_space_)
     unit_space = unit_space_;
 }
 
-int ProgressBar::GetConsoleWidth() const
-{
-    int width;
-
-#ifdef _WIN64
-    CONSOLE_SCREEN_BUFFER_INFO csbi;
-    GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
-    width = csbi.srWindow.Right - csbi.srWindow.Left;
-#else
-    struct winsize win;
-    ioctl(0, TIOCGWINSZ, &win);
-    width = win.ws_col;
-#endif
-
-    return width;
-}
-
 int ProgressBar::GetBarLength() const
 {
     // get console width and according adjust the length of the progress bar
 
-    int bar_length = static_cast<int>((GetConsoleWidth() - desc_width - CHARACTER_WIDTH_PERCENTAGE) / 2.);
+    int bar_length = static_cast<int>((95 - desc_width - CHARACTER_WIDTH_PERCENTAGE) / 2.0);
 
     return bar_length;
 }
 
-void ProgressBar::ClearBarField()
-{
-    for (int i = 0; i < GetConsoleWidth(); ++i)
-    {
-        *out << " ";
-    }
-    *out << "\r" << std::flush;
-}
-
-void ProgressBar::Progressed(const uint64_t& idx_)
+void ProgressBar::Progressed(const uint64_t& idx_, BackEnd* backend)
 {
     try
     {
@@ -60,25 +35,26 @@ void ProgressBar::Progressed(const uint64_t& idx_)
         double percent_per_unit_bar = TOTAL_PERCENTAGE / bar_size;
 
         // display progress bar
-        *out << " " << std::right << std::setw(12) << description << " [";
+        std::stringstream out;
+        out << " " << std::right << std::setw(12) << description << " [";
 
         for (int bar_length = 0; bar_length <= bar_size - 1; ++bar_length)
         {
             if (bar_length*percent_per_unit_bar < progress_percent)
             {
-                *out << unit_bar;
+                out << unit_bar;
             }
             else
             {
-                *out << unit_space;
+                out << unit_space;
             }
         }
 
-        *out << "]" << std::setw(CHARACTER_WIDTH_PERCENTAGE + 1) << std::setprecision(1) << std::fixed << progress_percent << "%\r" << std::flush;
+        out << "]" << std::setw(CHARACTER_WIDTH_PERCENTAGE + 1) << std::setprecision(1) << std::fixed << progress_percent << "%\r" << std::flush;
+        backend->setProgress(out.str());
     }
     catch (unsigned long e)
     {
-        ClearBarField();
         std::cerr << "PROGRESS_BAR_EXCEPTION: _idx (" << e << ") went out of bounds, greater than n (" << n << ")." << std::endl << std::flush;
     }
 }

@@ -7,6 +7,8 @@
 #include <string>
 #include "DataTypes.h"
 
+class BackEnd;
+
 typedef uint8_t BYTE;
 
 class Decom
@@ -22,11 +24,11 @@ class Decom
     {};
     virtual ~Decom() {}
 
-    void init(const std::string& infile);
+    void init(const std::string& infile, BackEnd* backend);
 
   private:
     void getEntries(const uint32_t& APID);
-    void formatInstruments() const;
+    void formatInstruments(BackEnd* backend) const;
     void storeAPID(const uint32_t& APID);
     uint64_t getFileSize();
     DataTypes::Packet decodeData();
