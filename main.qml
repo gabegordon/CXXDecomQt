@@ -6,7 +6,7 @@ import io.qt.backend 1.0
 
 ApplicationWindow {
     id: root
-    width: 800
+    width: 1200
     height: 600
     visible: true
     background: LinearGradient {
@@ -22,12 +22,16 @@ ApplicationWindow {
     BackEnd {
         id: backend
         onFinished: finishedPopup.open()
+        onFinishedh5: {
+            progressh5.close()
+            apidSelect.open()
+        }
     }
 
     Label {
         id: title
-        x: 290
-        y: 45
+        x: 491
+        y: 44
         text: "Decom Utility"
         font.pixelSize: 32
         font.bold: true
@@ -35,7 +39,7 @@ ApplicationWindow {
 
     Popup {
         id: runSelectWindow
-        x: 100
+        x: 300
         y: 133
         width: 600
         height: 334
@@ -76,7 +80,7 @@ ApplicationWindow {
         id: progress
         x: 10
         y: 133
-        width: 780
+        width: 1180
         height: 334
         modal: true
         focus: true
@@ -94,21 +98,37 @@ ApplicationWindow {
                 font.pixelSize: 22
             }
         }
+    }
 
-        Button {
-            text: "Exit"
-            id: exitButton
-            visible: false
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            font.pixelSize: 22
-            onClicked: Qt.quit()
+    Popup {
+        id: progressh5
+        x: 10
+        y: 133
+        width: 1180
+        height: 334
+        modal: true
+        focus: true
+        Column {
+            Text {
+                text: backend.progress
+                font.pixelSize: 22
+            }
         }
+    }
+
+    Button {
+        text: "Exit"
+        id: exitButton
+        visible: false
+        anchors.bottom: parent.bottom
+        anchors.right: parent.right
+        font.pixelSize: 22
+        onClicked: Qt.quit()
     }
 
     Popup {
         id: apidSelect
-        x: 100
+        x: 300
         y: 133
         width: 600
         height: 334
@@ -164,8 +184,8 @@ ApplicationWindow {
             text: "Run h5 Decode"
             scale: 2
             onClicked: {
+                progressh5.open()
                 backend.decodeh5()
-                apidSelect.open()
             }
         }
     }
@@ -178,6 +198,7 @@ ApplicationWindow {
         visible: false
         onAccepted: {
             backend.folderName = fileDialog.fileUrl
+            console.log(fileDialog.fileUrl)
             visible: false
         }
         onRejected: {

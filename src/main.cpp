@@ -7,8 +7,10 @@ int main(int argc, char *argv[])
 {
 #ifdef __linux__
         system("cd output && rm -f *.txt");  // Clear output directory
+        system("mkdir -p output");
 #else
         system("cd output && del /Q *.txt 2>NUL 1>NUL");
+        system("if not exist output mkdir output");
 #endif
 
     QGuiApplication app(argc, argv);

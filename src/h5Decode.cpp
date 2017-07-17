@@ -7,6 +7,8 @@
 #include "getFiles.h"
 #include "hdf_wrapper.h"
 #include "LogFile.h"
+#include "backend.h"
+#include "ProgressBar.h"
 
 namespace h5 = h5cpp;
 
@@ -15,7 +17,7 @@ namespace h5 = h5cpp;
  *
  * @return set of files written
  */
-std::set<std::string> h5Decode::init()
+std::set<std::string> h5Decode::init(BackEnd* backend)
 {
     std::set<std::string> outfileNames;
     auto files = getFiles::h5InFolder(m_directory);
@@ -27,8 +29,11 @@ std::set<std::string> h5Decode::init()
 
     sortFiles(files);
 
+    ProgressBar pbar(files.size(), "Parsing h5");
+    uint32_t i = 0;
     for (const auto& filename : files)
     {
+        pbar.Progressed(i++, backend);
         h5::File h5File(filename, "r");
         h5::Group All_Data = h5File.root().open_group("All_Data");
 

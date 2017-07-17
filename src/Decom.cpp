@@ -26,7 +26,7 @@
 void Decom::init(const std::string& infile, BackEnd* backend)
 {
     m_infile.open(infile, std::ios::binary | std::ios::in);  //Open file as binary for reading
-    ReadFiles::checkFile(m_infile, ".pkt");
+    ReadFiles::checkFile(m_infile, infile);
 
     uint64_t fileSize = getFileSize();
     ProgressBar readProgress(fileSize, "Parsing");  // Create progress bar

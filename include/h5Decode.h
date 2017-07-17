@@ -5,6 +5,8 @@
 #include <fstream>
 #include <set>
 
+class BackEnd;
+
 class h5Decode
 {
   public:
@@ -15,7 +17,7 @@ class h5Decode
 
     virtual ~h5Decode() {}
 
-    std::set<std::string> init();
+    std::set<std::string> init(BackEnd* backend);
   private:
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;

@@ -61,9 +61,13 @@ void BackEnd::decodeh5()
 {
     if (m_folderName == "")
         return;
-
+#ifdef __linux__
     h5Decode h5Dec(m_folderName.toStdString().substr(6));
-    m_ofiles = h5Dec.init();
+#else
+    h5Decode h5Dec(m_folderName.toStdString().substr(8));
+#endif
+    m_ofiles = h5Dec.init(this);
+    emit finishedh5();
     emit ofilesChanged();
 }
 

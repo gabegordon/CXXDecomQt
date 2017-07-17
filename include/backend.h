@@ -35,6 +35,7 @@ signals:
     void currentFileChanged();
     void progressChanged();
     void finished();
+    void finishedh5();
 
 private:
     QString m_userName;
