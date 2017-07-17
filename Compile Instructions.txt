@@ -1,0 +1,10 @@
+To compile:
+
+Create build directory:
+mkdir build && cd build
+
+Generate Makefile:
+cmake -G "MinGW Makefiles" ..
+
+Build:
+cmake --build .

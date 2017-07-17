@@ -6,11 +6,11 @@
 int main(int argc, char *argv[])
 {
 #ifdef __linux__
-        system("cd output && rm -f *.txt");  // Clear output directory
-        system("mkdir -p output");
+        QProcess::execute("cd output && rm -f *.txt");  // Clear output directory
+        QProcess::execute("mkdir -p output");
 #else
-        system("cd output && del /Q *.txt 2>NUL 1>NUL");
-        system("if not exist output mkdir output");
+        QProcess::execute("cd output && del /Q *.txt 2>NUL 1>NUL");
+        QProcess::execute("if not exist output mkdir output 2>NUL 1>NUL");
 #endif
 
     QGuiApplication app(argc, argv);
