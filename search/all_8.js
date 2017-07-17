@@ -7,7 +7,7 @@ var searchData=
   ['ignored',['ignored',['../namespace_data_types.html#aa31c1f3ba8fd2e9da1cdb511a92b6666',1,'DataTypes::Entry::ignored()'],['../namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f',1,'DataTypes::Packet::ignored()']]],
   ['inc_5fref',['inc_ref',['../classh5cpp_1_1_object.html#aef6c1b620091d2665e37d0762cfbbce0',1,'h5cpp::Object']]],
   ['incrc',['IncRC',['../namespaceh5cpp_1_1internal.html#structh5cpp_1_1internal_1_1_inc_r_c',1,'h5cpp::internal']]],
-  ['init',['init',['../class_database_reader.html#a58c5d7789896918bef02829c37d8f5de',1,'DatabaseReader::init()'],['../class_decom.html#a4328215d51697cbce525896fbc42d0f2',1,'Decom::init()'],['../classh5_decode.html#a10a58ecf29631b89d6d171e2c23375a9',1,'h5Decode::init()']]],
+  ['init',['init',['../class_database_reader.html#a58c5d7789896918bef02829c37d8f5de',1,'DatabaseReader::init()'],['../class_decom.html#a4328215d51697cbce525896fbc42d0f2',1,'Decom::init()'],['../classh5_decode.html#a27e9ffc06e2539fa8d9e5b4e7cb5c653',1,'h5Decode::init()']]],
   ['instrumentformat',['InstrumentFormat',['../namespace_instrument_format.html',1,'']]],
   ['instrumentformat_2ecpp',['InstrumentFormat.cpp',['../_instrument_format_8cpp.html',1,'']]],
   ['instrumentformat_2eh',['InstrumentFormat.h',['../_instrument_format_8h.html',1,'']]],

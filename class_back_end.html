@@ -130,6 +130,8 @@ Signals</h2></td></tr>
 <tr class="separator:afdfa68ec20e58e0dc3b517a10e69c443"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fec464fa76c144733efe01ab5829e11"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_back_end.html#a4fec464fa76c144733efe01ab5829e11">finished</a> ()</td></tr>
 <tr class="separator:a4fec464fa76c144733efe01ab5829e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4678d2b1c09198b866161569115dbe44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_back_end.html#a4678d2b1c09198b866161569115dbe44">finishedh5</a> ()</td></tr>
+<tr class="separator:a4678d2b1c09198b866161569115dbe44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -223,10 +225,10 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    <a class="code" href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">m_debug</a>{debug}</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_a6b3f67566f6f0c5042cf3d6dd59e1e79"><div class="ttname"><a href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">BackEnd::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00044">backend.h:44</a></div></div>
-<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00041">backend.h:41</a></div></div>
-<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00043">backend.h:43</a></div></div>
-<div class="ttc" id="class_back_end_html_ad58528ee3d30dafa97a61be5dc83fc5a"><div class="ttname"><a href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">BackEnd::m_allAPIDs</a></div><div class="ttdeci">bool m_allAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00042">backend.h:42</a></div></div>
+<div class="ttc" id="class_back_end_html_a6b3f67566f6f0c5042cf3d6dd59e1e79"><div class="ttname"><a href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">BackEnd::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00045">backend.h:45</a></div></div>
+<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00042">backend.h:42</a></div></div>
+<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00044">backend.h:44</a></div></div>
+<div class="ttc" id="class_back_end_html_ad58528ee3d30dafa97a61be5dc83fc5a"><div class="ttname"><a href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">BackEnd::m_allAPIDs</a></div><div class="ttdeci">bool m_allAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00043">backend.h:43</a></div></div>
 <div class="ttc" id="class_q_object_html"><div class="ttname"><a href="class_q_object.html">QObject</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -284,7 +286,7 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <a class="code" href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">m_packetFiles</a>.emplace(packetFile.toStdString());</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_ab9269422cf5ec8480e1d3f7128a6a183"><div class="ttname"><a href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">BackEnd::m_packetFiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_packetFiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00045">backend.h:45</a></div></div>
+<div class="ttc" id="class_back_end_html_ab9269422cf5ec8480e1d3f7128a6a183"><div class="ttname"><a href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">BackEnd::m_packetFiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_packetFiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00046">backend.h:46</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -351,15 +353,20 @@ Private Attributes</h2></td></tr>
 <div class="fragment"><div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;{</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(6));</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <a class="code" href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">m_ofiles</a> = h5Dec.init();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    emit <a class="code" href="class_back_end.html#a72052c1cbdaf85f57f8c36ae3cf600f4">ofilesChanged</a>();</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00041">backend.h:41</a></div></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#ifdef __linux__</span></div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(6));</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#else</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(8));</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor"></span>    <a class="code" href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">m_ofiles</a> = h5Dec.init(<span class="keyword">this</span>);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    emit <a class="code" href="class_back_end.html#a4678d2b1c09198b866161569115dbe44">finishedh5</a>();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    emit <a class="code" href="class_back_end.html#a72052c1cbdaf85f57f8c36ae3cf600f4">ofilesChanged</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00042">backend.h:42</a></div></div>
 <div class="ttc" id="class_back_end_html_a72052c1cbdaf85f57f8c36ae3cf600f4"><div class="ttname"><a href="class_back_end.html#a72052c1cbdaf85f57f8c36ae3cf600f4">BackEnd::ofilesChanged</a></div><div class="ttdeci">void ofilesChanged()</div></div>
-<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00043">backend.h:43</a></div></div>
-<div class="ttc" id="classh5_decode_html"><div class="ttname"><a href="classh5_decode.html">h5Decode</a></div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00008">h5Decode.h:8</a></div></div>
+<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00044">backend.h:44</a></div></div>
+<div class="ttc" id="class_back_end_html_a4678d2b1c09198b866161569115dbe44"><div class="ttname"><a href="class_back_end.html#a4678d2b1c09198b866161569115dbe44">BackEnd::finishedh5</a></div><div class="ttdeci">void finishedh5()</div></div>
+<div class="ttc" id="classh5_decode_html"><div class="ttname"><a href="classh5_decode.html">h5Decode</a></div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00010">h5Decode.h:10</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -372,6 +379,29 @@ Private Attributes</h2></td></tr>
       <table class="memname">
         <tr>
           <td class="memname">void BackEnd::finished </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a4678d2b1c09198b866161569115dbe44"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BackEnd::finishedh5 </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -483,37 +513,37 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8cpp_source.html#l00070">70</a> of file <a class="el" href="backend_8cpp_source.html">backend.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">m_ofiles</a>.size() == 0)</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <a class="code" href="class_database_reader.html">DatabaseReader</a> dr(<span class="stringliteral">&quot;databases/CXXParams.csv&quot;</span>, <a class="code" href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">m_allAPIDs</a>);  <span class="comment">// Read databases</span></div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; packetFile : <a class="code" href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">m_packetFiles</a>)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_back_end.html#a49f04ce00a352c9e92dee11ba709b9e6">m_currentFile</a> = QString::fromStdString(packetFile);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        emit <a class="code" href="class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9">currentFileChanged</a>();</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        QGuiApplication::sync();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">size_t</span> found;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        std::string instrument;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">if</span> ((found = packetFile.find(<span class="stringliteral">&quot;-&quot;</span>)) != std::string::npos)  <span class="comment">// Get instrument from filename</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            instrument = packetFile.substr(0, found);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <a class="code" href="class_decom.html">Decom</a> decomEngine(instrument, <a class="code" href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">m_debug</a>, dr.getEntries());  <span class="comment">// Run decom</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        decomEngine.<a class="code" href="class_decom.html#a4328215d51697cbce525896fbc42d0f2">init</a>(<span class="stringliteral">&quot;output/&quot;</span> + packetFile, <span class="keyword">this</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    emit <a class="code" href="class_back_end.html#a4fec464fa76c144733efe01ab5829e11">finished</a>();</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_ab9269422cf5ec8480e1d3f7128a6a183"><div class="ttname"><a href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">BackEnd::m_packetFiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_packetFiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00045">backend.h:45</a></div></div>
+<p>Definition at line <a class="el" href="backend_8cpp_source.html#l00074">74</a> of file <a class="el" href="backend_8cpp_source.html">backend.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;{</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">m_ofiles</a>.size() == 0)</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <a class="code" href="class_database_reader.html">DatabaseReader</a> dr(<span class="stringliteral">&quot;databases/CXXParams.csv&quot;</span>, <a class="code" href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">m_allAPIDs</a>);  <span class="comment">// Read databases</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">const</span> <span class="keyword">auto</span>&amp; packetFile : <a class="code" href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">m_packetFiles</a>)</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="class_back_end.html#a49f04ce00a352c9e92dee11ba709b9e6">m_currentFile</a> = QString::fromStdString(packetFile);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        emit <a class="code" href="class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9">currentFileChanged</a>();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        QGuiApplication::sync();</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="keywordtype">size_t</span> found;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::string instrument;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordflow">if</span> ((found = packetFile.find(<span class="stringliteral">&quot;-&quot;</span>)) != std::string::npos)  <span class="comment">// Get instrument from filename</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            instrument = packetFile.substr(0, found);</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="class_decom.html">Decom</a> decomEngine(instrument, <a class="code" href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">m_debug</a>, dr.getEntries());  <span class="comment">// Run decom</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        decomEngine.<a class="code" href="class_decom.html#a4328215d51697cbce525896fbc42d0f2">init</a>(<span class="stringliteral">&quot;output/&quot;</span> + packetFile, <span class="keyword">this</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    }</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    emit <a class="code" href="class_back_end.html#a4fec464fa76c144733efe01ab5829e11">finished</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
+<div class="ttc" id="class_back_end_html_ab9269422cf5ec8480e1d3f7128a6a183"><div class="ttname"><a href="class_back_end.html#ab9269422cf5ec8480e1d3f7128a6a183">BackEnd::m_packetFiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_packetFiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00046">backend.h:46</a></div></div>
 <div class="ttc" id="class_decom_html_a4328215d51697cbce525896fbc42d0f2"><div class="ttname"><a href="class_decom.html#a4328215d51697cbce525896fbc42d0f2">Decom::init</a></div><div class="ttdeci">void init(const std::string &amp;infile, BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00026">Decom.cpp:26</a></div></div>
 <div class="ttc" id="class_back_end_html_a27412054c6b7ba25009c0e1b2224f9c9"><div class="ttname"><a href="class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9">BackEnd::currentFileChanged</a></div><div class="ttdeci">void currentFileChanged()</div></div>
 <div class="ttc" id="class_back_end_html_a4fec464fa76c144733efe01ab5829e11"><div class="ttname"><a href="class_back_end.html#a4fec464fa76c144733efe01ab5829e11">BackEnd::finished</a></div><div class="ttdeci">void finished()</div></div>
-<div class="ttc" id="class_back_end_html_a6b3f67566f6f0c5042cf3d6dd59e1e79"><div class="ttname"><a href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">BackEnd::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00044">backend.h:44</a></div></div>
+<div class="ttc" id="class_back_end_html_a6b3f67566f6f0c5042cf3d6dd59e1e79"><div class="ttname"><a href="class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79">BackEnd::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00045">backend.h:45</a></div></div>
 <div class="ttc" id="class_database_reader_html"><div class="ttname"><a href="class_database_reader.html">DatabaseReader</a></div><div class="ttdef"><b>Definition:</b> <a href="_database_reader_8h_source.html#l00006">DatabaseReader.h:6</a></div></div>
-<div class="ttc" id="class_back_end_html_a49f04ce00a352c9e92dee11ba709b9e6"><div class="ttname"><a href="class_back_end.html#a49f04ce00a352c9e92dee11ba709b9e6">BackEnd::m_currentFile</a></div><div class="ttdeci">QString m_currentFile</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00046">backend.h:46</a></div></div>
-<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00043">backend.h:43</a></div></div>
-<div class="ttc" id="class_back_end_html_ad58528ee3d30dafa97a61be5dc83fc5a"><div class="ttname"><a href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">BackEnd::m_allAPIDs</a></div><div class="ttdeci">bool m_allAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00042">backend.h:42</a></div></div>
+<div class="ttc" id="class_back_end_html_a49f04ce00a352c9e92dee11ba709b9e6"><div class="ttname"><a href="class_back_end.html#a49f04ce00a352c9e92dee11ba709b9e6">BackEnd::m_currentFile</a></div><div class="ttdeci">QString m_currentFile</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00047">backend.h:47</a></div></div>
+<div class="ttc" id="class_back_end_html_af529cb8593144d1dc418df62a3df0cbc"><div class="ttname"><a href="class_back_end.html#af529cb8593144d1dc418df62a3df0cbc">BackEnd::m_ofiles</a></div><div class="ttdeci">std::set&lt; std::string &gt; m_ofiles</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00044">backend.h:44</a></div></div>
+<div class="ttc" id="class_back_end_html_ad58528ee3d30dafa97a61be5dc83fc5a"><div class="ttname"><a href="class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a">BackEnd::m_allAPIDs</a></div><div class="ttdeci">bool m_allAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00043">backend.h:43</a></div></div>
 <div class="ttc" id="class_decom_html"><div class="ttname"><a href="class_decom.html">Decom</a></div><div class="ttdef"><b>Definition:</b> <a href="_decom_8h_source.html#l00014">Decom.h:14</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -540,7 +570,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a> = <a class="code" href="class_back_end.html#a1ce9aa04c4552bb8c9d4f2b51049cd99">folderName</a>;</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
 <div class="ttc" id="class_back_end_html_a1ce9aa04c4552bb8c9d4f2b51049cd99"><div class="ttname"><a href="class_back_end.html#a1ce9aa04c4552bb8c9d4f2b51049cd99">BackEnd::folderName</a></div><div class="ttdeci">QString folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00013">backend.h:13</a></div></div>
-<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00041">backend.h:41</a></div></div>
+<div class="ttc" id="class_back_end_html_afc89995e7c171244c82445966046ff20"><div class="ttname"><a href="class_back_end.html#afc89995e7c171244c82445966046ff20">BackEnd::m_folderName</a></div><div class="ttdeci">QString m_folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00042">backend.h:42</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -564,7 +594,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    emit <a class="code" href="class_back_end.html#afdfa68ec20e58e0dc3b517a10e69c443">progressChanged</a>();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    QGuiApplication::sync();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_a602c8a9d5e0ff84a39ef5e1ec6c5fb72"><div class="ttname"><a href="class_back_end.html#a602c8a9d5e0ff84a39ef5e1ec6c5fb72">BackEnd::m_progress</a></div><div class="ttdeci">QString m_progress</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00047">backend.h:47</a></div></div>
+<div class="ttc" id="class_back_end_html_a602c8a9d5e0ff84a39ef5e1ec6c5fb72"><div class="ttname"><a href="class_back_end.html#a602c8a9d5e0ff84a39ef5e1ec6c5fb72">BackEnd::m_progress</a></div><div class="ttdeci">QString m_progress</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00048">backend.h:48</a></div></div>
 <div class="ttc" id="class_back_end_html_afdfa68ec20e58e0dc3b517a10e69c443"><div class="ttname"><a href="class_back_end.html#afdfa68ec20e58e0dc3b517a10e69c443">BackEnd::progressChanged</a></div><div class="ttdeci">void progressChanged()</div></div>
 </div><!-- fragment -->
 </div>
@@ -588,7 +618,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00042">42</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00043">43</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -610,7 +640,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00046">46</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00047">47</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -632,7 +662,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00044">44</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00045">45</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -654,7 +684,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00041">41</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00042">42</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -676,7 +706,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00043">43</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00044">44</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -698,7 +728,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00045">45</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00046">46</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -720,7 +750,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00047">47</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00048">48</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
@@ -742,7 +772,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="backend_8h_source.html#l00040">40</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
+<p>Definition at line <a class="el" href="backend_8h_source.html#l00041">41</a> of file <a class="el" href="backend_8h_source.html">backend.h</a>.</p>
 
 </div>
 </div>
