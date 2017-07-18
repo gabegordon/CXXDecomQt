@@ -56,9 +56,10 @@ ApplicationWindow {
 
                 model: backend.ofiles
                 delegate: CheckBox {
+                    id: cb
                     anchors.left: parent.left
                     text: modelData
-                    onClicked: backend.addPacketFile(modelData)
+                    onClicked: cb.checked ? backend.addPacketFile(modelData) : backend.removePacketFile(modelData)
                 }
             }
         }
@@ -114,16 +115,15 @@ ApplicationWindow {
                 font.pixelSize: 22
             }
         }
-    }
-
-    Button {
-        text: "Exit"
-        id: exitButton
-        visible: false
-        anchors.bottom: parent.bottom
-        anchors.right: parent.right
-        font.pixelSize: 22
-        onClicked: Qt.quit()
+        Button {
+            text: "Exit"
+            id: exitButton
+            visible: false
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            font.pixelSize: 22
+            onClicked: Qt.quit()
+        }
     }
 
     Popup {

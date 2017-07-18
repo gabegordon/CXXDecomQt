@@ -51,8 +51,8 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
                 h5::read_dataset<uint8_t>(RawAP, data);
 
                 int32_t apStorageOffset = static_cast<int32_t>(data.at(51)) + (static_cast<int32_t>(data.at(50)) * 256) + (static_cast<int32_t>(data.at(49)) * 65536) + (static_cast<int32_t>(data.at(48)) * 16777216);
-                data.erase(std::begin(data), (std::begin(data) + apStorageOffset));
-                allData.insert(std::end(allData), std::begin(data), std::end(data));
+                allData.insert(std::end(allData), (std::begin(data) + apStorageOffset), std::end(data));
+                allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));
             }
             writeFile(APgroupString, allData);
             outfileNames.emplace(APgroupString);

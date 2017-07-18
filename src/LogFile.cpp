@@ -4,7 +4,6 @@
 
 #include "LogFile.h"
 
-
 typedef boost::iostreams::tee_device<std::ostream, std::ofstream> Tee;
 typedef boost::iostreams::stream<Tee> TeeStream;
 

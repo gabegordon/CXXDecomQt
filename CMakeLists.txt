@@ -4,6 +4,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 project(CXXDecomQt C CXX)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_BUILD_TYPE RELEASE)
 set(CMAKE_CXX_STANDARD 14)
 set(EXECUTABLE_OUTPUT_PATH "bin")
@@ -23,8 +24,8 @@ include_directories(${HDF5_INCLUDE_DIR})
 include_directories(${QT_USE_FILE})
 add_definitions(${QT_DEFINITIONS})
 
-file(GLOB SOURCES "src/*.cpp")
-file(GLOB INCLUDES "include/*.h")
+file(GLOB SOURCES "src/[A-z]*.cpp")
+file(GLOB INCLUDES "include/[A-z]*.h")
 
 add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QDebug>
 #include <QGuiApplication>
+#include <algorithm>
 #include "backend.h"
 #include "h5Decode.h"
 #include "DatabaseReader.h"
@@ -13,9 +14,13 @@ BackEnd::BackEnd(QObject* parent, const bool debug) :
     m_allAPIDs{true},
     m_ofiles{},
     m_debug{debug}
-{
-}
+{}
 
+/**
+ * Sets foldername member based on QML file selector.
+ *
+ * @param folderName Folder path
+ */
 void BackEnd::setFolderName(const QString& folderName)
 {
     if (folderName == m_folderName)
@@ -24,6 +29,11 @@ void BackEnd::setFolderName(const QString& folderName)
     m_folderName = folderName;
 }
 
+/**
+ * Given a string containing the progressbar convert to QString. Then signal and update Qt.
+ *
+ * @param prog String to be display
+ */
 void BackEnd::setProgress(const std::string& prog)
 {
     m_progress = QString::fromStdString(prog);
@@ -31,11 +41,29 @@ void BackEnd::setProgress(const std::string& prog)
     QGuiApplication::sync();
 }
 
+/**
+ * Given user selected of packet files, add to list of selected files.
+ * @param packetFile File to add
+ */
 void BackEnd::addPacketFile(const QString &packetFile)
 {
-    m_packetFiles.emplace(packetFile.toStdString());
+    m_packetFiles.emplace_back(packetFile.toStdString());
 }
 
+/**
+ * Remove packet file if user deselects a file.
+ * @param packetFile File to remove
+ */
+void BackEnd::removePacketFile(const QString &packetFile)
+{
+    m_packetFiles.erase(std::remove(std::begin(m_packetFiles), std::end(m_packetFiles), packetFile.toStdString()), std::end(m_packetFiles));
+}
+
+/**
+ * Getter function for pkt files. Allows Qt to display list of possible packet files.
+ *
+ * @return List of file names
+ */
 QStringList BackEnd::ofiles()
 {
     QStringList tQList;
@@ -57,6 +85,9 @@ QString BackEnd::progress()
     return m_progress;
 }
 
+/**
+ * Passes user selected folder to h5Decode and parses all files in the directory.
+ */
 void BackEnd::decodeh5()
 {
     if (m_folderName == "")
@@ -71,6 +102,9 @@ void BackEnd::decodeh5()
     emit ofilesChanged();
 }
 
+/**
+ * Main decom loop. Loads databases and then loops through all user-selected packet files and decoms them.
+ */
 void BackEnd::runDecom()
 {
     if(m_ofiles.size() == 0)

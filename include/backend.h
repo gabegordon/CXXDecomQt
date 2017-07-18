@@ -5,6 +5,7 @@
 #include <QString>
 #include <QStringList>
 #include <string>
+#include <vector>
 #include <set>
 
 class BackEnd : public QObject
@@ -29,6 +30,7 @@ public slots:
     void decodeh5();
     void runDecom();
     void addPacketFile(const QString &packetFile);
+    void removePacketFile(const QString &packetFile);
 
 signals:
     void ofilesChanged();
@@ -43,7 +45,7 @@ private:
     bool m_allAPIDs;
     std::set<std::string> m_ofiles;
     bool m_debug;
-    std::set<std::string>m_packetFiles;
+    std::vector<std::string>m_packetFiles;
     QString m_currentFile;
     QString m_progress;
 };

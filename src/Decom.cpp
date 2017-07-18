@@ -27,12 +27,9 @@ void Decom::init(const std::string& infile, BackEnd* backend)
 {
     m_infile.open(infile, std::ios::binary | std::ios::in);  //Open file as binary for reading
     ReadFiles::checkFile(m_infile, infile);
-
     uint64_t fileSize = getFileSize();
     ProgressBar readProgress(fileSize, "Parsing");  // Create progress bar
-
     ThreadPoolServer pool{m_instrument};  // Create thread pool that we will be passing our packets to
-
     while (true)  // Loop until error or we reach end of file
     {
         m_progress = m_infile.tellg();  // Get current progress
@@ -46,7 +43,7 @@ void Decom::init(const std::string& infile, BackEnd* backend)
         DataTypes::Packet pack = decodeData();
 
         storeAPID(pack.apid);
-        pool.exec(std::move(std::make_unique<DataTypes::Packet>(pack)));  // Push packet into our writer thread's queue
+        pool.exec(std::make_unique<DataTypes::Packet>(pack));  // Push packet into our writer thread's queue
     }
 
     m_infile.close(); // Close input file
