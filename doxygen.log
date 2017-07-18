@@ -3,18 +3,26 @@ Warning: ignoring unsupported tag `TOC_INCLUDE_HEADINGS   =' at line 313, file /
 Warning: ignoring unsupported tag `GROUP_NESTED_COMPOUNDS =' at line 370, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
 Warning: ignoring unsupported tag `HIDE_COMPOUND_REFERENCE=' at line 541, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
 Warning: ignoring unsupported tag `WARN_AS_ERROR          =' at line 765, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: Tag `CLANG_ASSISTED_PARSING' at line 1083 of file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config belongs to an option that was not enabled at compile time.
+Warning: ignoring unknown tag `TRAVIS_BUILD_DIR' at line 795, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `doxygen' at line 795, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `running' at line 795, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `dox' at line 795, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `TRAVIS_BUILD_DIR' at line 796, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `doxygen' at line 796, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `compiling' at line 796, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unknown tag `dox' at line 796, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: Tag `CLANG_ASSISTED_PARSING' at line 1085 of file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config belongs to an option that was not enabled at compile time.
 To avoid this warning please remove this line from your configuration file, upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
-Warning: Tag `CLANG_OPTIONS' at line 1091 of file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config belongs to an option that was not enabled at compile time.
+Warning: Tag `CLANG_OPTIONS' at line 1093 of file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config belongs to an option that was not enabled at compile time.
 To avoid this warning please remove this line from your configuration file, upgrade it using "doxygen -u", or recompile doxygen with this feature enabled.
-Warning: ignoring unsupported tag `LATEX_EXTRA_STYLESHEET =' at line 1763, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `LATEX_TIMESTAMP        =' at line 1830, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `RTF_SOURCE_CODE        =' at line 1896, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1931, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `DOCBOOK_PROGRAMLISTING =' at line 1994, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `PLANTUML_JAR_PATH      =' at line 2423, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2428, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
-Warning: ignoring unsupported tag `PLANTUML_INCLUDE_PATH  =' at line 2433, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `LATEX_EXTRA_STYLESHEET =' at line 1765, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `LATEX_TIMESTAMP        =' at line 1832, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `RTF_SOURCE_CODE        =' at line 1898, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `MAN_SUBDIR             =' at line 1933, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `DOCBOOK_PROGRAMLISTING =' at line 1996, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `PLANTUML_JAR_PATH      =' at line 2425, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `PLANTUML_CFG_FILE      =' at line 2430, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
+Warning: ignoring unsupported tag `PLANTUML_INCLUDE_PATH  =' at line 2435, file /home/travis/build/gabegordon/CXXDecomQt/doxygen/config
 Warning: the dot tool could not be found at C:\Users\ggordon5\Documents\graphviz-2.38\release\bin\
 Searching for include files...
 Searching for example files...
@@ -225,8 +233,8 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:49: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
   parameter 'backend'
-/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:6: warning: unable to resolve reference to `running' for \ref command
-/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:7: warning: unable to resolve reference to `compiling' for \ref command
+/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:10: warning: unable to resolve reference to `running' for \ref command
+/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:12: warning: unable to resolve reference to `compiling' for \ref command
 .
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/h5Decode.cpp...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp...
