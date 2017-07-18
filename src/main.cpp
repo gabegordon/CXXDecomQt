@@ -1,3 +1,13 @@
+/** @mainpage H5 Decom Utility
+    This is a tool designed to parse .h5 (RDR) files containing science or hk data. ...
+    It takes an input folder of .h5 files and outputs CSVs for each APID contained within the input directory's h5 files. ...
+    These CSVs contain human-readable data. For each data field in the APID a corresponding column is generated in the CSV file. ...
+    ...
+    Instructions for Running can be found [here](@ref running)
+    Instructions for Compiling can be found [here](@ref compiling)
+*/
+
+
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 #include <QtQml>
