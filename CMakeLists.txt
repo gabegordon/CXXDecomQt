@@ -17,15 +17,16 @@ set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 find_package (Boost COMPONENTS iostreams REQUIRED)
 
+include_directories(include)
 include_directories(${Boost_INCLUDE_DIR})
 include_directories(${HDF5_INCLUDE_DIR})
-include_directories(include)
 include_directories(${QT_USE_FILE})
 add_definitions(${QT_DEFINITIONS})
 
 file(GLOB SOURCES "src/*.cpp")
+file(GLOB INCLUDES "include/*.h")
 
-add_executable(${PROJECT_NAME} "include/backend.h" "qml.qrc" ${SOURCES})
+add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 
 target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Quick Qt5::Qml pthread ${Boost_LIBRARIES} ${QT_DEFINITIONS} ${HDF5_LIBRARIES})
 
