@@ -99,6 +99,15 @@ ApplicationWindow {
                 font.pixelSize: 22
             }
         }
+        Button {
+            text: "Exit"
+            id: exitButton
+            visible: false
+            anchors.bottom: parent.bottom
+            anchors.right: parent.right
+            font.pixelSize: 22
+            onClicked: Qt.quit()
+        }
     }
 
     Popup {
@@ -114,15 +123,6 @@ ApplicationWindow {
                 text: backend.progress
                 font.pixelSize: 22
             }
-        }
-        Button {
-            text: "Exit"
-            id: exitButton
-            visible: false
-            anchors.bottom: parent.bottom
-            anchors.right: parent.right
-            font.pixelSize: 22
-            onClicked: Qt.quit()
         }
     }
 
