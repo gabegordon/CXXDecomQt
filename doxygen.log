@@ -225,6 +225,8 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:49: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
   parameter 'backend'
+/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:6: warning: unable to resolve reference to `running' for \ref command
+/home/travis/build/gabegordon/CXXDecomQt/src/main.cpp:7: warning: unable to resolve reference to `compiling' for \ref command
 .
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/h5Decode.cpp...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp...
@@ -499,5 +501,5 @@ Patching output file 60/63
 Patching output file 61/63
 Patching output file 62/63
 Patching output file 63/63
-lookup cache used 1693/65536 hits=13183 misses=1885
+lookup cache used 1697/65536 hits=13191 misses=1889
 finished...

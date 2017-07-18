@@ -16,5 +16,6 @@ var searchData=
   ['headerdecode',['HeaderDecode',['../namespace_header_decode.html',1,'']]],
   ['headerdecode_2ecpp',['HeaderDecode.cpp',['../_header_decode_8cpp.html',1,'']]],
   ['headerdecode_2eh',['HeaderDecode.h',['../_header_decode_8h.html',1,'']]],
+  ['h5_20decom_20utility',['H5 Decom Utility',['../index.html',1,'']]],
   ['internal',['internal',['../namespaceh5cpp_1_1internal.html',1,'h5cpp']]]
 ];
