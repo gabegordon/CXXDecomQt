@@ -6,6 +6,7 @@ var searchData=
   ['readdatabase',['readDatabase',['../class_database_reader.html#aae93efbd44b7b547dcf0153c472ada74',1,'DatabaseReader']]],
   ['readnextrow',['readNextRow',['../class_c_s_v_row.html#a14b9ac6d9ffb01a7b05ea903cfd04eeb',1,'CSVRow']]],
   ['remove',['remove',['../classh5cpp_1_1_attributes.html#a74795aec71552d1c701ad24d9e735a77',1,'h5cpp::Attributes::remove()'],['../classh5cpp_1_1_group.html#aa114628c5f78d2fc057fe792d45a70ea',1,'h5cpp::Group::remove()']]],
+  ['removepacketfile',['removePacketFile',['../class_back_end.html#af6ab079e0d97d3a6bb666f5b0259b5a0',1,'BackEnd']]],
   ['require_5fgroup',['require_group',['../classh5cpp_1_1_group.html#a06df6846e310d66487ad901f97a21548',1,'h5cpp::Group']]],
   ['root',['root',['../classh5cpp_1_1_file.html#a747d62d822bb2d99b870a9eb57dd7121',1,'h5cpp::File']]],
   ['rundecom',['runDecom',['../class_back_end.html#a90b5ff3a658af1e05d6cd518d1b8ba22',1,'BackEnd']]],
