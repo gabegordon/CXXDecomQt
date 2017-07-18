@@ -1,0 +1,23 @@
+/*! \page  control Control Flow of h5Decom
+ *
+<pre>
+ * -BackEnd serves as the interface between Qt and the rest of the code.
+ * -Once user is done selecting folder, then h5Decom is called.
+ * -Once complete, we now have .pkt (binary) files to use Decom on.
+ * -Before doing so, we load the databases the describe data locations using DatabaseReader
+ * -Then, Decom runs for the remainder of execution.
+ *      Decom:
+ *               -Decom loops until reaching the end of the file.
+ *               -On each iteration headers are decoded HeaderDecode.
+ *               -Then, using that information (APID/Length) from headers, we DataDecode.
+ *               -If the packet is segmented, DataDecode may loop several times and call HeaderDecode on its own.
+ *               -Once done, a DataTypes::Packet is pushed into ThreadPoolServer's Map of ThreadSafeQueue.
+ *      ThreadPoolServer:
+ *               -When a packet is passed, it is pushed into the corresponding ThreadSafeQueue.
+ *               -From there, the corresponding thread (based on APID) pull its from the queue and writes it to CSV.
+ *               -Threads continue listening on the queue until, the main thread (Decom) joins them.
+ *      Post-Processing:
+ *               -At this point we are done parsing and write all packets.
+ *               -If we parsed science data that needs special formatting it is done now. (InstrumentFormat)
+</pre> 
+*/

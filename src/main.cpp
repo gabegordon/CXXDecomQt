@@ -5,6 +5,7 @@
     \n
     Instructions for Running can be found [here](@ref running) \n
     Instructions for Compiling can be found [here](@ref compiling) \n
+    Simple description of control flow [here](@ref control) \n
 */
 
 #include <QGuiApplication>
