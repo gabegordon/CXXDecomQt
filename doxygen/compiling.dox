@@ -1,0 +1,22 @@
+/*! \page  compiling  Compiling h5Decom
+ *
+<pre>
+\section Dependencies
+-gcc>=6
+-libhdf5
+-boost (static)
+-Qt>=5.7
+\section Setup CMake
+Clone latest:
+\code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
+Create build directory:
+\code{.sh}  cd CXXDecomQt && mkdir build && cd build \endcode
+Generate Makefile:
+Windows:
+\code{.sh} cmake -G "MinGW Makefiles" .. \endcode
+Linux:
+\code{.sh} cmake .. \endcode
+\section Build
+\code{.sh} cmake --build . \endcode
+</pre> 
+*/
