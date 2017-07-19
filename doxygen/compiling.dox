@@ -6,6 +6,7 @@
 -libhdf5
 -boost (static)
 -Qt>=5.7
+-cmake
 \section Setup CMake
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
@@ -18,5 +19,13 @@ Linux:
 \code{.sh} cmake .. \endcode
 \section Build
 \code{.sh} cmake --build . \endcode
-</pre> 
+\section MinGW Compiler (Needed to compile on Windows)
+First download and install MSYS2 from:
+\code http://www.msys2.org/
+Run MSYS2 and get upgrades
+\code{.sh} pacman -Syu
+Obtain Pre-Built Qt binary files
+\code{.sh} pacman -S mingw-w64-x86_64-qt5
+Ensure mingw64/bin is in PATH and then compile as normal.
+</pre>
 */
