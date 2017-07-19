@@ -73,4 +73,5 @@ Thumbs.db
 *.txt.user
 build/*
 .projectile
-
+doxygen/config2
+doxygen/html
