@@ -100,12 +100,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_decom_8h.html">Decom.h</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_back_end.html#a4a5600a29da0043635c198d57e4495cd">   11</a></span>&#160;<a class="code" href="class_back_end.html#a4a5600a29da0043635c198d57e4495cd">BackEnd::BackEnd</a>(<a class="code" href="class_q_object.html">QObject</a>* parent, <span class="keyword">const</span> <span class="keywordtype">bool</span> debug) :</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="class_back_end.html#ab6fe52b22e676d3809bcea4f94960a91">   11</a></span>&#160;<a class="code" href="class_back_end.html#ab6fe52b22e676d3809bcea4f94960a91">BackEnd::BackEnd</a>(<a class="code" href="class_q_object.html">QObject</a>* parent) :</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_q_object.html">QObject</a>(parent),</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_folderName{},</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_allAPIDs{<span class="keyword">true</span>},</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_ofiles{},</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_debug{debug}</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_debug{<span class="keyword">true</span>}</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{}</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_back_end.html#a0007e248da8316e42c6f07be173602f5">   24</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_back_end.html#a0007e248da8316e42c6f07be173602f5">BackEnd::setFolderName</a>(<span class="keyword">const</span> QString&amp; folderName)</div>
@@ -159,7 +159,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a> == <span class="stringliteral">&quot;&quot;</span>)</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#ifdef __linux__</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(6));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(7));  <span class="comment">// Remove &quot;file:///&quot; from filename</span></div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="preprocessor"></span>    <a class="code" href="classh5_decode.html">h5Decode</a> h5Dec(<a class="code" href="class_back_end.html#afc89995e7c171244c82445966046ff20">m_folderName</a>.toStdString().substr(8));</div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
@@ -196,7 +196,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_decom_html_a4328215d51697cbce525896fbc42d0f2"><div class="ttname"><a href="class_decom.html#a4328215d51697cbce525896fbc42d0f2">Decom::init</a></div><div class="ttdeci">void init(const std::string &amp;infile, BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00026">Decom.cpp:26</a></div></div>
 <div class="ttc" id="class_back_end_html_a27412054c6b7ba25009c0e1b2224f9c9"><div class="ttname"><a href="class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9">BackEnd::currentFileChanged</a></div><div class="ttdeci">void currentFileChanged()</div></div>
 <div class="ttc" id="_database_reader_8h_html"><div class="ttname"><a href="_database_reader_8h.html">DatabaseReader.h</a></div></div>
-<div class="ttc" id="class_back_end_html_a4a5600a29da0043635c198d57e4495cd"><div class="ttname"><a href="class_back_end.html#a4a5600a29da0043635c198d57e4495cd">BackEnd::BackEnd</a></div><div class="ttdeci">BackEnd(QObject *parent=nullptr, const bool debug=false)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00011">backend.cpp:11</a></div></div>
 <div class="ttc" id="class_back_end_html_a4fec464fa76c144733efe01ab5829e11"><div class="ttname"><a href="class_back_end.html#a4fec464fa76c144733efe01ab5829e11">BackEnd::finished</a></div><div class="ttdeci">void finished()</div></div>
 <div class="ttc" id="class_back_end_html_ab0049711a7910f543293c98a576231ab"><div class="ttname"><a href="class_back_end.html#ab0049711a7910f543293c98a576231ab">BackEnd::currentFile</a></div><div class="ttdeci">QString currentFile()</div></div>
 <div class="ttc" id="class_back_end_html_a1ce9aa04c4552bb8c9d4f2b51049cd99"><div class="ttname"><a href="class_back_end.html#a1ce9aa04c4552bb8c9d4f2b51049cd99">BackEnd::folderName</a></div><div class="ttdeci">QString folderName</div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00014">backend.h:14</a></div></div>
@@ -224,6 +223,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="backend_8h_html"><div class="ttname"><a href="backend_8h.html">backend.h</a></div></div>
 <div class="ttc" id="classh5_decode_html"><div class="ttname"><a href="classh5_decode.html">h5Decode</a></div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00010">h5Decode.h:10</a></div></div>
 <div class="ttc" id="class_decom_html"><div class="ttname"><a href="class_decom.html">Decom</a></div><div class="ttdef"><b>Definition:</b> <a href="_decom_8h_source.html#l00014">Decom.h:14</a></div></div>
+<div class="ttc" id="class_back_end_html_ab6fe52b22e676d3809bcea4f94960a91"><div class="ttname"><a href="class_back_end.html#ab6fe52b22e676d3809bcea4f94960a91">BackEnd::BackEnd</a></div><div class="ttdeci">BackEnd(QObject *parent=nullptr)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00011">backend.cpp:11</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

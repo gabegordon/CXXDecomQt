@@ -211,7 +211,7 @@ Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/Progre
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/progressqueue.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:31: warning: code section ended without end marker
 /home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:31: warning: end of comment block while expecting command </pre>
-/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:162: warning: The following parameters of DataDecode::decodeDataSegmented(std::ifstream &infile, const bool omps) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:167: warning: The following parameters of DataDecode::decodeDataSegmented(std::ifstream &infile, const bool omps) are not documented:
   parameter 'omps'
 /home/travis/build/gabegordon/CXXDecomQt/src/Decom.cpp:20: warning: The following parameters of Decom::init(const std::string &infile, BackEnd *backend) are not documented:
   parameter 'backend'
@@ -514,5 +514,5 @@ Patching output file 60/63
 Patching output file 61/63
 Patching output file 62/63
 Patching output file 63/63
-lookup cache used 1709/65536 hits=13328 misses=1902
+lookup cache used 1707/65536 hits=13333 misses=1900
 finished...

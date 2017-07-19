@@ -115,69 +115,74 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">sortFiles</a>(files);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(files.size(), <span class="stringliteral">&quot;Parsing h5&quot;</span>);</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    uint32_t i = 0;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : files)</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        pbar.<a class="code" href="class_progress_bar.html#a9de570009a14cc9e4c78a2ee5f56430e">Progressed</a>(i++, backend);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <a class="code" href="classh5cpp_1_1_file.html">h5::File</a> h5File(filename, <span class="stringliteral">&quot;r&quot;</span>);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> All_Data = h5File.<a class="code" href="classh5cpp_1_1_file.html#a747d62d822bb2d99b870a9eb57dd7121">root</a>().<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(<span class="stringliteral">&quot;All_Data&quot;</span>);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> group = 0; group &lt; All_Data.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++group)</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        {</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            std::string APgroupString = All_Data.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(group);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> APgroup = (All_Data.<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(APgroupString));</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            std::vector&lt;uint8_t&gt; allData;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> AP = 0; AP &lt; APgroup.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++AP)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                <a class="code" href="classh5cpp_1_1_dataset.html">h5::Dataset</a> RawAP = APgroup.<a class="code" href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">open_dataset</a>(APgroup.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(AP));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                std::vector&lt;uint8_t&gt; data;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                h5::read_dataset&lt;uint8_t&gt;(RawAP, data);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    <span class="comment">// This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    std::string input =  files.front() + files.back();  <span class="comment">// We can put this on a single line. It does not matter for Matlab</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    std::ofstream datesFile;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    datesFile.open(<span class="stringliteral">&quot;output/datesFile.dat&quot;</span>);  <span class="comment">// create a file with the first and last dates for matlab to use in creating a directory structure by SCID and date</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    datesFile &lt;&lt; input;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    datesFile.close();</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(files.size(), <span class="stringliteral">&quot;Parsing h5&quot;</span>);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    uint32_t i = 0;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : files)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        pbar.<a class="code" href="class_progress_bar.html#a9de570009a14cc9e4c78a2ee5f56430e">Progressed</a>(i++, backend);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="classh5cpp_1_1_file.html">h5::File</a> h5File(filename, <span class="stringliteral">&quot;r&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> All_Data = h5File.<a class="code" href="classh5cpp_1_1_file.html#a747d62d822bb2d99b870a9eb57dd7121">root</a>().<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(<span class="stringliteral">&quot;All_Data&quot;</span>);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> group = 0; group &lt; All_Data.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++group)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            std::string APgroupString = All_Data.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(group);</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> APgroup = (All_Data.<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(APgroupString));</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            std::vector&lt;uint8_t&gt; allData;</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                int32_t apStorageOffset = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(51)) + (static_cast&lt;int32_t&gt;(data.at(50)) * 256) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(49)) * 65536) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(48)) * 16777216);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                allData.insert(std::end(allData), (std::begin(data) + apStorageOffset), std::end(data));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;            <a class="code" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">writeFile</a>(APgroupString, allData);</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            outfileNames.emplace(APgroupString);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; ofile : <a class="code" href="classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa">m_outfiles</a>)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        ofile.second.close();</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">   73</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">h5Decode::writeFile</a>(<span class="keyword">const</span> std::string&amp; child, <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;{</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::ofstream&amp; ofile = <a class="code" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">getStream</a>(child);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> uint8_t&amp; byte : data)</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        ofile &lt;&lt; byte;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">   88</a></span>&#160;std::ofstream&amp; <a class="code" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">h5Decode::getStream</a>(<span class="keyword">const</span> std::string&amp; child)</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keyword">auto</span>&amp; ofile = <a class="code" href="classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa">m_outfiles</a>[child];</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">if</span>(!ofile.is_open())</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    {</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        ofile.open(<span class="stringliteral">&quot;output/&quot;</span> + child, std::ios::binary);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    }</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">return</span> ofile;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;}</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">  103</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">h5Decode::sortFiles</a>(std::vector&lt;std::string&gt;&amp; files)</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::sort(std::begin(files), std::end(files));</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
-<div class="ttc" id="classh5_decode_html_a2bdfdd677d0766b0abcf1299060bc470"><div class="ttname"><a href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">h5Decode::getStream</a></div><div class="ttdeci">std::ofstream &amp; getStream(const std::string &amp;child)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00088">h5Decode.cpp:88</a></div></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> AP = 0; AP &lt; APgroup.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++AP)</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <a class="code" href="classh5cpp_1_1_dataset.html">h5::Dataset</a> RawAP = APgroup.<a class="code" href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">open_dataset</a>(APgroup.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(AP));</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                std::vector&lt;uint8_t&gt; data;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                h5::read_dataset&lt;uint8_t&gt;(RawAP, data);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                int32_t apStorageOffset = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(51)) + (static_cast&lt;int32_t&gt;(data.at(50)) * 256) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(49)) * 65536) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(48)) * 16777216);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;            <a class="code" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">writeFile</a>(APgroupString, allData);</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;            outfileNames.emplace(APgroupString);</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; ofile : <a class="code" href="classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa">m_outfiles</a>)</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        ofile.second.close();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">h5Decode::writeFile</a>(<span class="keyword">const</span> std::string&amp; child, <span class="keyword">const</span> std::vector&lt;uint8_t&gt;&amp; data)</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::ofstream&amp; ofile = <a class="code" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">getStream</a>(child);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> uint8_t&amp; byte : data)</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        ofile &lt;&lt; byte;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;}</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">   93</a></span>&#160;std::ofstream&amp; <a class="code" href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">h5Decode::getStream</a>(<span class="keyword">const</span> std::string&amp; child)</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;{</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keyword">auto</span>&amp; ofile = <a class="code" href="classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa">m_outfiles</a>[child];</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">if</span>(!ofile.is_open())</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    {</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ofile.open(<span class="stringliteral">&quot;output/&quot;</span> + child, std::ios::binary);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    }</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">return</span> ofile;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;}</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">  108</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">h5Decode::sortFiles</a>(std::vector&lt;std::string&gt;&amp; files)</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;{</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    std::sort(std::begin(files), std::end(files));</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;}</div>
+<div class="ttc" id="classh5_decode_html_a2bdfdd677d0766b0abcf1299060bc470"><div class="ttname"><a href="classh5_decode.html#a2bdfdd677d0766b0abcf1299060bc470">h5Decode::getStream</a></div><div class="ttdeci">std::ofstream &amp; getStream(const std::string &amp;child)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00093">h5Decode.cpp:93</a></div></div>
 <div class="ttc" id="_progress_bar_8h_html"><div class="ttname"><a href="_progress_bar_8h.html">ProgressBar.h</a></div></div>
 <div class="ttc" id="class_progress_bar_html"><div class="ttname"><a href="class_progress_bar.html">ProgressBar</a></div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8h_source.html#l00012">ProgressBar.h:12</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_file_html_a747d62d822bb2d99b870a9eb57dd7121"><div class="ttname"><a href="classh5cpp_1_1_file.html#a747d62d822bb2d99b870a9eb57dd7121">h5cpp::File::root</a></div><div class="ttdeci">Group root()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00998">hdf_wrapper.h:998</a></div></div>
-<div class="ttc" id="classh5_decode_html_a66b478dba4e0636d624d0640c964fbb9"><div class="ttname"><a href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">h5Decode::writeFile</a></div><div class="ttdeci">void writeFile(const std::string &amp;child, const std::vector&lt; uint8_t &gt; &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00073">h5Decode.cpp:73</a></div></div>
+<div class="ttc" id="classh5_decode_html_a66b478dba4e0636d624d0640c964fbb9"><div class="ttname"><a href="classh5_decode.html#a66b478dba4e0636d624d0640c964fbb9">h5Decode::writeFile</a></div><div class="ttdeci">void writeFile(const std::string &amp;child, const std::vector&lt; uint8_t &gt; &amp;data)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00078">h5Decode.cpp:78</a></div></div>
 <div class="ttc" id="class_back_end_html"><div class="ttname"><a href="class_back_end.html">BackEnd</a></div><div class="ttdef"><b>Definition:</b> <a href="backend_8h_source.html#l00011">backend.h:11</a></div></div>
 <div class="ttc" id="_log_file_8h_html"><div class="ttname"><a href="_log_file_8h.html">LogFile.h</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00846">hdf_wrapper.h:846</a></div></div>
@@ -188,7 +193,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classh5cpp_1_1_group_html_af45cbbf46d016a7908c764a6f8faa13c"><div class="ttname"><a href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">h5cpp::Group::open_dataset</a></div><div class="ttdeci">Dataset open_dataset(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01157">hdf_wrapper.h:1157</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_file_html"><div class="ttname"><a href="classh5cpp_1_1_file.html">h5cpp::File</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00926">hdf_wrapper.h:926</a></div></div>
 <div class="ttc" id="classh5_decode_html_a5c415d7e091fde438bb53c22cd9801fa"><div class="ttname"><a href="classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa">h5Decode::m_outfiles</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::ofstream &gt; m_outfiles</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00023">h5Decode.h:23</a></div></div>
-<div class="ttc" id="classh5_decode_html_a603b61f2403ac3e59b00100bd475937c"><div class="ttname"><a href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">h5Decode::sortFiles</a></div><div class="ttdeci">void sortFiles(std::vector&lt; std::string &gt; &amp;files)</div><div class="ttdoc">Sorts h5 files. </div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00103">h5Decode.cpp:103</a></div></div>
+<div class="ttc" id="classh5_decode_html_a603b61f2403ac3e59b00100bd475937c"><div class="ttname"><a href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">h5Decode::sortFiles</a></div><div class="ttdeci">void sortFiles(std::vector&lt; std::string &gt; &amp;files)</div><div class="ttdoc">Sorts h5 files. </div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00108">h5Decode.cpp:108</a></div></div>
 <div class="ttc" id="classh5_decode_html_a398f07cf678a7a7cda54957bae354a0c"><div class="ttname"><a href="classh5_decode.html#a398f07cf678a7a7cda54957bae354a0c">h5Decode::m_directory</a></div><div class="ttdeci">std::string m_directory</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00022">h5Decode.h:22</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00822">hdf_wrapper.h:822</a></div></div>
 <div class="ttc" id="h5_decode_8h_html"><div class="ttname"><a href="h5_decode_8h.html">h5Decode.h</a></div></div>
