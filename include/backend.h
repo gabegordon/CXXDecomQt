@@ -16,7 +16,7 @@ class BackEnd : public QObject
     Q_PROPERTY(QString currentFile READ currentFile NOTIFY currentFileChanged)
     Q_PROPERTY(QString progress READ progress NOTIFY progressChanged)
 public:
-    explicit BackEnd(QObject *parent = nullptr, const bool debug = false);
+    explicit BackEnd(QObject *parent = nullptr);
     virtual ~BackEnd() {}
 
     void setFolderName(const QString& folderName);

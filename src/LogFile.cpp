@@ -15,9 +15,9 @@ typedef boost::iostreams::stream<Tee> TeeStream;
  */
 void LogFile::logError(const std::string& message)
 {
-    std::ofstream file( "Error_Log.txt" );
-    Tee tee(std::cerr, file);
+    std::ofstream logfile( "output/Error_Log.txt", std::ios::app);
+    Tee tee(std::cerr, logfile);
     TeeStream both(tee);
     both << message << std::endl;
-    file.close();
+    logfile.close();
 }

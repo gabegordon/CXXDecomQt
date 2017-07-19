@@ -136,7 +136,11 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
 
     if (!checkPackEntries(pack))
         return pack;
-
+    if (m_ompsScience && m_pHeader.sequenceFlag != DataTypes::FIRST)  // Middle and Last Packets only contain science data so don't look for entries
+    {
+        getOMPSScience(pack, buf);
+        return pack;
+    }
     uint32_t entryIndex;
     uint64_t size = m_entries.size();
     m_offset = getOffset();
@@ -151,8 +155,9 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
         DataTypes::DataType dtype = m_entries.at(entryIndex).type;
         pack.data.emplace_back(getNum(dtype, buf, entryIndex));
     }
-    if(m_ompsScience)
-        getOMPSScience(pack, infile);
+    if(m_ompsScience) {
+        getOMPSScience(pack, buf);
+    }
     segmentLastByte = entryIndex;  // Save our last entry position in case this is a segmented packet
     getHeaderData(pack);  // Load time data
     return pack;
@@ -240,21 +245,31 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
             }
         }
     }
+    m_ompsScience = false;
     return segPack;
 }
 
-void DataDecode::getOMPSScience(DataTypes::Packet& pack, std::ifstream& infile)
+void DataDecode::getOMPSScience(DataTypes::Packet& pack, std::vector<uint8_t>& buf)
 {
-    std::vector<uint32_t> buf;
-    if (m_pHeader.sequenceFlag == DataTypes::FIRST)  // Set science data lengths 853, 1018, 435 are the lengths of the data sections as specified in MDFCB
-        buf.resize(853);
-    else if (m_pHeader.sequenceFlag == DataTypes::MIDDLE)
-        buf.resize(1018);
+    uint32_t count = 0;
+    if (m_pHeader.sequenceFlag == DataTypes::FIRST)
+    {
+        DataTypes::Numeric num;
+        count = 835;
+    }
     else
-        buf.resize(435);
-    infile.read(reinterpret_cast<char*>(buf.data()), buf.size());  // read bytes
-    pack.data.reserve(m_entries.size() * sizeof(DataTypes::Numeric) * 2);
-    for (const uint32_t& pixel : buf)
+    {
+        if(m_pHeader.APID == 561)
+            count = 323;
+        else
+        {
+            if(m_pHeader.sequenceFlag == DataTypes::MIDDLE)
+                count = 1018;
+            else
+                count = 435;
+        }
+    }
+    for (const uint8_t& pixel : buf)
     {
         DataTypes::Numeric num;
         num.u32 = pixel;

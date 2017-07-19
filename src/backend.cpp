@@ -8,12 +8,12 @@
 #include "Decom.h"
 
 
-BackEnd::BackEnd(QObject* parent, const bool debug) :
+BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
     m_folderName{},
     m_allAPIDs{true},
     m_ofiles{},
-    m_debug{debug}
+    m_debug{true}
 {}
 
 /**
@@ -93,7 +93,7 @@ void BackEnd::decodeh5()
     if (m_folderName == "")
         return;
 #ifdef __linux__
-    h5Decode h5Dec(m_folderName.toStdString().substr(6));
+    h5Decode h5Dec(m_folderName.toStdString().substr(7));  // Remove "file:///" from filename
 #else
     h5Decode h5Dec(m_folderName.toStdString().substr(8));
 #endif

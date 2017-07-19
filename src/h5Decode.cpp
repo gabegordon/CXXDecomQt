@@ -28,7 +28,13 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
     }
 
     sortFiles(files);
+    // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
 
+    std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
+    std::ofstream datesFile;
+    datesFile.open("output/datesFile.dat");  // create a file with the first and last dates for matlab to use in creating a directory structure by SCID and date
+    datesFile << input;
+    datesFile.close();
     ProgressBar pbar(files.size(), "Parsing h5");
     uint32_t i = 0;
     for (const auto& filename : files)
@@ -51,7 +57,6 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
                 h5::read_dataset<uint8_t>(RawAP, data);
 
                 int32_t apStorageOffset = static_cast<int32_t>(data.at(51)) + (static_cast<int32_t>(data.at(50)) * 256) + (static_cast<int32_t>(data.at(49)) * 65536) + (static_cast<int32_t>(data.at(48)) * 16777216);
-                allData.insert(std::end(allData), (std::begin(data) + apStorageOffset), std::end(data));
                 allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));
             }
             writeFile(APgroupString, allData);
