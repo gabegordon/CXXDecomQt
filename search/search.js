@@ -19,7 +19,7 @@ var indexSectionsWithContent =
   9: "cfop",
   10: "adfgor",
   11: "cht",
-  12: "ch"
+  12: "chr"
 };
 
 var indexSectionNames =
