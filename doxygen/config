@@ -792,7 +792,7 @@ WARN_LOGFILE           =
 
 INPUT                  = $(TRAVIS_BUILD_DIR)/src \
 			 $(TRAVIS_BUILD_DIR)/include \
-			 $(TRAVIS_BUILD_DIR/doxygen/running.dox \
+			 $(TRAVIS_BUILD_DIR)/doxygen/running.dox \
 			 $(TRAVIS_BUILD_DIR)/doxygen/compiling.dox \
 			 $(TRAVIS_BUILD_DIR)/doxygen/control.dox
 # This tag can be used to specify the character encoding of the source files

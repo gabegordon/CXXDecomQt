@@ -151,7 +151,8 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
         DataTypes::DataType dtype = m_entries.at(entryIndex).type;
         pack.data.emplace_back(getNum(dtype, buf, entryIndex));
     }
-
+    if(m_ompsScience)
+        getOMPSScience(pack, infile);
     segmentLastByte = entryIndex;  // Save our last entry position in case this is a segmented packet
     getHeaderData(pack);  // Load time data
     return pack;
@@ -204,6 +205,11 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
 
+    if(m_pHeader.APID == 560 || m_pHeader.APID == 561)  // 560 and 561 are OMPS science apids
+        m_ompsScience = true;
+    else
+        m_ompsScience = false;
+
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
     {
         segPack = decodeData(infile, 0);
@@ -237,6 +243,26 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     return segPack;
 }
 
+void DataDecode::getOMPSScience(DataTypes::Packet& pack, std::ifstream& infile)
+{
+    std::vector<uint32_t> buf;
+    if (m_pHeader.sequenceFlag == DataTypes::FIRST)  // Set science data lengths 853, 1018, 435 are the lengths of the data sections as specified in MDFCB
+        buf.resize(853);
+    else if (m_pHeader.sequenceFlag == DataTypes::MIDDLE)
+        buf.resize(1018);
+    else
+        buf.resize(435);
+    infile.read(reinterpret_cast<char*>(buf.data()), buf.size());  // read bytes
+    pack.data.reserve(m_entries.size() * sizeof(DataTypes::Numeric) * 2);
+    for (const uint32_t& pixel : buf)
+    {
+        DataTypes::Numeric num;
+        num.u32 = pixel;
+        num.tag = DataTypes::Numeric::U32;
+        num.mnem = "Pixel";
+        pack.data.emplace_back(num);
+    }
+}
 /**
  * Given an entry get corresponding numerical value.
  *

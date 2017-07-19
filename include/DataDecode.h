@@ -24,7 +24,8 @@ class DataDecode
     m_pHeader{ph},
     m_sHeader{sh},
     m_debug{debug},
-    m_offset{}
+    m_offset{},
+    m_ompsScience{false}
     {}
 
     virtual ~DataDecode() {}
@@ -46,12 +47,14 @@ class DataDecode
     bool m_debug;
     uint8_t m_offset;
     Bytes m_numBytes;
+    bool m_ompsScience;
 
     bool loadData(const std::vector<uint8_t>& bufs, const DataTypes::Entry& currEntry);
     void getHeaderData(DataTypes::Packet& pack);
     float getFloat(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry);
     uint8_t getOffset();
     DataTypes::Numeric getNum(const DataTypes::DataType& dtype, const std::vector<uint8_t>& buf, const uint32_t& entryIndex);
+    void getOMPSScience(DataTypes::Packet& pack, std::ifstream& infile);
     bool checkPackEntries(DataTypes::Packet& pack);
     void decodeOne(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);
     void decodeTwo(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);

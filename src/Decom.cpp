@@ -92,7 +92,7 @@ void Decom::getEntries(const uint32_t& APID)
  */
 void Decom::formatInstruments(BackEnd* backend) const
 {
-    if(m_APIDs.count(528))
+    if(m_APIDs.count(528))  // 528 is ATMS science apid
         InstrumentFormat::formatATMS(backend);
 }
 
