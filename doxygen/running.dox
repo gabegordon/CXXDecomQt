@@ -1,7 +1,7 @@
-/*! \page  running Running h5Decom
+/*! \page running Running h5Decom
  *
 <pre>
- * -Ensure you have the latest version of the software. 
+ * -Ensure you have the latest version of the software.
  * -Ensure CXXDecomQt.exe is in a folder with its dependencies.
  * -Launch CXXDecomQt.exe.
  * -Select a folder with your .h5 files.
@@ -12,5 +12,5 @@
  * -Select the dataset you want to use.
  * -Wait for the decom to complete.
  * -Done!
-</pre> 
+</pre>
 */

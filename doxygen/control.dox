@@ -1,4 +1,4 @@
-/*! \page  control Control Flow of h5Decom
+/*! \page control Control Flow of h5Decom
  *
 <pre>
  * -BackEnd serves as the interface between Qt and the rest of the code.
@@ -17,7 +17,7 @@
  *               -From there, the corresponding thread (based on APID) pull its from the queue and writes it to CSV.
  *               -Threads continue listening on the queue until, the main thread (Decom) joins them.
  *      Post-Processing:
- *               -At this point we are done parsing and write all packets.
+ *               -At this point we are done parsing and writing all packets.
  *               -If we parsed science data that needs special formatting it is done now. (InstrumentFormat)
-</pre> 
+</pre>
 */
