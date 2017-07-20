@@ -129,10 +129,6 @@ uint8_t DataDecode::getOffset()
 DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& index)
 {
     m_offset = getOffset();
-    if (m_ompsScience)
-    {
-        return getOMPSScience(infile);
-    }
 
     DataTypes::Packet pack;
 
@@ -207,9 +203,8 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     versionNum = ByteManipulation::swapEndian16(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
-
-    if(m_pHeader.APID == 560 || m_pHeader.APID == 561)  // 560 and 561 are OMPS science apids
-        m_ompsScience = true;
+    if(m_pHeader.APID == 560 || m_pHeader.APID == 561)  // OMPS Science APIDs
+        return getOMPSScience(infile);
 
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
     {
@@ -241,73 +236,70 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
             }
         }
     }
-    m_ompsScience = false;
     return segPack;
 }
 
 DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
 {
-    DataTypes::Packet pack;
-    uint16_t hklength = 0;
-    uint16_t sciencelength = 0;
-    uint8_t padByte = 0;
+    DataTypes::Packet segPack;
+    uint16_t hklength = 151;
+    std::vector<uint8_t> hkbuf(hklength);  // reserve space for bytes
+    std::vector<uint8_t> scbuf;
+    infile.read(reinterpret_cast<char*>(hkbuf.data()), hkbuf.size());  // read bytes
+    getHeaderData(segPack);
 
-    if (m_pHeader.APID == 560)  // 560 is OMPS NP Total Column
+    size_t size = m_entries.size();
+    for (size_t entryIndex = 0; entryIndex < size; ++entryIndex)  // Loop through all database entries until we reach end or are about to go out of bounds
     {
-        if (m_pHeader.sequenceFlag == DataTypes::FIRST)
-        {
-            sciencelength = 853;  // Science data length;
-            hklength = 151;
-        }
-        else if (m_pHeader.sequenceFlag == DataTypes::MIDDLE)
-        {
-            sciencelength = 1018;
-        }
-        else
-        {
-            sciencelength = 435;
-            padByte = 1;
-        }
+        loadData(hkbuf, m_entries.at(entryIndex));
+        DataTypes::DataType dtype = m_entries.at(entryIndex).type;
+        segPack.data.emplace_back(getNum(dtype, hkbuf, entryIndex));
     }
-    else
+    std::vector<uint8_t> tmpbuf(853);  // Handle first packet science manually
+    infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
+    scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
+
+    do
     {
-        if(m_pHeader.sequenceFlag == DataTypes::FIRST)
+        uint16_t sciencelength = 0;
+        uint8_t padByte = 0;
+        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
+        m_pHeader = std::get<0>(headers);
+
+        if (m_pHeader.APID == 560)  // 560 is OMPS NP Total Column
         {
-            sciencelength = 853;
-            hklength = 151;
+            if (m_pHeader.sequenceFlag == DataTypes::MIDDLE)
+                sciencelength = 1018;
+            else
+            {
+                sciencelength = 435;
+                padByte = 1;
+            }
         }
         else
         {
             sciencelength = 323;
             padByte = 1;
         }
-    }
 
-    std::vector<uint8_t> buf(sciencelength + hklength + padByte);  // reserve space for bytes
-    infile.read(reinterpret_cast<char*>(buf.data()), buf.size());  // read bytes
-    pack.data.reserve(buf.size() * sizeof(DataTypes::Numeric) * 2);
+        std::vector<uint8_t> tmpbuf(sciencelength + padByte);
+        infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
+        scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
+    } while (m_pHeader.sequenceFlag != DataTypes::LAST);
 
-    if(hklength)  // If we have hk data
+    size_t scsize = scbuf.size();
+
+    for(size_t byte = 0; byte < scsize; byte += 4)
     {
-        size_t size = m_entries.size();
-        for (size_t entryIndex = 0; entryIndex < size; ++entryIndex)  // Loop through all database entries until we reach end or are about to go out of bounds
-        {
-            loadData(buf, m_entries.at(entryIndex));
-            DataTypes::DataType dtype = m_entries.at(entryIndex).type;
-            pack.data.emplace_back(getNum(dtype, buf, entryIndex));
-        }
+        DataTypes::Numeric pixel;
+        if(byte+3 > scsize)  // Break needed here to not out of bounds on pad byte
+            break;
+        pixel.u32 = ByteManipulation::mergeBytes(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);
+        pixel.mnem = "Pixel";
+        pixel.tag = DataTypes::Numeric::U32;
+        segPack.data.emplace_back(pixel);
     }
-
-    for(uint32_t start = hklength + 3; start < hklength + sciencelength; ++start)
-    {
-        DataTypes::Numeric num;
-        num.u32 = buf.at(start);
-        num.tag = DataTypes::Numeric::U32;
-        num.mnem = "PixelByte";
-        pack.data.emplace_back(num);
-    }
-    getHeaderData(pack);
-    return pack;
+    return segPack;
 }
 /**
  * Given an entry get corresponding numerical value.
