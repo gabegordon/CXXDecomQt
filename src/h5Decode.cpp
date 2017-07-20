@@ -12,12 +12,6 @@
 #include "ProgressBar.h"
 
 namespace h5 = h5cpp;
-void printFiles(std::vector<std::string> s)
-{
-    for (const auto& a : s)
-        std::cout << a << std::endl;
-    std::cout << "==================\n";
-}
 
 /**
  * Main h5 decode function. Reads all h5's in folder and writes packet files.
@@ -34,9 +28,7 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
         exit(0);
     }
 
-    printFiles(files);
     sortFiles(files);
-    printFiles(files);
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
 
     std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
