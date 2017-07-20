@@ -23,7 +23,6 @@ var searchData=
   ['m_5fnumbytes',['m_numBytes',['../class_data_decode.html#a9b3e0e5b468f858783ec37e682e3c630',1,'DataDecode']]],
   ['m_5foffset',['m_offset',['../class_data_decode.html#a804a54644b083edaa2df0dffa42edca3',1,'DataDecode']]],
   ['m_5fofiles',['m_ofiles',['../class_back_end.html#af529cb8593144d1dc418df62a3df0cbc',1,'BackEnd']]],
-  ['m_5fompsscience',['m_ompsScience',['../class_data_decode.html#a4b1b5ff3d2e2a4384bfd7b419d8ec56c',1,'DataDecode']]],
   ['m_5foutfiles',['m_outfiles',['../classh5_decode.html#a5c415d7e091fde438bb53c22cd9801fa',1,'h5Decode']]],
   ['m_5fpacketfiles',['m_packetFiles',['../class_back_end.html#a37bde40cbe90a8244e83bd6f67173725',1,'BackEnd']]],
   ['m_5fparamsfile',['m_paramsFile',['../class_database_reader.html#a2ac68856186c0a92f22658de774cce00',1,'DatabaseReader']]],
