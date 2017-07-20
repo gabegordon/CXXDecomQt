@@ -21,7 +21,7 @@ Linux:
 \code{.sh} cmake --build . \endcode
 \section MinGW Compiler (Needed to compile on Windows)
 First download and install MSYS2 from:
-\code http://www.msys2.org/
+http://www.msys2.org/
 Run MSYS2 and get upgrades
 \code{.sh} pacman -Syu
 Obtain Pre-Built Qt binary files
