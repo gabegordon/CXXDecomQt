@@ -54,7 +54,7 @@ class DataDecode
     float getFloat(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry);
     uint8_t getOffset();
     DataTypes::Numeric getNum(const DataTypes::DataType& dtype, const std::vector<uint8_t>& buf, const uint32_t& entryIndex);
-    void getOMPSScience(DataTypes::Packet& pack, std::vector<uint8_t>& buf);
+    DataTypes::Packet getOMPSScience(std::ifstream& infile);
     bool checkPackEntries(DataTypes::Packet& pack);
     void decodeOne(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);
     void decodeTwo(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);

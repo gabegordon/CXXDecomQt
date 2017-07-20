@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <set>
 #include <algorithm>
+#include <boost/algorithm/string.hpp>
 #include "h5Decode.h"
 #include "getFiles.h"
 #include "hdf_wrapper.h"
@@ -11,6 +12,12 @@
 #include "ProgressBar.h"
 
 namespace h5 = h5cpp;
+void printFiles(std::vector<std::string> s)
+{
+    for (const auto& a : s)
+        std::cout << a << std::endl;
+    std::cout << "==================\n";
+}
 
 /**
  * Main h5 decode function. Reads all h5's in folder and writes packet files.
@@ -27,7 +34,9 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
         exit(0);
     }
 
+    printFiles(files);
     sortFiles(files);
+    printFiles(files);
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
 
     std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
@@ -35,6 +44,7 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
     datesFile.open("output/datesFile.dat");  // create a file with the first and last dates for matlab to use in creating a directory structure by SCID and date
     datesFile << input;
     datesFile.close();
+
     ProgressBar pbar(files.size(), "Parsing h5");
     uint32_t i = 0;
     for (const auto& filename : files)
@@ -93,7 +103,7 @@ void h5Decode::writeFile(const std::string& child, const std::vector<uint8_t>& d
 std::ofstream& h5Decode::getStream(const std::string& child)
 {
     auto& ofile = m_outfiles[child];
-    if(!ofile.is_open())
+    if (!ofile.is_open())
     {
         ofile.open("output/" + child, std::ios::binary);
     }
@@ -107,5 +117,45 @@ std::ofstream& h5Decode::getStream(const std::string& child)
  */
 void h5Decode::sortFiles(std::vector<std::string>& files)
 {
-    std::sort(std::begin(files), std::end(files));
+    auto sortLambda = [] (const std::string& a, const std::string& b) -> bool
+    {
+        std::vector<std::string> astrings;
+        std::vector<std::string> bstrings;
+        boost::split(astrings, a, boost::is_any_of("_"));
+        boost::split(bstrings, b, boost::is_any_of("_"));
+        std::string aday;
+        std::string bday;
+        std::string amin;
+        std::string bmin;
+        std::string asec;
+        std::string bsec;
+        for (const auto& s: astrings)
+        {
+            if (s.substr(0,2) == "d2")  // Year of d2xxx
+                aday = s;
+            if (s.at(0) == 't')
+                amin = s;
+            if (s.at(0) == 'e')
+                asec = s;
+        }
+        for (const auto& s: bstrings)
+        {
+            if (s.substr(0,2) == "d2")  // Year of d2xxx
+                bday = s;
+            if (s.at(0) == 't')
+                bmin = s;
+            if (s.at(0) == 'e')
+                bsec = s;
+        }
+        if (aday != bday)
+            return aday < bday;
+        else
+        {
+            if (amin != bmin)
+                return amin < bmin;
+            else
+                return asec < bsec;
+        }
+    };
+    std::sort(std::begin(files), std::end(files), sortLambda);
 }
