@@ -6,12 +6,13 @@
 class DatabaseReader
 {
   public:
-  DatabaseReader(const std::string& paramsfile, const bool allAPIDs) :
+  DatabaseReader(const std::string& paramsfile, const bool& allAPIDs, const bool& NPP) :
     m_APIDs{},
     m_entries{},
     m_firstRun{true},
     m_allAPIDs{allAPIDs},
-    m_paramsFile{paramsfile}
+    m_paramsFile{paramsfile},
+    m_NPP{NPP}
     {
         init();
     };
@@ -26,7 +27,7 @@ class DatabaseReader
     bool m_firstRun;
     bool m_allAPIDs;
     std::string m_paramsFile;
-
+    bool m_NPP;
     void init();
     void readDatabase(const std::string& filename);
     void getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t& i_bitLower, uint32_t& i_bitUpper) const;

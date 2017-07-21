@@ -26,6 +26,7 @@ public:
     QStringList ofiles();
     QString progress();
 
+    bool m_NPP;
 public slots:
     void decodeh5();
     void runDecom();

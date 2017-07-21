@@ -28,6 +28,7 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
         exit(0);
     }
 
+    backend->m_NPP = checkNPP(files.front());
     sortFiles(files);
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
 
@@ -58,7 +59,7 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
                 std::vector<uint8_t> data;
                 h5::read_dataset<uint8_t>(RawAP, data);
 
-                int32_t apStorageOffset = static_cast<int32_t>(data.at(51)) + (static_cast<int32_t>(data.at(50)) * 256) + (static_cast<int32_t>(data.at(49)) * 65536) + (static_cast<int32_t>(data.at(48)) * 16777216);
+                int32_t apStorageOffset = static_cast<int32_t>(data.at(51)) + (static_cast<int32_t>(data.at(50)) * 256) + (static_cast<int32_t>(data.at(49)) * 65536) + (static_cast<int32_t>(data.at(48)) * 16777216);  // location from RDR Static Header table in CDFCB Vol 2
                 allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));
             }
             writeFile(APgroupString, allData);
@@ -150,4 +151,14 @@ void h5Decode::sortFiles(std::vector<std::string>& files)
         }
     };
     std::sort(std::begin(files), std::end(files), sortLambda);
+}
+
+bool h5Decode::checkNPP(const std::string& filename)
+{
+    std::vector<std::string> splitstring;
+    boost::split(splitstring, filename, boost::is_any_of("_"));
+    if(splitstring.at(1) == "npp")
+        return true;
+    else
+        return false;
 }

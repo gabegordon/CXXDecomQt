@@ -23,9 +23,9 @@ Linux:
 First download and install MSYS2 from:
 http://www.msys2.org/
 Run MSYS2 and get upgrades
-\code{.sh} pacman -Syu
+\code{.sh} pacman -Syu \endcode
 Obtain Pre-Built Qt binary files
-\code{.sh} pacman -S mingw-w64-x86_64-qt5
+\code{.sh} pacman -S mingw-w64-x86_64-qt5 \endcode
 Ensure mingw64/bin is in PATH and then compile as normal.
 </pre>
 */

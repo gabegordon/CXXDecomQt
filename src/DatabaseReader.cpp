@@ -29,7 +29,10 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
 void DatabaseReader::init()
 {
     readAPIDList();
-    readDatabase("databases/scdatabase.csv");
+    if(m_NPP)
+        readDatabase("databases/nppdatabase.csv");
+    else
+        readDatabase("databases/j1database.csv");
     readDatabase("databases/atmsdatabase.csv");
     readDatabase("databases/ompsdatabase.csv");
     readDatabase("databases/ceresdatabase.csv");

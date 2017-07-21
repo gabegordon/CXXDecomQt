@@ -13,7 +13,8 @@ BackEnd::BackEnd(QObject* parent) :
     m_folderName{},
     m_allAPIDs{true},
     m_ofiles{},
-    m_debug{true}
+    m_debug{true},
+    m_NPP{false}
 {}
 
 /**
@@ -109,7 +110,7 @@ void BackEnd::runDecom()
 {
     if(m_ofiles.size() == 0)
         return;
-    DatabaseReader dr("databases/CXXParams.csv", m_allAPIDs);  // Read databases
+    DatabaseReader dr("databases/CXXParams.csv", m_allAPIDs, m_NPP);  // Read databases
 
     for(const auto& packetFile : m_packetFiles)
     {
@@ -122,7 +123,7 @@ void BackEnd::runDecom()
         if ((found = packetFile.find("-")) != std::string::npos)  // Get instrument from filename
             instrument = packetFile.substr(0, found);
 
-        Decom decomEngine(instrument, m_debug, dr.getEntries());  // Run decom
+        Decom decomEngine(instrument, m_debug, dr.getEntries(), m_NPP);  // Run decom
         decomEngine.init("output/" + packetFile, this);
     }
     emit finished();

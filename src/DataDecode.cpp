@@ -1,6 +1,7 @@
 #include <fstream>
 #include <tuple>
 #include <vector>
+#include <algorithm>
 #include "HeaderDecode.h"
 #include "DataDecode.h"
 #include "ByteManipulation.h"
@@ -203,7 +204,8 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     versionNum = ByteManipulation::swapEndian16(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
-    if(m_pHeader.APID == 560 || m_pHeader.APID == 561)  // OMPS Science APIDs
+    std::vector<uint32_t> scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  // All OMPS Science APIDs
+    if (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), m_pHeader.APID) != std::end(scienceAPIDS))
         return getOMPSScience(infile);
 
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
@@ -242,7 +244,11 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
 DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
 {
     DataTypes::Packet segPack;
-    uint16_t hklength = 151;
+    uint16_t hklength = 0;
+    if(m_NPP)  // NPP HK length
+        hklength = 151;
+    else  // J-1 HK length
+        hklength = 143;
     std::vector<uint8_t> hkbuf(hklength);  // reserve space for bytes
     std::vector<uint8_t> scbuf;
     infile.read(reinterpret_cast<char*>(hkbuf.data()), hkbuf.size());  // read bytes
@@ -255,34 +261,17 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
         DataTypes::DataType dtype = m_entries.at(entryIndex).type;
         segPack.data.emplace_back(getNum(dtype, hkbuf, entryIndex));
     }
-    std::vector<uint8_t> tmpbuf(853);  // Handle first packet science manually
+
+    std::vector<uint8_t> tmpbuf(m_pHeader.packetLength - hklength);  // Handle first packet science manually
     infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
     scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
 
-    do
+    do  // Loop through all middle and last packets
     {
-        uint16_t sciencelength = 0;
-        uint8_t padByte = 0;
         std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
         m_pHeader = std::get<0>(headers);
 
-        if (m_pHeader.APID == 560)  // 560 is OMPS NP Total Column
-        {
-            if (m_pHeader.sequenceFlag == DataTypes::MIDDLE)
-                sciencelength = 1018;
-            else
-            {
-                sciencelength = 435;
-                padByte = 1;
-            }
-        }
-        else
-        {
-            sciencelength = 323;
-            padByte = 1;
-        }
-
-        std::vector<uint8_t> tmpbuf(sciencelength + padByte);
+        std::vector<uint8_t> tmpbuf(m_pHeader.packetLength);
         infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
         scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
     } while (m_pHeader.sequenceFlag != DataTypes::LAST);
@@ -292,7 +281,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
     for(size_t byte = 0; byte < scsize; byte += 4)
     {
         DataTypes::Numeric pixel;
-        if(byte+3 > scsize)  // Break needed here to not out of bounds on pad byte
+        if(byte+3 > scsize)  // Break needed here to not go out of bounds on pad byte
             break;
         pixel.u32 = ByteManipulation::mergeBytes(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);
         pixel.mnem = "Pixel";
