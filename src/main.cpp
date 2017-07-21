@@ -11,8 +11,8 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 //#ifdef __MINGW32__
-//#include <QtPlugin>
-//Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+#include <QtPlugin>
+Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
 //#endif
 #include "backend.h"
 

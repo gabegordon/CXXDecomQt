@@ -10,38 +10,55 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -std=c++14 -pthread")
 set(CMAKE_BUILD_TYPE release)
 set(EXECUTABLE_OUTPUT_PATH "bin")
 
-find_package (Threads)
-
 find_package(HDF5 REQUIRED)
 
-find_package(Qt5 COMPONENTS Core Quick Qml Svg Network REQUIRED)
+find_package(Qt5 COMPONENTS Core Gui Qml Svg QuickControls2 Quick WinExtras REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(QT5SVG Qt5Svg)
-link_directories(${QT5SVG_LIBRARY_DIRS})
-pkg_check_modules(QT5NETWORK Qt5Network)
-link_directories(${QT5NETWORK_LIBRARY_DIRS})
+find_package(Qt5 COMPONENTS Core Gui Qml Svg REQUIRED)
+if(MINGW)
+	pkg_check_modules(QT5ALL REQUIRED Qt5Core Qt5Gui Qt5Qml Qt5Svg Qt5QuickControls2 Qt5Quick Qt5WinExtras)
+endif()
+
+set(QT_LIBRARIES Qt5::Core Qt5::Gui Qt5::Qml Qt5::Svg Qt5::QuickControls2 Qt5::Quick Qt5::WinExtras)
 
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
 find_package (Boost COMPONENTS iostreams REQUIRED)
+include_directories(
+  include
+  ${Boost_INCLUDE_DIRS}
+  ${HDF5_INCLUDE_DIRS}
+)
 
-include_directories(include)
-include_directories(${Boost_INCLUDE_DIR})
-include_directories(${HDF5_INCLUDE_DIR})
+set(DECOM_LINK_LIBS
+	${Boost_LIBRARIES}
+  ${HDF5_LIBRARIES}
+	${QT_LIBRARIES}
+)
+
+set(QT5PLATFORMSUPPORT_LIBS
+        Qt5FontDatabaseSupport::Qt5FontDatabaseSupport
+        Qt5ThemeSupport::Qt5ThemeSupport
+        Qt5EventDispatcherSupport::Qt5EventDispatcherSupport
+)
+
+if(MINGW)
+  add_definitions(-DQT_STATICPLUGIN)
+	list(APPEND DECOM_LINK_LIBS Qt5::QSvgPlugin)
+	list(APPEND DECOM_LINK_LIBS Qt5::QWindowsIntegrationPlugin)
+  list(APPEND DECOM_LINK_LIBS ${QTPLATFORMSUPPORT_LIBS})
+	list(APPEND DECOM_LINK_LIBS ${QT5ALL_LDFLAGS})
+endif()
 
 file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.h")
 
 add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 
-target_link_libraries(${PROJECT_NAME} Qt5::Core Qt5::Quick Qt5::Qml Qt5::Svg Qt5::Network pthread ${QT5SVG_LIBRARIES} ${QT5NETWORK_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT} 
-${Boost_LIBRARIES} 
-${HDF5_LIBRARIES})
+target_link_libraries(${PROJECT_NAME} ${DECOM_LINK_LIBS})
 
-if(NOT UNIX)
-if(NOT MINGW)
+if(NOT UNIX AND NOT MINGW)
   add_custom_command(TARGET CXXDecomQt
                        PRE_BUILD
                        COMMAND cmd /c robocopy ../deps/ ./bin/ /s /e)
-endif()
 endif()
