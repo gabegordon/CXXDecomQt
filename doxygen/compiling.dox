@@ -1,13 +1,14 @@
 /*! \page  compiling  Compiling h5Decom
  *
 <pre>
-\section Dependencies
+\section sec1 Dependencies
 -gcc>=5
 -libhdf5
 -boost>=1.58 (static)
 -Qt>=5.7
 -cmake
-\section Compiling for Linux on Linux
+\endsection
+\section sec2 For Linux on Linux
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
 Create build directory:
@@ -16,7 +17,7 @@ Generate Makefile:
 \code{.sh} cmake .. \endcode
 And Build:
 \code{.sh} cmake --build . \endcode
-\section Cross-Compiling For Windows on Linux (Preferred method for creating a windows binary)
+\section sec3 For Windows on Linux (Preferred method for creating a windows binary)
 Install mxe
 \code{.sh} git clone https://github.com/mxe/mxe.git \endcode
 Build Qt and Deps (This step will take a long time)
@@ -31,9 +32,9 @@ Run CMake:
 \code{.sh} i686-w64-mingw32.static-cmake .. \endcode
 Build:
 \code{.sh} cmake --build . \endcode
-\section Compiling on Windows (Requires including deps folder)
+\section sec4 For Windows on Windows (Requires including deps folder)
 First download and install MSYS2 from:
-http://www.msys2.org/
+http://www.msys2.org
 Run MSYS2 and get upgrades
 \code{.sh} pacman -Syu \endcode
 Obtain Pre-Built Qt binary files
