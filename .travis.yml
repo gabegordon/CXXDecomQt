@@ -21,7 +21,7 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
-      - beineri/opt-qt59-trusty
+      - sourceline: 'ppa:beineri/opt-qt59-trusty'
     packages:
       - gcc-6
       - g++-6
