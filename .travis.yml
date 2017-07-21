@@ -52,7 +52,7 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   - mkdir -p build && cd build
-  - cmake -DCMAKE_PREFIX_PATH=/opt/qt59 ..
+  - cmake -DBoost_INCLUDE_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0 -DBoost_LIBRARY_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0/stage/lib -DCMAKE_PREFIX_PATH=/opt/qt59 ..
   - cmake --build .
 
 after_success:
