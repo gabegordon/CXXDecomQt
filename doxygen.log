@@ -210,7 +210,8 @@ Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/Databa
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/DataDecode.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/DataTypes.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/Decom.h...
-Generat/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:163: warning: The following parameters of DataDecode::decodeDataSegmented(std::ifstream &infile, const bool omps) are not documented:
+Generat/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:10: warning: Found unknown command `\endsection'
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:163: warning: The following parameters of DataDecode::decodeDataSegmented(std::ifstream &infile, const bool omps) are not documented:
   parameter 'omps'
 /home/travis/build/gabegordon/CXXDecomQt/src/Decom.cpp:20: warning: The following parameters of Decom::init(const std::string &infile, BackEnd *backend) are not documented:
   parameter 'backend'

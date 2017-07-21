@@ -81,15 +81,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><pre>
-</pre><h1><a class="anchor" id="Dependencies"></a>
+</pre><h1><a class="anchor" id="sec1"></a>
 Dependencies</h1>
 <pre>-gcc&gt;=5
 -libhdf5
 -boost&gt;=1.58 (static)
 -Qt&gt;=5.7
 -cmake
-</pre><h1><a class="anchor" id="Compiling"></a>
-on Windows (Requires including deps folder)</h1>
+
+</pre><h1><a class="anchor" id="sec2"></a>
+For Linux on Linux</h1>
 <pre>Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
@@ -106,7 +107,7 @@ And Build:
 </p>
 <div class="fragment"><div class="line">cmake --build . </div>
 </div><!-- fragment -->
-</pre><h1><a class="anchor" id="Cross-Compiling"></a>
+</pre><h1><a class="anchor" id="sec3"></a>
 For Windows on Linux (Preferred method for creating a windows binary)</h1>
 <pre>Install mxe
 </p>
@@ -136,10 +137,10 @@ Build:
 </p>
 <div class="fragment"><div class="line">cmake --build . </div>
 </div><!-- fragment -->
-</pre><h1><a class="anchor" id="Compiling"></a>
-on Windows (Requires including deps folder)</h1>
+</pre><h1><a class="anchor" id="sec4"></a>
+For Windows on Windows (Requires including deps folder)</h1>
 <pre>First download and install MSYS2 from:
-<a href="http://www.msys2.org/">http://www.msys2.org/</a>
+<a href="http://www.msys2.org">http://www.msys2.org</a>
 Run MSYS2 and get upgrades
 </p>
 <div class="fragment"><div class="line">pacman -Syu </div>
