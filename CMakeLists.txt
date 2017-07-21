@@ -12,14 +12,13 @@ set(EXECUTABLE_OUTPUT_PATH "bin")
 
 find_package(HDF5 REQUIRED)
 
-find_package(Qt5 COMPONENTS Core Gui Qml Svg QuickControls2 Quick WinExtras REQUIRED)
+find_package(Qt5 COMPONENTS Core Gui Qml QuickControls2 Quick REQUIRED)
 find_package(PkgConfig REQUIRED)
-find_package(Qt5 COMPONENTS Core Gui Qml Svg REQUIRED)
 if(MINGW)
-	pkg_check_modules(QT5ALL REQUIRED Qt5Core Qt5Gui Qt5Qml Qt5Svg Qt5QuickControls2 Qt5Quick Qt5WinExtras)
+	pkg_check_modules(QT5ALL REQUIRED Qt5Core Qt5Gui Qt5Qml Qt5QuickControls2 Qt5Quick)
 endif()
 
-set(QT_LIBRARIES Qt5::Core Qt5::Gui Qt5::Qml Qt5::Svg Qt5::QuickControls2 Qt5::Quick Qt5::WinExtras)
+set(QT_LIBRARIES Qt5::Core Qt5::Gui Qt5::Qml Qt5::QuickControls2 Qt5::Quick)
 
 set(Boost_USE_STATIC_LIBS ON)
 set(Boost_USE_MULTITHREADED ON)
