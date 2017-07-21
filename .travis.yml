@@ -21,6 +21,7 @@ addons:
   apt:
     sources:
       - ubuntu-toolchain-r-test
+      - beineri/opt-qt59-trusty
     packages:
       - gcc-6
       - g++-6
@@ -32,10 +33,10 @@ addons:
       - graphviz
       - libhdf5-serial-dev
       - libhdf5-7
-      - qt*5-dev
       - build-essential
       - libgl1-mesa-dev
       - libboost-all-dev 
+      - qt59-meta-full
 
 script:
   # Export CC and CXX to tell cmake which compiler to use
@@ -45,7 +46,7 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   - mkdir -p build && cd build
-  - cmake ..
+  - cmake -DCMAKE_PREFIX_PATH=/opt/qt59 ..
   - cmake --build .
 
 after_success:
