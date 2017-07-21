@@ -93,8 +93,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">ByteManipulation.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;iostream&gt;</code><br/>
-<code>#include &lt;cstdint&gt;</code><br/>
+<div class="textblock"><code>#include &lt;cstdint&gt;</code><br/>
+<code>#include &lt;boost/endian/conversion.hpp&gt;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for ByteManipulation.h:</div>
 <div class="dyncontent">
@@ -119,18 +119,9 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaf0d62f7fc9d5377874762182619bca3"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#aaf0d62f7fc9d5377874762182619bca3">ByteManipulation::operator&lt;&lt;</a> (std::ostream &amp;os, char c)</td></tr>
-<tr class="separator:aaf0d62f7fc9d5377874762182619bca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a61c96508f96d77ae60d2ab965cf279d9"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a61c96508f96d77ae60d2ab965cf279d9">ByteManipulation::operator&lt;&lt;</a> (std::ostream &amp;os, signed char c)</td></tr>
-<tr class="separator:a61c96508f96d77ae60d2ab965cf279d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5619a8caf30bdb12fa07dc332f716c70"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a5619a8caf30bdb12fa07dc332f716c70">ByteManipulation::operator&lt;&lt;</a> (std::ostream &amp;os, unsigned char c)</td></tr>
-<tr class="separator:a5619a8caf30bdb12fa07dc332f716c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51dbb37e49ca132d404b54d5e3395b5f"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a51dbb37e49ca132d404b54d5e3395b5f">ByteManipulation::swapEndian16</a> (const uint16_t &amp;val)</td></tr>
-<tr class="separator:a51dbb37e49ca132d404b54d5e3395b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ab72207a2afc29b3292753712e71240"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a9ab72207a2afc29b3292753712e71240">ByteManipulation::swapEndian32</a> (const uint32_t &amp;val)</td></tr>
-<tr class="separator:a9ab72207a2afc29b3292753712e71240"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add259ecf16ed813fb50abadda26e570b"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#add259ecf16ed813fb50abadda26e570b">ByteManipulation::swapEndian64</a> (const uint64_t &amp;val)</td></tr>
-<tr class="separator:add259ecf16ed813fb50abadda26e570b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54d88705cd4cfdf61578dfdb6b496b86"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a54d88705cd4cfdf61578dfdb6b496b86"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a54d88705cd4cfdf61578dfdb6b496b86">ByteManipulation::swapEndian</a> (const T &amp;val)</td></tr>
+<tr class="separator:a54d88705cd4cfdf61578dfdb6b496b86"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b5b92a5bbf0619d3555cec959731432"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a2b5b92a5bbf0619d3555cec959731432">ByteManipulation::extract8</a> (const uint8_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
 <tr class="separator:a2b5b92a5bbf0619d3555cec959731432"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8c3d1d731a1819a95e2dddd05351f42"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#ab8c3d1d731a1819a95e2dddd05351f42">ByteManipulation::extract16</a> (const uint16_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>

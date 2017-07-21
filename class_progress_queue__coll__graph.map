@@ -1,2 +1,5 @@
 <map id="ProgressQueue&lt; T &gt;" name="ProgressQueue&lt; T &gt;">
+<area shape="rect" id="node2" href="$classstd_1_1condition__variable.html" title="std::condition_variable" alt="" coords="124,285,276,312"/>
+<area shape="rect" id="node3" href="$classstd_1_1condition__variable__any.html" title="std::condition_variable_any" alt="" coords="110,200,289,227"/>
+<area shape="rect" id="node5" href="$classstd_1_1recursive__mutex.html" title="std::recursive_mutex" alt="" coords="128,96,272,123"/>
 </map>

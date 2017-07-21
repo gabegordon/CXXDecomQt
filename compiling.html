@@ -83,13 +83,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock"><pre>
 </pre><h1><a class="anchor" id="Dependencies"></a>
 Dependencies</h1>
-<pre>-gcc&gt;=6
+<pre>-gcc&gt;=5
 -libhdf5
--boost (static)
+-boost&gt;=1.58 (static)
 -Qt&gt;=5.7
 -cmake
-</pre><h1><a class="anchor" id="Setup"></a>
-CMake</h1>
+</pre><h1><a class="anchor" id="Compiling"></a>
+on Windows (Requires including deps folder)</h1>
 <pre>Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
@@ -99,20 +99,45 @@ Create build directory:
 <div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
 </div><!-- fragment --><p>
 Generate Makefile:
-Windows:
-</p>
-<div class="fragment"><div class="line">cmake -G <span class="stringliteral">&quot;MinGW Makefiles&quot;</span> .. </div>
-</div><!-- fragment --><p>
-Linux:
 </p>
 <div class="fragment"><div class="line">cmake .. </div>
+</div><!-- fragment --><p>
+And Build:
+</p>
+<div class="fragment"><div class="line">cmake --build . </div>
 </div><!-- fragment -->
-</pre><h1><a class="anchor" id="Build"></a>
-Build</h1>
-<pre><div class="fragment"><div class="line">cmake --build . </div>
+</pre><h1><a class="anchor" id="Cross-Compiling"></a>
+For Windows on Linux (Preferred method for creating a windows binary)</h1>
+<pre>Install mxe
+</p>
+<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/mxe/mxe.git </span></div>
+</div><!-- fragment --><p>
+Build Qt and Deps (This step will take a long time)
+</p>
+<div class="fragment"><div class="line">cd mxe &amp;&amp; make qt5 boost hdf5 </div>
+</div><!-- fragment --><p>
+Edit your .bashrc script in order to change $PATH:
+</p>
+<div class="fragment"><div class="line">export PATH=/&lt;where mxe is installed&gt;/usr/bin:$PATH </div>
+</div><!-- fragment --><p>
+Clone latest:
+</p>
+<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
+</div><!-- fragment --><p>
+Create build directory:
+</p>
+<div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
+</div><!-- fragment --><p>
+Run CMake:
+</p>
+<div class="fragment"><div class="line">i686-w64-mingw32.static-cmake .. </div>
+</div><!-- fragment --><p>
+Build:
+</p>
+<div class="fragment"><div class="line">cmake --build . </div>
 </div><!-- fragment -->
-</pre><h1><a class="anchor" id="MinGW"></a>
-Compiler (Needed to compile on Windows)</h1>
+</pre><h1><a class="anchor" id="Compiling"></a>
+on Windows (Requires including deps folder)</h1>
 <pre>First download and install MSYS2 from:
 <a href="http://www.msys2.org/">http://www.msys2.org/</a>
 Run MSYS2 and get upgrades
@@ -123,7 +148,22 @@ Obtain Pre-Built Qt binary files
 </p>
 <div class="fragment"><div class="line">pacman -S mingw-w64-x86_64-qt5 </div>
 </div><!-- fragment --><p>
-Ensure mingw64/bin is in PATH and then compile as normal.
+Clone latest:
+</p>
+<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
+</div><!-- fragment --><p>
+Create build directory:
+</p>
+<div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
+</div><!-- fragment --><p>
+Run CMake:
+</p>
+<div class="fragment"><div class="line">cmake -G<span class="stringliteral">&quot;MinGW Makefiles&quot;</span> .. </div>
+</div><!-- fragment --><p>
+Build:
+</p>
+<div class="fragment"><div class="line">cmake --build . </div>
+</div><!-- fragment -->
 </pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
