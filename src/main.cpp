@@ -10,7 +10,10 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include <QtQml>
+//#ifdef __MINGW32__
+//#include <QtPlugin>
+//Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
+//#endif
 #include "backend.h"
 
 int main(int argc, char *argv[])

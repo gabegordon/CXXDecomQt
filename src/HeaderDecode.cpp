@@ -58,8 +58,8 @@ DataTypes::PrimaryHeader decodePrimary(std::ifstream& infile, const bool& debug)
     uint16_t fifthSixByte;
     ReadFiles::read(firstFourBytes, infile);
     ReadFiles::read(fifthSixByte, infile);
-    firstFourBytes = ByteManipulation::swapEndian32(firstFourBytes);
-    fifthSixByte = ByteManipulation::swapEndian16(fifthSixByte);
+    firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
+    fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
     // Set CCSDS from bits 0-3
     ph.CCSDS = ByteManipulation::extract32(firstFourBytes, 0, 3);
 
@@ -115,15 +115,15 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
         ReadFiles::read(millis, infile);
         ReadFiles::read(micros, infile);
 
-        sh.day = ByteManipulation::swapEndian16(day);
-        sh.millis = ByteManipulation::swapEndian32(millis);
-        sh.micros = ByteManipulation::swapEndian16(micros);
+        sh.day = ByteManipulation::swapEndian(day);
+        sh.millis = ByteManipulation::swapEndian(millis);
+        sh.micros = ByteManipulation::swapEndian(micros);
         if (seq_flag == DataTypes::FIRST)
         {
             // If first segmented packet, then bits 0-7 are segment count
             uint16_t packetSegments;
             ReadFiles::read(packetSegments, infile);
-            packetSegments = ByteManipulation::swapEndian16(packetSegments);
+            packetSegments = ByteManipulation::swapEndian(packetSegments);
             sh.segments = ByteManipulation::extract16(packetSegments, 0, 8);
         }
     }

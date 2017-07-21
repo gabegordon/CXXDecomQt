@@ -3,6 +3,7 @@
 #include <cstdint>
 #include <set>
 #include <algorithm>
+#include <iterator>
 #include <boost/algorithm/string.hpp>
 #include "h5Decode.h"
 #include "getFiles.h"

@@ -1,9 +1,14 @@
 #pragma once
 
 #include <queue>
-#include <mutex>
 #include <memory>
+#include <mutex>
+#ifdef __MINGW32__
+#include <mingw.mutex.h>
+#include <mingw.condition_variable.h>
+#else
 #include <condition_variable>
+#endif
 #include "DataTypes.h"
 
 class ThreadSafeListenerQueue

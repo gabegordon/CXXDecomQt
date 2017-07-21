@@ -1,5 +1,4 @@
 #include <iostream>
-#include <QDebug>
 #include <QGuiApplication>
 #include <algorithm>
 #include "backend.h"

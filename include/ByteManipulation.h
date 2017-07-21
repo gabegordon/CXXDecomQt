@@ -1,19 +1,19 @@
 #pragma once
-#include <iostream>
 #include <cstdint>
+#include <boost/endian/conversion.hpp>
 
 namespace ByteManipulation {
-    std::ostream &operator<<(std::ostream &os, char c);
-
-    std::ostream &operator<<(std::ostream &os, signed char c);
-
-    std::ostream &operator<<(std::ostream &os, unsigned char c);
-
-    uint16_t swapEndian16(const uint16_t& val);
-
-    uint32_t swapEndian32(const uint32_t& val);
-
-    uint64_t swapEndian64(const uint64_t& val);
+/**
+ * Swap endian of a value.
+ *
+ * @param val Template value for integer
+ * @return Type of val (Swapped)
+ */
+    template<typename T>
+    T swapEndian(const T& val)
+    {
+        return boost::endian::endian_reverse(val);
+    }
 
     uint32_t extract8(const uint8_t& val, const uint32_t& start, const uint32_t& len);
 

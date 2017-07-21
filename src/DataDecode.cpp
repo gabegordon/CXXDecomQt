@@ -2,6 +2,7 @@
 #include <tuple>
 #include <vector>
 #include <algorithm>
+#include <iterator>
 #include "HeaderDecode.h"
 #include "DataDecode.h"
 #include "ByteManipulation.h"
@@ -173,14 +174,14 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::ifstream& infile, const b
 
     getHeaderData(segPack);
     auto pack = decodeData(infile, segmentLastByte);  // Read the data from the first packet segment
-    segPack.data.insert(std::end(segPack.data), std::begin(pack.data), std::end(pack.data));   // Append to back of our data vector
+    segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));  // Append to back of our data vector
 
     do  // Continue getting headers and data, and appending it until we reach LAST packet segment
     {
         std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
         m_pHeader = std::get<0>(headers);
         auto pack = decodeData(infile, segmentLastByte);
-        segPack.data.insert(std::end(segPack.data), std::begin(pack.data), std::end(pack.data));
+        segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));
     } while (m_pHeader.sequenceFlag != DataTypes::LAST);
 
     return segPack;  // Return one packet containing all the data from segmented packets
@@ -201,7 +202,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     ReadFiles::read(versionNum, infile);
     ReadFiles::read(contCount, infile);
     ReadFiles::read(contFlag, infile);
-    versionNum = ByteManipulation::swapEndian16(versionNum);
+    versionNum = ByteManipulation::swapEndian(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
     std::vector<uint32_t> scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  // All OMPS Science APIDs
@@ -233,7 +234,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
                     ReadFiles::read(ompsHeader, infile);
                 }
                 DataTypes::Packet tmpPack = decodeDataSegmented(infile, true);
-                segPack.data.insert(std::end(segPack.data), std::begin(tmpPack.data), std::end(tmpPack.data));
+                segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(tmpPack.data)), std::make_move_iterator(std::end(tmpPack.data)));
                 segPacketCount++;
             }
         }
@@ -264,7 +265,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
 
     std::vector<uint8_t> tmpbuf(m_pHeader.packetLength - hklength);  // Handle first packet science manually
     infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
-    scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
+    scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
 
     do  // Loop through all middle and last packets
     {
@@ -273,7 +274,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
 
         std::vector<uint8_t> tmpbuf(m_pHeader.packetLength);
         infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
-        scbuf.insert(std::end(scbuf), std::begin(tmpbuf), std::end(tmpbuf));
+        scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
     } while (m_pHeader.sequenceFlag != DataTypes::LAST);
 
     size_t scsize = scbuf.size();
@@ -281,7 +282,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
     for(size_t byte = 0; byte < scsize; byte += 4)
     {
         DataTypes::Numeric pixel;
-        if(byte+3 > scsize)  // Break needed here to not go out of bounds on pad byte
+        if(byte+3 >= scsize)  // Break needed here to not go out of bounds on pad byte
             break;
         pixel.u32 = ByteManipulation::mergeBytes(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);
         pixel.mnem = "Pixel";
