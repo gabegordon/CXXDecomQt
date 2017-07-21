@@ -2,6 +2,7 @@ var searchData=
 [
   ['check_5fvalid_5fthrow',['check_valid_throw',['../classh5cpp_1_1_object.html#a43a1c182159b24eb4967147dd7607838',1,'h5cpp::Object']]],
   ['checkfile',['checkFile',['../namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef',1,'ReadFiles']]],
+  ['checknpp',['checkNPP',['../classh5_decode.html#aa27d7545f221864a53fa6283c9f918c1',1,'h5Decode']]],
   ['checkpackentries',['checkPackEntries',['../class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723',1,'DataDecode']]],
   ['checkvalidheader',['checkValidHeader',['../namespace_header_decode.html#ad5d2f691de2e3d775a26c52ac3f346f9',1,'HeaderDecode']]],
   ['chunked',['chunked',['../classh5cpp_1_1_properties.html#afbb8ea2a8098823295744b83051593fa',1,'h5cpp::Properties']]],
