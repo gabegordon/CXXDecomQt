@@ -15,31 +15,32 @@ endif()
 
 if(STATIC_QT)
   set(LINKER_FLAGS -static -static-libstdc++ -static-libgcc)
-  find_package(Qt5Core REQUIRED)
   find_package(PkgConfig REQUIRED)
-  set(QT_PREFIX Qt5)
+  find_package(Qt5WinExtras REQUIRED)
 endif()
 
-set(QT5_PKGS Core Qml Gui WinExtras Quick QuickControls2)
+set(QT5_PKGS Core Qml Gui Quick QuickControls2)
 
 set(QT5_LIBS "")
 
 #Find Qt Libs
 foreach(pkg ${QT5_PKGS})
-  find_package(${QT_PREFIX}${pkg} REQUIRED)
-  list(APPEND QT5_LIBS ${QT_PREFIX}::${pkg})
-  pkg_check_modules(QT5ALL Qt5Core Qt5Qml Qt5Gui Qt5WinExtras Qt5Quick Qt5QuickControls2)
+  find_package(Qt5${pkg} REQUIRED)
+  list(APPEND QT5_LIBS Qt5::${pkg})
+  if(STATIC_QT)
+    pkg_check_modules(QT5ALL Qt5Core Qt5Qml Qt5Gui Qt5Quick Qt5QuickControls2 Qt5WinExtras)
+  endif()
 endforeach()
 
 #Get platform support libs
 if(MINGW)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
-find_package(Qt5ThemeSupport REQUIRED)
-find_package(Qt5FontDatabaseSupport REQUIRED)
-find_package(Qt5EventDispatcherSupport REQUIRED)
-find_library(Qt5FbSupport_LIB libQt5FbSupport REQUIRED)
-find_library(Qt5PlatformCompositorSupport_LIB libQt5AccessibilitySupport)
+  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
+  find_package(Qt5ThemeSupport REQUIRED)
+  find_package(Qt5FontDatabaseSupport REQUIRED)
+  find_package(Qt5EventDispatcherSupport REQUIRED)
+  find_package(Freetype REQUIRED)
 endif()
+
 #Find HDF5 Library
 find_package(HDF5 REQUIRED)
 
@@ -64,8 +65,6 @@ include_directories(
   ${Boost_INCLUDE_DIR}
   ${HDF5_INCLUDE_DIR}
   ${QT5ALL_INCLUDE_DIRS}
-  ${Qt5Core_PRIVATE_INCLUDE_DIRS}
-  ${Qt5Gui_PRIVATE_INCLUDE_DIRS}
   )
 
 set(DECOM_LINK_LIBS
@@ -80,7 +79,7 @@ set(QT5PLATFORMSUPPORT_LIBS
   Qt5ThemeSupport::Qt5ThemeSupport
   Qt5EventDispatcherSupport::Qt5EventDispatcherSupport
   ${Qt5FbSupport_LIB}
-  ${Qt5PlatformCompositorSupport_LIB}
+  ${FREETYPE_LIBRARIES}
   )
 
 if(STATIC_QT)
@@ -94,4 +93,4 @@ file(GLOB INCLUDES "include/[A-z]*.h")
 add_executable(${PROJECT_NAME} ${EXE_TYPE} "qml.qrc" ${SOURCES} ${INCLUDES})
 
 # Add the Qt5 Widgets for linking
-target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS})
+target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
