@@ -38,7 +38,6 @@ var searchData=
   ['dereference',['dereference',['../classh5cpp_1_1iterator.html#adca661ca802de9b4ad3634acd05b109c',1,'h5cpp::iterator']]],
   ['desc_5fwidth',['desc_width',['../class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59',1,'ProgressBar']]],
   ['description',['description',['../class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2',1,'ProgressBar']]],
-  ['disableautoerrorreporting',['disableAutoErrorReporting',['../namespaceh5cpp.html#aefcf9dd122dcfaf421aa4845793814f7',1,'h5cpp']]],
   ['disablereporting',['disableReporting',['../classh5cpp_1_1_auto_error_reporting_guard.html#a7ddc94061dc86923b7866afb36072253',1,'h5cpp::AutoErrorReportingGuard']]],
   ['ds_5fid',['ds_id',['../classh5cpp_1_1_r_wdataset.html#aa9ecd41eb7ada304cb1402284f421f36',1,'h5cpp::RWdataset']]],
   ['dscreationflags',['DsCreationFlags',['../namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34',1,'h5cpp']]]

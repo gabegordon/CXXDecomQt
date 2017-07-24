@@ -106,15 +106,15 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:aa1bfadde0935f7318982024cc7d4f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86dc33778c9bfe871377116972dbcd1e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">write</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, const <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> &amp;memtype, const <a class="el" href="classh5cpp_1_1_dataspace.html">Dataspace</a> &amp;memspace, const T *values)</td></tr>
 <tr class="separator:a86dc33778c9bfe871377116972dbcd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9576757770faa94ad6254e9b5a4a5eb2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#a9576757770faa94ad6254e9b5a4a5eb2">read</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, const <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> &amp;memtype, const <a class="el" href="classh5cpp_1_1_dataspace.html">Dataspace</a> &amp;memspace, T *values)</td></tr>
-<tr class="separator:a9576757770faa94ad6254e9b5a4a5eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3ff66e0e713df33a34185900c38304"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">read</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, T *values)</td></tr>
+<tr class="separator:aad3ff66e0e713df33a34185900c38304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class T&gt;<br/>
 struct h5cpp::h5traits&lt; T &gt;</h3>
 
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01261">1261</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01256">1256</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="aa1bfadde0935f7318982024cc7d4f846"></a>
 <div class="memitem">
@@ -139,10 +139,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01268">1268</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;  {</div>
-<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;    <span class="keywordflow">return</span> internal::get_disktype&lt;T&gt;();</div>
-<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01263">1263</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;  {</div>
+<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    <span class="keywordflow">return</span> internal::get_disktype&lt;T&gt;();</div>
+<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -169,14 +169,14 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01263">1263</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01264"></a><span class="lineno"> 1264</span>&#160;  {</div>
-<div class="line"><a name="l01265"></a><span class="lineno"> 1265</span>&#160;    <span class="keywordflow">return</span> internal::get_memtype&lt;T&gt;();</div>
-<div class="line"><a name="l01266"></a><span class="lineno"> 1266</span>&#160;  }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01258">1258</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01259"></a><span class="lineno"> 1259</span>&#160;  {</div>
+<div class="line"><a name="l01260"></a><span class="lineno"> 1260</span>&#160;    <span class="keywordflow">return</span> internal::get_memtype&lt;T&gt;();</div>
+<div class="line"><a name="l01261"></a><span class="lineno"> 1261</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a9576757770faa94ad6254e9b5a4a5eb2"></a>
+<a class="anchor" id="aad3ff66e0e713df33a34185900c38304"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
@@ -190,18 +190,6 @@ template&lt;class T &gt; </div>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;&#160;</td>
           <td class="paramname"><em>rw</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> &amp;&#160;</td>
-          <td class="paramname"><em>memtype</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="classh5cpp_1_1_dataspace.html">Dataspace</a> &amp;&#160;</td>
-          <td class="paramname"><em>memspace</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,10 +210,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01278">1278</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01279"></a><span class="lineno"> 1279</span>&#160;  {</div>
-<div class="line"><a name="l01280"></a><span class="lineno"> 1280</span>&#160;    rw.read(values);</div>
-<div class="line"><a name="l01281"></a><span class="lineno"> 1281</span>&#160;  }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01273">1273</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;  {</div>
+<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    rw.read(values);</div>
+<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -275,10 +263,10 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01273">1273</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01274"></a><span class="lineno"> 1274</span>&#160;  {</div>
-<div class="line"><a name="l01275"></a><span class="lineno"> 1275</span>&#160;    rw.write(values);</div>
-<div class="line"><a name="l01276"></a><span class="lineno"> 1276</span>&#160;  }</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01268">1268</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l01269"></a><span class="lineno"> 1269</span>&#160;  {</div>
+<div class="line"><a name="l01270"></a><span class="lineno"> 1270</span>&#160;    rw.write(values);</div>
+<div class="line"><a name="l01271"></a><span class="lineno"> 1271</span>&#160;  }</div>
 </div><!-- fragment -->
 </div>
 </div>

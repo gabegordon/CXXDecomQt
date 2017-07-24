@@ -21,6 +21,5 @@ var searchData=
   ['decom',['Decom',['../class_decom.html#abc35842bb559c84048bb4d33fd54d044',1,'Decom']]],
   ['deflate',['deflate',['../classh5cpp_1_1_properties.html#a542ece53430606b91850870cacc914e3',1,'h5cpp::Properties']]],
   ['dereference',['dereference',['../classh5cpp_1_1iterator.html#adca661ca802de9b4ad3634acd05b109c',1,'h5cpp::iterator']]],
-  ['disableautoerrorreporting',['disableAutoErrorReporting',['../namespaceh5cpp.html#aefcf9dd122dcfaf421aa4845793814f7',1,'h5cpp']]],
   ['disablereporting',['disableReporting',['../classh5cpp_1_1_auto_error_reporting_guard.html#a7ddc94061dc86923b7866afb36072253',1,'h5cpp::AutoErrorReportingGuard']]]
 ];
