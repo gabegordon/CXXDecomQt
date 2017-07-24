@@ -11,7 +11,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(EXECUTABLE_OUTPUT_PATH "bin")
 
 
-set(QT5_PKGS Core Qml Gui Quick QuickControls2 Svg)
+set(QT5_PKGS Core Qml Gui Quick QuickControls2)
 
 set(QT5_LIBS "")
 
@@ -53,5 +53,10 @@ file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.h")
 add_executable(${PROJECT_NAME} ${EXE_TYPE} "qml.qrc" ${SOURCES} ${INCLUDES})
 
-# Add the Qt5 Widgets for linking
 target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
+
+if(NOT UNIX)
+  add_custom_command(TARGET CXXDecomQt
+                       PRE_BUILD
+                       COMMAND cmd /c robocopy ../deps/ ./bin/ /s /e)
+endif()

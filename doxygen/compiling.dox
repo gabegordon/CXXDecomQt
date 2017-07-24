@@ -8,7 +8,7 @@
 -Qt>=5.7
 -cmake
 \endsection
-\section sec2 For Linux on Linux
+\section sec2 For Linux
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
 Create build directory:
@@ -17,32 +17,18 @@ Generate Makefile:
 \code{.sh} cmake .. \endcode
 And Build:
 \code{.sh} cmake --build . \endcode
-\section sec3 For Windows on Linux (Preferred method for creating a windows binary)
-Install mxe
-\code{.sh} git clone https://github.com/mxe/mxe.git \endcode
-Build Qt and Deps (This step will take a long time)
-\code{.sh} cd mxe && make qt5 boost hdf5 \endcode
-Edit your .bashrc script in order to change $PATH:
-\code{.sh} export PATH=/<where mxe is installed>/usr/bin:$PATH \endcode
-Clone latest:
-\code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
-Create build directory:
-\code{.sh}  cd CXXDecomQt && mkdir build && cd build \endcode
-Run CMake:
-\code{.sh} i686-w64-mingw32.static-cmake .. \endcode
-Build:
-\code{.sh} cmake --build . \endcode
-\section sec4 For Windows on Windows (Requires including deps folder)
+\section sec4 For Windows
 First download and install MSYS2 from:
 http://www.msys2.org
 Run MSYS2 and get upgrades
 \code{.sh} pacman -Syu \endcode
 Obtain Pre-Built Qt binary files
 \code{.sh} pacman -S mingw-w64-x86_64-qt5 \endcode
+Ensure mingw64 is in PATH.
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
 Create build directory:
-\code{.sh}  cd CXXDecomQt && mkdir build && cd build \endcode
+\code{.sh} cd CXXDecomQt && mkdir build && cd build \endcode
 Run CMake:
 \code{.sh} cmake -G"MinGW Makefiles" .. \endcode
 Build:
