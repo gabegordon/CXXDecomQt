@@ -5,21 +5,13 @@ project(CXXDecomQt)
 # Find includes in the build directories
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
+set(CMAKE_BUILD_TYPE release)
 # Generate compile commands for IDE autocomplete
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_OUTPUT_PATH "bin")
+set(EXECUTABLE_OUTPUT_PATH "bin")
 
-if(MINGW)
-  option(STATIC_QT "Use static Qt5 libraries" ON)
-endif()
 
-if(STATIC_QT)
-  set(LINKER_FLAGS -static -static-libstdc++ -static-libgcc)
-  find_package(PkgConfig REQUIRED)
-  find_package(Qt5WinExtras REQUIRED)
-endif()
-
-set(QT5_PKGS Core Qml Gui Quick QuickControls2)
+set(QT5_PKGS Core Qml Gui Quick QuickControls2 Svg)
 
 set(QT5_LIBS "")
 
@@ -27,19 +19,7 @@ set(QT5_LIBS "")
 foreach(pkg ${QT5_PKGS})
   find_package(Qt5${pkg} REQUIRED)
   list(APPEND QT5_LIBS Qt5::${pkg})
-  if(STATIC_QT)
-    pkg_check_modules(QT5ALL Qt5Core Qt5Qml Qt5Gui Qt5Quick Qt5QuickControls2 Qt5WinExtras)
-  endif()
 endforeach()
-
-#Get platform support libs
-if(MINGW)
-  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
-  find_package(Qt5ThemeSupport REQUIRED)
-  find_package(Qt5FontDatabaseSupport REQUIRED)
-  find_package(Qt5EventDispatcherSupport REQUIRED)
-  find_package(Freetype REQUIRED)
-endif()
 
 #Find HDF5 Library
 find_package(HDF5 REQUIRED)
@@ -55,10 +35,6 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra")
 
-if(WIN32)
-  set(EXE_TYPE WIN32)
-endif()
-
 include_directories(
   include
   ${QT_INCLUDE_DIR}
@@ -71,22 +47,7 @@ set(DECOM_LINK_LIBS
   ${BOOST_LIBRARIES}
   ${HDF5_LIBRARIES}
   ${QT_LIBRARIES}
-  ${QT5ALL_LIBRARIES}
   )
-
-set(QT5PLATFORMSUPPORT_LIBS
-  Qt5FontDatabaseSupport::Qt5FontDatabaseSupport
-  Qt5ThemeSupport::Qt5ThemeSupport
-  Qt5EventDispatcherSupport::Qt5EventDispatcherSupport
-  ${Qt5FbSupport_LIB}
-  ${FREETYPE_LIBRARIES}
-  )
-
-if(STATIC_QT)
-  list(APPEND DECOM_LINK_LIBS Qt5::QWindowsIntegrationPlugin)
-  list(APPEND DECOM_LINK_LIBS ${QT5ALL_LDFLAGS})
-  list(APPEND DECOM_LINK_LIBS ${QT5PLATFORMSUPPORT_LIBS})
-endif()
 
 file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.h")

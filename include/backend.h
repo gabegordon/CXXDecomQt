@@ -1,6 +1,3 @@
-#ifndef BACKEND_H
-#define BACKEND_H
-
 #include <QObject>
 #include <QString>
 #include <QStringList>
@@ -19,12 +16,13 @@ public:
     explicit BackEnd(QObject *parent = nullptr);
     virtual ~BackEnd() {}
 
-    void setFolderName(const QString& folderName);
     void setProgress(const std::string& prog);
+    void setFolderName(const QString& folderName);
 
     QString currentFile();
     QStringList ofiles();
     QString progress();
+
 
     bool m_NPP;
 public slots:
@@ -50,4 +48,3 @@ private:
     QString m_currentFile;
     QString m_progress;
 };
-#endif // BACKEND_H

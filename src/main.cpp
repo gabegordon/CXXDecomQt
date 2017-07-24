@@ -10,22 +10,10 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#ifdef __MINGW32__
-#include <QtPlugin>
-Q_IMPORT_PLUGIN(QWindowsIntegrationPlugin)
-#endif
 #include "backend.h"
 
 int main(int argc, char *argv[])
 {
-#ifdef __linux__
-    system("mkdir -p output");
-    system("cd output && rm -f *.txt");  // Clear output directory
-#else
-    system("if not exist output mkdir output 2>NUL 1>NUL");
-    system("cd output && del /Q *.txt 2>NUL 1>NUL");
-#endif
-
     QGuiApplication app(argc, argv);
 
     qmlRegisterType<BackEnd>("io.qt.backend", 1, 0, "BackEnd");

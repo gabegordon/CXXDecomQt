@@ -9,11 +9,11 @@
 
 BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
+    m_NPP{false},
     m_folderName{},
     m_allAPIDs{true},
     m_ofiles{},
-    m_debug{true},
-    m_NPP{false}
+    m_debug{false}
 {}
 
 /**

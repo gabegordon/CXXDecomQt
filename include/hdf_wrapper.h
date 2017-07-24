@@ -73,11 +73,6 @@ struct IncRC {};
 struct NoIncRC {};
 }
 
-static void disableAutoErrorReporting()
-{
-  H5Eset_auto(H5E_DEFAULT, NULL, NULL);
-};
-
 class AutoErrorReportingGuard
 {
   void *client_data;
@@ -1073,7 +1068,7 @@ class Dataset : public Object
     {
       Datatype memtype = get_memtype<T>();
       RWdataset rw(get_id(), memtype.get_id(), memspace.get_id(), disk_space_id);
-      h5traits_of<T>::type::read(rw, memtype, memspace, data);
+      h5traits_of<T>::type::read(rw, data);
     }
 
     Dataset(hid_t id, internal::NoIncRC) : Object(id) {} // we get an existing reference, no need to increase the ref count. it will only be lowered by one when the instance is destroyed.
@@ -1275,7 +1270,7 @@ struct h5traits
     rw.write(values);
   }
   
-  static inline void read(RW &rw, const Datatype &memtype, const Dataspace &memspace, T *values)
+  static inline void read(RW &rw, T *values)
   {
     rw.read(values);
   }
@@ -1295,7 +1290,7 @@ struct h5traits<std::string>
     return internal::get_disktype<char*>();
   }
 
-  static inline void write(RW &rw, const Datatype &memtype, const Dataspace &memspace, const std::string *values)
+  static inline void write(RW &rw, const Dataspace &memspace, const std::string *values)
   {
     hssize_t n = memspace.get_npoints();
     assert(n >= 1);
@@ -1362,7 +1357,7 @@ struct h5traits < char* >
     return internal::get_disktype<char*>();
   }
 
-  static inline void write(RW &rw, const Datatype &memtype, const Dataspace &memspace, const char *const *values)
+  static inline void write(RW &rw, const char *const *values)
   {
     rw.write(values);
   }

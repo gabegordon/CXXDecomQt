@@ -1,7 +1,7 @@
 #include <vector>
 #include <string>
-#ifdef _WIN64
-#include <Windows.h>
+#ifdef _WIN32
+#include <windows.h>
 #else
 #include <dirent.h>
 #include <sys/stat.h>
@@ -12,10 +12,10 @@ namespace getFiles
     std::vector<std::string> h5InFolder(const std::string& folder)
     {
         std::vector<std::string> names;
-#ifdef _WIN64
+#ifdef _WIN32
         std::string search_path = folder + "/*.h5";
-        WIN32_FIND_DATA fd;
-        HANDLE hFind = ::FindFirstFile(search_path.c_str(), &fd);
+        WIN32_FIND_DATAA fd;
+        void* hFind = FindFirstFileA(search_path.c_str(), &fd);
         if(hFind != INVALID_HANDLE_VALUE) {
             do {
                 // read all (real) files in current folder
@@ -24,7 +24,7 @@ namespace getFiles
                     std::string ws(fd.cFileName);
                     names.push_back(folder + "/" + ws);
                 }
-            }while(::FindNextFile(hFind, &fd));
+            }while(::FindNextFileA(hFind, &fd));
             ::FindClose(hFind);
         }
         return names;
