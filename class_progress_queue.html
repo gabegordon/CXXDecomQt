@@ -99,7 +99,7 @@ Collaboration diagram for ProgressQueue&lt; T &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_progress_queue__coll__graph.png" border="0" usemap="#_progress_queue_3_01_t_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="_progress_queue_3_01_t_01_4_coll__map" id="_progress_queue_3_01_t_01_4_coll__map">
-<area shape="rect" id="node2" href="classstd_1_1condition__variable.html" title="std::condition_variable" alt="" coords="124,285,276,312"/><area shape="rect" id="node3" href="classstd_1_1condition__variable__any.html" title="std::condition_variable_any" alt="" coords="110,200,289,227"/><area shape="rect" id="node5" href="classstd_1_1recursive__mutex.html" title="std::recursive_mutex" alt="" coords="128,96,272,123"/></map>
+</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -119,7 +119,7 @@ Private Attributes</h2></td></tr>
 <tr class="separator:acc5b9ceeaf1626cfa0d95e49cc4da271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba53a9e1e83109bdc1e88857dafad8ee"><td class="memItemLeft" align="right" valign="top">std::mutex&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee">m</a></td></tr>
 <tr class="separator:aba53a9e1e83109bdc1e88857dafad8ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab370f64a2fa0f64411812053235f9d0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classstd_1_1condition__variable.html">std::condition_variable</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a></td></tr>
+<tr class="memitem:ab370f64a2fa0f64411812053235f9d0f"><td class="memItemLeft" align="right" valign="top">std::condition_variable&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a></td></tr>
 <tr class="separator:ab370f64a2fa0f64411812053235f9d0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -215,7 +215,7 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee">m</a>);</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">while</span>(<a class="code" href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">q</a>.empty())</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        {</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a>.<a class="code" href="classstd_1_1condition__variable.html#aac6917dec618a858a9c10dac6c858bf2">wait</a>(lock);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            <a class="code" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a>.wait(lock);</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        element = <a class="code" href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">q</a>.front();</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">q</a>.pop();</div>
@@ -224,7 +224,6 @@ template&lt;typename T &gt; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    }</div>
 <div class="ttc" id="class_progress_queue_html_aba53a9e1e83109bdc1e88857dafad8ee"><div class="ttname"><a href="class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee">ProgressQueue::m</a></div><div class="ttdeci">std::mutex m</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00037">progressqueue.h:37</a></div></div>
 <div class="ttc" id="class_progress_queue_html_acc5b9ceeaf1626cfa0d95e49cc4da271"><div class="ttname"><a href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">ProgressQueue::q</a></div><div class="ttdeci">std::queue&lt; T &gt; q</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00036">progressqueue.h:36</a></div></div>
-<div class="ttc" id="classstd_1_1condition__variable_html_aac6917dec618a858a9c10dac6c858bf2"><div class="ttname"><a href="classstd_1_1condition__variable.html#aac6917dec618a858a9c10dac6c858bf2">std::condition_variable::wait</a></div><div class="ttdeci">void wait(unique_lock&lt; mutex &gt; &amp;lock)</div><div class="ttdef"><b>Definition:</b> <a href="mingw_8condition__variable_8h_source.html#l00192">mingw.condition_variable.h:192</a></div></div>
 <div class="ttc" id="class_progress_queue_html_ab370f64a2fa0f64411812053235f9d0f"><div class="ttname"><a href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">ProgressQueue::c</a></div><div class="ttdeci">std::condition_variable c</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00038">progressqueue.h:38</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -257,11 +256,10 @@ template&lt;typename T &gt; </div>
 <div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee">m</a>);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">q</a>.push_back(element);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a>.<a class="code" href="classstd_1_1condition__variable__any.html#a4b24ef9d9c2fc0b544a57b9764cd1a77">notify_one</a>();</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">c</a>.notify_one();</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        lock.unlock();</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    }</div>
 <div class="ttc" id="class_progress_queue_html_aba53a9e1e83109bdc1e88857dafad8ee"><div class="ttname"><a href="class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee">ProgressQueue::m</a></div><div class="ttdeci">std::mutex m</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00037">progressqueue.h:37</a></div></div>
-<div class="ttc" id="classstd_1_1condition__variable__any_html_a4b24ef9d9c2fc0b544a57b9764cd1a77"><div class="ttname"><a href="classstd_1_1condition__variable__any.html#a4b24ef9d9c2fc0b544a57b9764cd1a77">std::condition_variable_any::notify_one</a></div><div class="ttdeci">void notify_one() noexcept</div><div class="ttdef"><b>Definition:</b> <a href="mingw_8condition__variable_8h_source.html#l00131">mingw.condition_variable.h:131</a></div></div>
 <div class="ttc" id="class_progress_queue_html_acc5b9ceeaf1626cfa0d95e49cc4da271"><div class="ttname"><a href="class_progress_queue.html#acc5b9ceeaf1626cfa0d95e49cc4da271">ProgressQueue::q</a></div><div class="ttdeci">std::queue&lt; T &gt; q</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00036">progressqueue.h:36</a></div></div>
 <div class="ttc" id="class_progress_queue_html_ab370f64a2fa0f64411812053235f9d0f"><div class="ttname"><a href="class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f">ProgressQueue::c</a></div><div class="ttdeci">std::condition_variable c</div><div class="ttdef"><b>Definition:</b> <a href="progressqueue_8h_source.html#l00038">progressqueue.h:38</a></div></div>
 </div><!-- fragment -->
@@ -278,7 +276,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classstd_1_1condition__variable.html">std::condition_variable</a> <a class="el" href="class_progress_queue.html">ProgressQueue</a>&lt; T &gt;::c</td>
+          <td class="memname">std::condition_variable <a class="el" href="class_progress_queue.html">ProgressQueue</a>&lt; T &gt;::c</td>
         </tr>
       </table>
   </td>

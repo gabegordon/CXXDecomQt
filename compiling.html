@@ -90,7 +90,7 @@ Dependencies</h1>
 -cmake
 
 </pre><h1><a class="anchor" id="sec2"></a>
-For Linux on Linux</h1>
+For Linux</h1>
 <pre>Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
@@ -107,38 +107,8 @@ And Build:
 </p>
 <div class="fragment"><div class="line">cmake --build . </div>
 </div><!-- fragment -->
-</pre><h1><a class="anchor" id="sec3"></a>
-For Windows on Linux (Preferred method for creating a windows binary)</h1>
-<pre>Install mxe
-</p>
-<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/mxe/mxe.git </span></div>
-</div><!-- fragment --><p>
-Build Qt and Deps (This step will take a long time)
-</p>
-<div class="fragment"><div class="line">cd mxe &amp;&amp; make qt5 boost hdf5 </div>
-</div><!-- fragment --><p>
-Edit your .bashrc script in order to change $PATH:
-</p>
-<div class="fragment"><div class="line">export PATH=/&lt;where mxe is installed&gt;/usr/bin:$PATH </div>
-</div><!-- fragment --><p>
-Clone latest:
-</p>
-<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
-</div><!-- fragment --><p>
-Create build directory:
-</p>
-<div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
-</div><!-- fragment --><p>
-Run CMake:
-</p>
-<div class="fragment"><div class="line">i686-w64-mingw32.static-cmake .. </div>
-</div><!-- fragment --><p>
-Build:
-</p>
-<div class="fragment"><div class="line">cmake --build . </div>
-</div><!-- fragment -->
 </pre><h1><a class="anchor" id="sec4"></a>
-For Windows on Windows (Requires including deps folder)</h1>
+For Windows</h1>
 <pre>First download and install MSYS2 from:
 <a href="http://www.msys2.org">http://www.msys2.org</a>
 Run MSYS2 and get upgrades
@@ -149,6 +119,7 @@ Obtain Pre-Built Qt binary files
 </p>
 <div class="fragment"><div class="line">pacman -S mingw-w64-x86_64-qt5 </div>
 </div><!-- fragment --><p>
+Ensure mingw64 is in PATH.
 Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
