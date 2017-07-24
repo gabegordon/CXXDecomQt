@@ -54,9 +54,3 @@ file(GLOB INCLUDES "include/[A-z]*.h")
 add_executable(${PROJECT_NAME} ${EXE_TYPE} "qml.qrc" ${SOURCES} ${INCLUDES})
 
 target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
-
-if(NOT UNIX)
-  add_custom_command(TARGET CXXDecomQt
-                       PRE_BUILD
-                       COMMAND cmd /c robocopy ../deps/ ./bin/ /s /e)
-endif()
