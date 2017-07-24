@@ -32,6 +32,7 @@ Create build directory:
 Run CMake:
 \code{.sh} cmake -G"MinGW Makefiles" .. \endcode
 Build:
+\code{.sh} cmake --build . \endcode
 Copy deps folder contents into the executable directory to run.
 </pre>
 */
