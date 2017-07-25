@@ -45,6 +45,7 @@ ApplicationWindow {
         height: 334
         modal: true
         focus: true
+        closePolicy: Popup.NoAutoClose
         Column {
             Text {
                 text: "Select files to Decom"
@@ -85,6 +86,7 @@ ApplicationWindow {
         height: 334
         modal: true
         focus: true
+        closePolicy: Popup.NoAutoClose
         Column {
             Text {
                 text: "Decom Current File: "
@@ -118,6 +120,7 @@ ApplicationWindow {
         height: 334
         modal: true
         focus: true
+        closePolicy: Popup.NoAutoClose
         Column {
             Text {
                 text: backend.progress
@@ -134,6 +137,7 @@ ApplicationWindow {
         height: 334
         modal: true
         focus: true
+        closePolicy: Popup.NoAutoClose
         Column {
             spacing: 30
             Text {
