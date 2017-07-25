@@ -137,10 +137,11 @@ ApplicationWindow {
         Column {
             spacing: 30
             Text {
-                text: "Enter specific APIDs (NOT IMPLEMENTED YET)"
+                text: "Enter specific APIDs"
                 font.pixelSize: 22
             }
             TextField {
+                id: apidField
                 placeholderText: qsTr("Comma-Separated APIDs")
             }
             Text {
@@ -150,7 +151,8 @@ ApplicationWindow {
             CheckBox {
                 text: "All APIDs"
                 font.pixelSize: 22
-                checked: true
+                checked: false
+                onClicked: backend.toggleAllAPIDs()
             }
         }
 
@@ -160,6 +162,7 @@ ApplicationWindow {
             anchors.right: parent.right
             anchors.bottom: parent.bottom
             onClicked: {
+                backend.setAPIDs(apidField.text)
                 apidSelect.close()
                 runSelectWindow.open()
             }
@@ -197,7 +200,7 @@ ApplicationWindow {
         folder: "data"
         visible: false
         onAccepted: {
-            backend.folderName = fileDialog.fileUrl
+            backend.setFolderName(fileDialog.fileUrl)
             console.log(fileDialog.fileUrl)
             visible: false
         }

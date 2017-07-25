@@ -277,6 +277,9 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
         scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
     } while (m_pHeader.sequenceFlag != DataTypes::LAST);
 
+    if (!checkPackEntries(segPack))
+        return segPack;
+
     size_t scsize = scbuf.size();
 
     for(size_t byte = 0; byte < scsize; byte += 4)
@@ -471,6 +474,5 @@ bool DataDecode::checkPackEntries(DataTypes::Packet& pack)
             return false;
         }
     }
-    pack.ignored = false;
     return true;
 }

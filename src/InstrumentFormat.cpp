@@ -167,10 +167,4 @@ void formatATMS(BackEnd* backend)
     writeChans(buf, backend);
 }
 
-
-void formatOMPS(BackEnd* backend)
-{
-    CSVRow omps_row;
-    std::ifstream m_infile;
-}
 }

@@ -1,6 +1,7 @@
 #include <iostream>
 #include <QGuiApplication>
 #include <algorithm>
+#include <boost/algorithm/string.hpp>
 #include "backend.h"
 #include "h5Decode.h"
 #include "DatabaseReader.h"
@@ -11,7 +12,7 @@ BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
     m_NPP{false},
     m_folderName{},
-    m_allAPIDs{true},
+    m_allAPIDs{false},
     m_ofiles{},
     m_debug{false}
 {}
@@ -29,6 +30,10 @@ void BackEnd::setFolderName(const QString& folderName)
     m_folderName = folderName;
 }
 
+void BackEnd::setAPIDs(const QString& apids)
+{
+    m_selectedAPIDs = apids;
+}
 /**
  * Given a string containing the progressbar convert to QString. Then signal and update Qt.
  *
@@ -39,6 +44,11 @@ void BackEnd::setProgress(const std::string& prog)
     m_progress = QString::fromStdString(prog);
     emit progressChanged();
     QGuiApplication::sync();
+}
+
+void BackEnd::toggleAllAPIDs()
+{
+    m_allAPIDs = !m_allAPIDs;
 }
 
 /**
@@ -109,7 +119,7 @@ void BackEnd::runDecom()
 {
     if(m_ofiles.size() == 0)
         return;
-    DatabaseReader dr("databases/CXXParams.csv", m_allAPIDs, m_NPP);  // Read databases
+    DatabaseReader dr(m_allAPIDs, m_NPP, getSelectedAPIDs());  // Read databases
 
     for(const auto& packetFile : m_packetFiles)
     {
@@ -126,4 +136,27 @@ void BackEnd::runDecom()
         decomEngine.init("output/" + packetFile, this);
     }
     emit finished();
+}
+
+
+/**
+ * Converts QString of APIDs to vector of integers.
+ *
+ * @return Vector containing the apids
+ */
+std::vector<uint32_t> BackEnd::getSelectedAPIDs()
+{
+    std::vector<uint32_t> apids;
+    std::string apidString = m_selectedAPIDs.toStdString();
+
+    if (apidString == "")
+        return apids;
+
+    std::vector<std::string> splitstring;
+    boost::split(splitstring, apidString, boost::is_any_of(","));
+    for(const auto& apid: splitstring)
+    {
+        apids.emplace_back(std::stoul(apid));
+    }
+    return apids;
 }
