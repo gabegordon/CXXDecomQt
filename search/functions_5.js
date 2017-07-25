@@ -5,6 +5,5 @@ var searchData=
   ['finishedh5',['finishedh5',['../class_back_end.html#a4678d2b1c09198b866161569115dbe44',1,'BackEnd']]],
   ['flush',['flush',['../classh5cpp_1_1_file.html#aa997b4a1f8d17724ba045726263280c2',1,'h5cpp::File']]],
   ['formatatms',['formatATMS',['../namespace_instrument_format.html#a74f5feb46652b587dd446f457b281da4',1,'InstrumentFormat']]],
-  ['formatinstruments',['formatInstruments',['../class_decom.html#a7106cf1a16350c085e9ee720c6be212b',1,'Decom']]],
-  ['formatomps',['formatOMPS',['../namespace_instrument_format.html#a31c8f5e7b8df9cbabc59aa11457c878d',1,'InstrumentFormat']]]
+  ['formatinstruments',['formatInstruments',['../class_decom.html#a7106cf1a16350c085e9ee720c6be212b',1,'Decom']]]
 ];

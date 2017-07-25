@@ -7,6 +7,7 @@ var searchData=
   ['set_5farray',['set_array',['../namespaceh5cpp.html#a3c235730206d45c752fd5ef5611d9171',1,'h5cpp::set_array(Attributes attrs, const std::string &amp;name, const std::vector&lt; T, A &gt; &amp;data)'],['../namespaceh5cpp.html#a6a3cd746ff7c5c55837cbb505246a3a1',1,'h5cpp::set_array(Attributes attrs, const std::string &amp;name, const T *data, hsize_t count)']]],
   ['set_5fsize',['set_size',['../classh5cpp_1_1_datatype.html#a789f985f85d95b923f6bff85d5e3b099',1,'h5cpp::Datatype']]],
   ['set_5fvariable_5fsize',['set_variable_size',['../classh5cpp_1_1_datatype.html#ad1518d54129271d107451499151208e9',1,'h5cpp::Datatype']]],
+  ['setapids',['setAPIDs',['../class_back_end.html#ac70d765171baaa9d030f2f0167fb6434',1,'BackEnd']]],
   ['setfoldername',['setFolderName',['../class_back_end.html#a0007e248da8316e42c6f07be173602f5',1,'BackEnd']]],
   ['setinactive',['setInactive',['../class_thread_safe_listener_queue.html#a45bdc71a92a65d8af0e67572af3357ae',1,'ThreadSafeListenerQueue']]],
   ['setprogress',['setProgress',['../class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b',1,'BackEnd']]],

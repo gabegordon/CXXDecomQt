@@ -16,7 +16,7 @@ var indexSectionsWithContent =
   6: "bcst",
   7: "bds",
   8: "cfilmnostu",
-  9: "cfop",
+  9: "cop",
   10: "adfgor",
   11: "cht",
   12: "chr"
