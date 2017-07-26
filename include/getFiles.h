@@ -9,11 +9,11 @@
 
 namespace getFiles
 {
-    std::vector<std::string> h5InFolder(const std::string& folder)
+    static std::vector<std::string> filesInFolder(const std::string& folder, const std::string& type)
     {
         std::vector<std::string> names;
 #ifdef _WIN32
-        std::string search_path = folder + "/*.h5";
+        std::string search_path = folder + type;
         WIN32_FIND_DATAA fd;
         void* hFind = FindFirstFileA(search_path.c_str(), &fd);
         if(hFind != INVALID_HANDLE_VALUE) {
@@ -38,7 +38,7 @@ namespace getFiles
             const std::string file_name = ent->d_name;
             const std::string full_file_name = folder + "/" + file_name;
 
-            if (file_name.back() != '5')
+            if (file_name.back() != type.back())
                 continue;
 
             if (stat(full_file_name.c_str(), &st) == -1)

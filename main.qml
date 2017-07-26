@@ -22,7 +22,7 @@ ApplicationWindow {
     BackEnd {
         id: backend
         onFinished: finishedPopup.open()
-        onFinishedh5: {
+        onFinishedDecode: {
             progressh5.close()
             apidSelect.open()
         }
@@ -183,16 +183,28 @@ ApplicationWindow {
             id: fileDialogButton
             text: "Select h5 folder"
             scale: 2
-            onClicked: fileDialog.visible = true
+            onClicked: {
+                backend.setH5()
+                fileDialog.visible = true
+            }
+        }
+
+        Button {
+            text: "Select PDS folder"
+            scale: 2
+            onClicked: {
+                backend.setPDS()
+                fileDialog.visible = true
+            }
         }
 
         Button {
             id: h5DecodeButton
-            text: "Run h5 Decode"
+            text: "Run Decom"
             scale: 2
             onClicked: {
                 progressh5.open()
-                backend.decodeh5()
+                backend.decode()
             }
         }
     }

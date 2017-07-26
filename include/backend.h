@@ -23,20 +23,22 @@ public:
 
     bool m_NPP;
 public slots:
-    void decodeh5();
+    void decode();
     void runDecom();
     void addPacketFile(const QString &packetFile);
     void removePacketFile(const QString &packetFile);
     void setFolderName(const QString& folderName);
     void setAPIDs(const QString& apids);
     void toggleAllAPIDs();
+    void setH5();
+    void setPDS();
 
 signals:
     void ofilesChanged();
     void currentFileChanged();
     void progressChanged();
     void finished();
-    void finishedh5();
+    void finishedDecode();
 
 private:
     QString m_userName;
@@ -48,6 +50,8 @@ private:
     QString m_currentFile;
     QString m_progress;
     QString m_selectedAPIDs;
+    bool m_H5;
+    bool m_PDS;
 
     std::vector<uint32_t> getSelectedAPIDs();
 };

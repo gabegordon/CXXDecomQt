@@ -4,6 +4,7 @@
 #include <boost/algorithm/string.hpp>
 #include "backend.h"
 #include "h5Decode.h"
+#include "pdsDecode.h"
 #include "DatabaseReader.h"
 #include "Decom.h"
 
@@ -14,7 +15,9 @@ BackEnd::BackEnd(QObject* parent) :
     m_folderName{},
     m_allAPIDs{false},
     m_ofiles{},
-    m_debug{false}
+    m_debug{false},
+    m_H5{false},
+    m_PDS{false}
 {}
 
 /**
@@ -34,6 +37,19 @@ void BackEnd::setAPIDs(const QString& apids)
 {
     m_selectedAPIDs = apids;
 }
+
+void BackEnd::setH5()
+{
+    m_H5 = true;
+    m_PDS = false;
+}
+
+void BackEnd::setPDS()
+{
+    m_PDS = true;
+    m_H5 = false;
+}
+
 /**
  * Given a string containing the progressbar convert to QString. Then signal and update Qt.
  *
@@ -96,19 +112,31 @@ QString BackEnd::progress()
 }
 
 /**
- * Passes user selected folder to h5Decode and parses all files in the directory.
+ * Passes user selected folder to decode and parses all files in the directory.
  */
-void BackEnd::decodeh5()
+void BackEnd::decode()
 {
     if (m_folderName == "")
         return;
+
+    std::string folderName;
 #ifdef __linux__
-    h5Decode h5Dec(m_folderName.toStdString().substr(7));  // Remove "file:///" from filename
+    folderName = m_folderName.toStdString().substr(7);  // Remove "file:///" from filename
 #else
-    h5Decode h5Dec(m_folderName.toStdString().substr(8));
+    folderName = m_folderName.toStdString().substr(8);
 #endif
-    m_ofiles = h5Dec.init(this);
-    emit finishedh5();
+
+    if(m_H5)
+    {
+        h5Decode h5Dec(folderName);
+        m_ofiles = h5Dec.init(this);
+    }
+    else
+    {
+        pdsDecode pdsDec(folderName);
+        m_ofiles = pdsDec.init(this);
+    }
+    emit finishedDecode();
     emit ofilesChanged();
 }
 
@@ -131,7 +159,8 @@ void BackEnd::runDecom()
         std::string instrument;
         if ((found = packetFile.find("-")) != std::string::npos)  // Get instrument from filename
             instrument = packetFile.substr(0, found);
-
+        else
+            instrument = "CERES";  // CERES PDS files dont have name included
         Decom decomEngine(instrument, m_debug, dr.getEntries(), m_NPP);  // Run decom
         decomEngine.init("output/" + packetFile, this);
     }

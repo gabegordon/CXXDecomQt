@@ -22,7 +22,7 @@ namespace h5 = h5cpp;
 std::set<std::string> h5Decode::init(BackEnd* backend)
 {
     std::set<std::string> outfileNames;
-    auto files = getFiles::h5InFolder(m_directory);
+    auto files = getFiles::filesInFolder(m_directory, "/*.h5");
     if(files.size() == 0)
     {
         LogFile::logError("No .h5 files found");
@@ -31,8 +31,8 @@ std::set<std::string> h5Decode::init(BackEnd* backend)
 
     backend->m_NPP = checkNPP(files.front());
     sortFiles(files);
-    // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
 
+    // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
     std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
     std::ofstream datesFile;
     datesFile.open("output/datesFile.dat");  // create a file with the first and last dates for matlab to use in creating a directory structure by SCID and date
