@@ -91,29 +91,47 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aed068b3197106af37021e506d65b0e27"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget_files.html#aed068b3197106af37021e506d65b0e27">h5InFolder</a> (const std::string &amp;folder)</td></tr>
-<tr class="separator:aed068b3197106af37021e506d65b0e27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40e21f58278aa9e75def06e718df1f69"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">filesInFolder</a> (const std::string &amp;folder, const std::string &amp;type)</td></tr>
+<tr class="separator:a40e21f58278aa9e75def06e718df1f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="aed068b3197106af37021e506d65b0e27"></a>
+<a class="anchor" id="a40e21f58278aa9e75def06e718df1f69"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;std::string&gt; getFiles::h5InFolder </td>
+          <td class="memname">static std::vector&lt;std::string&gt; getFiles::filesInFolder </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>folder</em></td><td>)</td>
+          <td class="paramname"><em>folder</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="get_files_8h_source.html#l00012">12</a> of file <a class="el" href="get_files_8h_source.html">getFiles.h</a>.</p>
 <div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        std::vector&lt;std::string&gt; names;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>        std::string search_path = folder + <span class="stringliteral">&quot;/*.h5&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>        std::string search_path = folder + type;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        WIN32_FIND_DATAA fd;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span>* hFind = FindFirstFileA(search_path.c_str(), &amp;fd);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(hFind != INVALID_HANDLE_VALUE) {</div>
@@ -138,7 +156,7 @@ Functions</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">const</span> std::string file_name = ent-&gt;d_name;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">const</span> std::string full_file_name = folder + <span class="stringliteral">&quot;/&quot;</span> + file_name;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (file_name.back() != <span class="charliteral">&#39;5&#39;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (file_name.back() != type.back())</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (stat(full_file_name.c_str(), &amp;st) == -1)</div>

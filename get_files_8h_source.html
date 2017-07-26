@@ -101,11 +101,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="namespaceget_files.html">   10</a></span>&#160;<span class="keyword">namespace </span>getFiles</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceget_files.html#aed068b3197106af37021e506d65b0e27">   12</a></span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="namespaceget_files.html#aed068b3197106af37021e506d65b0e27">h5InFolder</a>(<span class="keyword">const</span> std::string&amp; folder)</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">   12</a></span>&#160;    <span class="keyword">static</span> std::vector&lt;std::string&gt; <a class="code" href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">filesInFolder</a>(<span class="keyword">const</span> std::string&amp; folder, <span class="keyword">const</span> std::string&amp; type)</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        std::vector&lt;std::string&gt; names;</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>        std::string search_path = folder + <span class="stringliteral">&quot;/*.h5&quot;</span>;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>        std::string search_path = folder + type;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        WIN32_FIND_DATAA fd;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span>* hFind = FindFirstFileA(search_path.c_str(), &amp;fd);</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(hFind != INVALID_HANDLE_VALUE) {</div>
@@ -130,7 +130,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">const</span> std::string file_name = ent-&gt;d_name;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">const</span> std::string full_file_name = folder + <span class="stringliteral">&quot;/&quot;</span> + file_name;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (file_name.back() != <span class="charliteral">&#39;5&#39;</span>)</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (file_name.back() != type.back())</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">continue</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (stat(full_file_name.c_str(), &amp;st) == -1)</div>
@@ -148,7 +148,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span>    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="namespaceget_files_html_aed068b3197106af37021e506d65b0e27"><div class="ttname"><a href="namespaceget_files.html#aed068b3197106af37021e506d65b0e27">getFiles::h5InFolder</a></div><div class="ttdeci">std::vector&lt; std::string &gt; h5InFolder(const std::string &amp;folder)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8h_source.html#l00012">getFiles.h:12</a></div></div>
+<div class="ttc" id="namespaceget_files_html_a40e21f58278aa9e75def06e718df1f69"><div class="ttname"><a href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">getFiles::filesInFolder</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; filesInFolder(const std::string &amp;folder, const std::string &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8h_source.html#l00012">getFiles.h:12</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

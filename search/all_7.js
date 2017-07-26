@@ -4,7 +4,6 @@ var searchData=
   ['h5decode',['h5Decode',['../classh5_decode.html',1,'h5Decode'],['../classh5_decode.html#a02a09a2cdde362d29b6ac6cf8aa68cb9',1,'h5Decode::h5Decode()']]],
   ['h5decode_2ecpp',['h5Decode.cpp',['../h5_decode_8cpp.html',1,'']]],
   ['h5decode_2eh',['h5Decode.h',['../h5_decode_8h.html',1,'']]],
-  ['h5infolder',['h5InFolder',['../namespaceget_files.html#aed068b3197106af37021e506d65b0e27',1,'getFiles']]],
   ['h5traits',['h5traits',['../structh5cpp_1_1h5traits.html',1,'h5cpp']]],
   ['h5traits_3c_20char_20_2a_20_3e',['h5traits&lt; char * &gt;',['../structh5cpp_1_1h5traits_3_01char_01_5_01_4.html',1,'h5cpp']]],
   ['h5traits_3c_20char_5bn_5d_3e',['h5traits&lt; char[n]&gt;',['../structh5cpp_1_1h5traits_3_01char[n]_4.html',1,'h5cpp']]],
