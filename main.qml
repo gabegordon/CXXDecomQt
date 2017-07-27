@@ -7,7 +7,7 @@ import io.qt.backend 1.0
 ApplicationWindow {
     id: root
     width: 1200
-    height: 600
+    height: 800
     visible: true
     background: LinearGradient {
         anchors.fill: parent
@@ -42,7 +42,7 @@ ApplicationWindow {
         x: 300
         y: 133
         width: 600
-        height: 334
+        height: 501
         modal: true
         focus: true
         closePolicy: Popup.NoAutoClose
@@ -53,7 +53,7 @@ ApplicationWindow {
             }
 
             ListView {
-                width: 100; height: 100
+                width: 100; height: 400
 
                 model: backend.ofiles
                 delegate: CheckBox {
@@ -80,10 +80,10 @@ ApplicationWindow {
 
     Popup {
         id: progress
-        x: 10
-        y: 133
+        x: 11
+        y: 150
         width: 1180
-        height: 334
+        height: 467
         modal: true
         focus: true
         closePolicy: Popup.NoAutoClose
@@ -115,9 +115,9 @@ ApplicationWindow {
     Popup {
         id: progressh5
         x: 10
-        y: 133
+        y: 150
         width: 1180
-        height: 334
+        height: 467
         modal: true
         focus: true
         closePolicy: Popup.NoAutoClose
@@ -132,7 +132,7 @@ ApplicationWindow {
     Popup {
         id: apidSelect
         x: 300
-        y: 133
+        y: 233
         width: 600
         height: 334
         modal: true
@@ -174,7 +174,7 @@ ApplicationWindow {
     }
 
     Column {
-        anchors.verticalCenterOffset: 66
+        anchors.verticalCenterOffset: 0
         anchors.horizontalCenterOffset: 0
         spacing: 80
         anchors.centerIn: parent

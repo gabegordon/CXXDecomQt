@@ -336,7 +336,7 @@ DataTypes::Numeric DataDecode::getNum(const DataTypes::DataType& dtype, const st
         }
         }
 
-        if (dtype == DataTypes::SIGNED)
+        if (dtype == DataTypes::SIGNED)  // Tag for what type the union contains
             num.tag = DataTypes::Numeric::I32;
         else
             num.tag = DataTypes::Numeric::U32;

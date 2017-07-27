@@ -67,6 +67,12 @@ std::ofstream& pdsDecode::getStream(const std::string& outfilename)
     return ofile;
 }
 
+/**
+ * Gets filename from full file path string.
+ *
+ * @param filename Full file path
+ * @return Filename string
+ */
 std::string pdsDecode::getFileName(const std::string& filename)
 {
     std::vector<std::string> splitstring;
