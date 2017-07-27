@@ -209,15 +209,23 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Gets filename from full file path string.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>Full file path </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Filename string </dd></dl>
 
-<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00070">70</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    boost::split(splitstring, filename, boost::is_any_of(<span class="stringliteral">&quot;/&quot;</span>));  <span class="comment">// Split file path delimeters</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    std::string name_without_path = splitstring.back();  <span class="comment">// Name will be at the end of the path</span></div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">return</span> name_without_path.substr(0, 8);  <span class="comment">// First 8 characters is description without date</span></div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;}</div>
+<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00076">76</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    boost::split(splitstring, filename, boost::is_any_of(<span class="stringliteral">&quot;/&quot;</span>));  <span class="comment">// Split file path delimeters</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::string name_without_path = splitstring.back();  <span class="comment">// Name will be at the end of the path</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordflow">return</span> name_without_path.substr(0, 8);  <span class="comment">// First 8 characters is description without date</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -325,7 +333,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="namespaceget_files_html_a40e21f58278aa9e75def06e718df1f69"><div class="ttname"><a href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">getFiles::filesInFolder</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; filesInFolder(const std::string &amp;folder, const std::string &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8h_source.html#l00012">getFiles.h:12</a></div></div>
 <div class="ttc" id="classpds_decode_html_a11fa5e2a73302ac5d3f670c456902126"><div class="ttname"><a href="classpds_decode.html#a11fa5e2a73302ac5d3f670c456902126">pdsDecode::m_outfiles</a></div><div class="ttdeci">std::unordered_map&lt; std::string, std::ofstream &gt; m_outfiles</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8h_source.html#l00023">pdsDecode.h:23</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
-<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00070">pdsDecode.cpp:70</a></div></div>
+<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00076">pdsDecode.cpp:76</a></div></div>
 <div class="ttc" id="classpds_decode_html_a32c524a3611c40a21292e42dab956865"><div class="ttname"><a href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">pdsDecode::m_directory</a></div><div class="ttdeci">std::string m_directory</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8h_source.html#l00022">pdsDecode.h:22</a></div></div>
 <div class="ttc" id="classpds_decode_html_a8efea4cc32b92b0477124a5469002bbe"><div class="ttname"><a href="classpds_decode.html#a8efea4cc32b92b0477124a5469002bbe">pdsDecode::getStream</a></div><div class="ttdeci">std::ofstream &amp; getStream(const std::string &amp;outfilename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00060">pdsDecode.cpp:60</a></div></div>
 <div class="ttc" id="class_progress_bar_html_a9de570009a14cc9e4c78a2ee5f56430e"><div class="ttname"><a href="class_progress_bar.html#a9de570009a14cc9e4c78a2ee5f56430e">ProgressBar::Progressed</a></div><div class="ttdeci">void Progressed(const uint64_t &amp;idx_, BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8cpp_source.html#l00019">ProgressBar.cpp:19</a></div></div>
