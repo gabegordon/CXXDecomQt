@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['stripped_5ftype',['stripped_type',['../namespaceh5cpp.html#a9eb73a039ad34f3001d296f2ab19ae2d',1,'h5cpp::h5traits_of']]]
+  ['iterator',['iterator',['../structrecursive__directory__range.html#a0326cf4679994839f5998ab9f4c855e9',1,'recursive_directory_range']]]
 ];

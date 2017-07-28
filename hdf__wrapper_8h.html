@@ -408,14 +408,14 @@ type</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">inline</span> Datatype get_memtype&lt;T&gt;() \</div>
-<div class="line">{ \</div>
-<div class="line">  return Datatype::copy(tid); \</div>
-<div class="line">} \</div>
-<div class="line">template&lt;&gt; <span class="keyword">inline</span> Datatype get_disktype&lt;T&gt;()  \</div>
-<div class="line">{ \</div>
-<div class="line">  return Datatype::copy(dtid); \</div>
-<div class="line">}</div>
+<b>Value:</b><div class="fragment"><div class="line"><span class="keyword">template</span>&lt;&gt; <span class="keyword">inline</span> Datatype get_memtype&lt;T&gt;()   \</div>
+<div class="line">        {                                             \</div>
+<div class="line">            return Datatype::copy(tid);               \</div>
+<div class="line">        }                                             \</div>
+<div class="line">        template&lt;&gt; <span class="keyword">inline</span> Datatype get_disktype&lt;T&gt;()  \</div>
+<div class="line">        {                                             \</div>
+<div class="line">            return Datatype::copy(dtid);              \</div>
+<div class="line">        }</div>
 </div><!-- fragment -->
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01205">1205</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
 

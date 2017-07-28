@@ -305,12 +305,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00305">305</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;      hid_t newid = H5Tcopy(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;      <span class="keywordflow">if</span> (newid &lt; 0)</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error copying datatype&quot;</span>);</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">Datatype</a>(newid);</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;        {</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;            hid_t newid = H5Tcopy(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;            <span class="keywordflow">if</span> (newid &lt; 0)</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error copying datatype&quot;</span>);</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">Datatype</a>(newid);</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_datatype_html_a97e2346d3b5d10321f7a90f1bc4b5bd7"><div class="ttname"><a href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">h5cpp::Datatype::Datatype</a></div><div class="ttdeci">Datatype()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00303">hdf_wrapper.h:303</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -354,14 +354,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00313">313</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;    {</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;      hsize_t hdims[H5S_MAX_RANK];</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;ndims; ++i) hdims[i] = dims[i];</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;      hid_t <span class="keywordtype">id</span> = H5Tarray_create2(base.get_id(), ndims, hdims);</div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating array data type&quot;</span>);</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">Datatype</a>(<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        {</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;            hsize_t hdims[H5S_MAX_RANK];</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;ndims; ++i) hdims[i] = dims[i];</div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;            hid_t <span class="keywordtype">id</span> = H5Tarray_create2(base.get_id(), ndims, hdims);</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;            <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating array data type&quot;</span>);</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">Datatype</a>(<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_datatype_html_a97e2346d3b5d10321f7a90f1bc4b5bd7"><div class="ttname"><a href="classh5cpp_1_1_datatype.html#a97e2346d3b5d10321f7a90f1bc4b5bd7">h5cpp::Datatype::Datatype</a></div><div class="ttdeci">Datatype()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00303">hdf_wrapper.h:303</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -388,12 +388,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00332">332</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;    {</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;      <span class="keywordtype">size_t</span> s = H5Tget_size(this-&gt;<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;      <span class="keywordflow">if</span> (s == 0)</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get datatype size&quot;</span>);</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;      <span class="keywordflow">return</span> s;</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        {</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordtype">size_t</span> s = H5Tget_size(this-&gt;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;            <span class="keywordflow">if</span> (s == 0)</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot get datatype size&quot;</span>);</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <span class="keywordflow">return</span> s;</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -420,12 +420,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00340">340</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;    {</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;      htri_t res = H5Tequal(<span class="keywordtype">id</span>, other.get_id());</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;      <span class="keywordflow">if</span> (res &lt; 0)</div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot compare datatypes&quot;</span>);</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;      <span class="keywordflow">return</span> res != 0;</div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        {</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;            htri_t res = H5Tequal(<span class="keywordtype">id</span>, other.get_id());</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">if</span> (res &lt; 0)</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot compare datatypes&quot;</span>);</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            <span class="keywordflow">return</span> res != 0;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -451,11 +451,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00348">348</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;      herr_t err = H5Tlock(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>());</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;      <span class="keywordflow">if</span> (err &lt; 0)</div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error locking datatype&quot;</span>);</div>
-<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        {</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;            herr_t err = H5Tlock(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>());</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;            <span class="keywordflow">if</span> (err &lt; 0)</div>
+<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error locking datatype&quot;</span>);</div>
+<div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_object_html_a8aafdfbac1c33ca9f820b3ab12a89bde"><div class="ttname"><a href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">h5cpp::Object::get_id</a></div><div class="ttdeci">hid_t get_id() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00205">hdf_wrapper.h:205</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -483,11 +483,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00323">323</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;    {</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;      herr_t err = H5Tset_size(this-&gt;<span class="keywordtype">id</span>, s);</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;      <span class="keywordflow">if</span> (err &lt; 0)</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot set datatype size&quot;</span>);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        {</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;            herr_t err = H5Tset_size(this-&gt;<span class="keywordtype">id</span>, s);</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;            <span class="keywordflow">if</span> (err &lt; 0)</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;cannot set datatype size&quot;</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>

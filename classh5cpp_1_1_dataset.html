@@ -251,11 +251,11 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01051">1051</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;    {</div>
-<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;      this-&gt;<span class="keywordtype">id</span> = H5Dopen2(loc_id, name.c_str(), dapl_id);</div>
-<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;      <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to open dataset: &quot;</span>+name);</div>
-<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01052"></a><span class="lineno"> 1052</span>&#160;        {</div>
+<div class="line"><a name="l01053"></a><span class="lineno"> 1053</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Dopen2(loc_id, name.c_str(), dapl_id);</div>
+<div class="line"><a name="l01054"></a><span class="lineno"> 1054</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l01055"></a><span class="lineno"> 1055</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to open dataset: &quot;</span>+name);</div>
+<div class="line"><a name="l01056"></a><span class="lineno"> 1056</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -376,9 +376,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01119">1119</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;    {</div>
-<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;      <span class="keywordflow">return</span> Attributes(*<span class="keyword">this</span>);</div>
-<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01120"></a><span class="lineno"> 1120</span>&#160;        {</div>
+<div class="line"><a name="l01121"></a><span class="lineno"> 1121</span>&#160;            <span class="keywordflow">return</span> Attributes(*<span class="keyword">this</span>);</div>
+<div class="line"><a name="l01122"></a><span class="lineno"> 1122</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -433,14 +433,14 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01080">1080</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;    {</div>
-<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;      hid_t <span class="keywordtype">id</span> = H5Dcreate2(group.get_id(), name.c_str(),</div>
-<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;                            dtype.get_id(), space.get_id(),</div>
-<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                            H5P_DEFAULT, prop.get_id(), H5P_DEFAULT);</div>
-<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating dataset: &quot;</span>+name);</div>
-<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_dataset.html#a77a881283647c7a164ff765ff53b2d04">Dataset</a>(<span class="keywordtype">id</span>, internal::NoIncRC());</div>
-<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01081"></a><span class="lineno"> 1081</span>&#160;        {</div>
+<div class="line"><a name="l01082"></a><span class="lineno"> 1082</span>&#160;            hid_t <span class="keywordtype">id</span> = H5Dcreate2(group.get_id(), name.c_str(),</div>
+<div class="line"><a name="l01083"></a><span class="lineno"> 1083</span>&#160;                                  dtype.get_id(), space.get_id(),</div>
+<div class="line"><a name="l01084"></a><span class="lineno"> 1084</span>&#160;                                  H5P_DEFAULT, prop.get_id(), H5P_DEFAULT);</div>
+<div class="line"><a name="l01085"></a><span class="lineno"> 1085</span>&#160;            <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l01086"></a><span class="lineno"> 1086</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating dataset: &quot;</span>+name);</div>
+<div class="line"><a name="l01087"></a><span class="lineno"> 1087</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_dataset.html#a77a881283647c7a164ff765ff53b2d04">Dataset</a>(<span class="keywordtype">id</span>, internal::NoIncRC());</div>
+<div class="line"><a name="l01088"></a><span class="lineno"> 1088</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_a77a881283647c7a164ff765ff53b2d04"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#a77a881283647c7a164ff765ff53b2d04">h5cpp::Dataset::Dataset</a></div><div class="ttdeci">Dataset()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01077">hdf_wrapper.h:1077</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -492,9 +492,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01091">1091</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;    {</div>
-<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_dataset.html#aa5de68501f6480938baeae9f1a0ebe8d">Dataset::create</a>(group, name, get_disktype&lt;T&gt;(), space, <a class="code" href="classh5cpp_1_1_dataset.html#aebb867f960f63a99214c9e4156ec42ea">create_creation_properties</a>(space, flags));</div>
-<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01092"></a><span class="lineno"> 1092</span>&#160;        {</div>
+<div class="line"><a name="l01093"></a><span class="lineno"> 1093</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_dataset.html#aa5de68501f6480938baeae9f1a0ebe8d">Dataset::create</a>(group, name, get_disktype&lt;T&gt;(), space, <a class="code" href="classh5cpp_1_1_dataset.html#aebb867f960f63a99214c9e4156ec42ea">create_creation_properties</a>(space, flags));</div>
+<div class="line"><a name="l01094"></a><span class="lineno"> 1094</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_aebb867f960f63a99214c9e4156ec42ea"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#aebb867f960f63a99214c9e4156ec42ea">h5cpp::Dataset::create_creation_properties</a></div><div class="ttdeci">static Properties create_creation_properties(const Dataspace &amp;sp, DsCreationFlags flags)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01109">hdf_wrapper.h:1109</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_aa5de68501f6480938baeae9f1a0ebe8d"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#aa5de68501f6480938baeae9f1a0ebe8d">h5cpp::Dataset::create</a></div><div class="ttdeci">static Dataset create(Group group, const std::string &amp;name, const Datatype &amp;dtype, const Dataspace &amp;space, const Properties &amp;prop)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01080">hdf_wrapper.h:1080</a></div></div>
 </div><!-- fragment -->
@@ -533,14 +533,14 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01109">1109</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;    {</div>
-<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;      Properties prop(H5P_DATASET_CREATE);</div>
-<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;      <span class="keywordflow">if</span> (flags &amp; <a class="code" href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34aa83395a73946441922b32df2d880ce35">CREATE_DS_COMPRESSED</a>)</div>
-<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;        prop.deflate();</div>
-<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;      <span class="keywordflow">if</span> (flags &amp; <a class="code" href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34abd80e1b941df00b77d33fa06eda2424a">CREATE_DS_CHUNKED</a> || flags &amp; CREATE_DS_COMPRESSED)</div>
-<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;        prop.chunked_with_estimated_size(sp);</div>
-<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;      <span class="keywordflow">return</span> prop;</div>
-<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01110"></a><span class="lineno"> 1110</span>&#160;        {</div>
+<div class="line"><a name="l01111"></a><span class="lineno"> 1111</span>&#160;            Properties prop(H5P_DATASET_CREATE);</div>
+<div class="line"><a name="l01112"></a><span class="lineno"> 1112</span>&#160;            <span class="keywordflow">if</span> (flags &amp; <a class="code" href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34aa83395a73946441922b32df2d880ce35">CREATE_DS_COMPRESSED</a>)</div>
+<div class="line"><a name="l01113"></a><span class="lineno"> 1113</span>&#160;                prop.deflate();</div>
+<div class="line"><a name="l01114"></a><span class="lineno"> 1114</span>&#160;            <span class="keywordflow">if</span> (flags &amp; <a class="code" href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34abd80e1b941df00b77d33fa06eda2424a">CREATE_DS_CHUNKED</a> || flags &amp; CREATE_DS_COMPRESSED)</div>
+<div class="line"><a name="l01115"></a><span class="lineno"> 1115</span>&#160;                prop.chunked_with_estimated_size(sp);</div>
+<div class="line"><a name="l01116"></a><span class="lineno"> 1116</span>&#160;            <span class="keywordflow">return</span> prop;</div>
+<div class="line"><a name="l01117"></a><span class="lineno"> 1117</span>&#160;        }</div>
 <div class="ttc" id="namespaceh5cpp_html_a490c8d9159164b43aee98d117dfecb34aa83395a73946441922b32df2d880ce35"><div class="ttname"><a href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34aa83395a73946441922b32df2d880ce35">h5cpp::CREATE_DS_COMPRESSED</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01030">hdf_wrapper.h:1030</a></div></div>
 <div class="ttc" id="namespaceh5cpp_html_a490c8d9159164b43aee98d117dfecb34abd80e1b941df00b77d33fa06eda2424a"><div class="ttname"><a href="namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34abd80e1b941df00b77d33fa06eda2424a">h5cpp::CREATE_DS_CHUNKED</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01031">hdf_wrapper.h:1031</a></div></div>
 </div><!-- fragment -->
@@ -568,12 +568,12 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01124">1124</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;    {</div>
-<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;      hid_t <span class="keywordtype">id</span> = H5Dget_space(this-&gt;<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;      <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to get dataspace of dataset&quot;</span>);</div>
-<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;      <span class="keywordflow">return</span> Dataspace(<span class="keywordtype">id</span>, internal::NoIncRC());</div>
-<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01125"></a><span class="lineno"> 1125</span>&#160;        {</div>
+<div class="line"><a name="l01126"></a><span class="lineno"> 1126</span>&#160;            hid_t <span class="keywordtype">id</span> = H5Dget_space(this-&gt;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l01127"></a><span class="lineno"> 1127</span>&#160;            <span class="keywordflow">if</span> (<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l01128"></a><span class="lineno"> 1128</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to get dataspace of dataset&quot;</span>);</div>
+<div class="line"><a name="l01129"></a><span class="lineno"> 1129</span>&#160;            <span class="keywordflow">return</span> Dataspace(<span class="keywordtype">id</span>, internal::NoIncRC());</div>
+<div class="line"><a name="l01130"></a><span class="lineno"> 1130</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -599,12 +599,12 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01132">1132</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;    {</div>
-<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;      hid_t type_id = H5Dget_type(this-&gt;<span class="keywordtype">id</span>);</div>
-<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;      <span class="keywordflow">if</span> (type_id&lt;0)</div>
-<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to get type of Attribute&quot;</span>);</div>
-<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;      <span class="keywordflow">return</span> Datatype(type_id);</div>
-<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01133"></a><span class="lineno"> 1133</span>&#160;        {</div>
+<div class="line"><a name="l01134"></a><span class="lineno"> 1134</span>&#160;            hid_t type_id = H5Dget_type(this-&gt;<span class="keywordtype">id</span>);</div>
+<div class="line"><a name="l01135"></a><span class="lineno"> 1135</span>&#160;            <span class="keywordflow">if</span> (type_id&lt;0)</div>
+<div class="line"><a name="l01136"></a><span class="lineno"> 1136</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;unable to get type of Attribute&quot;</span>);</div>
+<div class="line"><a name="l01137"></a><span class="lineno"> 1137</span>&#160;            <span class="keywordflow">return</span> Datatype(type_id);</div>
+<div class="line"><a name="l01138"></a><span class="lineno"> 1138</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -649,11 +649,11 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01067">1067</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;    {</div>
-<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;      Datatype memtype = get_memtype&lt;T&gt;();</div>
-<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;      RWdataset rw(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), memtype.get_id(), memspace.get_id(), disk_space_id);</div>
-<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;      <a class="code" href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">h5traits_of&lt;T&gt;::type::read</a>(rw, data);</div>
-<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01068"></a><span class="lineno"> 1068</span>&#160;        {</div>
+<div class="line"><a name="l01069"></a><span class="lineno"> 1069</span>&#160;            Datatype memtype = get_memtype&lt;T&gt;();</div>
+<div class="line"><a name="l01070"></a><span class="lineno"> 1070</span>&#160;            RWdataset rw(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), memtype.get_id(), memspace.get_id(), disk_space_id);</div>
+<div class="line"><a name="l01071"></a><span class="lineno"> 1071</span>&#160;            <a class="code" href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">h5traits_of&lt;T&gt;::type::read</a>(rw, data);</div>
+<div class="line"><a name="l01072"></a><span class="lineno"> 1072</span>&#160;        }</div>
 <div class="ttc" id="structh5cpp_1_1h5traits_html_aad3ff66e0e713df33a34185900c38304"><div class="ttname"><a href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">h5cpp::h5traits::read</a></div><div class="ttdeci">static void read(RW &amp;rw, T *values)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01273">hdf_wrapper.h:1273</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_object_html_a8aafdfbac1c33ca9f820b3ab12a89bde"><div class="ttname"><a href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">h5cpp::Object::get_id</a></div><div class="ttdeci">hid_t get_id() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00205">hdf_wrapper.h:205</a></div></div>
 </div><!-- fragment -->
@@ -684,10 +684,10 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01141">1141</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;    {</div>
-<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;      Dataspace ds = <a class="code" href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">get_dataspace</a>();</div>
-<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;      <a class="code" href="classh5cpp_1_1_dataset.html#ae5db278664bfa6dd1aa0458daf767c50">read</a>(ds, H5S_ALL, data);</div>
-<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01142"></a><span class="lineno"> 1142</span>&#160;        {</div>
+<div class="line"><a name="l01143"></a><span class="lineno"> 1143</span>&#160;            Dataspace ds = <a class="code" href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">get_dataspace</a>();</div>
+<div class="line"><a name="l01144"></a><span class="lineno"> 1144</span>&#160;            <a class="code" href="classh5cpp_1_1_dataset.html#ae5db278664bfa6dd1aa0458daf767c50">read</a>(ds, H5S_ALL, data);</div>
+<div class="line"><a name="l01145"></a><span class="lineno"> 1145</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_a64963331184ef866472a2d9399b485b3"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">h5cpp::Dataset::get_dataspace</a></div><div class="ttdeci">Dataspace get_dataspace() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01124">hdf_wrapper.h:1124</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_ae5db278664bfa6dd1aa0458daf767c50"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#ae5db278664bfa6dd1aa0458daf767c50">h5cpp::Dataset::read</a></div><div class="ttdeci">void read(Dataspace memspace, hid_t disk_space_id, T *data) const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01067">hdf_wrapper.h:1067</a></div></div>
 </div><!-- fragment -->
@@ -734,11 +734,11 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01059">1059</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;    {</div>
-<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;      Datatype  memtype = get_memtype&lt;T&gt;();</div>
-<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;      RWdataset rw(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), memtype.get_id(), memspace.get_id(), disk_space_id);</div>
-<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;      <a class="code" href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">h5traits_of&lt;T&gt;::type::write</a>(rw, memtype, memspace, data);</div>
-<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01060"></a><span class="lineno"> 1060</span>&#160;        {</div>
+<div class="line"><a name="l01061"></a><span class="lineno"> 1061</span>&#160;            Datatype  memtype = get_memtype&lt;T&gt;();</div>
+<div class="line"><a name="l01062"></a><span class="lineno"> 1062</span>&#160;            RWdataset rw(<a class="code" href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">get_id</a>(), memtype.get_id(), memspace.get_id(), disk_space_id);</div>
+<div class="line"><a name="l01063"></a><span class="lineno"> 1063</span>&#160;            <a class="code" href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">h5traits_of&lt;T&gt;::type::write</a>(rw, memtype, memspace, data);</div>
+<div class="line"><a name="l01064"></a><span class="lineno"> 1064</span>&#160;        }</div>
 <div class="ttc" id="structh5cpp_1_1h5traits_html_a86dc33778c9bfe871377116972dbcd1e"><div class="ttname"><a href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">h5cpp::h5traits::write</a></div><div class="ttdeci">static void write(RW &amp;rw, const Datatype &amp;memtype, const Dataspace &amp;memspace, const T *values)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01268">hdf_wrapper.h:1268</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_object_html_a8aafdfbac1c33ca9f820b3ab12a89bde"><div class="ttname"><a href="classh5cpp_1_1_object.html#a8aafdfbac1c33ca9f820b3ab12a89bde">h5cpp::Object::get_id</a></div><div class="ttdeci">hid_t get_id() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00205">hdf_wrapper.h:205</a></div></div>
 </div><!-- fragment -->
@@ -785,9 +785,9 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01097">1097</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;    {</div>
-<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;      <a class="code" href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">write</a>(mem_space, file_space.get_id(), data);</div>
-<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01098"></a><span class="lineno"> 1098</span>&#160;        {</div>
+<div class="line"><a name="l01099"></a><span class="lineno"> 1099</span>&#160;            <a class="code" href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">write</a>(mem_space, file_space.get_id(), data);</div>
+<div class="line"><a name="l01100"></a><span class="lineno"> 1100</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_a7cb0dd23d6ab0c11b3a748d58654dea9"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">h5cpp::Dataset::write</a></div><div class="ttdeci">void write(Dataspace memspace, hid_t disk_space_id, const T *data)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01059">hdf_wrapper.h:1059</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -817,10 +817,10 @@ template&lt;class T &gt; </div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01103">1103</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;    {</div>
-<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;      Dataspace ds = <a class="code" href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">get_dataspace</a>();</div>
-<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;      <a class="code" href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">write</a>(ds, H5S_ALL, data);</div>
-<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l01104"></a><span class="lineno"> 1104</span>&#160;        {</div>
+<div class="line"><a name="l01105"></a><span class="lineno"> 1105</span>&#160;            Dataspace ds = <a class="code" href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">get_dataspace</a>();</div>
+<div class="line"><a name="l01106"></a><span class="lineno"> 1106</span>&#160;            <a class="code" href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">write</a>(ds, H5S_ALL, data);</div>
+<div class="line"><a name="l01107"></a><span class="lineno"> 1107</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_a64963331184ef866472a2d9399b485b3"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#a64963331184ef866472a2d9399b485b3">h5cpp::Dataset::get_dataspace</a></div><div class="ttdeci">Dataspace get_dataspace() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01124">hdf_wrapper.h:1124</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html_a7cb0dd23d6ab0c11b3a748d58654dea9"><div class="ttname"><a href="classh5cpp_1_1_dataset.html#a7cb0dd23d6ab0c11b3a748d58654dea9">h5cpp::Dataset::write</a></div><div class="ttdeci">void write(Dataspace memspace, hid_t disk_space_id, const T *data)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01059">hdf_wrapper.h:1059</a></div></div>
 </div><!-- fragment -->

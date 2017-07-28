@@ -91,11 +91,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a40e21f58278aa9e75def06e718df1f69"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget_files.html#a40e21f58278aa9e75def06e718df1f69">filesInFolder</a> (const std::string &amp;folder, const std::string &amp;type)</td></tr>
-<tr class="separator:a40e21f58278aa9e75def06e718df1f69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a713b4fb9062678985a12d9352a398193"><td class="memItemLeft" align="right" valign="top">static std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">filesInDirectory</a> (const std::string &amp;folder, const std::string &amp;type)</td></tr>
+<tr class="separator:a713b4fb9062678985a12d9352a398193"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a40e21f58278aa9e75def06e718df1f69"></a>
+<a class="anchor" id="a713b4fb9062678985a12d9352a398193"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -103,7 +103,7 @@ Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::vector&lt;std::string&gt; getFiles::filesInFolder </td>
+          <td class="memname">static std::vector&lt;std::string&gt; getFiles::filesInDirectory </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>folder</em>, </td>
@@ -126,53 +126,33 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Gets filenames of all files in a directory/subdirs with matching extension.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">folder</td><td>Folder to look in </td></tr>
+    <tr><td class="paramname">type</td><td>File extension to look for </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of matching filenames </dd></dl>
 
-<p>Definition at line <a class="el" href="get_files_8h_source.html#l00012">12</a> of file <a class="el" href="get_files_8h_source.html">getFiles.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    {</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        std::vector&lt;std::string&gt; names;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifdef _WIN32</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor"></span>        std::string search_path = folder + type;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        WIN32_FIND_DATAA fd;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <span class="keywordtype">void</span>* hFind = FindFirstFileA(search_path.c_str(), &amp;fd);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordflow">if</span>(hFind != INVALID_HANDLE_VALUE) {</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;            <span class="keywordflow">do</span> {</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="comment">// read all (real) files in current folder</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                <span class="comment">// , delete &#39;!&#39; read other 2 default folder . and ..</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="keywordflow">if</span>(! (fd.dwFileAttributes &amp; FILE_ATTRIBUTE_DIRECTORY) ) {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                    std::string ws(fd.cFileName);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;                    names.push_back(folder + <span class="stringliteral">&quot;/&quot;</span> + ws);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;                }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            }<span class="keywordflow">while</span>(::FindNextFileA(hFind, &amp;fd));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            ::FindClose(hFind);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">return</span> names;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>        DIR *dir;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keyword">class </span>dirent *ent;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">class </span>stat st;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        dir = opendir(folder.c_str());</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordflow">while</span> ((ent = readdir(dir)) != NULL) {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keyword">const</span> std::string file_name = ent-&gt;d_name;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keyword">const</span> std::string full_file_name = folder + <span class="stringliteral">&quot;/&quot;</span> + file_name;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            <span class="keywordflow">if</span> (file_name.back() != type.back())</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            <span class="keywordflow">if</span> (stat(full_file_name.c_str(), &amp;st) == -1)</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">bool</span> is_directory = (st.st_mode &amp; S_IFDIR) != 0;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (is_directory)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            names.push_back(full_file_name);</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        }</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        closedir(dir);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordflow">return</span> names;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="preprocessor"></span>    }</div>
+<p>Definition at line <a class="el" href="get_files_8h_source.html#l00027">27</a> of file <a class="el" href="get_files_8h_source.html">getFiles.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::vector&lt;std::string&gt; names;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        fs::path rootfolder(folder);</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> file : <a class="code" href="structrecursive__directory__range.html">recursive_directory_range</a>(rootfolder))</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        {</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            <span class="keywordflow">if</span> (!fs::is_directory(file))</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;            {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                <span class="keywordflow">if</span> (file.path().extension().string() == type)</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                {</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    names.emplace_back(file.path().string());</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                }</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            }</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> names;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="ttc" id="structrecursive__directory__range_html"><div class="ttname"><a href="structrecursive__directory__range.html">recursive_directory_range</a></div><div class="ttdef"><b>Definition:</b> <a href="get_files_8h_source.html#l00007">getFiles.h:7</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

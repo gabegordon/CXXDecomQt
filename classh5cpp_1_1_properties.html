@@ -187,12 +187,12 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00745">745</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                             : <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>()</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;    {</div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;      this-&gt;<span class="keywordtype">id</span> = H5Pcreate(cls_id);</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;      <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;        <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating property list&quot;</span>);</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;                               : <a class="code" href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">Object</a>()</div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;        {</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;            this-&gt;<span class="keywordtype">id</span> = H5Pcreate(cls_id);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;            <span class="keywordflow">if</span> (this-&gt;<span class="keywordtype">id</span> &lt; 0)</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error creating property list&quot;</span>);</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_object_html_ad33dd5f705b1ac71aea5361a73a3cc98"><div class="ttname"><a href="classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98">h5cpp::Object::Object</a></div><div class="ttdeci">Object()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00210">hdf_wrapper.h:210</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -231,10 +231,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00758">758</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;    {</div>
-<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;      H5Pset_chunk(this-&gt;<span class="keywordtype">id</span>, rank, dims);</div>
-<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160;        {</div>
+<div class="line"><a name="l00760"></a><span class="lineno">  760</span>&#160;            H5Pset_chunk(this-&gt;<span class="keywordtype">id</span>, rank, dims);</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;        }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -261,23 +261,23 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00764">764</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;    {</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;      hsize_t dims[H5S_MAX_RANK];</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;      <span class="keywordtype">int</span> r = sp.get_dims(dims);</div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;      hsize_t cdims[H5S_MAX_RANK];</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;r; ++i)</div>
-<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;      {</div>
-<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;        hsize_t val = dims[i];</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;        hsize_t org_val = val;</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;        val = (hsize_t)(val * 0.1);</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;        <span class="keywordflow">if</span> (val &lt; 32.)</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;          val = 32;</div>
-<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;        <span class="keywordflow">if</span> (val &gt; org_val)</div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;          val = org_val;</div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;        cdims[i] = val;</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;      }</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_properties.html#afbb8ea2a8098823295744b83051593fa">chunked</a>(r, cdims);</div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;        {</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;            hsize_t dims[H5S_MAX_RANK];</div>
+<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160;            <span class="keywordtype">int</span> r = sp.get_dims(dims);</div>
+<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;            hsize_t cdims[H5S_MAX_RANK];</div>
+<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;r; ++i)</div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;            {</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;                hsize_t val = dims[i];</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;                hsize_t org_val = val;</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;                val = (hsize_t)(val * 0.1);</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;                <span class="keywordflow">if</span> (val &lt; 32.)</div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;                    val = 32;</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;                <span class="keywordflow">if</span> (val &gt; org_val)</div>
+<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;                    val = org_val;</div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;                cdims[i] = val;</div>
+<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;            }</div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_properties.html#afbb8ea2a8098823295744b83051593fa">chunked</a>(r, cdims);</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;        }</div>
 <div class="ttc" id="classh5cpp_1_1_properties_html_afbb8ea2a8098823295744b83051593fa"><div class="ttname"><a href="classh5cpp_1_1_properties.html#afbb8ea2a8098823295744b83051593fa">h5cpp::Properties::chunked</a></div><div class="ttdeci">Properties &amp; chunked(int rank, const hsize_t *dims)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00758">hdf_wrapper.h:758</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -305,10 +305,10 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00752">752</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;    {</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;      H5Pset_deflate(this-&gt;<span class="keywordtype">id</span>, strength);</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;      <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;    };</div>
+<div class="fragment"><div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;        {</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;            H5Pset_deflate(this-&gt;<span class="keywordtype">id</span>, strength);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;            <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;        };</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -18,6 +18,6 @@ var searchData=
   ['is_5fsimple',['is_simple',['../classh5cpp_1_1_dataspace.html#a3a29b9d9901a363fee3a4414c5f5473d',1,'h5cpp::Dataspace']]],
   ['is_5fvalid',['is_valid',['../classh5cpp_1_1_object.html#afe3d65da3dda0994975e6954ed1e5ee4',1,'h5cpp::Object']]],
   ['isvalid',['isValid',['../namespace_header_decode.html#a2aea32d8f4411a2de69b62b76486bb07',1,'HeaderDecode']]],
-  ['iterator',['iterator',['../classh5cpp_1_1iterator.html#a37954e17edf83f4dcada5b0096fe5212',1,'h5cpp::iterator::iterator(hssize_t idx_, Group g_)'],['../classh5cpp_1_1iterator.html#a77f2fff4c15817fee2beac882fe48a0b',1,'h5cpp::iterator::iterator()']]],
+  ['iterator',['iterator',['../structrecursive__directory__range.html#a0326cf4679994839f5998ab9f4c855e9',1,'recursive_directory_range::iterator()'],['../classh5cpp_1_1iterator.html#a37954e17edf83f4dcada5b0096fe5212',1,'h5cpp::iterator::iterator(hssize_t idx_, Group g_)'],['../classh5cpp_1_1iterator.html#a77f2fff4c15817fee2beac882fe48a0b',1,'h5cpp::iterator::iterator()']]],
   ['iterator',['iterator',['../classh5cpp_1_1iterator.html',1,'h5cpp']]]
 ];

@@ -4,6 +4,7 @@ var searchData=
   ['read_5fdataset',['read_dataset',['../namespaceh5cpp.html#a5f843be28b0c82f8afb40a42dae5a8f1',1,'h5cpp']]],
   ['readdatabase',['readDatabase',['../class_database_reader.html#aae93efbd44b7b547dcf0153c472ada74',1,'DatabaseReader']]],
   ['readnextrow',['readNextRow',['../class_c_s_v_row.html#a14b9ac6d9ffb01a7b05ea903cfd04eeb',1,'CSVRow']]],
+  ['recursive_5fdirectory_5frange',['recursive_directory_range',['../structrecursive__directory__range.html#a67dfbfc4226f545f60233b98579d7a68',1,'recursive_directory_range']]],
   ['remove',['remove',['../classh5cpp_1_1_attributes.html#a74795aec71552d1c701ad24d9e735a77',1,'h5cpp::Attributes::remove()'],['../classh5cpp_1_1_group.html#aa114628c5f78d2fc057fe792d45a70ea',1,'h5cpp::Group::remove()']]],
   ['removepacketfile',['removePacketFile',['../class_back_end.html#af6ab079e0d97d3a6bb666f5b0259b5a0',1,'BackEnd']]],
   ['require_5fgroup',['require_group',['../classh5cpp_1_1_group.html#a06df6846e310d66487ad901f97a21548',1,'h5cpp::Group']]],

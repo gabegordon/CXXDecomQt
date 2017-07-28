@@ -6,6 +6,7 @@ var searchData=
   ['readfile_2eh',['ReadFile.h',['../_read_file_8h.html',1,'']]],
   ['readfiles',['ReadFiles',['../namespace_read_files.html',1,'']]],
   ['readnextrow',['readNextRow',['../class_c_s_v_row.html#a14b9ac6d9ffb01a7b05ea903cfd04eeb',1,'CSVRow']]],
+  ['recursive_5fdirectory_5frange',['recursive_directory_range',['../structrecursive__directory__range.html',1,'recursive_directory_range'],['../structrecursive__directory__range.html#a67dfbfc4226f545f60233b98579d7a68',1,'recursive_directory_range::recursive_directory_range()']]],
   ['remove',['remove',['../classh5cpp_1_1_attributes.html#a74795aec71552d1c701ad24d9e735a77',1,'h5cpp::Attributes::remove()'],['../classh5cpp_1_1_group.html#aa114628c5f78d2fc057fe792d45a70ea',1,'h5cpp::Group::remove()']]],
   ['removepacketfile',['removePacketFile',['../class_back_end.html#af6ab079e0d97d3a6bb666f5b0259b5a0',1,'BackEnd']]],
   ['require_5fgroup',['require_group',['../classh5cpp_1_1_group.html#a06df6846e310d66487ad901f97a21548',1,'h5cpp::Group']]],
@@ -16,6 +17,6 @@ var searchData=
   ['rw',['RW',['../classh5cpp_1_1_r_w.html',1,'h5cpp']]],
   ['rwattribute',['RWattribute',['../classh5cpp_1_1_attribute.html#a7146c975ed715981247e4aa167595f72',1,'h5cpp::Attribute::RWattribute()'],['../classh5cpp_1_1_r_wattribute.html#af7e207864d70011def7192db195d8911',1,'h5cpp::RWattribute::RWattribute()']]],
   ['rwattribute',['RWattribute',['../classh5cpp_1_1_r_wattribute.html',1,'h5cpp']]],
-  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html',1,'h5cpp']]],
-  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html#ae1a506162f089ff7f1fb8b24ce73e160',1,'h5cpp::RWdataset']]]
+  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html#ae1a506162f089ff7f1fb8b24ce73e160',1,'h5cpp::RWdataset']]],
+  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html',1,'h5cpp']]]
 ];

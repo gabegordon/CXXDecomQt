@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['end',['end',['../classh5cpp_1_1_group.html#aaa260c641c11ef1bf57c64afd694466e',1,'h5cpp::Group']]],
+  ['end',['end',['../structrecursive__directory__range.html#aeabc57e71ea33c73f4370afe0ac713fc',1,'recursive_directory_range::end()'],['../classh5cpp_1_1_group.html#aaa260c641c11ef1bf57c64afd694466e',1,'h5cpp::Group::end()']]],
   ['entry',['Entry',['../namespace_data_types.html#struct_data_types_1_1_entry',1,'DataTypes']]],
   ['exception',['Exception',['../classh5cpp_1_1_exception.html',1,'h5cpp']]],
   ['exception',['Exception',['../classh5cpp_1_1_exception.html#a80ffe595d073b120ce8ef2f79e23f1b6',1,'h5cpp::Exception::Exception(const std::string &amp;msg_)'],['../classh5cpp_1_1_exception.html#a33ed20e96d39ba8253a919582ec7b753',1,'h5cpp::Exception::Exception()']]],
