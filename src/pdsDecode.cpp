@@ -14,7 +14,7 @@ std::set<std::string> pdsDecode::init(BackEnd* backend)
 {
     std::set<std::string> outfileNames;
     std::string test = "1;";
-    std::vector<std::string> files = getFiles::filesInFolder(m_directory, "/*.PDS");
+    std::vector<std::string> files = getFiles::filesInDirectory(m_directory, ".PDS");
     if(files.size() == 0)
     {
         LogFile::logError("No .pds files found");

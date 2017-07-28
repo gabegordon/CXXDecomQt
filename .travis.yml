@@ -42,8 +42,8 @@ script:
   - wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.bz2
   - tar --bzip2 -xf boost_1_64_0.tar.bz2
   - cd boost_1_64_0
-  - ./bootstrap.sh
-  - ./b2 --with-iostreams link=static
+  - ./bootstrap.sh 
+  - ./b2 --with-system --with-filesytem --with-iostreams link=static
   - cd ..
   # Export CC and CXX to tell cmake which compiler to use
   - export CC=/usr/bin/gcc-6

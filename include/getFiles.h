@@ -1,58 +1,43 @@
 #include <vector>
 #include <string>
-#ifdef _WIN32
-#include <windows.h>
-#else
-#include <dirent.h>
-#include <sys/stat.h>
-#endif
+#include <iostream>
+#include <boost/filesystem.hpp>
+
+namespace fs = boost::filesystem;
+struct recursive_directory_range
+{
+    typedef fs::recursive_directory_iterator iterator;
+recursive_directory_range(fs::path p) : p_(p) {}
+
+    iterator begin() { return fs::recursive_directory_iterator(p_); }
+    iterator end() { return fs::recursive_directory_iterator(); }
+
+    fs::path p_;
+};
 
 namespace getFiles
 {
-    static std::vector<std::string> filesInFolder(const std::string& folder, const std::string& type)
+    /**
+     * Gets filenames of all files in a directory/subdirs with matching extension.
+     *
+     * @param folder Folder to look in
+     * @param type File extension to look for
+     * @return Vector of matching filenames
+     */
+    static std::vector<std::string> filesInDirectory(const std::string& folder, const std::string& type)
     {
         std::vector<std::string> names;
-#ifdef _WIN32
-        std::string search_path = folder + type;
-        WIN32_FIND_DATAA fd;
-        void* hFind = FindFirstFileA(search_path.c_str(), &fd);
-        if(hFind != INVALID_HANDLE_VALUE) {
-            do {
-                // read all (real) files in current folder
-                // , delete '!' read other 2 default folder . and ..
-                if(! (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) ) {
-                    std::string ws(fd.cFileName);
-                    names.push_back(folder + "/" + ws);
+        fs::path rootfolder(folder);
+        for (auto file : recursive_directory_range(rootfolder))
+        {
+            if (!fs::is_directory(file))
+            {
+                if (file.path().extension().string() == type)
+                {
+                    names.emplace_back(file.path().string());
                 }
-            }while(::FindNextFileA(hFind, &fd));
-            ::FindClose(hFind);
+            }
         }
         return names;
-#else
-        DIR *dir;
-        class dirent *ent;
-        class stat st;
-
-        dir = opendir(folder.c_str());
-        while ((ent = readdir(dir)) != NULL) {
-            const std::string file_name = ent->d_name;
-            const std::string full_file_name = folder + "/" + file_name;
-
-            if (file_name.back() != type.back())
-                continue;
-
-            if (stat(full_file_name.c_str(), &st) == -1)
-                continue;
-
-            const bool is_directory = (st.st_mode & S_IFDIR) != 0;
-
-            if (is_directory)
-                continue;
-
-            names.push_back(full_file_name);
-        }
-        closedir(dir);
-        return names;
-#endif
     }
 }

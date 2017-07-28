@@ -22,7 +22,7 @@ namespace h5 = h5cpp;
 std::set<std::string> h5Decode::init(BackEnd* backend)
 {
     std::set<std::string> outfileNames;
-    auto files = getFiles::filesInFolder(m_directory, "/*.h5");
+    auto files = getFiles::filesInDirectory(m_directory, ".h5");
     if(files.size() == 0)
     {
         LogFile::logError("No .h5 files found");

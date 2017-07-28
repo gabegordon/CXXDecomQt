@@ -26,7 +26,7 @@ find_package(HDF5 REQUIRED)
 
 #Find Boost (static)
 set(Boost_USE_STATIC_LIBS ON)
-find_package(Boost COMPONENTS iostreams REQUIRED)
+find_package(Boost COMPONENTS system filesystem iostreams REQUIRED)
 
 # Turn on automatic invocation of the MOC
 set(CMAKE_AUTOMOC ON)
@@ -38,13 +38,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra")
 include_directories(
   include
   ${QT_INCLUDE_DIR}
-  ${Boost_INCLUDE_DIR}
+  ${Boost_INCLUDE_DIRS}
   ${HDF5_INCLUDE_DIR}
   ${QT5ALL_INCLUDE_DIRS}
   )
 
 set(DECOM_LINK_LIBS
-  ${BOOST_LIBRARIES}
+  ${Boost_LIBRARIES}
   ${HDF5_LIBRARIES}
   ${QT_LIBRARIES}
   )
