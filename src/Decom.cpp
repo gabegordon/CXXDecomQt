@@ -1,17 +1,17 @@
 #include <iostream>
 #include <algorithm>
 #include <iterator>
-#include <tuple>
 #include <cstdlib>
 #include <string>
 #include <memory>
+#include <bitset>
+#include <sstream>
 #include "Decom.h"
 #include "ProgressBar.h"
 #include "ByteManipulation.h"
 #include "HeaderDecode.h"
 #include "DataDecode.h"
 #include "InstrumentFormat.h"
-#include "ThreadPoolServer.h"
 #include "ReadFile.h"
 #include "LogFile.h"
 #include "backend.h"
@@ -23,32 +23,39 @@
  * @param infile File to read from
  * @return N/A
  */
-void Decom::init(const std::string& infile, BackEnd* backend)
+
+void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue)
 {
-    m_infile.open(infile, std::ios::binary | std::ios::in);  //Open file as binary for reading
-    ReadFiles::checkFile(m_infile, infile);
-    uint64_t fileSize = getFileSize();
-    ProgressBar readProgress(fileSize, "Parsing");  // Create progress bar
-    ThreadPoolServer pool{m_instrument};  // Create thread pool that we will be passing our packets to
-    while (true)  // Loop until error or we reach end of file
+    ThreadPoolServer pool;  // Create thread pool that we will be passing our packets to
+
+    while (true)
     {
-        m_progress = m_infile.tellg();  // Get current progress
-        readProgress.Progressed(m_progress, backend);
-        if (m_infile.eof() || m_progress >= fileSize)  // If reached end of file
+        std::tuple<std::vector<uint8_t>, std::string> queueVal;
+        uint32_t retVal = queue.listen(queueVal);
+        if (retVal)
+        {
+            std::istringstream input_stream(std::string(std::begin(std::get<0>(queueVal)), std::end(std::get<0>(queueVal))));
+            int64_t fileSize = getFileSize(input_stream);
+            while (true)  // Loop until error or we reach end of file
+            {
+                m_progress = input_stream.tellg();  // Get current progress
+                if (input_stream.eof() || m_progress >= fileSize)  // If reached end of file
+                    break;
+                if (!getHeadersAndEntries(input_stream))
+                    break;
+                DataTypes::Packet pack = decodeData(input_stream, fileSize, std::get<1>(queueVal));
+
+                storeAPID(pack.apid);
+                pool.exec(std::make_unique<DataTypes::Packet>(pack), std::get<1>(queueVal));  // Push packet into our writer thread's queue
+            }
+        }
+        else
+        {
+            pool.join();  // Wait for writer threads to join
+            formatInstruments(); // Check if we need to format instrument data
             break;
-
-        if (!getHeadersAndEntries())
-            break;
-
-        DataTypes::Packet pack = decodeData();
-
-        storeAPID(pack.apid);
-        pool.exec(std::make_unique<DataTypes::Packet>(pack));  // Push packet into our writer thread's queue
+        }
     }
-
-    m_infile.close(); // Close input file
-    pool.join();  // Wait for writer threads to join
-    formatInstruments(backend); // Check if we need to format instrument data
 }
 
 /**
@@ -90,10 +97,10 @@ void Decom::getEntries(const uint32_t& APID)
  *
  * @return N/A
  */
-void Decom::formatInstruments(BackEnd* backend) const
+void Decom::formatInstruments() const
 {
     if(m_APIDs.count(528))  // 528 is ATMS science apid
-        InstrumentFormat::formatATMS(backend);
+        InstrumentFormat::formatATMS();
 }
 
 /**
@@ -112,11 +119,11 @@ void Decom::storeAPID(const uint32_t& APID)
  *
  * @return fileSize
  */
-uint64_t Decom::getFileSize()
+int64_t Decom::getFileSize(std::istringstream& buffer)
 {
-    m_infile.seekg(0, std::ios::end);  // Seek to end to get filesize
-    uint64_t fileSize = m_infile.tellg();
-    m_infile.seekg(0, std::ios::beg);
+    buffer.seekg(0, std::ios::end);  // Seek to end to get filesize
+    int64_t fileSize = buffer.tellg();
+    buffer.seekg(0, std::ios::beg);
     return fileSize;
 }
 
@@ -125,21 +132,21 @@ uint64_t Decom::getFileSize()
  *
  * @return Packet struct containing the data
  */
-DataTypes::Packet Decom::decodeData()
+DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const int64_t& fileSize, const std::string& instrument)
 {
-    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, m_instrument, m_NPP};  // Create new dataDecode object and pass headers/instrument info
+    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_NPP};  // Create new dataDecode object and pass headers/instrument info
 
-    if (m_instrument == "OMPS")  // If omps then use special function
+    if (instrument == "OMPS")  // If omps then use special function
     {
-        return dc.decodeOMPS(m_infile);
+        return dc.decodeOMPS(buffer, fileSize);
     }
     else if (std::get<0>(m_headers).sequenceFlag == DataTypes::FIRST)  // If segmented packet
     {
-        return dc.decodeDataSegmented(m_infile, false);
+        return dc.decodeDataSegmented(buffer, false);
     }
     else  // Otherwise standalone packet
     {
-        return dc.decodeData(m_infile, 0);
+        return dc.decodeData(buffer, 0);
     }
 }
 
@@ -149,9 +156,9 @@ DataTypes::Packet Decom::decodeData()
  *
  * @return False on invalid header
  */
-bool Decom::getHeadersAndEntries()
+bool Decom::getHeadersAndEntries(std::istringstream& buffer)
 {
-    m_headers = HeaderDecode::decodeHeaders(m_infile, m_debug);  // Decode headers
+    m_headers = HeaderDecode::decodeHeaders(buffer, m_debug);  // Decode headers
 
     if (!std::get<2>(m_headers))  // If header is invalid
         return false;

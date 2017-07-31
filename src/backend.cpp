@@ -3,10 +3,7 @@
 #include <algorithm>
 #include <boost/algorithm/string.hpp>
 #include "backend.h"
-#include "h5Decode.h"
-#include "pdsDecode.h"
 #include "DatabaseReader.h"
-#include "Decom.h"
 
 
 BackEnd::BackEnd(QObject* parent) :
@@ -17,7 +14,9 @@ BackEnd::BackEnd(QObject* parent) :
     m_ofiles{},
     m_debug{false},
     m_H5{false},
-    m_PDS{false}
+    m_PDS{false},
+    m_h5Dec{},
+    m_pdsDec{}
 {}
 
 /**
@@ -59,6 +58,13 @@ void BackEnd::setProgress(const std::string& prog)
 {
     m_progress = QString::fromStdString(prog);
     emit progressChanged();
+    QGuiApplication::sync();
+}
+
+void BackEnd::setCurrentFile(const std::string& filename)
+{
+    m_currentFile = QString::fromStdString(filename);
+    emit currentFileChanged();
     QGuiApplication::sync();
 }
 
@@ -114,7 +120,7 @@ QString BackEnd::progress()
 /**
  * Passes user selected folder to decode and parses all files in the directory.
  */
-void BackEnd::decode()
+void BackEnd::getFiles()
 {
     if (m_folderName == "")
         return;
@@ -128,15 +134,12 @@ void BackEnd::decode()
 
     if(m_H5)
     {
-        h5Decode h5Dec(folderName);
-        m_ofiles = h5Dec.init(this);
+        m_ofiles = m_h5Dec.getFileTypeNames(folderName, m_NPP);
     }
     else
     {
-        pdsDecode pdsDec(folderName);
-        m_ofiles = pdsDec.init(this);
+        m_ofiles = m_pdsDec.getFileTypeNames(folderName);
     }
-    emit finishedDecode();
     emit ofilesChanged();
 }
 
@@ -148,22 +151,10 @@ void BackEnd::runDecom()
     if(m_ofiles.size() == 0)
         return;
     DatabaseReader dr(m_allAPIDs, m_NPP, getSelectedAPIDs());  // Read databases
-
-    for(const auto& packetFile : m_packetFiles)
-    {
-        m_currentFile = QString::fromStdString(packetFile);
-        emit currentFileChanged();
-        QGuiApplication::sync();
-
-        size_t found;
-        std::string instrument;
-        if ((found = packetFile.find("-")) != std::string::npos)  // Get instrument from filename
-            instrument = packetFile.substr(0, found);
-        else
-            instrument = "CERES";  // CERES PDS files dont have name included
-        Decom decomEngine(instrument, m_debug, dr.getEntries(), m_NPP);  // Run decom
-        decomEngine.init("output/" + packetFile, this);
-    }
+    if (m_H5)
+        m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
+    else
+        m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
     emit finished();
 }
 

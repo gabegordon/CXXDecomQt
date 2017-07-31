@@ -19,10 +19,10 @@ bool isValid = false;
  * @param debug Print debug info flag
  * @return Tuple containing headers and valid flag
  */
-std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHeaders(std::ifstream& infile, const bool& debug)
+std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHeaders(std::istringstream& buffer, const bool& debug)
 {
-    auto ph = decodePrimary(infile, debug);
-    auto sh = decodeSecondary(infile);
+    auto ph = decodePrimary(buffer, debug);
+    auto sh = decodeSecondary(buffer);
 
     if (!isValid)
     {
@@ -51,13 +51,13 @@ void debugPrinter(const DataTypes::PrimaryHeader& ph)
  * @param debug Debug flag
  * @return PrimaryHeader struct
  */
-DataTypes::PrimaryHeader decodePrimary(std::ifstream& infile, const bool& debug)
+DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& debug)
 {
     DataTypes::PrimaryHeader ph = p_defaults;
     uint32_t firstFourBytes;
     uint16_t fifthSixByte;
-    ReadFiles::read(firstFourBytes, infile);
-    ReadFiles::read(fifthSixByte, infile);
+    ReadFiles::readBuffer(firstFourBytes, buffer);
+    ReadFiles::readBuffer(fifthSixByte, buffer);
     firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
     fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
     // Set CCSDS from bits 0-3
@@ -91,7 +91,6 @@ DataTypes::PrimaryHeader decodePrimary(std::ifstream& infile, const bool& debug)
         else
             ph.packetLength -= 8;  // Otherwise just 8 byte CCSDS time code
     }
-
     checkValidHeader(ph);
     return ph;
 }
@@ -102,7 +101,7 @@ DataTypes::PrimaryHeader decodePrimary(std::ifstream& infile, const bool& debug)
  * @param infile File to read from
  * @return SecondaryHeader struct
  */
-DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
+DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
 {
     DataTypes::SecondaryHeader sh = s_defaults;
     if (sh_flag)  // If secondary header flag is set
@@ -111,9 +110,9 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
         uint32_t millis;
         uint16_t micros;
 
-        ReadFiles::read(day, infile);
-        ReadFiles::read(millis, infile);
-        ReadFiles::read(micros, infile);
+        ReadFiles::readBuffer(day, buffer);
+        ReadFiles::readBuffer(millis, buffer);
+        ReadFiles::readBuffer(micros, buffer);
 
         sh.day = ByteManipulation::swapEndian(day);
         sh.millis = ByteManipulation::swapEndian(millis);
@@ -122,7 +121,7 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
         {
             // If first segmented packet, then bits 0-7 are segment count
             uint16_t packetSegments;
-            ReadFiles::read(packetSegments, infile);
+            ReadFiles::readBuffer(packetSegments, buffer);
             packetSegments = ByteManipulation::swapEndian(packetSegments);
             sh.segments = ByteManipulation::extract16(packetSegments, 0, 8);
         }
@@ -138,9 +137,7 @@ DataTypes::SecondaryHeader decodeSecondary(std::ifstream& infile)
  */
 void checkValidHeader(const DataTypes::PrimaryHeader& pheader)
 {
-    if (pheader.CCSDS != 0)
-        isValid = false;
-    else if (pheader.APID > 1449)
+    if (pheader.APID > 1449)
         isValid = false;
     else if (pheader.packetSequence > 16383)
         isValid = false;

@@ -1,5 +1,6 @@
 #pragma once
 #include <fstream>
+#include <sstream>
 #include "DataTypes.h"
 
 class DataDecode
@@ -30,9 +31,9 @@ class DataDecode
 
     virtual ~DataDecode() {}
 
-    DataTypes::Packet decodeData(std::ifstream& infile, const uint32_t& index);
-    DataTypes::Packet decodeDataSegmented(std::ifstream& infile, const bool omps);
-    DataTypes::Packet decodeOMPS(std::ifstream& infile);
+    DataTypes::Packet decodeData(std::istringstream& buffer, const uint32_t& index);
+    DataTypes::Packet decodeDataSegmented(std::istringstream& buffer, const bool omps);
+    DataTypes::Packet decodeOMPS(std::istringstream& buffer, const int64_t& fileSize);
 
   private:
     uint8_t m_initialByte;
@@ -54,7 +55,7 @@ class DataDecode
     float getFloat(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry);
     uint8_t getOffset();
     DataTypes::Numeric getNum(const DataTypes::DataType& dtype, const std::vector<uint8_t>& buf, const uint32_t& entryIndex);
-    DataTypes::Packet getOMPSScience(std::ifstream& infile);
+    DataTypes::Packet getOMPSScience(std::istringstream& buffer, const int64_t& fileSize);
     bool checkPackEntries(DataTypes::Packet& pack);
     void decodeOne(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);
     void decodeTwo(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);

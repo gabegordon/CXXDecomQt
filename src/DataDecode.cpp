@@ -1,8 +1,10 @@
 #include <fstream>
+#include <iostream>
 #include <tuple>
 #include <vector>
 #include <algorithm>
 #include <iterator>
+#include <boost/interprocess/streams/bufferstream.hpp>
 #include "HeaderDecode.h"
 #include "DataDecode.h"
 #include "ByteManipulation.h"
@@ -128,14 +130,14 @@ uint8_t DataDecode::getOffset()
  * @param index Index to begin from (used only in segmented packets)
  * @return Packet containing all data from binary stream
  */
-DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& index)
+DataTypes::Packet DataDecode::decodeData(std::istringstream& buffer, const uint32_t& index)
 {
     m_offset = getOffset();
 
     DataTypes::Packet pack;
 
     std::vector<uint8_t> buf(m_pHeader.packetLength);  // reserve space for bytes
-    infile.read(reinterpret_cast<char*>(buf.data()), buf.size());  // read bytes
+    buffer.read(reinterpret_cast<char*>(buf.data()), buf.size());  // read bytes
     pack.data.reserve(m_entries.size() * sizeof(DataTypes::Numeric) * 2);
 
     if (!checkPackEntries(pack))
@@ -165,7 +167,7 @@ DataTypes::Packet DataDecode::decodeData(std::ifstream& infile, const uint32_t& 
  * @param infile File to read from
  * @return Single packet containing all segmented packets
  */
-DataTypes::Packet DataDecode::decodeDataSegmented(std::ifstream& infile, const bool omps)
+DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, const bool omps)
 {
     DataTypes::Packet segPack;
 
@@ -173,14 +175,14 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::ifstream& infile, const b
         segmentLastByte = 0;
 
     getHeaderData(segPack);
-    auto pack = decodeData(infile, segmentLastByte);  // Read the data from the first packet segment
+    auto pack = decodeData(buffer, segmentLastByte);  // Read the data from the first packet segment
     segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));  // Append to back of our data vector
 
     do  // Continue getting headers and data, and appending it until we reach LAST packet segment
     {
-        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
+        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
         m_pHeader = std::get<0>(headers);
-        auto pack = decodeData(infile, segmentLastByte);
+        auto pack = decodeData(buffer, segmentLastByte);
         segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));
     } while (m_pHeader.sequenceFlag != DataTypes::LAST);
 
@@ -193,31 +195,32 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::ifstream& infile, const b
  * @param infile File to read from
  * @return Single packet containing all [segmented] packets
  */
-DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
+DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer, const int64_t& fileSize)
 {
     DataTypes::Packet segPack;
     uint16_t versionNum = 0;
     uint8_t contCount = 0;
     uint8_t contFlag = 0;
-    ReadFiles::read(versionNum, infile);
-    ReadFiles::read(contCount, infile);
-    ReadFiles::read(contFlag, infile);
+    ReadFiles::readBuffer(versionNum, buffer);
+    ReadFiles::readBuffer(contCount, buffer);
+    ReadFiles::readBuffer(contFlag, buffer);
     versionNum = ByteManipulation::swapEndian(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
+
     std::vector<uint32_t> scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  // All OMPS Science APIDs
     if (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), m_pHeader.APID) != std::end(scienceAPIDS))
-        return getOMPSScience(infile);
+        return getOMPSScience(buffer, fileSize);
 
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
     {
-        segPack = decodeData(infile, 0);
+        segPack = decodeData(buffer, 0);
     }
     else
     {
         if (!contCount)  // If contCount is not set, then do standard segmented decode
         {
-            segPack = decodeDataSegmented(infile, false);
+            segPack = decodeDataSegmented(buffer, false);
         }
         else  // Otherwise, handle super-segmented packet
         {
@@ -227,13 +230,13 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
             {
                 if (segPacketCount != 0)  //  Skip parsing headers for first packet, as we have already done so
                 {
-                    std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
+                    std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
                     m_pHeader = std::get<0>(headers);
                     m_pHeader.packetLength -= 4;
                     uint64_t ompsHeader;
-                    ReadFiles::read(ompsHeader, infile);
+                    ReadFiles::readBuffer(ompsHeader, buffer);
                 }
-                DataTypes::Packet tmpPack = decodeDataSegmented(infile, true);
+                DataTypes::Packet tmpPack = decodeDataSegmented(buffer, true);
                 segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(tmpPack.data)), std::make_move_iterator(std::end(tmpPack.data)));
                 segPacketCount++;
             }
@@ -242,7 +245,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::ifstream& infile)
     return segPack;
 }
 
-DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
+DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer, const int64_t& fileSize)
 {
     DataTypes::Packet segPack;
     uint16_t hklength = 0;
@@ -252,7 +255,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
         hklength = 143;
     std::vector<uint8_t> hkbuf(hklength);  // reserve space for bytes
     std::vector<uint8_t> scbuf;
-    infile.read(reinterpret_cast<char*>(hkbuf.data()), hkbuf.size());  // read bytes
+    buffer.read(reinterpret_cast<char*>(hkbuf.data()), hkbuf.size());  // read bytes
     getHeaderData(segPack);
 
     size_t size = m_entries.size();
@@ -264,18 +267,19 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
     }
 
     std::vector<uint8_t> tmpbuf(m_pHeader.packetLength - hklength);  // Handle first packet science manually
-    infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
+    buffer.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
     scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
 
     do  // Loop through all middle and last packets
     {
-        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(infile, m_debug);
+        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
         m_pHeader = std::get<0>(headers);
 
         std::vector<uint8_t> tmpbuf(m_pHeader.packetLength);
-        infile.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
+        buffer.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
         scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
-    } while (m_pHeader.sequenceFlag != DataTypes::LAST);
+        LogFile::logError(std::to_string(buffer.tellg()) + "," + std::to_string(fileSize));
+    } while (m_pHeader.sequenceFlag != DataTypes::LAST && buffer.tellg() < fileSize);
 
     if (!checkPackEntries(segPack))
         return segPack;
@@ -285,7 +289,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::ifstream& infile)
     for(size_t byte = 0; byte < scsize; byte += 4)
     {
         DataTypes::Numeric pixel;
-        if(byte+3 >= scsize)  // Break needed here to not go out of bounds on pad byte
+        if(byte + 3 >= scsize)  // Break needed here to not go out of bounds on pad byte
             break;
         pixel.u32 = ByteManipulation::mergeBytes(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);
         pixel.mnem = "Pixel";

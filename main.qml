@@ -94,7 +94,7 @@ ApplicationWindow {
             }
             Text {
                 text: backend.currentFile
-                font.pixelSize: 22
+                font.pixelSize: 12
             }
             Text {
                 text: backend.progress
@@ -112,22 +112,6 @@ ApplicationWindow {
         }
     }
 
-    Popup {
-        id: progressh5
-        x: 10
-        y: 150
-        width: 1180
-        height: 467
-        modal: true
-        focus: true
-        closePolicy: Popup.NoAutoClose
-        Column {
-            Text {
-                text: backend.progress
-                font.pixelSize: 22
-            }
-        }
-    }
 
     Popup {
         id: apidSelect
@@ -203,8 +187,8 @@ ApplicationWindow {
             text: "Run Decom"
             scale: 2
             onClicked: {
-                progressh5.open()
-                backend.decode()
+                backend.getFiles()
+                apidSelect.open()
             }
         }
     }

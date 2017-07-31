@@ -5,15 +5,12 @@
 #include "LogFile.h"
 #include "ReadFile.h"
 #include "ProgressBar.h"
-/**
- * Main PDS decode function. Reads all PDS's in folder and writes packet files.
- *
- * @return set of files written
- */
-std::set<std::string> pdsDecode::init(BackEnd* backend)
+#include "Decom.h"
+
+std::set<std::string> pdsDecode::getFileTypeNames(const std::string& directory)
 {
+    m_directory = directory;
     std::set<std::string> outfileNames;
-    std::string test = "1;";
     std::vector<std::string> files = getFiles::filesInDirectory(m_directory, ".PDS");
     if(files.size() == 0)
     {
@@ -21,11 +18,8 @@ std::set<std::string> pdsDecode::init(BackEnd* backend)
         exit(0);
     }
 
-    ProgressBar pbar(files.size(), "Parsing PDS");
-    uint32_t i = 0;
     for (const auto& filename : files)
     {
-        pbar.Progressed(i++, backend);
         std::ifstream infile(filename, std::ios::binary);
         uint8_t firstByte = 0;
         ReadFiles::read(firstByte, infile);
@@ -37,34 +31,57 @@ std::set<std::string> pdsDecode::init(BackEnd* backend)
         }
         else
         {
-            infile.seekg(0, std::ios::beg);  // Go back to start of the file
             std::string outfilename = getFileName(filename);
-            std::ofstream& outfile = getStream(outfilename);
-            outfile << infile.rdbuf();  // Write contents to outfile
-
             outfileNames.emplace(outfilename);
             infile.close();
         }
     }
-    for(auto& ofile : m_outfiles)
-        ofile.second.close();
     return outfileNames;
 }
 
 /**
- * Gets correct output file and returns stream.
+ * Main PDS decode function. Reads all PDS's in folder and writes packet files.
  *
- * @param outfilename Filename
- * @return ofstream reference
+ * @return set of files written
  */
-std::ofstream& pdsDecode::getStream(const std::string& outfilename)
+void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const bool& NPP)
 {
-    auto& ofile = m_outfiles[outfilename];
-    if (!ofile.is_open())
+    std::vector<std::string> files = getFiles::filesInDirectory(m_directory, ".PDS");
+    if(files.size() == 0)
     {
-        ofile.open("output/" + outfilename, std::ios::binary);
+        LogFile::logError("No .pds files found");
+        exit(0);
     }
-    return ofile;
+
+    Decom decomEngine(debug, entries, NPP);
+    std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue));
+    ProgressBar pbar(files.size(), "Parsing PDS");
+    uint32_t i = 0;
+    for (const auto& filename : files)
+    {
+        backend->setCurrentFile(filename);
+        pbar.Progressed(++i, backend);
+        std::ifstream infile(filename, std::ios::binary);
+        uint8_t firstByte = 0;
+        ReadFiles::read(firstByte, infile);
+
+        if (firstByte == 0)  // If firstbyte is zeroed then it is a header file that we can ignore.
+        {
+            continue;
+            infile.close();
+        }
+        else
+        {
+            if (std::find(std::begin(selectedFiles), std::end(selectedFiles), getFileName(filename)) != std::end(selectedFiles))
+            {
+
+                infile.seekg(0, std::ios::beg);  // Go back to start of the file
+                std::vector<uint8_t> contents((std::istreambuf_iterator<char>(infile)), std::istreambuf_iterator<char>());
+                m_queue.push(std::make_tuple(contents, "CERES"));
+            }
+            infile.close();
+        }
+    }
 }
 
 /**

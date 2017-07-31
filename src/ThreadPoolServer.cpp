@@ -13,15 +13,15 @@
  * @param apid APID for output file naming purposes
  * @return N/A
  */
-void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue& queue, const std::string& instrument, const uint32_t apid)
+void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>& queue, const std::string& instrument, const uint32_t apid)
 {
     std::ofstream outfile("output/" + instrument + "_" + std::to_string(apid) + ".txt");
     bool firstRun = true;
 
     while (true)  // Loop until return due to empty queue
     {
-        uint32_t retVal = 0;
-        auto queueVal = queue.listen(retVal);  // Listen on queue until queueVal is returned (tuple with lock and stream)
+        std::unique_ptr<DataTypes::Packet> queueVal;
+        uint32_t retVal = queue.listen(queueVal);
         if (retVal)  // retVal is 1 on success
         {
             if (firstRun)
@@ -64,7 +64,7 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue& queue, const std::str
  * @param pack unique_ptr pointing to packet
  * @return N/A
  */
-void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack)
+void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack, const std::string& instrument)
 {
     if(!pack)
     {
@@ -80,7 +80,7 @@ void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack)
     }
     else
     {
-        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, std::ref(m_queues[pack->apid]), std::ref(m_instrument), pack->apid));
+        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, std::ref(m_queues[pack->apid]), std::ref(instrument), pack->apid));
         m_queues[pack->apid].push(std::move(pack));
     }
 }

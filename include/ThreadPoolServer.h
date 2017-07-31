@@ -10,19 +10,17 @@
 class ThreadPoolServer
 {
   public:
-  ThreadPoolServer(const std::string& instrument) :
-    m_queues{},
-    m_instrument{instrument}
+  ThreadPoolServer() :
+    m_queues{}
     {}
 
     ~ThreadPoolServer() {}
 
-    void exec(std::unique_ptr<DataTypes::Packet> pack);
+    void exec(std::unique_ptr<DataTypes::Packet> pack, const std::string& instrument);
     void join();
-    void ThreadMain(ThreadSafeListenerQueue& queue, const std::string& instrument, const uint32_t apid);
+    void ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>& queue, const std::string& instrument, const uint32_t apid);
 
   private:
-    std::unordered_map<uint32_t, ThreadSafeListenerQueue> m_queues;
+    std::unordered_map<uint32_t, ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>> m_queues;
     std::vector<std::thread> m_threads;
-    std::string m_instrument;
 };

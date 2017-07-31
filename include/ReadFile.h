@@ -1,6 +1,7 @@
 #pragma once
 #include <fstream>
 #include <string>
+#include <sstream>
 #include "LogFile.h"
 
 namespace ReadFiles
@@ -14,6 +15,12 @@ namespace ReadFiles
      * @return N/A
      */
     static inline void read(T& buffer, std::ifstream& in)
+    {
+        in.read(reinterpret_cast<char *>(&buffer), sizeof(buffer));
+    }
+
+    template <typename T>
+    static inline void readBuffer(T& buffer, std::istringstream& in)
     {
         in.read(reinterpret_cast<char *>(&buffer), sizeof(buffer));
     }

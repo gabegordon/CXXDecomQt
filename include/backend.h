@@ -4,6 +4,8 @@
 #include <string>
 #include <vector>
 #include <set>
+#include "h5Decode.h"
+#include "pdsDecode.h"
 
 class BackEnd : public QObject
 {
@@ -16,6 +18,7 @@ public:
     virtual ~BackEnd() {}
 
     void setProgress(const std::string& prog);
+    void setCurrentFile(const std::string& filename);
 
     QString currentFile();
     QStringList ofiles();
@@ -23,7 +26,7 @@ public:
 
     bool m_NPP;
 public slots:
-    void decode();
+    void getFiles();
     void runDecom();
     void addPacketFile(const QString &packetFile);
     void removePacketFile(const QString &packetFile);
@@ -52,6 +55,7 @@ private:
     QString m_selectedAPIDs;
     bool m_H5;
     bool m_PDS;
-
+    h5Decode m_h5Dec;
+    pdsDecode m_pdsDec;
     std::vector<uint32_t> getSelectedAPIDs();
 };
