@@ -56,8 +56,6 @@ Preprocessing /home/travis/build/gabegordon/CXXDecomQt/src/ProgressBar.cpp...
 Parsing file /home/travis/build/gabegordon/CXXDecomQt/src/ProgressBar.cpp...
 Preprocessing /home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp...
 Parsing file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp...
-Preprocessing /home/travis/build/gabegordon/CXXDecomQt/src/ThreadSafeListenerQueue.cpp...
-Parsing file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadSafeListenerQueue.cpp...
 Preprocessing /home/travis/build/gabegordon/CXXDecomQt/include/backend.h...
 Parsing file /home/travis/build/gabegordon/CXXDecomQt/include/backend.h...
 Preprocessing /home/travis/build/gabegordon/CXXDecomQt/include/ByteManipulation.h...
@@ -157,15 +155,15 @@ Generating example documentation...
 Generating file sources...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/backend.h...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/ByteManipulation.h...
-Generating code for file /homeQGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-/travis/build/gabegordon/CXXDecomQt/include/CSVRow.h...
+Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/CSVRow.h...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/DatabaseReader.h...
-Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/DataDecode.h...
+Generating code for file /homQGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+e/travis/build/gabegordon/CXXDecomQt/include/DataDecode.h...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/DataTypes.h...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/Decom.h...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/include/getFiles.h...
@@ -194,7 +192,6 @@ Generating code for file /home/travis/build/gabegordon/CXXDecomQt/src/main.cpp..
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/src/pdsDecode.cpp...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/src/ProgressBar.cpp...
 Generating code for file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp...
-Generating code for file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadSafeListenerQueue.cpp...
 Generating file documentation...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/doxygen/control.dox...
@@ -209,27 +206,48 @@ Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/Decom.
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/getFiles.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/h5Decode.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/hdf_wrapper.h...
-Generating docs for file /home/travis/build/gabego/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:10: warning: Found unknown command `\endsection'
-/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:163: warning: The following parameters of DataDecode::decodeDataSegmented(std::ifstream &infile, const bool omps) are not documented:
-  parameter 'omps'
-/home/travis/build/gabegordon/CXXDecomQt/src/Decom.cpp:20: warning: The following parameters of Decom::init(const std::string &infile, BackEnd *backend) are not documented:
-  parameter 'backend'
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-QGDict::hashAsciiKey: Invalid null key
-rdon/CXXDecomQt/include/HeaderDecode.h...
+Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/HeaderDecode.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/InstrumentFormat.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/LogFile.h...
-Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/pdsDecode.h...
+Generating docs for file /home/travis/build/gabegordon//home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:10: warning: Found unknown command `\endsection'
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:127: warning: argument 'infile' of command @param is not found in the argument list of DataDecode::decodeData(std::istringstream &buffer, const uint32_t &index)
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:127: warning: The following parameters of DataDecode::decodeData(std::istringstream &buffer, const uint32_t &index) are not documented:
+  parameter 'buffer'
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:165: warning: argument 'infile' of command @param is not found in the argument list of DataDecode::decodeDataSegmented(std::istringstream &buffer, const bool omps)
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:165: warning: The following parameters of DataDecode::decodeDataSegmented(std::istringstream &buffer, const bool omps) are not documented:
+  parameter 'buffer'
+  parameter 'omps'
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:193: warning: argument 'infile' of command @param is not found in the argument list of DataDecode::decodeOMPS(std::istringstream &buffer, const int64_t &fileSize)
+/home/travis/build/gabegordon/CXXDecomQt/src/DataDecode.cpp:193: warning: The following parameters of DataDecode::decodeOMPS(std::istringstream &buffer, const int64_t &fileSize) are not documented:
+  parameter 'buffer'
+  parameter 'fileSize'
+/home/travis/build/gabegordon/CXXDecomQt/src/Decom.cpp:20: warning: argument 'infile' of command @param is not found in the argument list of Decom::init(ThreadSafeListenerQueue< std::tuple< std::vector< uint8_t >, std::string >> &queue)
+/home/travis/build/gabegordon/CXXDecomQt/src/Decom.cpp:20: warning: The following parameters of Decom::init(ThreadSafeListenerQueue< std::tuple< std::vector< uint8_t >, std::string >> &queue) are not documented:
+  parameter 'queue'
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+/home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp:62: warning: The following parameters of ThreadPoolServer::exec(std::unique_ptr< DataTypes::Packet > pack, const std::string &instrument) are not documented:
+  parameter 'instrument'
+/home/travis/build/gabegordon/CXXDecomQt/include/ThreadSafeListenerQueue.h:38: warning: argument 'retVal' of command @param is not found in the argument list of ThreadSafeListenerQueue< T >::listen(T &queueVal)
+/home/travis/build/gabegordon/CXXDecomQt/include/ThreadSafeListenerQueue.h:38: warning: The following parameters of ThreadSafeListenerQueue::listen(T &queueVal) are not documented:
+  parameter 'queueVal'
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+QGDict::hashAsciiKey: Invalid null key
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: The following parameters of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug) are not documented:
+  parameter 'buffer'
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: The following parameters of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug) are not documented:
+  parameter 'buffer'
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:99: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeSecondary(std::istringstream &buffer)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:99: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer) are not documented:
+  parameter 'buffer'
+CXXDecomQt/include/pdsDecode.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/ProgressBar.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/progressqueue.h...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/ReadFile.h...
@@ -249,7 +267,6 @@ Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/main.cpp..
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/pdsDecode.cpp...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/ProgressBar.cpp...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp...
-Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/src/ThreadSafeListenerQueue.cpp...
 Generating page documentation...
 Generating docs for page running...
 Generating docs for page compiling...
@@ -293,9 +310,7 @@ Generating docs for compound h5cpp::File...
 Generating docs for compound h5cpp::Dataset...
 Generating docs for compound h5cpp::h5traits...
 Generating docs for compound h5cpp::h5traits< std::string >...
-Generating docs for compound h5cpp::h5traits< char[n]>./home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:49: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
-  parameter 'backend'
-..
+Generating docs for compound h5cpp::h5traits< char[n]>...
 Generating docs for compound h5cpp::h5traits< char * >...
 Generating docs for namespace h5cpp::internal
 Generating docs for namespace HeaderDecode
@@ -321,217 +336,217 @@ Generating example index...
 finalizing index lists...
 Running dot...
 Generating dot graphs using 3 parallel threads...
-Running dot for graph 1/145
-Running dot for graph 2/145
-Running dot for graph 3/145
-Running dot for graph 4/145
-Running dot for graph 5/145
-Running dot for graph 6/145
-Running dot for graph 7/145
-Running dot for graph 8/145
-Running dot for graph 9/145
-Running dot for graph 10/145
-Running dot for graph 11/145
-Running dot for graph 12/145
-Running dot for graph 13/145
-Running dot for graph 14/145
-Running dot for graph 15/145
-Running dot for graph 16/145
-Running dot for graph 17/145
-Running dot for graph 18/145
-Running dot for graph 19/145
-Running dot for graph 20/145
-Running dot for graph 21/145
-Running dot for graph 22/145
-Running dot for graph 23/145
-Running dot for graph 24/145
-Running dot for graph 25/145
-Running dot for graph 26/145
-Running dot for graph 27/145
-Running dot for graph 28/145
-Running dot for graph 29/145
-Running dot for graph 30/145
-Running dot for graph 31/145
-Running dot for graph 32/145
-Running dot for graph 33/145
-Running dot for graph 34/145
-Running dot for graph 35/145
-Running dot for graph 36/145
-Running dot for graph 37/145
-Running dot for graph 38/145
-Running dot for graph 39/145
-Running dot for graph 40/145
-Running dot for graph 41/145
-Running dot for graph 42/145
-Running dot for graph 43/145
-Running dot for graph 44/145
-Running dot for graph 45/145
-Running dot for graph 46/145
-Running dot for graph 47/145
-Running dot for graph 48/145
-Running dot for graph 49/145
-Running dot for graph 50/145
-Running dot for graph 51/145
-Running dot for graph 52/145
-Running dot for graph 53/145
-Running dot for graph 54/145
-Running dot for graph 55/145
-Running dot for graph 56/145
-Running dot for graph 57/145
-Running dot for graph 58/145
-Running dot for graph 59/145
-Running dot for graph 60/145
-Running dot for graph 61/145
-Running dot for graph 62/145
-Running dot for graph 63/145
-Running dot for graph 64/145
-Running dot for graph 65/145
-Running dot for graph 66/145
-Running dot for graph 67/145
-Running dot for graph 68/145
-Running dot for graph 69/145
-Running dot for graph 70/145
-Running dot for graph 71/145
-Running dot for graph 72/145
-Running dot for graph 73/145
-Running dot for graph 74/145
-Running dot for graph 75/145
-Running dot for graph 76/145
-Running dot for graph 77/145
-Running dot for graph 78/145
-Running dot for graph 79/145
-Running dot for graph 80/145
-Running dot for graph 81/145
-Running dot for graph 82/145
-Running dot for graph 83/145
-Running dot for graph 84/145
-Running dot for graph 85/145
-Running dot for graph 86/145
-Running dot for graph 87/145
-Running dot for graph 88/145
-Running dot for graph 89/145
-Running dot for graph 90/145
-Running dot for graph 91/145
-Running dot for graph 92/145
-Running dot for graph 93/145
-Running dot for graph 94/145
-Running dot for graph 95/145
-Running dot for graph 96/145
-Running dot for graph 97/145
-Running dot for graph 98/145
-Running dot for graph 99/145
-Running dot for graph 100/145
-Running dot for graph 101/145
-Running dot for graph 102/145
-Running dot for graph 103/145
-Running dot for graph 104/145
-Running dot for graph 105/145
-Running dot for graph 106/145
-Running dot for graph 107/145
-Running dot for graph 108/145
-Running dot for graph 109/145
-Running dot for graph 110/145
-Running dot for graph 111/145
-Running dot for graph 112/145
-Running dot for graph 113/145
-Running dot for graph 114/145
-Running dot for graph 115/145
-Running dot for graph 116/145
-Running dot for graph 117/145
-Running dot for graph 118/145
-Running dot for graph 119/145
-Running dot for graph 120/145
-Running dot for graph 121/145
-Running dot for graph 122/145
-Running dot for graph 123/145
-Running dot for graph 124/145
-Running dot for graph 125/145
-Running dot for graph 126/145
-Running dot for graph 127/145
-Running dot for graph 128/145
-Running dot for graph 129/145
-Running dot for graph 130/145
-Running dot for graph 131/145
-Running dot for graph 132/145
-Running dot for graph 133/145
-Running dot for graph 134/145
-Running dot for graph 135/145
-Running dot for graph 136/145
-Running dot for graph 137/145
-Running dot for graph 138/145
-Running dot for graph 139/145
-Running dot for graph 140/145
-Running dot for graph 141/145
-Running dot for graph 142/145
-Running dot for graph 143/145
-Running dot for graph 144/145
-Running dot for graph 145/145
-Patching output file 1/67
-Patching output file 2/67
-Patching output file 3/67
-Patching output file 4/67
-Patching output file 5/67
-Patching output file 6/67
-Patching output file 7/67
-Patching output file 8/67
-Patching output file 9/67
-Patching output file 10/67
-Patching output file 11/67
-Patching output file 12/67
-Patching output file 13/67
-Patching output file 14/67
-Patching output file 15/67
-Patching output file 16/67
-Patching output file 17/67
-Patching output file 18/67
-Patching output file 19/67
-Patching output file 20/67
-Patching output file 21/67
-Patching output file 22/67
-Patching output file 23/67
-Patching output file 24/67
-Patching output file 25/67
-Patching output file 26/67
-Patching output file 27/67
-Patching output file 28/67
-Patching output file 29/67
-Patching output file 30/67
-Patching output file 31/67
-Patching output file 32/67
-Patching output file 33/67
-Patching output file 34/67
-Patching output file 35/67
-Patching output file 36/67
-Patching output file 37/67
-Patching output file 38/67
-Patching output file 39/67
-Patching output file 40/67
-Patching output file 41/67
-Patching output file 42/67
-Patching output file 43/67
-Patching output file 44/67
-Patching output file 45/67
-Patching output file 46/67
-Patching output file 47/67
-Patching output file 48/67
-Patching output file 49/67
-Patching output file 50/67
-Patching output file 51/67
-Patching output file 52/67
-Patching output file 53/67
-Patching output file 54/67
-Patching output file 55/67
-Patching output file 56/67
-Patching output file 57/67
-Patching output file 58/67
-Patching output file 59/67
-Patching output file 60/67
-Patching output file 61/67
-Patching output file 62/67
-Patching output file 63/67
-Patching output file 64/67
-Patching output file 65/67
-Patching output file 66/67
-Patching output file 67/67
-lookup cache used 1759/65536 hits=13508 misses=1954
+Running dot for graph 1/146
+Running dot for graph 2/146
+Running dot for graph 3/146
+Running dot for graph 4/146
+Running dot for graph 5/146
+Running dot for graph 6/146
+Running dot for graph 7/146
+Running dot for graph 8/146
+Running dot for graph 9/146
+Running dot for graph 10/146
+Running dot for graph 11/146
+Running dot for graph 12/146
+Running dot for graph 13/146
+Running dot for graph 14/146
+Running dot for graph 15/146
+Running dot for graph 16/146
+Running dot for graph 17/146
+Running dot for graph 18/146
+Running dot for graph 19/146
+Running dot for graph 20/146
+Running dot for graph 21/146
+Running dot for graph 22/146
+Running dot for graph 23/146
+Running dot for graph 24/146
+Running dot for graph 25/146
+Running dot for graph 26/146
+Running dot for graph 27/146
+Running dot for graph 28/146
+Running dot for graph 29/146
+Running dot for graph 30/146
+Running dot for graph 31/146
+Running dot for graph 32/146
+Running dot for graph 33/146
+Running dot for graph 34/146
+Running dot for graph 35/146
+Running dot for graph 36/146
+Running dot for graph 37/146
+Running dot for graph 38/146
+Running dot for graph 39/146
+Running dot for graph 40/146
+Running dot for graph 41/146
+Running dot for graph 42/146
+Running dot for graph 43/146
+Running dot for graph 44/146
+Running dot for graph 45/146
+Running dot for graph 46/146
+Running dot for graph 47/146
+Running dot for graph 48/146
+Running dot for graph 49/146
+Running dot for graph 50/146
+Running dot for graph 51/146
+Running dot for graph 52/146
+Running dot for graph 53/146
+Running dot for graph 54/146
+Running dot for graph 55/146
+Running dot for graph 56/146
+Running dot for graph 57/146
+Running dot for graph 58/146
+Running dot for graph 59/146
+Running dot for graph 60/146
+Running dot for graph 61/146
+Running dot for graph 62/146
+Running dot for graph 63/146
+Running dot for graph 64/146
+Running dot for graph 65/146
+Running dot for graph 66/146
+Running dot for graph 67/146
+Running dot for graph 68/146
+Running dot for graph 69/146
+Running dot for graph 70/146
+Running dot for graph 71/146
+Running dot for graph 72/146
+Running dot for graph 73/146
+Running dot for graph 74/146
+Running dot for graph 75/146
+Running dot for graph 76/146
+Running dot for graph 77/146
+Running dot for graph 78/146
+Running dot for graph 79/146
+Running dot for graph 80/146
+Running dot for graph 81/146
+Running dot for graph 82/146
+Running dot for graph 83/146
+Running dot for graph 84/146
+Running dot for graph 85/146
+Running dot for graph 86/146
+Running dot for graph 87/146
+Running dot for graph 88/146
+Running dot for graph 89/146
+Running dot for graph 90/146
+Running dot for graph 91/146
+Running dot for graph 92/146
+Running dot for graph 93/146
+Running dot for graph 94/146
+Running dot for graph 95/146
+Running dot for graph 96/146
+Running dot for graph 97/146
+Running dot for graph 98/146
+Running dot for graph 99/146
+Running dot for graph 100/146
+Running dot for graph 101/146
+Running dot for graph 102/146
+Running dot for graph 103/146
+Running dot for graph 104/146
+Running dot for graph 105/146
+Running dot for graph 106/146
+Running dot for graph 107/146
+Running dot for graph 108/146
+Running dot for graph 109/146
+Running dot for graph 110/146
+Running dot for graph 111/146
+Running dot for graph 112/146
+Running dot for graph 113/146
+Running dot for graph 114/146
+Running dot for graph 115/146
+Running dot for graph 116/146
+Running dot for graph 117/146
+Running dot for graph 118/146
+Running dot for graph 119/146
+Running dot for graph 120/146
+Running dot for graph 121/146
+Running dot for graph 122/146
+Running dot for graph 123/146
+Running dot for graph 124/146
+Running dot for graph 125/146
+Running dot for graph 126/146
+Running dot for graph 127/146
+Running dot for graph 128/146
+Running dot for graph 129/146
+Running dot for graph 130/146
+Running dot for graph 131/146
+Running dot for graph 132/146
+Running dot for graph 133/146
+Running dot for graph 134/146
+Running dot for graph 135/146
+Running dot for graph 136/146
+Running dot for graph 137/146
+Running dot for graph 138/146
+Running dot for graph 139/146
+Running dot for graph 140/146
+Running dot for graph 141/146
+Running dot for graph 142/146
+Running dot for graph 143/146
+Running dot for graph 144/146
+Running dot for graph 145/146
+Running dot for graph 146/146
+Patching output file 1/66
+Patching output file 2/66
+Patching output file 3/66
+Patching output file 4/66
+Patching output file 5/66
+Patching output file 6/66
+Patching output file 7/66
+Patching output file 8/66
+Patching output file 9/66
+Patching output file 10/66
+Patching output file 11/66
+Patching output file 12/66
+Patching output file 13/66
+Patching output file 14/66
+Patching output file 15/66
+Patching output file 16/66
+Patching output file 17/66
+Patching output file 18/66
+Patching output file 19/66
+Patching output file 20/66
+Patching output file 21/66
+Patching output file 22/66
+Patching output file 23/66
+Patching output file 24/66
+Patching output file 25/66
+Patching output file 26/66
+Patching output file 27/66
+Patching output file 28/66
+Patching output file 29/66
+Patching output file 30/66
+Patching output file 31/66
+Patching output file 32/66
+Patching output file 33/66
+Patching output file 34/66
+Patching output file 35/66
+Patching output file 36/66
+Patching output file 37/66
+Patching output file 38/66
+Patching output file 39/66
+Patching output file 40/66
+Patching output file 41/66
+Patching output file 42/66
+Patching output file 43/66
+Patching output file 44/66
+Patching output file 45/66
+Patching output file 46/66
+Patching output file 47/66
+Patching output file 48/66
+Patching output file 49/66
+Patching output file 50/66
+Patching output file 51/66
+Patching output file 52/66
+Patching output file 53/66
+Patching output file 54/66
+Patching output file 55/66
+Patching output file 56/66
+Patching output file 57/66
+Patching output file 58/66
+Patching output file 59/66
+Patching output file 60/66
+Patching output file 61/66
+Patching output file 62/66
+Patching output file 63/66
+Patching output file 64/66
+Patching output file 65/66
+Patching output file 66/66
+lookup cache used 1797/65536 hits=13788 misses=2002
 finished...

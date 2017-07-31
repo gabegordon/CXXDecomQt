@@ -1,6 +1,2 @@
-<map id="ThreadSafeListenerQueue" name="ThreadSafeListenerQueue">
-<area shape="rect" id="node7" href="$namespace_data_types.html#struct_data_types_1_1_packet" title="DataTypes::Packet" alt="" coords="379,429,513,456"/>
-<area shape="rect" id="node11" href="$namespace_data_types.html#struct_data_types_1_1_numeric" title="DataTypes::Numeric" alt="" coords="583,189,725,216"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="668,99,747,125"/>
-<area shape="rect" id="node14" title="STL class. " alt="" coords="645,6,771,47"/>
+<map id="ThreadSafeListenerQueue&lt; T &gt;" name="ThreadSafeListenerQueue&lt; T &gt;">
 </map>

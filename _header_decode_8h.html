@@ -95,13 +95,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;tuple&gt;</code><br/>
+<code>#include &lt;sstream&gt;</code><br/>
 <code>#include &quot;<a class="el" href="_data_types_8h_source.html">DataTypes.h</a>&quot;</code><br/>
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for HeaderDecode.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="_header_decode_8h__incl.png" border="0" usemap="#_2home_2travis_2build_2gabegordon_2_c_x_x_decom_qt_2include_2_header_decode_8h" alt=""/></div>
 <map name="_2home_2travis_2build_2gabegordon_2_c_x_x_decom_qt_2include_2_header_decode_8h" id="_2home_2travis_2build_2gabegordon_2_c_x_x_decom_qt_2include_2_header_decode_8h">
-<area shape="rect" id="node3" href="_data_types_8h.html" title="DataTypes.h" alt="" coords="97,109,193,136"/></map>
+<area shape="rect" id="node4" href="_data_types_8h.html" title="DataTypes.h" alt="" coords="174,109,271,136"/></map>
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
@@ -120,17 +121,17 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2ff0278b4d5a9712975f2c85701dacc3"><td class="memItemLeft" align="right" valign="top">std::tuple<br class="typebreak"/>
+<tr class="memitem:a0138ce6b3a08d132531ab6afff40e986"><td class="memItemLeft" align="right" valign="top">std::tuple<br class="typebreak"/>
 &lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_primary_header">DataTypes::PrimaryHeader</a>, <br class="typebreak"/>
 <a class="el" href="namespace_data_types.html#struct_data_types_1_1_secondary_header">DataTypes::SecondaryHeader</a>, <br class="typebreak"/>
-bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a2ff0278b4d5a9712975f2c85701dacc3">HeaderDecode::decodeHeaders</a> (std::ifstream &amp;infile, const bool &amp;debug)</td></tr>
-<tr class="separator:a2ff0278b4d5a9712975f2c85701dacc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a0138ce6b3a08d132531ab6afff40e986">HeaderDecode::decodeHeaders</a> (std::istringstream &amp;buffer, const bool &amp;debug)</td></tr>
+<tr class="separator:a0138ce6b3a08d132531ab6afff40e986"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a716446f47a31715229951152dda40859"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a716446f47a31715229951152dda40859">HeaderDecode::debugPrinter</a> (const <a class="el" href="namespace_data_types.html#struct_data_types_1_1_primary_header">DataTypes::PrimaryHeader</a> &amp;ph)</td></tr>
 <tr class="separator:a716446f47a31715229951152dda40859"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad07b050c7682b13f3c036d5ca9b83b8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_primary_header">DataTypes::PrimaryHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#ad07b050c7682b13f3c036d5ca9b83b8a">HeaderDecode::decodePrimary</a> (std::ifstream &amp;infile, const bool &amp;debug)</td></tr>
-<tr class="separator:ad07b050c7682b13f3c036d5ca9b83b8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c11de70125ef12fe3aca4fce9382b16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_secondary_header">DataTypes::SecondaryHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a4c11de70125ef12fe3aca4fce9382b16">HeaderDecode::decodeSecondary</a> (std::ifstream &amp;infile)</td></tr>
-<tr class="separator:a4c11de70125ef12fe3aca4fce9382b16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23c560b144808e48a1f18e94033457d2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_primary_header">DataTypes::PrimaryHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a23c560b144808e48a1f18e94033457d2">HeaderDecode::decodePrimary</a> (std::istringstream &amp;buffer, const bool &amp;debug)</td></tr>
+<tr class="separator:a23c560b144808e48a1f18e94033457d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95380617c09cc5a1a0d83afe2ac56130"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_secondary_header">DataTypes::SecondaryHeader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#a95380617c09cc5a1a0d83afe2ac56130">HeaderDecode::decodeSecondary</a> (std::istringstream &amp;buffer)</td></tr>
+<tr class="separator:a95380617c09cc5a1a0d83afe2ac56130"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad5d2f691de2e3d775a26c52ac3f346f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_header_decode.html#ad5d2f691de2e3d775a26c52ac3f346f9">HeaderDecode::checkValidHeader</a> (const <a class="el" href="namespace_data_types.html#struct_data_types_1_1_primary_header">DataTypes::PrimaryHeader</a> &amp;pheader)</td></tr>
 <tr class="separator:ad5d2f691de2e3d775a26c52ac3f346f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
