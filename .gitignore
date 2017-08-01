@@ -74,3 +74,4 @@ build/*
 .projectile
 doxygen/config2
 doxygen/html
+test

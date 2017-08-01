@@ -6,19 +6,11 @@ project(CXXDecomQt)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_BUILD_TYPE release)
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra -Ofast -flto -march=native")
+SET(CMAKE_EXE_LINKER_FLAGS_RELEASE "${CMAKE_EXE_LINKER_FLAGS} -flto")
 # Generate compile commands for IDE autocomplete
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(EXECUTABLE_OUTPUT_PATH "bin")
-
-if(MINGW AND ${CMAKE_HOST_UNIX})
-  option(STATIC_QT "Use static Qt5 libraries" ON)
-endif()
-
-if(STATIC_QT)
-  set(LINKER_FLAGS -static -static-libstdc++ -static-libgcc)
-  find_package(PkgConfig REQUIRED)
-  find_package(Qt5WinExtras REQUIRED)
-endif()
 
 set(QT5_PKGS Core Qml Gui Quick QuickControls2)
 
@@ -28,19 +20,7 @@ set(QT5_LIBS "")
 foreach(pkg ${QT5_PKGS})
   find_package(Qt5${pkg} REQUIRED)
   list(APPEND QT5_LIBS Qt5::${pkg})
-  if(STATIC_QT)
-    pkg_check_modules(QT5ALL Qt5Core Qt5Qml Qt5Gui Qt5Quick Qt5QuickControls2 Qt5WinExtras)
-  endif()
 endforeach()
-
-#Get platform support libs
-if(STATIC_QT)
-  set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
-  find_package(Qt5ThemeSupport REQUIRED)
-  find_package(Qt5FontDatabaseSupport REQUIRED)
-  find_package(Qt5EventDispatcherSupport REQUIRED)
-  find_package(Freetype REQUIRED)
-endif()
 
 #Find HDF5 Library
 find_package(HDF5 REQUIRED)
@@ -54,18 +34,11 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra")
-
-if(WIN32)
-  set(EXE_TYPE WIN32)
-endif()
-
 include_directories(
   include
   ${QT_INCLUDE_DIR}
   ${Boost_INCLUDE_DIRS}
   ${HDF5_INCLUDE_DIR}
-  ${QT5ALL_INCLUDE_DIRS}
   )
 
 set(DECOM_LINK_LIBS
@@ -74,23 +47,8 @@ set(DECOM_LINK_LIBS
   ${QT_LIBRARIES}
   )
 
-set(QT5PLATFORMSUPPORT_LIBS
-  Qt5FontDatabaseSupport::Qt5FontDatabaseSupport
-  Qt5ThemeSupport::Qt5ThemeSupport
-  Qt5EventDispatcherSupport::Qt5EventDispatcherSupport
-  ${Qt5FbSupport_LIB}
-  ${FREETYPE_LIBRARIES}
-  )
-
-if(STATIC_QT)
-  list(APPEND DECOM_LINK_LIBS Qt5::QWindowsIntegrationPlugin)
-  list(APPEND DECOM_LINK_LIBS ${QT5ALL_LIBRARIES})
-  list(APPEND DECOM_LINK_LIBS ${QT5ALL_LDFLAGS})
-  list(APPEND DECOM_LINK_LIBS ${QT5PLATFORMSUPPORT_LIBS})
-endif()
-
 file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.hpp")
-add_executable(${PROJECT_NAME} ${EXE_TYPE} "qml.qrc" ${SOURCES} ${INCLUDES})
+add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 
 target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)

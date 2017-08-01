@@ -59,6 +59,11 @@ class ThreadSafeListenerQueue
         return 1;
     }
 
+    size_t size()
+    {
+        return q.size();
+    }
+
 /**
  * Sets member variable m_active to false. This causes threads to terminate once queue becomes empty.
  *

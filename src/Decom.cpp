@@ -28,6 +28,7 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
     {
         std::tuple<std::vector<uint8_t>, std::string> queueVal;
         uint32_t retVal = queue->listen(queueVal);  // Listen on queue until we receieve data from h5Decode
+        backend->setProgress("Items left in Queue: " + std::to_string(queue->size()));
         if (retVal)
         {
             std::istringstream input_stream;
