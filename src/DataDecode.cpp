@@ -184,7 +184,7 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, co
         m_pHeader = std::get<0>(headers);
         auto pack = decodeData(buffer, segmentLastByte);
         segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));
-    } while (m_pHeader.sequenceFlag != DataTypes::LAST);
+    } while (m_pHeader.sequenceFlag != DataTypes::LAST && !buffer.eof());
 
     return segPack;  // Return one packet containing all the data from segmented packets
 }
@@ -195,7 +195,7 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, co
  * @param infile File to read from
  * @return Single packet containing all [segmented] packets
  */
-DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer, const int64_t& fileSize)
+DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
 {
     DataTypes::Packet segPack;
     uint16_t versionNum = 0;
@@ -210,7 +210,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer, const int64
 
     std::vector<uint32_t> scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  // All OMPS Science APIDs
     if (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), m_pHeader.APID) != std::end(scienceAPIDS))
-        return getOMPSScience(buffer, fileSize);
+        return getOMPSScience(buffer);
 
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
     {
@@ -226,7 +226,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer, const int64
         {
             uint16_t segPacketCount = 0;
             segmentLastByte = 0;
-            while (segPacketCount != contCount + 1)
+            while (segPacketCount != contCount + 1 && !buffer.eof())
             {
                 if (segPacketCount != 0)  //  Skip parsing headers for first packet, as we have already done so
                 {
@@ -245,7 +245,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer, const int64
     return segPack;
 }
 
-DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer, const int64_t& fileSize)
+DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 {
     DataTypes::Packet segPack;
     uint16_t hklength = 0;
@@ -278,8 +278,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer, const i
         std::vector<uint8_t> tmpbuf(m_pHeader.packetLength);
         buffer.read(reinterpret_cast<char*>(tmpbuf.data()), tmpbuf.size());  // read bytes
         scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));
-        LogFile::logError(std::to_string(buffer.tellg()) + "," + std::to_string(fileSize));
-    } while (m_pHeader.sequenceFlag != DataTypes::LAST && buffer.tellg() < fileSize);
+    } while (m_pHeader.sequenceFlag != DataTypes::LAST && !buffer.eof());
 
     if (!checkPackEntries(segPack))
         return segPack;

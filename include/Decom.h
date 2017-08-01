@@ -26,14 +26,14 @@ class Decom
     {};
     virtual ~Decom() {}
 
-    void init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue);
+    void init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue, BackEnd* backend);
 
   private:
     void getEntries(const uint32_t& APID);
-    void formatInstruments() const;
+    void formatInstruments(BackEnd* backend) const;
     void storeAPID(const uint32_t& APID);
     int64_t getFileSize(std::istringstream& buffer);
-    DataTypes::Packet decodeData(std::istringstream& buffer, const int64_t& fileSize, const std::string& instrument);
+    DataTypes::Packet decodeData(std::istringstream& buffer, const std::string& instrument);
     bool getHeadersAndEntries(std::istringstream& buffer);
 
     std::unordered_map<uint32_t, std::vector<DataTypes::Entry>> m_mapEntries;

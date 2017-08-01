@@ -65,7 +65,8 @@ void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFi
     sortFiles(files);
 
     Decom decomEngine(debug, entries, NPP);
-    std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue));
+    std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue), backend);
+    decomThread.detach();
     ProgressBar pbar(files.size(), "Parsing h5");
     uint32_t i = 0;
     for (const auto& filename : files)
@@ -103,8 +104,8 @@ void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFi
         }
         h5File.close();
     }
+    backend->setProgress("Waiting for writer threads to finish.");
     m_queue.setInactive();
-    decomThread.join();
 }
 
 /**

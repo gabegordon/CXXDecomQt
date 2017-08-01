@@ -49,10 +49,11 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
  * @param buf Buffer of atms_pack read in from output file
  * @return N/A
  */
-void writeChans(const std::vector<atms_pack>& buf)
+void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
 {
     uint64_t i = 0;
     uint64_t bufSize = buf.size();
+    ProgressBar writeProgress(bufSize, "Write ATMS");
 
     std::vector<out_pack> outpacks(22);  // Create vector of outpackets (1 for each ATMS channel)
     std::vector<float> scans(104);   // Create vector for scan angles (104 per complete scan)
@@ -60,6 +61,7 @@ void writeChans(const std::vector<atms_pack>& buf)
 
     while (i < bufSize)  // Loop until we reach end of buffer
     {
+        writeProgress.Progressed(i, backend);
         uint8_t packCounter = 0;
 
         for (auto& pack : outpacks)  // Add time info to outpacks
@@ -122,18 +124,23 @@ void writeChans(const std::vector<atms_pack>& buf)
  *
  * @return N/A
  */
-void formatATMS()
+void formatATMS(BackEnd* backend)
 {
     CSVRow atms_row;
     std::ifstream m_infile;
-    m_infile.open("output/ATMS_528.txt");
+    m_infile.open("output/ATMS_528.txt", std::ios::ate);
     ReadFiles::checkFile(m_infile, "output/ATMS_528.txt");
+
+    uint64_t fileSize = m_infile.tellg();
+    m_infile.seekg(0, std::ios::beg);  // Seek to beginning because we opened at end
+    ProgressBar readProgress(fileSize, "Read ATMS");
 
     bool firstRow = true;
     std::vector<atms_pack> buf;
 
     while (m_infile >> atms_row)  // Read rows into atms_pack structs
     {
+        readProgress.Progressed(m_infile.tellg(), backend);
         if (firstRow)
         {
             firstRow = false;
@@ -152,7 +159,7 @@ void formatATMS()
         }
         buf.emplace_back(pack);
     }
-    writeChans(buf);
+    writeChans(buf, backend);
 }
 
 }

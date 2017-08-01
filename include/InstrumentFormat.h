@@ -1,5 +1,6 @@
+#include "backend.h"
 
 namespace InstrumentFormat
 {
-    void formatATMS();
+    void formatATMS(BackEnd* backend);
 }

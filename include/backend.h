@@ -1,3 +1,5 @@
+#pragma once
+
 #include <QObject>
 #include <QString>
 #include <QStringList>
@@ -19,6 +21,7 @@ public:
 
     void setProgress(const std::string& prog);
     void setCurrentFile(const std::string& filename);
+    void setFinished();
 
     QString currentFile();
     QStringList ofiles();
@@ -41,7 +44,6 @@ signals:
     void currentFileChanged();
     void progressChanged();
     void finished();
-    void finishedDecode();
 
 private:
     QString m_userName;

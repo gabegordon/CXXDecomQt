@@ -24,7 +24,7 @@
  * @return N/A
  */
 
-void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue)
+void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue, BackEnd* backend)
 {
     ThreadPoolServer pool;  // Create thread pool that we will be passing our packets to
 
@@ -41,9 +41,9 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
                 m_progress = input_stream.tellg();  // Get current progress
                 if (input_stream.eof() || m_progress >= fileSize)  // If reached end of file
                     break;
-                if (!getHeadersAndEntries(input_stream))
+                if (!getHeadersAndEntries(input_stream))  // If invalid header
                     break;
-                DataTypes::Packet pack = decodeData(input_stream, fileSize, std::get<1>(queueVal));
+                DataTypes::Packet pack = decodeData(input_stream, std::get<1>(queueVal));
 
                 storeAPID(pack.apid);
                 pool.exec(std::make_unique<DataTypes::Packet>(pack), std::get<1>(queueVal));  // Push packet into our writer thread's queue
@@ -52,7 +52,8 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
         else
         {
             pool.join();  // Wait for writer threads to join
-            formatInstruments(); // Check if we need to format instrument data
+            formatInstruments(backend); // Check if we need to format instrument data
+            backend->setFinished();
             break;
         }
     }
@@ -97,10 +98,10 @@ void Decom::getEntries(const uint32_t& APID)
  *
  * @return N/A
  */
-void Decom::formatInstruments() const
+void Decom::formatInstruments(BackEnd* backend) const
 {
     if(m_APIDs.count(528))  // 528 is ATMS science apid
-        InstrumentFormat::formatATMS();
+        InstrumentFormat::formatATMS(backend);
 }
 
 /**
@@ -132,13 +133,13 @@ int64_t Decom::getFileSize(std::istringstream& buffer)
  *
  * @return Packet struct containing the data
  */
-DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const int64_t& fileSize, const std::string& instrument)
+DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::string& instrument)
 {
     DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_NPP};  // Create new dataDecode object and pass headers/instrument info
 
     if (instrument == "OMPS")  // If omps then use special function
     {
-        return dc.decodeOMPS(buffer, fileSize);
+        return dc.decodeOMPS(buffer);
     }
     else if (std::get<0>(m_headers).sequenceFlag == DataTypes::FIRST)  // If segmented packet
     {

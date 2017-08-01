@@ -61,6 +61,11 @@ void BackEnd::setProgress(const std::string& prog)
     QGuiApplication::sync();
 }
 
+void BackEnd::setFinished()
+{
+    emit finished();
+}
+
 void BackEnd::setCurrentFile(const std::string& filename)
 {
     m_currentFile = QString::fromStdString(filename);
@@ -155,7 +160,6 @@ void BackEnd::runDecom()
         m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
     else
         m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
-    emit finished();
 }
 
 

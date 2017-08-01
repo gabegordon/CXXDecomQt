@@ -33,7 +33,7 @@ class DataDecode
 
     DataTypes::Packet decodeData(std::istringstream& buffer, const uint32_t& index);
     DataTypes::Packet decodeDataSegmented(std::istringstream& buffer, const bool omps);
-    DataTypes::Packet decodeOMPS(std::istringstream& buffer, const int64_t& fileSize);
+    DataTypes::Packet decodeOMPS(std::istringstream& buffer);
 
   private:
     uint8_t m_initialByte;
@@ -55,7 +55,7 @@ class DataDecode
     float getFloat(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry);
     uint8_t getOffset();
     DataTypes::Numeric getNum(const DataTypes::DataType& dtype, const std::vector<uint8_t>& buf, const uint32_t& entryIndex);
-    DataTypes::Packet getOMPSScience(std::istringstream& buffer, const int64_t& fileSize);
+    DataTypes::Packet getOMPSScience(std::istringstream& buffer);
     bool checkPackEntries(DataTypes::Packet& pack);
     void decodeOne(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);
     void decodeTwo(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num);

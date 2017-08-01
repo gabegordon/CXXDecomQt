@@ -22,10 +22,6 @@ ApplicationWindow {
     BackEnd {
         id: backend
         onFinished: finishedPopup.open()
-        onFinishedDecode: {
-            progressh5.close()
-            apidSelect.open()
-        }
     }
 
     Label {
