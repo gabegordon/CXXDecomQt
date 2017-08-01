@@ -27,7 +27,6 @@ public:
     QStringList ofiles();
     QString progress();
 
-    bool m_NPP;
 public slots:
     void getFiles();
     void runDecom();
@@ -60,4 +59,5 @@ private:
     h5Decode m_h5Dec;
     pdsDecode m_pdsDec;
     std::vector<uint32_t> getSelectedAPIDs();
+    DataTypes::SCType m_type;
 };

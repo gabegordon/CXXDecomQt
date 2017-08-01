@@ -135,7 +135,7 @@ int64_t Decom::getFileSize(std::istringstream& buffer)
  */
 DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::string& instrument)
 {
-    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_NPP};  // Create new dataDecode object and pass headers/instrument info
+    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_type};  // Create new dataDecode object and pass headers/instrument info
 
     if (instrument == "OMPS")  // If omps then use special function
     {

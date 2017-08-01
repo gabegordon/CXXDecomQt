@@ -16,7 +16,7 @@
 
 namespace h5 = h5cpp;
 
-std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, bool& NPP)
+std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, DataTypes::SCType& type)
 {
     m_directory = directory;
     std::set<std::string> outfileNames;
@@ -38,7 +38,7 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, b
         }
     }
 
-    NPP = checkNPP(files.front());
+    type = checkType(files.front());
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
     std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
     std::ofstream datesFile;
@@ -54,7 +54,7 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, b
  *
  * @return set of files written
  */
-void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const bool& NPP)
+void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
 {
     auto files = getFiles::filesInDirectory(m_directory, ".h5");
     if(files.size() == 0)
@@ -64,7 +64,7 @@ void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFi
     }
     sortFiles(files);
 
-    Decom decomEngine(debug, entries, NPP);
+    Decom decomEngine(debug, entries, type);
     std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue), backend);
     decomThread.detach();
     ProgressBar pbar(files.size(), "Parsing h5");
@@ -158,12 +158,18 @@ void h5Decode::sortFiles(std::vector<std::string>& files)
     std::sort(std::begin(files), std::end(files), sortLambda);
 }
 
-bool h5Decode::checkNPP(const std::string& filename)
+DataTypes::SCType h5Decode::checkType(const std::string& filename)
 {
     std::vector<std::string> splitstring;
     boost::split(splitstring, filename, boost::is_any_of("_"));
     if(splitstring.at(1) == "npp")
-        return true;
+        return DataTypes::SCType::NPP;
+    else if(splitstring.at(1) == "j01")
+        return DataTypes::SCType::J1;
+    else if(splitstring.at(1) == "j02")
+        return DataTypes::SCType::J2;
+    else if(splitstring.at(1) == "j03")
+        return DataTypes::SCType::J3;
     else
-        return false;
+        return DataTypes::SCType::J4;
 }

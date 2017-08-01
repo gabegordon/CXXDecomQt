@@ -6,12 +6,12 @@
 class DatabaseReader
 {
   public:
-  DatabaseReader(const bool& allAPIDs, const bool& NPP, const std::vector<uint32_t>& selectedAPIDs) :
+  DatabaseReader(const bool& allAPIDs, const DataTypes::SCType& type, const std::vector<uint32_t>& selectedAPIDs) :
     m_APIDs{selectedAPIDs},
     m_entries{},
     m_firstRun{true},
     m_allAPIDs{allAPIDs},
-    m_NPP{NPP}
+    m_type{type}
     {
         init();
     };
@@ -25,7 +25,7 @@ class DatabaseReader
     std::vector<std::string> m_skip = {"PVNO", "PPTYPE", "PSHDF", "PID", "PSEGF", "PSCNT", "PLEN", "PTDAY", "PTMS", "PTUS", "ORCV", "OVER", "OTCNT", "OTFLG", "C_RDR_VER", "C_CONT_COUNT", "C_CONT_FLAG", "C_VERSION", "C_TYPE", "C_APID", "C_GRP_FLAGS", "C_2HDR_FLAG", "C_SEQ_COUNT", "C_PKT_LEN", "C_DOY", "C_MSEC", "C_USEC", "CPID", "CKTTIMEDY", "CKTTIMEML", "CKTTIMEMC"};
     bool m_firstRun;
     bool m_allAPIDs;
-    bool m_NPP;
+    DataTypes::SCType m_type;
 
     void init();
     void readDatabase(const std::string& filename);

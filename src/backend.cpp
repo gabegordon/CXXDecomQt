@@ -8,7 +8,6 @@
 
 BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
-    m_NPP{false},
     m_folderName{},
     m_allAPIDs{false},
     m_ofiles{},
@@ -16,7 +15,8 @@ BackEnd::BackEnd(QObject* parent) :
     m_H5{false},
     m_PDS{false},
     m_h5Dec{},
-    m_pdsDec{}
+    m_pdsDec{},
+    m_type{DataTypes::SCType::J1}
 {}
 
 /**
@@ -139,7 +139,7 @@ void BackEnd::getFiles()
 
     if(m_H5)
     {
-        m_ofiles = m_h5Dec.getFileTypeNames(folderName, m_NPP);
+        m_ofiles = m_h5Dec.getFileTypeNames(folderName, m_type);
     }
     else
     {
@@ -155,11 +155,11 @@ void BackEnd::runDecom()
 {
     if(m_ofiles.size() == 0)
         return;
-    DatabaseReader dr(m_allAPIDs, m_NPP, getSelectedAPIDs());  // Read databases
+    DatabaseReader dr(m_allAPIDs, m_type, getSelectedAPIDs());  // Read databases
     if (m_H5)
-        m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
+        m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type);
     else
-        m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_NPP);
+        m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type);
 }
 
 

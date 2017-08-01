@@ -249,10 +249,24 @@ DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 {
     DataTypes::Packet segPack;
     uint16_t hklength = 0;
-    if(m_NPP)  // NPP HK length
-        hklength = 151;
-    else  // J-1 HK length
-        hklength = 143;
+    switch (m_type)
+    {
+    case DataTypes::SCType::NPP:
+    {
+        hklength = 151;  // NPP HK length
+        break;
+    }
+    case DataTypes::SCType::J1:
+    {
+        hklength = 143;  // J-1 HK length
+        break;
+    }
+    default:
+    {
+        hklength = 143;  // Add future lengths here
+    }
+    }
+
     std::vector<uint8_t> hkbuf(hklength);  // reserve space for bytes
     std::vector<uint8_t> scbuf;
     buffer.read(reinterpret_cast<char*>(hkbuf.data()), hkbuf.size());  // read bytes

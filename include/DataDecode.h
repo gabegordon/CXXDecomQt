@@ -14,7 +14,7 @@ class DataDecode
         FOUR
     };
 
-  DataDecode(const DataTypes::PrimaryHeader& ph, const DataTypes::SecondaryHeader& sh, std::vector<DataTypes::Entry>& entries, const bool debug, const std::string& instrument, const bool& NPP) :
+  DataDecode(const DataTypes::PrimaryHeader& ph, const DataTypes::SecondaryHeader& sh, std::vector<DataTypes::Entry>& entries, const bool debug, const std::string& instrument, const DataTypes::SCType& type) :
     m_initialByte{},
     m_byte1{},
     m_byte2{},
@@ -26,7 +26,7 @@ class DataDecode
     m_sHeader{sh},
     m_debug{debug},
     m_offset{},
-    m_NPP{NPP}
+    m_type{type}
     {}
 
     virtual ~DataDecode() {}
@@ -48,7 +48,7 @@ class DataDecode
     bool m_debug;
     uint8_t m_offset;
     Bytes m_numBytes;
-    bool m_NPP;
+    DataTypes::SCType m_type;
 
     bool loadData(const std::vector<uint8_t>& bufs, const DataTypes::Entry& currEntry);
     void getHeaderData(DataTypes::Packet& pack);

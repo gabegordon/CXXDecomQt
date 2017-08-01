@@ -44,7 +44,7 @@ std::set<std::string> pdsDecode::getFileTypeNames(const std::string& directory)
  *
  * @return set of files written
  */
-void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const bool& NPP)
+void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
 {
     std::vector<std::string> files = getFiles::filesInDirectory(m_directory, ".PDS");
     if(files.size() == 0)
@@ -53,7 +53,7 @@ void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedF
         exit(0);
     }
 
-    Decom decomEngine(debug, entries, NPP);
+    Decom decomEngine(debug, entries, type);
     std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue), backend);
     ProgressBar pbar(files.size(), "Parsing PDS");
     uint32_t i = 0;

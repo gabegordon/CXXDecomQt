@@ -28,10 +28,34 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
  */
 void DatabaseReader::init()
 {
-    if(m_NPP)
+    switch(m_type)
+    {
+    case DataTypes::SCType::NPP:
+    {
         readDatabase("databases/nppdatabase.csv");
-    else
+        break;
+    }
+    case DataTypes::SCType::J1:
+    {
         readDatabase("databases/j1database.csv");
+        break;
+    }
+    case DataTypes::SCType::J2:
+    {
+        readDatabase("databases/j2database.csv");
+        break;
+    }
+    case DataTypes::SCType::J3:
+    {
+        readDatabase("databases/j3database.csv");
+        break;
+    }
+    case DataTypes::SCType::J4:
+    {
+        readDatabase("databases/j4database.csv");
+        break;
+    }
+    }
     readDatabase("databases/atmsdatabase.csv");
     readDatabase("databases/ompsdatabase.csv");
     readDatabase("databases/ceresdatabase.csv");
@@ -185,17 +209,17 @@ void DatabaseReader::printDataBase() const
 std::vector<DataTypes::Entry> DatabaseReader::getEntries()
 {
     auto sortLambda = [] (const DataTypes::Entry& a, const DataTypes::Entry& b) -> bool
-    {
-        if (a.i_APID != b.i_APID)
-            return a.i_APID < b.i_APID;
-        else
-        {
-            if (a.byte != b.byte)
-                return a.byte < b.byte;
-            else
-                return a.bitLower < b.bitLower;
-        }
-    };
+                      {
+                          if (a.i_APID != b.i_APID)
+                              return a.i_APID < b.i_APID;
+                          else
+                          {
+                              if (a.byte != b.byte)
+                                  return a.byte < b.byte;
+                              else
+                                  return a.bitLower < b.bitLower;
+                          }
+                      };
     std::sort(m_entries.begin(), m_entries.end(), sortLambda);
     return m_entries;
 }

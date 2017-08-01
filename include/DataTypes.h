@@ -19,6 +19,15 @@ namespace DataTypes {
         FLOAT
     };
 
+    enum SCType
+    {
+        NPP,
+        J1,
+        J2,
+        J3,
+        J4
+    };
+
     struct Entry {
         std::string mnemonic;
         DataTypes::DataType type;
@@ -71,7 +80,7 @@ namespace DataTypes {
         uint32_t segments;
     };
 
-    static inline DataType hashIt(const std::string&  inString) {
+    static inline DataType hashIt(const std::string& inString) {
         if (inString == "D") return UNSIGNED;
         else if (inString == "S") return SIGNED;
         else if (inString == "U") return UNSIGNED;
