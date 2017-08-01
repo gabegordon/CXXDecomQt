@@ -109,18 +109,18 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:acf759f2d1346e2156b2357b6d44fd53c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaee2be518851e10da5833bd893759cf9"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#aaee2be518851e10da5833bd893759cf9">~h5Decode</a> ()</td></tr>
 <tr class="separator:aaee2be518851e10da5833bd893759cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7788019aba9f3fa57131bbe254ffe652"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a7788019aba9f3fa57131bbe254ffe652">getFileTypeNames</a> (const std::string &amp;directory, bool &amp;NPP)</td></tr>
-<tr class="separator:a7788019aba9f3fa57131bbe254ffe652"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0fef45b88d8e23f973df40727c455a05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a0fef45b88d8e23f973df40727c455a05">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const bool &amp;NPP)</td></tr>
-<tr class="separator:a0fef45b88d8e23f973df40727c455a05"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a266bbc9e5445dfa067f88a37381914da"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a266bbc9e5445dfa067f88a37381914da">getFileTypeNames</a> (const std::string &amp;directory, <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type)</td></tr>
+<tr class="separator:a266bbc9e5445dfa067f88a37381914da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a123303fc0ad96b2236e9c1c2a8d5a23a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a123303fc0ad96b2236e9c1c2a8d5a23a">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type)</td></tr>
+<tr class="separator:a123303fc0ad96b2236e9c1c2a8d5a23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
 <tr class="memitem:a603b61f2403ac3e59b00100bd475937c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">sortFiles</a> (std::vector&lt; std::string &gt; &amp;files)</td></tr>
 <tr class="memdesc:a603b61f2403ac3e59b00100bd475937c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts h5 files.  <a href="#a603b61f2403ac3e59b00100bd475937c">More...</a><br/></td></tr>
 <tr class="separator:a603b61f2403ac3e59b00100bd475937c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa27d7545f221864a53fa6283c9f918c1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#aa27d7545f221864a53fa6283c9f918c1">checkNPP</a> (const std::string &amp;filename)</td></tr>
-<tr class="separator:aa27d7545f221864a53fa6283c9f918c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15dc3284afff2bd4d2481738b6a39a4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a15dc3284afff2bd4d2481738b6a39a4a">checkType</a> (const std::string &amp;filename)</td></tr>
+<tr class="separator:a15dc3284afff2bd4d2481738b6a39a4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -196,7 +196,7 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aa27d7545f221864a53fa6283c9f918c1"></a>
+<a class="anchor" id="a15dc3284afff2bd4d2481738b6a39a4a"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -204,7 +204,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool h5Decode::checkNPP </td>
+          <td class="memname"><a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> h5Decode::checkType </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>filename</em></td><td>)</td>
@@ -223,14 +223,25 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    boost::split(splitstring, filename, boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="keywordflow">if</span>(splitstring.at(1) == <span class="stringliteral">&quot;npp&quot;</span>)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;}</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec">DataTypes::SCType::NPP</a>;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(splitstring.at(1) == <span class="stringliteral">&quot;j01&quot;</span>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">DataTypes::SCType::J1</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(splitstring.at(1) == <span class="stringliteral">&quot;j02&quot;</span>)</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1">DataTypes::SCType::J2</a>;</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(splitstring.at(1) == <span class="stringliteral">&quot;j03&quot;</span>)</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3afd8d53b9a5ce3865a7bbf259160e2589">DataTypes::SCType::J3</a>;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301">DataTypes::SCType::J4</a>;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}</div>
+<div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301">DataTypes::J4</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00028">DataTypes.h:28</a></div></div>
+<div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec">DataTypes::NPP</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00024">DataTypes.h:24</a></div></div>
+<div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1">DataTypes::J2</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00026">DataTypes.h:26</a></div></div>
+<div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3afd8d53b9a5ce3865a7bbf259160e2589"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3afd8d53b9a5ce3865a7bbf259160e2589">DataTypes::J3</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00027">DataTypes.h:27</a></div></div>
+<div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">DataTypes::J1</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00025">DataTypes.h:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a7788019aba9f3fa57131bbe254ffe652"></a>
+<a class="anchor" id="a266bbc9e5445dfa067f88a37381914da"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -243,8 +254,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">bool &amp;&#160;</td>
-          <td class="paramname"><em>NPP</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -276,7 +287,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        }</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    NPP = <a class="code" href="classh5_decode.html#aa27d7545f221864a53fa6283c9f918c1">checkNPP</a>(files.front());</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    type = <a class="code" href="classh5_decode.html#a15dc3284afff2bd4d2481738b6a39a4a">checkType</a>(files.front());</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">// This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt</span></div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    std::string input =  files.front() + files.back();  <span class="comment">// We can put this on a single line. It does not matter for Matlab</span></div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    std::ofstream datesFile;</div>
@@ -286,19 +297,19 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;}</div>
-<div class="ttc" id="classh5_decode_html_aa27d7545f221864a53fa6283c9f918c1"><div class="ttname"><a href="classh5_decode.html#aa27d7545f221864a53fa6283c9f918c1">h5Decode::checkNPP</a></div><div class="ttdeci">bool checkNPP(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00161">h5Decode.cpp:161</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00841">hdf_wrapper.h:841</a></div></div>
 <div class="ttc" id="namespaceget_files_html_a713b4fb9062678985a12d9352a398193"><div class="ttname"><a href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">getFiles::filesInDirectory</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; filesInDirectory(const std::string &amp;folder, const std::string &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8h_source.html#l00027">getFiles.h:27</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_file_html"><div class="ttname"><a href="classh5cpp_1_1_file.html">h5cpp::File</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00921">hdf_wrapper.h:921</a></div></div>
 <div class="ttc" id="classh5_decode_html_a398f07cf678a7a7cda54957bae354a0c"><div class="ttname"><a href="classh5_decode.html#a398f07cf678a7a7cda54957bae354a0c">h5Decode::m_directory</a></div><div class="ttdeci">std::string m_directory</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8h_source.html#l00026">h5Decode.h:26</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00817">hdf_wrapper.h:817</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
+<div class="ttc" id="classh5_decode_html_a15dc3284afff2bd4d2481738b6a39a4a"><div class="ttname"><a href="classh5_decode.html#a15dc3284afff2bd4d2481738b6a39a4a">h5Decode::checkType</a></div><div class="ttdeci">DataTypes::SCType checkType(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00161">h5Decode.cpp:161</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html"><div class="ttname"><a href="classh5cpp_1_1_group.html">h5cpp::Group</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00787">hdf_wrapper.h:787</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ab3e57014fbd9d2ce9a49578d657d7c5c"><div class="ttname"><a href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">h5cpp::Group::get_link_name</a></div><div class="ttdeci">std::string get_link_name(hsize_t idx) const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00827">hdf_wrapper.h:827</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a0fef45b88d8e23f973df40727c455a05"></a>
+<a class="anchor" id="a123303fc0ad96b2236e9c1c2a8d5a23a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -329,8 +340,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>NPP</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -352,7 +363,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="classh5_decode.html#a603b61f2403ac3e59b00100bd475937c">sortFiles</a>(files);</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, NPP);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type);</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#a805c4f564abad58aa82fe41acb0bbba0">Decom::init</a>, decomEngine, std::ref(<a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>), backend);</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    decomThread.detach();</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(files.size(), <span class="stringliteral">&quot;Parsing h5&quot;</span>);</div>

@@ -111,8 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6de747b5f22a812c890d76949bd98c43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3738c61ccb8305cabe0bb133c32556fe"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpds_decode.html#a3738c61ccb8305cabe0bb133c32556fe">getFileTypeNames</a> (const std::string &amp;directory)</td></tr>
 <tr class="separator:a3738c61ccb8305cabe0bb133c32556fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aacd7303a777748ee9fc24463d95a6237"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpds_decode.html#aacd7303a777748ee9fc24463d95a6237">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const bool &amp;NPP)</td></tr>
-<tr class="separator:aacd7303a777748ee9fc24463d95a6237"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a341d108791c8a53283d93a7f2d75ce6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classpds_decode.html#a341d108791c8a53283d93a7f2d75ce6a">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type)</td></tr>
+<tr class="separator:a341d108791c8a53283d93a7f2d75ce6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -311,7 +311,7 @@ Private Attributes</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="aacd7303a777748ee9fc24463d95a6237"></a>
+<a class="anchor" id="a341d108791c8a53283d93a7f2d75ce6a"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -342,8 +342,8 @@ Private Attributes</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const bool &amp;&#160;</td>
-          <td class="paramname"><em>NPP</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;&#160;</td>
+          <td class="paramname"><em>type</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -364,7 +364,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        exit(0);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, NPP);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type);</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#a805c4f564abad58aa82fe41acb0bbba0">Decom::init</a>, decomEngine, std::ref(<a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>), backend);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(files.size(), <span class="stringliteral">&quot;Parsing PDS&quot;</span>);</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    uint32_t i = 0;</div>

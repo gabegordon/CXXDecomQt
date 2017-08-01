@@ -3,6 +3,7 @@ var searchData=
   ['s_5fdefaults',['s_defaults',['../namespace_header_decode.html#a0f6ab4ab84fc35444df54aa771fb0879',1,'HeaderDecode']]],
   ['scalar',['scalar',['../classh5cpp_1_1_dataspace.html#a8b9e5023ae7e2b174adbecfc2eb58e79',1,'h5cpp::Dataspace']]],
   ['scanangle',['scanangle',['../_instrument_format_8cpp.html#a442f468c49c9566cd6668bd2153fe34b',1,'atms_pack']]],
+  ['sctype',['SCType',['../namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3',1,'DataTypes']]],
   ['secondaryheader',['SecondaryHeader',['../namespace_data_types.html#struct_data_types_1_1_secondary_header',1,'DataTypes']]],
   ['secondaryheader',['secondaryHeader',['../namespace_data_types.html#a08ea44d32cd0196f49c71e90e2f62866',1,'DataTypes::PrimaryHeader']]],
   ['segmentlastbyte',['segmentLastByte',['../class_data_decode.html#a04ac1673067171bdfb00372c1dcc0fe0',1,'DataDecode']]],

@@ -30,7 +30,7 @@ var searchData=
   ['getfiles',['getFiles',['../namespaceget_files.html',1,'getFiles'],['../class_back_end.html#ab4e8bd3997e5e5e8bb7b4435d948898d',1,'BackEnd::getFiles()']]],
   ['getfiles_2eh',['getFiles.h',['../get_files_8h.html',1,'']]],
   ['getfilesize',['getFileSize',['../class_decom.html#a527d2f3b31ebd28424ae63e7d390c45d',1,'Decom']]],
-  ['getfiletypenames',['getFileTypeNames',['../classh5_decode.html#a7788019aba9f3fa57131bbe254ffe652',1,'h5Decode::getFileTypeNames()'],['../classpds_decode.html#a3738c61ccb8305cabe0bb133c32556fe',1,'pdsDecode::getFileTypeNames()']]],
+  ['getfiletypenames',['getFileTypeNames',['../classh5_decode.html#a266bbc9e5445dfa067f88a37381914da',1,'h5Decode::getFileTypeNames()'],['../classpds_decode.html#a3738c61ccb8305cabe0bb133c32556fe',1,'pdsDecode::getFileTypeNames()']]],
   ['getfloat',['getFloat',['../class_data_decode.html#a295a6cb11d7b007adda573df3ce962ad',1,'DataDecode']]],
   ['getheaderdata',['getHeaderData',['../class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44',1,'DataDecode']]],
   ['getheadersandentries',['getHeadersAndEntries',['../class_decom.html#a678c5543c799d136e90846779fbc8a13',1,'Decom']]],
