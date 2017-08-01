@@ -222,14 +222,14 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug)
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: The following parameters of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug, const bool &bigEndian)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:16: warning: The following parameters of HeaderDecode::decodeHeaders(std::istringstream &buffer, const bool &debug, const bool &bigEndian) are not documented:
   parameter 'buffer'
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:47: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug)
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:47: warning: The following parameters of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug, const bool &bigEndian)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: The following parameters of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug, const bool &bigEndian) are not documented:
   parameter 'buffer'
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:98: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeSecondary(std::istringstream &buffer)
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:98: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:100: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:100: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian) are not documented:
   parameter 'buffer'
 /home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:47: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
   parameter 'backend'
@@ -527,5 +527,5 @@ Patching output file 61/64
 Patching output file 62/64
 Patching output file 63/64
 Patching output file 64/64
-lookup cache used 1718/65536 hits=14079 misses=1929
+lookup cache used 1726/65536 hits=14254 misses=1939
 finished...

@@ -111,8 +111,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aaee2be518851e10da5833bd893759cf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb32c85e869960b691d2ddf0665b5b42"><td class="memItemLeft" align="right" valign="top">std::set&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#abb32c85e869960b691d2ddf0665b5b42">getFileTypeNames</a> (const std::string &amp;directory, <a class="el" href="class_back_end.html">BackEnd</a> *backend)</td></tr>
 <tr class="separator:abb32c85e869960b691d2ddf0665b5b42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a123303fc0ad96b2236e9c1c2a8d5a23a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a123303fc0ad96b2236e9c1c2a8d5a23a">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type)</td></tr>
-<tr class="separator:a123303fc0ad96b2236e9c1c2a8d5a23a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05ff16686aa768eef3354470c5b15db4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classh5_decode.html#a05ff16686aa768eef3354470c5b15db4">init</a> (<a class="el" href="class_back_end.html">BackEnd</a> *backend, const std::vector&lt; std::string &gt; &amp;selectedFiles, const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type, const bool &amp;bigEndian)</td></tr>
+<tr class="separator:a05ff16686aa768eef3354470c5b15db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -229,22 +229,22 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Enum containg satellite type. </dd></dl>
 
-<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00170">170</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;{</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    boost::filesystem::path filepath(filename);  <span class="comment">// Convert to boost path so that we can strip the path info</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    boost::split(splitstring, filepath.stem().string(), boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));  <span class="comment">// Split string on the underscore</span></div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;npp&quot;</span>)</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec">DataTypes::SCType::NPP</a>;</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j01&quot;</span>)</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">DataTypes::SCType::J1</a>;</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j02&quot;</span>)</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1">DataTypes::SCType::J2</a>;</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j03&quot;</span>)</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3afd8d53b9a5ce3865a7bbf259160e2589">DataTypes::SCType::J3</a>;</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301">DataTypes::SCType::J4</a>;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;}</div>
+<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00171">171</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;{</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;    boost::filesystem::path filepath(filename);  <span class="comment">// Convert to boost path so that we can strip the path info</span></div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;    boost::split(splitstring, filepath.stem().string(), boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));  <span class="comment">// Split string on the underscore</span></div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;npp&quot;</span>)</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec">DataTypes::SCType::NPP</a>;</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j01&quot;</span>)</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">DataTypes::SCType::J1</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j02&quot;</span>)</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1">DataTypes::SCType::J2</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (splitstring.at(1) == <span class="stringliteral">&quot;j03&quot;</span>)</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3afd8d53b9a5ce3865a7bbf259160e2589">DataTypes::SCType::J3</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301">DataTypes::SCType::J4</a>;</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
 <div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a03425e164284556c7b4640e4c83f0301">DataTypes::J4</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00028">DataTypes.hpp:28</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec">DataTypes::NPP</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00024">DataTypes.hpp:24</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1"><div class="ttname"><a href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a2d81d3a1b1b99b7524faa01a763389d1">DataTypes::J2</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00026">DataTypes.hpp:26</a></div></div>
@@ -320,7 +320,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="classh5_decode_html_a67191b2838034b56a826f89a9c89f07b"><div class="ttname"><a href="classh5_decode.html#a67191b2838034b56a826f89a9c89f07b">h5Decode::sortFiles</a></div><div class="ttdeci">void sortFiles()</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00119">h5Decode.cpp:119</a></div></div>
+<div class="ttc" id="classh5_decode_html_a67191b2838034b56a826f89a9c89f07b"><div class="ttname"><a href="classh5_decode.html#a67191b2838034b56a826f89a9c89f07b">h5Decode::sortFiles</a></div><div class="ttdeci">void sortFiles()</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00120">h5Decode.cpp:120</a></div></div>
 <div class="ttc" id="classh5_decode_html_a44cceee461a3aebbffc5f5775c24f918"><div class="ttname"><a href="classh5_decode.html#a44cceee461a3aebbffc5f5775c24f918">h5Decode::m_h5Files</a></div><div class="ttdeci">std::vector&lt; h5cpp::File &gt; m_h5Files</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8hpp_source.html#l00031">h5Decode.hpp:31</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00842">hdf_wrapper.hpp:842</a></div></div>
 <div class="ttc" id="namespaceget_files_html_a713b4fb9062678985a12d9352a398193"><div class="ttname"><a href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">getFiles::filesInDirectory</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; filesInDirectory(const std::string &amp;folder, const std::string &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8hpp_source.html#l00029">getFiles.hpp:29</a></div></div>
@@ -329,14 +329,14 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="classh5_decode_html_a398f07cf678a7a7cda54957bae354a0c"><div class="ttname"><a href="classh5_decode.html#a398f07cf678a7a7cda54957bae354a0c">h5Decode::m_directory</a></div><div class="ttdeci">std::string m_directory</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8hpp_source.html#l00028">h5Decode.hpp:28</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00818">hdf_wrapper.hpp:818</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00014">LogFile.cpp:14</a></div></div>
-<div class="ttc" id="classh5_decode_html_a15dc3284afff2bd4d2481738b6a39a4a"><div class="ttname"><a href="classh5_decode.html#a15dc3284afff2bd4d2481738b6a39a4a">h5Decode::checkType</a></div><div class="ttdeci">DataTypes::SCType checkType(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00170">h5Decode.cpp:170</a></div></div>
-<div class="ttc" id="class_back_end_html_a6a8e43e7e988f272b52c345d627c738b"><div class="ttname"><a href="class_back_end.html#a6a8e43e7e988f272b52c345d627c738b">BackEnd::setType</a></div><div class="ttdeci">void setType(const DataTypes::SCType &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00097">backend.cpp:97</a></div></div>
+<div class="ttc" id="classh5_decode_html_a15dc3284afff2bd4d2481738b6a39a4a"><div class="ttname"><a href="classh5_decode.html#a15dc3284afff2bd4d2481738b6a39a4a">h5Decode::checkType</a></div><div class="ttdeci">DataTypes::SCType checkType(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8cpp_source.html#l00171">h5Decode.cpp:171</a></div></div>
+<div class="ttc" id="class_back_end_html_a6a8e43e7e988f272b52c345d627c738b"><div class="ttname"><a href="class_back_end.html#a6a8e43e7e988f272b52c345d627c738b">BackEnd::setType</a></div><div class="ttdeci">void setType(const DataTypes::SCType &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00098">backend.cpp:98</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html"><div class="ttname"><a href="classh5cpp_1_1_group.html">h5cpp::Group</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00788">hdf_wrapper.hpp:788</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ab3e57014fbd9d2ce9a49578d657d7c5c"><div class="ttname"><a href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">h5cpp::Group::get_link_name</a></div><div class="ttdeci">std::string get_link_name(hsize_t idx) const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00828">hdf_wrapper.hpp:828</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a123303fc0ad96b2236e9c1c2a8d5a23a"></a>
+<a class="anchor" id="a05ff16686aa768eef3354470c5b15db4"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -368,7 +368,13 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>bigEndian</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -385,64 +391,65 @@ Private Attributes</h2></td></tr>
     <tr><td class="paramname">debug</td><td>Debug flag. </td></tr>
     <tr><td class="paramname">entries</td><td>Database entries to be passed to the <a class="el" href="class_decom.html">Decom</a> class. </td></tr>
     <tr><td class="paramname">type</td><td>Satellite type. </td></tr>
+    <tr><td class="paramname">bigEndian</td><td>Endian format of input data. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00070">70</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;{</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type);  <span class="comment">// Create Decom object</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a>, decomEngine, &amp;<a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>, backend);  <span class="comment">// Start Decom init function in a another thread</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    decomThread.detach();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>.size(), <span class="stringliteral">&quot;Parsing h5&quot;</span>);</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    uint32_t i = 0;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; h5File : <a class="code" href="classh5_decode.html#a44cceee461a3aebbffc5f5775c24f918">m_h5Files</a>)  <span class="comment">// For each h5 file</span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">setCurrentFile</a>(h5File.get_file_name());  <span class="comment">// Notify backend of the name of the file we are parsing</span></div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        pbar.Progressed(++i, backend);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> All_Data = h5File.root().<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(<span class="stringliteral">&quot;All_Data&quot;</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> group = 0; group &lt; All_Data.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++group)</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        {</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            std::string APgroupString = All_Data.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(group);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            std::string instrument;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="keywordtype">size_t</span> found;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordflow">if</span> ((found = APgroupString.find(<span class="stringliteral">&quot;-&quot;</span>)) != std::string::npos)  <span class="comment">// Get instrument from filename</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;                instrument = APgroupString.substr(0, found);</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            <span class="keywordflow">if</span> (std::find(std::begin(selectedFiles), std::end(selectedFiles), APgroupString) != std::end(selectedFiles))  <span class="comment">// If this is a selected file</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            {</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> APgroup = (All_Data.<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(APgroupString));</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;                std::vector&lt;uint8_t&gt; allData;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> AP = 0; AP &lt; APgroup.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++AP)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                {</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                    <a class="code" href="classh5cpp_1_1_dataset.html">h5::Dataset</a> RawAP = APgroup.<a class="code" href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">open_dataset</a>(APgroup.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(AP));</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    std::vector&lt;uint8_t&gt; data;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    h5::read_dataset&lt;uint8_t&gt;(RawAP, data);  <span class="comment">// Read h5 data into vector of bytes</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                    int32_t apStorageOffset = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(51)) + (static_cast&lt;int32_t&gt;(data.at(50)) * 256) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(49)) * 65536) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(48)) * 16777216);  <span class="comment">// location from RDR Static Header table in CDFCB Vol 2</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));  <span class="comment">// Move local vector into allData</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                <a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">push</a>(std::make_tuple(allData, instrument));  <span class="comment">// Pass the h5 file contents to Decom</span></div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            }</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        h5File.close();</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(<span class="stringliteral">&quot;Waiting for writer threads to finish.&quot;</span>);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">setInactive</a>();  <span class="comment">// Notify Decom that no more h5 files will be pushed onto the queue</span></div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
+<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00071">71</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type, bigEndian);  <span class="comment">// Create Decom object</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a>, decomEngine, &amp;<a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>, backend);  <span class="comment">// Start Decom init function in a another thread</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    decomThread.detach();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>.size(), <span class="stringliteral">&quot;Parsing h5&quot;</span>);</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    uint32_t i = 0;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; h5File : <a class="code" href="classh5_decode.html#a44cceee461a3aebbffc5f5775c24f918">m_h5Files</a>)  <span class="comment">// For each h5 file</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    {</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">setCurrentFile</a>(h5File.get_file_name());  <span class="comment">// Notify backend of the name of the file we are parsing</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        pbar.Progressed(++i, backend);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> All_Data = h5File.root().<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(<span class="stringliteral">&quot;All_Data&quot;</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> group = 0; group &lt; All_Data.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++group)</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        {</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            std::string APgroupString = All_Data.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(group);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            std::string instrument;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            <span class="keywordtype">size_t</span> found;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            <span class="keywordflow">if</span> ((found = APgroupString.find(<span class="stringliteral">&quot;-&quot;</span>)) != std::string::npos)  <span class="comment">// Get instrument from filename</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;                instrument = APgroupString.substr(0, found);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            <span class="keywordflow">if</span> (std::find(std::begin(selectedFiles), std::end(selectedFiles), APgroupString) != std::end(selectedFiles))  <span class="comment">// If this is a selected file</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            {</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;                <a class="code" href="classh5cpp_1_1_group.html">h5::Group</a> APgroup = (All_Data.<a class="code" href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">open_group</a>(APgroupString));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;                std::vector&lt;uint8_t&gt; allData;</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;                <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> AP = 0; AP &lt; APgroup.<a class="code" href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">size</a>(); ++AP)</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                {</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;                    <a class="code" href="classh5cpp_1_1_dataset.html">h5::Dataset</a> RawAP = APgroup.<a class="code" href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">open_dataset</a>(APgroup.<a class="code" href="classh5cpp_1_1_group.html#ab3e57014fbd9d2ce9a49578d657d7c5c">get_link_name</a>(AP));</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;                    std::vector&lt;uint8_t&gt; data;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;                    h5::read_dataset&lt;uint8_t&gt;(RawAP, data);  <span class="comment">// Read h5 data into vector of bytes</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;                    int32_t apStorageOffset = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(51)) + (static_cast&lt;int32_t&gt;(data.at(50)) * 256) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(49)) * 65536) + (<span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(data.at(48)) * 16777216);  <span class="comment">// location from RDR Static Header table in CDFCB Vol 2</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                    allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));  <span class="comment">// Move local vector into allData</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;                }</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">push</a>(std::make_tuple(allData, instrument));  <span class="comment">// Pass the h5 file contents to Decom</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            }</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        }</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        h5File.close();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(<span class="stringliteral">&quot;Waiting for writer threads to finish.&quot;</span>);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="classh5_decode.html#ac7b6d263e52a4436a2559749c910959c">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">setInactive</a>();  <span class="comment">// Notify Decom that no more h5 files will be pushed onto the queue</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;}</div>
 <div class="ttc" id="class_progress_bar_html"><div class="ttname"><a href="class_progress_bar.html">ProgressBar</a></div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00012">ProgressBar.hpp:12</a></div></div>
 <div class="ttc" id="classh5_decode_html_a44cceee461a3aebbffc5f5775c24f918"><div class="ttname"><a href="classh5_decode.html#a44cceee461a3aebbffc5f5775c24f918">h5Decode::m_h5Files</a></div><div class="ttdeci">std::vector&lt; h5cpp::File &gt; m_h5Files</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8hpp_source.html#l00031">h5Decode.hpp:31</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_a476bf31155e9ffa2f9038209451120fd"><div class="ttname"><a href="classh5cpp_1_1_group.html#a476bf31155e9ffa2f9038209451120fd">h5cpp::Group::open_group</a></div><div class="ttdeci">Group open_group(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00842">hdf_wrapper.hpp:842</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_dataset_html"><div class="ttname"><a href="classh5cpp_1_1_dataset.html">h5cpp::Dataset</a></div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l01048">hdf_wrapper.hpp:1048</a></div></div>
 <div class="ttc" id="class_decom_html_ad40e9ea5962892637b5c5cca4a44012f"><div class="ttname"><a href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a></div><div class="ttdeci">void init(ThreadSafeListenerQueue&lt; std::tuple&lt; std::vector&lt; uint8_t &gt;, std::string &gt;&gt; *queue, BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00023">Decom.cpp:23</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_af45cbbf46d016a7908c764a6f8faa13c"><div class="ttname"><a href="classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c">h5cpp::Group::open_dataset</a></div><div class="ttdeci">Dataset open_dataset(const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l01153">hdf_wrapper.hpp:1153</a></div></div>
-<div class="ttc" id="class_back_end_html_a133f0aa16a611460cb72b7ca15f1a28b"><div class="ttname"><a href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">BackEnd::setProgress</a></div><div class="ttdeci">void setProgress(const std::string &amp;prog)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00066">backend.cpp:66</a></div></div>
+<div class="ttc" id="class_back_end_html_a133f0aa16a611460cb72b7ca15f1a28b"><div class="ttname"><a href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">BackEnd::setProgress</a></div><div class="ttdeci">void setProgress(const std::string &amp;prog)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00067">backend.cpp:67</a></div></div>
 <div class="ttc" id="class_thread_safe_listener_queue_html_a1d6a3a5f293e51cc9c741f786519cc56"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">ThreadSafeListenerQueue::setInactive</a></div><div class="ttdeci">void setInactive()</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00067">ThreadSafeListenerQueue.hpp:67</a></div></div>
-<div class="ttc" id="class_back_end_html_ab1ec70a8193ef7248e3fc69de3410da5"><div class="ttname"><a href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">BackEnd::setCurrentFile</a></div><div class="ttdeci">void setCurrentFile(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00086">backend.cpp:86</a></div></div>
+<div class="ttc" id="class_back_end_html_ab1ec70a8193ef7248e3fc69de3410da5"><div class="ttname"><a href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">BackEnd::setCurrentFile</a></div><div class="ttdeci">void setCurrentFile(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00087">backend.cpp:87</a></div></div>
 <div class="ttc" id="classh5_decode_html_adc599304acc87f3e66d3646b7d12db20"><div class="ttname"><a href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">h5Decode::m_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_files</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8hpp_source.html#l00032">h5Decode.hpp:32</a></div></div>
 <div class="ttc" id="class_thread_safe_listener_queue_html_a74170aa2add229dc638e7dedd82128a9"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">ThreadSafeListenerQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;element)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00030">ThreadSafeListenerQueue.hpp:30</a></div></div>
 <div class="ttc" id="classh5cpp_1_1_group_html_ae8e6f4e9732fd7f8d4d37e946716cd75"><div class="ttname"><a href="classh5cpp_1_1_group.html#ae8e6f4e9732fd7f8d4d37e946716cd75">h5cpp::Group::size</a></div><div class="ttdeci">hsize_t size() const </div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00818">hdf_wrapper.hpp:818</a></div></div>
@@ -475,50 +482,50 @@ Private Attributes</h2></td></tr>
 </div><div class="memdoc">
 <p>Sorts h5 files based on time. </p>
 
-<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00119">119</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;{</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keyword">auto</span> sortLambda = [] (<span class="keyword">const</span> std::string&amp; a, <span class="keyword">const</span> std::string&amp; b) -&gt; <span class="keywordtype">bool</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;                      {</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                          std::vector&lt;std::string&gt; astrings;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                          std::vector&lt;std::string&gt; bstrings;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                          boost::split(astrings, a, boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                          boost::split(bstrings, b, boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                          std::string aday;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                          std::string bday;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                          std::string amin;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                          std::string bmin;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                          std::string asec;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                          std::string bsec;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : astrings)</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                          {</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                              <span class="keywordflow">if</span> (s.substr(0, 2) == <span class="stringliteral">&quot;d2&quot;</span>)  <span class="comment">// Year of d2xxx</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                  aday = s;</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;t&#39;</span>)</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                                  amin = s;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;e&#39;</span>)</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                                  asec = s;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                          }</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : bstrings)</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                          {</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                              <span class="keywordflow">if</span> (s.substr(0, 2) == <span class="stringliteral">&quot;d2&quot;</span>)  <span class="comment">// Year of d2xxx</span></div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                                  bday = s;</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;t&#39;</span>)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                  bmin = s;</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;e&#39;</span>)</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                                  bsec = s;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                          }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                          <span class="keywordflow">if</span> (aday != bday)</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                              <span class="keywordflow">return</span> aday &lt; bday;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                          <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                          {</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                              <span class="keywordflow">if</span> (amin != bmin)</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                                  <span class="keywordflow">return</span> amin &lt; bmin;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                              <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                                  <span class="keywordflow">return</span> asec &lt; bsec;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                          }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                      };</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    std::sort(std::begin(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>), std::end(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>), sortLambda);</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
+<p>Definition at line <a class="el" href="h5_decode_8cpp_source.html#l00120">120</a> of file <a class="el" href="h5_decode_8cpp_source.html">h5Decode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;{</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    <span class="keyword">auto</span> sortLambda = [] (<span class="keyword">const</span> std::string&amp; a, <span class="keyword">const</span> std::string&amp; b) -&gt; <span class="keywordtype">bool</span></div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                      {</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                          std::vector&lt;std::string&gt; astrings;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;                          std::vector&lt;std::string&gt; bstrings;</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;                          boost::split(astrings, a, boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;                          boost::split(bstrings, b, boost::is_any_of(<span class="stringliteral">&quot;_&quot;</span>));</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;                          std::string aday;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;                          std::string bday;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                          std::string amin;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                          std::string bmin;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                          std::string asec;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                          std::string bsec;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : astrings)</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;                          {</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                              <span class="keywordflow">if</span> (s.substr(0, 2) == <span class="stringliteral">&quot;d2&quot;</span>)  <span class="comment">// Year of d2xxx</span></div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;                                  aday = s;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;t&#39;</span>)</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                                  amin = s;</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;e&#39;</span>)</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;                                  asec = s;</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;                          }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;                          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; s : bstrings)</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;                          {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                              <span class="keywordflow">if</span> (s.substr(0, 2) == <span class="stringliteral">&quot;d2&quot;</span>)  <span class="comment">// Year of d2xxx</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                  bday = s;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;t&#39;</span>)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                  bmin = s;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;                              <span class="keywordflow">if</span> (s.at(0) == <span class="charliteral">&#39;e&#39;</span>)</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;                                  bsec = s;</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;                          }</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;                          <span class="keywordflow">if</span> (aday != bday)</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                              <span class="keywordflow">return</span> aday &lt; bday;</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;                          <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;                          {</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                              <span class="keywordflow">if</span> (amin != bmin)</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                                  <span class="keywordflow">return</span> amin &lt; bmin;</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;                              <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                                  <span class="keywordflow">return</span> asec &lt; bsec;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;                          }</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                      };</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::sort(std::begin(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>), std::end(<a class="code" href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">m_files</a>), sortLambda);</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
 <div class="ttc" id="classh5_decode_html_adc599304acc87f3e66d3646b7d12db20"><div class="ttname"><a href="classh5_decode.html#adc599304acc87f3e66d3646b7d12db20">h5Decode::m_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_files</div><div class="ttdef"><b>Definition:</b> <a href="h5_decode_8hpp_source.html#l00032">h5Decode.hpp:32</a></div></div>
 </div><!-- fragment -->
 </div>

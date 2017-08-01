@@ -105,8 +105,8 @@ Collaboration diagram for Decom:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a08fdb72ccfb4b2fb7da41ee9cbcd0e4e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#a08fdb72ccfb4b2fb7da41ee9cbcd0e4e">Decom</a> (const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type)</td></tr>
-<tr class="separator:a08fdb72ccfb4b2fb7da41ee9cbcd0e4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4f43e01df81167fd5620986964aa1c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#acc4f43e01df81167fd5620986964aa1c">Decom</a> (const bool &amp;debug, const std::vector&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_entry">DataTypes::Entry</a> &gt; &amp;entries, const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;type, const bool &amp;bigEndian)</td></tr>
+<tr class="separator:acc4f43e01df81167fd5620986964aa1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a997e35bbac38b98d922a0b7743448e20"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#a997e35bbac38b98d922a0b7743448e20">~Decom</a> ()</td></tr>
 <tr class="separator:a997e35bbac38b98d922a0b7743448e20"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad40e9ea5962892637b5c5cca4a44012f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">init</a> (<a class="el" href="class_thread_safe_listener_queue.html">ThreadSafeListenerQueue</a>&lt; std::tuple&lt; std::vector&lt; uint8_t &gt;, std::string &gt;&gt; *queue, <a class="el" href="class_back_end.html">BackEnd</a> *backend)</td></tr>
@@ -149,12 +149,14 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <tr class="separator:afd3dc03db9b3cfea696a5af98cca8e63"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae106a562e7b187564d9340b15b57b9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">m_type</a></td></tr>
 <tr class="separator:aae106a562e7b187564d9340b15b57b9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73c2c51f1f55e335f9a6a0a6f6d73b28"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">m_bigEndian</a></td></tr>
+<tr class="separator:a73c2c51f1f55e335f9a6a0a6f6d73b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00016">16</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a08fdb72ccfb4b2fb7da41ee9cbcd0e4e"></a>
+<a class="anchor" id="acc4f43e01df81167fd5620986964aa1c"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,7 +179,13 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a> &amp;&#160;</td>
-          <td class="paramname"><em>type</em>&#160;</td>
+          <td class="paramname"><em>type</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool &amp;&#160;</td>
+          <td class="paramname"><em>bigEndian</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -193,20 +201,22 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00019">19</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                  :</div>
+<div class="fragment"><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                                                                                                                           :</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">m_mapEntries</a>{},</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7">m_entries</a>{entries},</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_decom.html#aeab751b3e1c6674050867f78d917f9a3">m_progress</a>{0},</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">m_debug</a>{debug},</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>{},</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">m_type</a>{type}</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    {}</div>
-<div class="ttc" id="class_decom_html_a5ebe992c9feb463fb68f03c853cf65b7"><div class="ttname"><a href="class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7">Decom::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00040">Decom.hpp:40</a></div></div>
-<div class="ttc" id="class_decom_html_aae106a562e7b187564d9340b15b57b9b"><div class="ttname"><a href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">Decom::m_type</a></div><div class="ttdeci">DataTypes::SCType m_type</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00047">Decom.hpp:47</a></div></div>
-<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00039">Decom.hpp:39</a></div></div>
-<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00046">Decom.hpp:46</a></div></div>
-<div class="ttc" id="class_decom_html_aeab751b3e1c6674050867f78d917f9a3"><div class="ttname"><a href="class_decom.html#aeab751b3e1c6674050867f78d917f9a3">Decom::m_progress</a></div><div class="ttdeci">int64_t m_progress</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00042">Decom.hpp:42</a></div></div>
-<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00043">Decom.hpp:43</a></div></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">m_type</a>{type},</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">m_bigEndian</a>{bigEndian}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {}</div>
+<div class="ttc" id="class_decom_html_a5ebe992c9feb463fb68f03c853cf65b7"><div class="ttname"><a href="class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7">Decom::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00041">Decom.hpp:41</a></div></div>
+<div class="ttc" id="class_decom_html_aae106a562e7b187564d9340b15b57b9b"><div class="ttname"><a href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">Decom::m_type</a></div><div class="ttdeci">DataTypes::SCType m_type</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00048">Decom.hpp:48</a></div></div>
+<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00040">Decom.hpp:40</a></div></div>
+<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00047">Decom.hpp:47</a></div></div>
+<div class="ttc" id="class_decom_html_a73c2c51f1f55e335f9a6a0a6f6d73b28"><div class="ttname"><a href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">Decom::m_bigEndian</a></div><div class="ttdeci">bool m_bigEndian</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00049">Decom.hpp:49</a></div></div>
+<div class="ttc" id="class_decom_html_aeab751b3e1c6674050867f78d917f9a3"><div class="ttname"><a href="class_decom.html#aeab751b3e1c6674050867f78d917f9a3">Decom::m_progress</a></div><div class="ttdeci">int64_t m_progress</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00043">Decom.hpp:43</a></div></div>
+<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00044">Decom.hpp:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -231,8 +241,8 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00027">27</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{}</div>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00028">28</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -273,7 +283,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Definition at line <a class="el" href="_decom_8cpp_source.html#l00133">133</a> of file <a class="el" href="_decom_8cpp_source.html">Decom.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;{</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="class_data_decode.html">DataDecode</a> dc{std::get&lt;0&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>), std::get&lt;1&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>), <a class="code" href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">m_mapEntries</a>[std::get&lt;0&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>).APID], <a class="code" href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">m_debug</a>, instrument, <a class="code" href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">m_type</a>};  <span class="comment">// Create new dataDecode object and pass headers/instrument info</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    <a class="code" href="class_data_decode.html">DataDecode</a> dc{std::get&lt;0&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>), std::get&lt;1&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>), <a class="code" href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">m_mapEntries</a>[std::get&lt;0&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>).APID], <a class="code" href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">m_debug</a>, instrument, <a class="code" href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">m_type</a>, <a class="code" href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">m_bigEndian</a>};  <span class="comment">// Create new dataDecode object and pass headers/instrument info</span></div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keywordflow">if</span> (instrument == <span class="stringliteral">&quot;OMPS&quot;</span>)  <span class="comment">// If omps then use special function</span></div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    {</div>
@@ -288,12 +298,13 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="keywordflow">return</span> dc.decodeData(buffer, 0);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    }</div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;}</div>
-<div class="ttc" id="class_decom_html_aae106a562e7b187564d9340b15b57b9b"><div class="ttname"><a href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">Decom::m_type</a></div><div class="ttdeci">DataTypes::SCType m_type</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00047">Decom.hpp:47</a></div></div>
-<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00039">Decom.hpp:39</a></div></div>
-<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00046">Decom.hpp:46</a></div></div>
+<div class="ttc" id="class_decom_html_aae106a562e7b187564d9340b15b57b9b"><div class="ttname"><a href="class_decom.html#aae106a562e7b187564d9340b15b57b9b">Decom::m_type</a></div><div class="ttdeci">DataTypes::SCType m_type</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00048">Decom.hpp:48</a></div></div>
+<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00040">Decom.hpp:40</a></div></div>
+<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00047">Decom.hpp:47</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aff8a980d2c0f7ad1b7ed03da51a72b76af0a9e955849f616304e2de96c2c69cc3"><div class="ttname"><a href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76af0a9e955849f616304e2de96c2c69cc3">DataTypes::FIRST</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00009">DataTypes.hpp:9</a></div></div>
+<div class="ttc" id="class_decom_html_a73c2c51f1f55e335f9a6a0a6f6d73b28"><div class="ttname"><a href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">Decom::m_bigEndian</a></div><div class="ttdeci">bool m_bigEndian</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00049">Decom.hpp:49</a></div></div>
 <div class="ttc" id="class_data_decode_html"><div class="ttname"><a href="class_data_decode.html">DataDecode</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8hpp_source.html#l00006">DataDecode.hpp:6</a></div></div>
-<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00043">Decom.hpp:43</a></div></div>
+<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00044">Decom.hpp:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -331,7 +342,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">m_APIDs</a>.count(528))  <span class="comment">// 528 is ATMS science apid</span></div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="namespace_instrument_format.html#a74f5feb46652b587dd446f457b281da4">InstrumentFormat::formatATMS</a>(backend);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;}</div>
-<div class="ttc" id="class_decom_html_ab6024c218565c81f3ef635ce90a482eb"><div class="ttname"><a href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">Decom::m_APIDs</a></div><div class="ttdeci">std::set&lt; uint32_t &gt; m_APIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00045">Decom.hpp:45</a></div></div>
+<div class="ttc" id="class_decom_html_ab6024c218565c81f3ef635ce90a482eb"><div class="ttname"><a href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">Decom::m_APIDs</a></div><div class="ttdeci">std::set&lt; uint32_t &gt; m_APIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00046">Decom.hpp:46</a></div></div>
 <div class="ttc" id="namespace_instrument_format_html_a74f5feb46652b587dd446f457b281da4"><div class="ttname"><a href="namespace_instrument_format.html#a74f5feb46652b587dd446f457b281da4">InstrumentFormat::formatATMS</a></div><div class="ttdeci">void formatATMS(BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_instrument_format_8cpp_source.html#l00124">InstrumentFormat.cpp:124</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -392,9 +403,9 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    }</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="ttc" id="class_decom_html_a5ebe992c9feb463fb68f03c853cf65b7"><div class="ttname"><a href="class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7">Decom::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00040">Decom.hpp:40</a></div></div>
-<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00039">Decom.hpp:39</a></div></div>
-<div class="ttc" id="class_decom_html_a8e375c58094d63dd788d8b2c6996ba62"><div class="ttname"><a href="class_decom.html#a8e375c58094d63dd788d8b2c6996ba62">Decom::m_missingAPIDs</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; m_missingAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00044">Decom.hpp:44</a></div></div>
+<div class="ttc" id="class_decom_html_a5ebe992c9feb463fb68f03c853cf65b7"><div class="ttname"><a href="class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7">Decom::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00041">Decom.hpp:41</a></div></div>
+<div class="ttc" id="class_decom_html_a97978bd1b591e7b85d6568338d40991c"><div class="ttname"><a href="class_decom.html#a97978bd1b591e7b85d6568338d40991c">Decom::m_mapEntries</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, std::vector&lt; DataTypes::Entry &gt; &gt; m_mapEntries</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00040">Decom.hpp:40</a></div></div>
+<div class="ttc" id="class_decom_html_a8e375c58094d63dd788d8b2c6996ba62"><div class="ttname"><a href="class_decom.html#a8e375c58094d63dd788d8b2c6996ba62">Decom::m_missingAPIDs</a></div><div class="ttdeci">std::vector&lt; uint32_t &gt; m_missingAPIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00045">Decom.hpp:45</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00014">LogFile.cpp:14</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -471,7 +482,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 
 <p>Definition at line <a class="el" href="_decom_8cpp_source.html#l00158">158</a> of file <a class="el" href="_decom_8cpp_source.html">Decom.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;{</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a> = <a class="code" href="namespace_header_decode.html#a0138ce6b3a08d132531ab6afff40e986">HeaderDecode::decodeHeaders</a>(buffer, <a class="code" href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">m_debug</a>);  <span class="comment">// Decode headers</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a> = <a class="code" href="namespace_header_decode.html#a4b1534ec626d810aba3c4a0409063270">HeaderDecode::decodeHeaders</a>(buffer, <a class="code" href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">m_debug</a>, <a class="code" href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">m_bigEndian</a>);  <span class="comment">// Decode headers</span></div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keywordflow">if</span> (!std::get&lt;2&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>))  <span class="comment">// If header is invalid</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
@@ -479,10 +490,11 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <a class="code" href="class_decom.html#a75977045379b8485544e598f8f0a8c17">getEntries</a>(std::get&lt;0&gt;(<a class="code" href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">m_headers</a>).APID);  <span class="comment">// Get matching database entries from header APID</span></div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;}</div>
-<div class="ttc" id="namespace_header_decode_html_a0138ce6b3a08d132531ab6afff40e986"><div class="ttname"><a href="namespace_header_decode.html#a0138ce6b3a08d132531ab6afff40e986">HeaderDecode::decodeHeaders</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; decodeHeaders(std::istringstream &amp;buffer, const bool &amp;debug)</div><div class="ttdef"><b>Definition:</b> <a href="_header_decode_8cpp_source.html#l00022">HeaderDecode.cpp:22</a></div></div>
 <div class="ttc" id="class_decom_html_a75977045379b8485544e598f8f0a8c17"><div class="ttname"><a href="class_decom.html#a75977045379b8485544e598f8f0a8c17">Decom::getEntries</a></div><div class="ttdeci">void getEntries(const uint32_t &amp;APID)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00065">Decom.cpp:65</a></div></div>
-<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00046">Decom.hpp:46</a></div></div>
-<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00043">Decom.hpp:43</a></div></div>
+<div class="ttc" id="class_decom_html_afd3dc03db9b3cfea696a5af98cca8e63"><div class="ttname"><a href="class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63">Decom::m_headers</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; m_headers</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00047">Decom.hpp:47</a></div></div>
+<div class="ttc" id="namespace_header_decode_html_a4b1534ec626d810aba3c4a0409063270"><div class="ttname"><a href="namespace_header_decode.html#a4b1534ec626d810aba3c4a0409063270">HeaderDecode::decodeHeaders</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; decodeHeaders(std::istringstream &amp;buffer, const bool &amp;debug, const bool &amp;bigEndian)</div><div class="ttdef"><b>Definition:</b> <a href="_header_decode_8cpp_source.html#l00023">HeaderDecode.cpp:23</a></div></div>
+<div class="ttc" id="class_decom_html_a73c2c51f1f55e335f9a6a0a6f6d73b28"><div class="ttname"><a href="class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28">Decom::m_bigEndian</a></div><div class="ttdeci">bool m_bigEndian</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00049">Decom.hpp:49</a></div></div>
+<div class="ttc" id="class_decom_html_a96766728bb1397ee1e4a5dff24de624a"><div class="ttname"><a href="class_decom.html#a96766728bb1397ee1e4a5dff24de624a">Decom::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00044">Decom.hpp:44</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -554,7 +566,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
-<div class="ttc" id="class_back_end_html_a8a7c67a2f92530d483e083ecb7da8c50"><div class="ttname"><a href="class_back_end.html#a8a7c67a2f92530d483e083ecb7da8c50">BackEnd::setFinished</a></div><div class="ttdeci">void setFinished() const </div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00076">backend.cpp:76</a></div></div>
+<div class="ttc" id="class_back_end_html_a8a7c67a2f92530d483e083ecb7da8c50"><div class="ttname"><a href="class_back_end.html#a8a7c67a2f92530d483e083ecb7da8c50">BackEnd::setFinished</a></div><div class="ttdeci">void setFinished() const </div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00077">backend.cpp:77</a></div></div>
 <div class="ttc" id="class_thread_safe_listener_queue_html_ab96d7813239f89dfa71358209f49660b"><div class="ttname"><a href="class_thread_safe_listener_queue.html#ab96d7813239f89dfa71358209f49660b">ThreadSafeListenerQueue::listen</a></div><div class="ttdeci">uint32_t listen(T &amp;queueVal)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00043">ThreadSafeListenerQueue.hpp:43</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aac1e55e08d67fafaa805378f47cdb2ed"><div class="ttname"><a href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">DataTypes::Packet::apid</a></div><div class="ttdeci">uint16_t apid</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00061">DataTypes.hpp:61</a></div></div>
 <div class="ttc" id="class_decom_html_aa4dd37869102e95b990b71357351fa7f"><div class="ttname"><a href="class_decom.html#aa4dd37869102e95b990b71357351fa7f">Decom::decodeData</a></div><div class="ttdeci">DataTypes::Packet decodeData(std::istringstream &amp;buffer, const std::string &amp;instrument)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00133">Decom.cpp:133</a></div></div>
@@ -566,7 +578,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="ttc" id="class_decom_html_a2b5ced5211af94762cb787aecb9e9d1a"><div class="ttname"><a href="class_decom.html#a2b5ced5211af94762cb787aecb9e9d1a">Decom::storeAPID</a></div><div class="ttdeci">void storeAPID(const uint32_t &amp;APID)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00109">Decom.cpp:109</a></div></div>
 <div class="ttc" id="class_decom_html_a7106cf1a16350c085e9ee720c6be212b"><div class="ttname"><a href="class_decom.html#a7106cf1a16350c085e9ee720c6be212b">Decom::formatInstruments</a></div><div class="ttdeci">void formatInstruments(BackEnd *backend) const </div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00098">Decom.cpp:98</a></div></div>
 <div class="ttc" id="class_decom_html_a678c5543c799d136e90846779fbc8a13"><div class="ttname"><a href="class_decom.html#a678c5543c799d136e90846779fbc8a13">Decom::getHeadersAndEntries</a></div><div class="ttdeci">bool getHeadersAndEntries(std::istringstream &amp;buffer)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00158">Decom.cpp:158</a></div></div>
-<div class="ttc" id="class_decom_html_aeab751b3e1c6674050867f78d917f9a3"><div class="ttname"><a href="class_decom.html#aeab751b3e1c6674050867f78d917f9a3">Decom::m_progress</a></div><div class="ttdeci">int64_t m_progress</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00042">Decom.hpp:42</a></div></div>
+<div class="ttc" id="class_decom_html_aeab751b3e1c6674050867f78d917f9a3"><div class="ttname"><a href="class_decom.html#aeab751b3e1c6674050867f78d917f9a3">Decom::m_progress</a></div><div class="ttdeci">int64_t m_progress</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00043">Decom.hpp:43</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -603,7 +615,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 <div class="fragment"><div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;{</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">m_APIDs</a>.insert(APID);</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;}</div>
-<div class="ttc" id="class_decom_html_ab6024c218565c81f3ef635ce90a482eb"><div class="ttname"><a href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">Decom::m_APIDs</a></div><div class="ttdeci">std::set&lt; uint32_t &gt; m_APIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00045">Decom.hpp:45</a></div></div>
+<div class="ttc" id="class_decom_html_ab6024c218565c81f3ef635ce90a482eb"><div class="ttname"><a href="class_decom.html#ab6024c218565c81f3ef635ce90a482eb">Decom::m_APIDs</a></div><div class="ttdeci">std::set&lt; uint32_t &gt; m_APIDs</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00046">Decom.hpp:46</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -626,7 +638,29 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00045">45</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00046">46</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a73c2c51f1f55e335f9a6a0a6f6d73b28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Decom::m_bigEndian</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00049">49</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -648,7 +682,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00043">43</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00044">44</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -670,7 +704,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00040">40</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00041">41</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -692,7 +726,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00046">46</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00047">47</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -714,7 +748,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00039">39</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00040">40</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -736,7 +770,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00044">44</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00045">45</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -758,7 +792,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00042">42</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00043">43</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>
@@ -780,7 +814,7 @@ bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href=
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00047">47</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_decom_8hpp_source.html#l00048">48</a> of file <a class="el" href="_decom_8hpp_source.html">Decom.hpp</a>.</p>
 
 </div>
 </div>

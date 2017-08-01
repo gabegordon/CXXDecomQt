@@ -3,6 +3,7 @@ var searchData=
   ['m_5factive',['m_active',['../class_thread_safe_listener_queue.html#a0d1183bd4c2476e894317ab19e0bc29e',1,'ThreadSafeListenerQueue']]],
   ['m_5fallapids',['m_allAPIDs',['../class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a',1,'BackEnd::m_allAPIDs()'],['../class_database_reader.html#a2432cbc742558867d4b422f9eb783524',1,'DatabaseReader::m_allAPIDs()']]],
   ['m_5fapids',['m_APIDs',['../class_database_reader.html#a67f84c397b63292884f3ffc4415f59bb',1,'DatabaseReader::m_APIDs()'],['../class_decom.html#ab6024c218565c81f3ef635ce90a482eb',1,'Decom::m_APIDs()']]],
+  ['m_5fbigendian',['m_bigEndian',['../class_back_end.html#a96cb69c9495c7899f2dc03d18a0ba1e4',1,'BackEnd::m_bigEndian()'],['../class_data_decode.html#a9406da5adb5066f46d216babae7a2c4d',1,'DataDecode::m_bigEndian()'],['../class_decom.html#a73c2c51f1f55e335f9a6a0a6f6d73b28',1,'Decom::m_bigEndian()']]],
   ['m_5fbyte1',['m_byte1',['../class_data_decode.html#afab65aa5db832c7357726679d2cb431c',1,'DataDecode']]],
   ['m_5fbyte2',['m_byte2',['../class_data_decode.html#a8577f9ac63b854c7cc344e01046ab1b3',1,'DataDecode']]],
   ['m_5fbyte3',['m_byte3',['../class_data_decode.html#a0df2ecc1f636eb7ab5fdbe6f5f7edd5e',1,'DataDecode']]],
