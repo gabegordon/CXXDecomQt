@@ -98,32 +98,25 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="namespace_read_files.html">    7</a></span>&#160;<span class="keyword">namespace </span>ReadFiles</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;{</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="namespace_read_files.html#a240bf570acd83f8c1b6825d0858c5b6a">   17</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_read_files.html#a240bf570acd83f8c1b6825d0858c5b6a">read</a>(T&amp; buffer, std::ifstream&amp; in)</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespace_read_files.html#ad33366bcbf99ad3efad22ff4063e0a2a">   23</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_read_files.html#ad33366bcbf99ad3efad22ff4063e0a2a">readBuffer</a>(T&amp; buffer, std::istringstream&amp; in)</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">   36</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">checkFile</a>(std::ifstream&amp; stream, <span class="keyword">const</span> std::string&amp; name)</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (!stream || !stream.is_open())</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;Failed to open &quot;</span> + name + <span class="stringliteral">&quot; file.&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            exit(0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="ttc" id="namespace_read_files_html_a240bf570acd83f8c1b6825d0858c5b6a"><div class="ttname"><a href="namespace_read_files.html#a240bf570acd83f8c1b6825d0858c5b6a">ReadFiles::read</a></div><div class="ttdeci">static void read(T &amp;buffer, std::ifstream &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00017">ReadFile.hpp:17</a></div></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> B, <span class="keyword">typename</span> F&gt;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">   16</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">read</a>(B&amp; buffer, F&amp; in)</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">   28</a></span>&#160;    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">checkFile</a>(std::ifstream&amp; stream, <span class="keyword">const</span> std::string&amp; name)</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (!stream || !stream.is_open())</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;Failed to open &quot;</span> + name + <span class="stringliteral">&quot; file.&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            exit(0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;}</div>
 <div class="ttc" id="_log_file_8hpp_html"><div class="ttname"><a href="_log_file_8hpp.html">LogFile.hpp</a></div></div>
-<div class="ttc" id="namespace_read_files_html_ab17a2fb53339d08a30d47333c2a783ef"><div class="ttname"><a href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">ReadFiles::checkFile</a></div><div class="ttdeci">static void checkFile(std::ifstream &amp;stream, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00036">ReadFile.hpp:36</a></div></div>
-<div class="ttc" id="namespace_read_files_html_ad33366bcbf99ad3efad22ff4063e0a2a"><div class="ttname"><a href="namespace_read_files.html#ad33366bcbf99ad3efad22ff4063e0a2a">ReadFiles::readBuffer</a></div><div class="ttdeci">static void readBuffer(T &amp;buffer, std::istringstream &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00023">ReadFile.hpp:23</a></div></div>
-<div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
+<div class="ttc" id="namespace_read_files_html_ab17a2fb53339d08a30d47333c2a783ef"><div class="ttname"><a href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">ReadFiles::checkFile</a></div><div class="ttdeci">static void checkFile(std::ifstream &amp;stream, const std::string &amp;name)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00028">ReadFile.hpp:28</a></div></div>
+<div class="ttc" id="namespace_read_files_html_afddbdd30b1c668e0d4f12bd016c5e951"><div class="ttname"><a href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a></div><div class="ttdeci">static void read(B &amp;buffer, F &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00016">ReadFile.hpp:16</a></div></div>
+<div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00014">LogFile.cpp:14</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

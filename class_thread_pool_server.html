@@ -112,8 +112,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a453c33f943de7e39367c5a966eb0564d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a692123bcf9bc0b9e496539184d400c8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_thread_pool_server.html#a692123bcf9bc0b9e496539184d400c8f">join</a> ()</td></tr>
 <tr class="separator:a692123bcf9bc0b9e496539184d400c8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acebc9280e66ef7250c73b86f255290ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_thread_pool_server.html#acebc9280e66ef7250c73b86f255290ac">ThreadMain</a> (<a class="el" href="class_thread_safe_listener_queue.html">ThreadSafeListenerQueue</a>&lt; std::unique_ptr&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> &gt;&gt; &amp;queue, const std::string &amp;instrument, const uint32_t apid)</td></tr>
-<tr class="separator:acebc9280e66ef7250c73b86f255290ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a298bdac143f688244232ed56f9d3df12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_thread_pool_server.html#a298bdac143f688244232ed56f9d3df12">ThreadMain</a> (<a class="el" href="class_thread_safe_listener_queue.html">ThreadSafeListenerQueue</a>&lt; std::unique_ptr&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> &gt;&gt; *queue, const std::string &amp;instrument, const uint32_t apid)</td></tr>
+<tr class="separator:a298bdac143f688244232ed56f9d3df12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
@@ -211,36 +211,31 @@ Private Attributes</h2></td></tr>
 <p>Moves a Packet pointer into the corresponding queue and creates new thread if we have a new APID</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pack</td><td>unique_ptr pointing to packet </td></tr>
+    <tr><td class="paramname">pack</td><td>unique_ptr pointing to packet. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00067">67</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;{</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span>(!pack)</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordflow">if</span>(pack-&gt;<a class="code" href="namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f">ignored</a>)</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>.count(pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>))</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>].push(std::move(pack));</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    {</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <a class="code" href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">m_threads</a>.emplace_back(std::thread(&amp;<a class="code" href="class_thread_pool_server.html#acebc9280e66ef7250c73b86f255290ac">ThreadPoolServer::ThreadMain</a>, <span class="keyword">this</span>, std::ref(<a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>]), std::ref(instrument), pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>].push(std::move(pack));</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00065">65</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span> (pack-&gt;<a class="code" href="namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f">ignored</a>)</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>.count(pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>))  <span class="comment">// If we already have a queue for this APID</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    {</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>].push(std::move(pack));</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">else</span>  <span class="comment">// Otherwise create new queue and thread</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">m_threads</a>.emplace_back(std::thread(&amp;<a class="code" href="class_thread_pool_server.html#a298bdac143f688244232ed56f9d3df12">ThreadPoolServer::ThreadMain</a>, <span class="keyword">this</span>, &amp;<a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>], std::ref(instrument), pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>));</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>[pack-&gt;<a class="code" href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">apid</a>].push(std::move(pack));</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;}</div>
 <div class="ttc" id="class_thread_pool_server_html_a977910b5e8f3708f7e13bd0e45fa9fb1"><div class="ttname"><a href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">ThreadPoolServer::m_queues</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, ThreadSafeListenerQueue&lt; std::unique_ptr&lt; DataTypes::Packet &gt; &gt; &gt; m_queues</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8hpp_source.html#l00024">ThreadPoolServer.hpp:24</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aac1e55e08d67fafaa805378f47cdb2ed"><div class="ttname"><a href="namespace_data_types.html#aac1e55e08d67fafaa805378f47cdb2ed">DataTypes::Packet::apid</a></div><div class="ttdeci">uint16_t apid</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00061">DataTypes.hpp:61</a></div></div>
+<div class="ttc" id="class_thread_pool_server_html_a298bdac143f688244232ed56f9d3df12"><div class="ttname"><a href="class_thread_pool_server.html#a298bdac143f688244232ed56f9d3df12">ThreadPoolServer::ThreadMain</a></div><div class="ttdeci">void ThreadMain(ThreadSafeListenerQueue&lt; std::unique_ptr&lt; DataTypes::Packet &gt;&gt; *queue, const std::string &amp;instrument, const uint32_t apid)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8cpp_source.html#l00015">ThreadPoolServer.cpp:15</a></div></div>
 <div class="ttc" id="class_thread_pool_server_html_a057e0d566df1f6e70c43a903be22fea4"><div class="ttname"><a href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">ThreadPoolServer::m_threads</a></div><div class="ttdeci">std::vector&lt; std::thread &gt; m_threads</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8hpp_source.html#l00025">ThreadPoolServer.hpp:25</a></div></div>
-<div class="ttc" id="class_thread_pool_server_html_acebc9280e66ef7250c73b86f255290ac"><div class="ttname"><a href="class_thread_pool_server.html#acebc9280e66ef7250c73b86f255290ac">ThreadPoolServer::ThreadMain</a></div><div class="ttdeci">void ThreadMain(ThreadSafeListenerQueue&lt; std::unique_ptr&lt; DataTypes::Packet &gt;&gt; &amp;queue, const std::string &amp;instrument, const uint32_t apid)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8cpp_source.html#l00016">ThreadPoolServer.cpp:16</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a968e18b38c8afef9644284d07bfb6b5f"><div class="ttname"><a href="namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f">DataTypes::Packet::ignored</a></div><div class="ttdeci">bool ignored</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00062">DataTypes.hpp:62</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -257,29 +252,28 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Called by <a class="el" href="class_decom.html">Decom</a> once the input file is finished being parsed. Waits for writers threads to finish (Empty queue and timeout) Also closes output files.</p>
-<dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
+<p>Called by <a class="el" href="class_decom.html">Decom</a> once the input file is finished being parsed. Waits for writers threads to finish (Empty queue and timeout) Also closes output files. </p>
 
-<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00094">94</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;{</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; q : <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>)</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        q.second.setInactive();</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; thread : <a class="code" href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">m_threads</a>)</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        thread.join();</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00086">86</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; q : <a class="code" href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">m_queues</a>)</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        q.second.setInactive();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span>&amp; thread : <a class="code" href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">m_threads</a>)</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        thread.join();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 <div class="ttc" id="class_thread_pool_server_html_a977910b5e8f3708f7e13bd0e45fa9fb1"><div class="ttname"><a href="class_thread_pool_server.html#a977910b5e8f3708f7e13bd0e45fa9fb1">ThreadPoolServer::m_queues</a></div><div class="ttdeci">std::unordered_map&lt; uint32_t, ThreadSafeListenerQueue&lt; std::unique_ptr&lt; DataTypes::Packet &gt; &gt; &gt; m_queues</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8hpp_source.html#l00024">ThreadPoolServer.hpp:24</a></div></div>
 <div class="ttc" id="class_thread_pool_server_html_a057e0d566df1f6e70c43a903be22fea4"><div class="ttname"><a href="class_thread_pool_server.html#a057e0d566df1f6e70c43a903be22fea4">ThreadPoolServer::m_threads</a></div><div class="ttdeci">std::vector&lt; std::thread &gt; m_threads</div><div class="ttdef"><b>Definition:</b> <a href="_thread_pool_server_8hpp_source.html#l00025">ThreadPoolServer.hpp:25</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="acebc9280e66ef7250c73b86f255290ac"></a>
+<a class="anchor" id="a298bdac143f688244232ed56f9d3df12"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
           <td class="memname">void ThreadPoolServer::ThreadMain </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_thread_safe_listener_queue.html">ThreadSafeListenerQueue</a>&lt; std::unique_ptr&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> &gt;&gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="class_thread_safe_listener_queue.html">ThreadSafeListenerQueue</a>&lt; std::unique_ptr&lt; <a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> &gt;&gt; *&#160;</td>
           <td class="paramname"><em>queue</em>, </td>
         </tr>
         <tr>
@@ -304,57 +298,56 @@ Private Attributes</h2></td></tr>
 <p>Writer thread's main loop. Thread waits until it can pull a packet from the queue and then writes the packet contents to an output file.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">queue</td><td>ThreadSafeQueue containing parsed packets </td></tr>
-    <tr><td class="paramname">instrument</td><td>Instrument string for output file naming purposes </td></tr>
-    <tr><td class="paramname">apid</td><td>APID for output file naming purposes </td></tr>
+    <tr><td class="paramname">queue</td><td>ThreadSafeQueue containing parsed packets. </td></tr>
+    <tr><td class="paramname">instrument</td><td>Instrument string for output file naming purposes. </td></tr>
+    <tr><td class="paramname">apid</td><td>APID for output file naming purposes. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00016">16</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::ofstream outfile(<span class="stringliteral">&quot;output/&quot;</span> + instrument + <span class="stringliteral">&quot;_&quot;</span> + std::to_string(apid) + <span class="stringliteral">&quot;.txt&quot;</span>);</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">bool</span> firstRun = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>)  <span class="comment">// Loop until return due to empty queue</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        std::unique_ptr&lt;DataTypes::Packet&gt; queueVal;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        uint32_t retVal = queue.<a class="code" href="class_thread_safe_listener_queue.html#ab96d7813239f89dfa71358209f49660b">listen</a>(queueVal);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> (retVal)  <span class="comment">// retVal is 1 on success</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        {</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            <span class="keywordflow">if</span> (firstRun)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;            {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                outfile &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Day&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Millis&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Micros&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;SeqCount&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a>&amp; num : queueVal-&gt;<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                    outfile &lt;&lt; std::setw(15) &lt;&lt; num.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                }</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                outfile &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                firstRun = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            }</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            outfile &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a9fa916abbbf73a32394367e484222795">day</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a48f8c99b5c7f91ce2389859b57d8cb12">millis</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#ac7efb43e6950549fa1f0ba75fb9a2290">micros</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a47b8b79f14ad3b48cb5350eb1b9ec1cd">sequenceCount</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;  <span class="comment">// Write time and sequenceCount</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a>&amp; num : queueVal-&gt;<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>)  <span class="comment">// Loop through packet data and write to file</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                <span class="keywordflow">switch</span> (num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a>)  <span class="comment">// Switch on data type</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959">DataTypes::Numeric::I32</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.i32; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.u32; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba2a348a5736c8476e5c60cf7ce4a3b254">DataTypes::Numeric::F64</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.f64; <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                outfile &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            outfile &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            outfile.close();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            <span class="keywordflow">return</span>;  <span class="comment">// If queue listen times out, then terminate thread</span></div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_thread_pool_server_8cpp_source.html#l00015">15</a> of file <a class="el" href="_thread_pool_server_8cpp_source.html">ThreadPoolServer.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    std::ofstream outfile(<span class="stringliteral">&quot;output/&quot;</span> + instrument + <span class="stringliteral">&quot;_&quot;</span> + std::to_string(apid) + <span class="stringliteral">&quot;.txt&quot;</span>);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">bool</span> firstRun = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">while</span> (<span class="keyword">true</span>)  <span class="comment">// Loop until return due to empty queue</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        std::unique_ptr&lt;DataTypes::Packet&gt; queueVal;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        uint32_t retVal = queue-&gt;<a class="code" href="class_thread_safe_listener_queue.html#ab96d7813239f89dfa71358209f49660b">listen</a>(queueVal);</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="keywordflow">if</span> (retVal)  <span class="comment">// retVal is 1 on success</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            <span class="keywordflow">if</span> (firstRun)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;            {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;                outfile &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Day&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Millis&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;Micros&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; <span class="stringliteral">&quot;SeqCount&quot;</span> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;                <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a>&amp; num : queueVal-&gt;<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>)</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;                {</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;                    outfile &lt;&lt; std::setw(15) &lt;&lt; num.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                outfile &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                firstRun = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;            outfile &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a9fa916abbbf73a32394367e484222795">day</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a48f8c99b5c7f91ce2389859b57d8cb12">millis</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#ac7efb43e6950549fa1f0ba75fb9a2290">micros</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span> &lt;&lt; std::setw(15) &lt;&lt; queueVal-&gt;<a class="code" href="namespace_data_types.html#a47b8b79f14ad3b48cb5350eb1b9ec1cd">sequenceCount</a> &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;  <span class="comment">// Write time and sequenceCount</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a>&amp; num : queueVal-&gt;<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>)  <span class="comment">// Loop through packet data and write to file</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;            {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                <span class="keywordflow">switch</span> (num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a>)  <span class="comment">// Switch on data type</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959">DataTypes::Numeric::I32</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.i32; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.u32; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keywordflow">case</span> <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba2a348a5736c8476e5c60cf7ce4a3b254">DataTypes::Numeric::F64</a>: outfile &lt;&lt; std::setw(15) &lt;&lt; std::right &lt;&lt; num.f64; <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                <span class="keywordflow">default</span>: <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                outfile &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            outfile &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            outfile.close();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span>;  <span class="comment">// If queue listen times out, then terminate thread</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}</div>
 <div class="ttc" id="namespace_data_types_html_a48f8c99b5c7f91ce2389859b57d8cb12"><div class="ttname"><a href="namespace_data_types.html#a48f8c99b5c7f91ce2389859b57d8cb12">DataTypes::Packet::millis</a></div><div class="ttdeci">uint32_t millis</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8hpp_source.html#l00058">DataTypes.hpp:58</a></div></div>
 <div class="ttc" id="class_thread_safe_listener_queue_html_ab96d7813239f89dfa71358209f49660b"><div class="ttname"><a href="class_thread_safe_listener_queue.html#ab96d7813239f89dfa71358209f49660b">ThreadSafeListenerQueue::listen</a></div><div class="ttdeci">uint32_t listen(T &amp;queueVal)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00043">ThreadSafeListenerQueue.hpp:43</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aa904ec5c10f8d8b21beacbf43e018e24"><div class="ttname"><a href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">DataTypes::Numeric::tag</a></div><div class="ttdeci">enum DataTypes::Numeric::@0 tag</div></div>

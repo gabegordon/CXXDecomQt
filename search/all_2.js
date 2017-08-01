@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c',['c',['../class_progress_queue.html#ab370f64a2fa0f64411812053235f9d0f',1,'ProgressQueue::c()'],['../class_thread_safe_listener_queue.html#ad8f466b871d64f3c4c67dafddc954783',1,'ThreadSafeListenerQueue::c()']]],
+  ['c',['c',['../class_thread_safe_listener_queue.html#ad8f466b871d64f3c4c67dafddc954783',1,'ThreadSafeListenerQueue']]],
   ['ccsds',['CCSDS',['../namespace_data_types.html#aebabfe6158de48322dedfc75bacc9061',1,'DataTypes::PrimaryHeader']]],
   ['chans',['chans',['../_instrument_format_8cpp.html#a32d368d0b7fc2ee75b45e57078cd0f5d',1,'atms_pack::chans()'],['../_instrument_format_8cpp.html#a80c68ae9a22e1dc3f54687c72f96a236',1,'out_pack::chans()']]],
   ['character_5fwidth_5fpercentage',['CHARACTER_WIDTH_PERCENTAGE',['../_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649',1,'ProgressBar.hpp']]],
@@ -19,7 +19,6 @@ var searchData=
   ['control_20flow_20of_20h5decom',['Control Flow of h5Decom',['../control.html',1,'']]],
   ['control_2edox',['control.dox',['../control_8dox.html',1,'']]],
   ['copy',['copy',['../classh5cpp_1_1_datatype.html#a1436ac1dce553c84672e40209da9583e',1,'h5cpp::Datatype']]],
-  ['counter',['counter',['../class_progress_bar.html#adaa85c113022f5400fe5bcd9836c901c',1,'ProgressBar']]],
   ['create',['create',['../classh5cpp_1_1_attributes.html#a8213e0213a410c3f17d44b14c26a39c5',1,'h5cpp::Attributes::create(const std::string &amp;name, const Dataspace &amp;space)'],['../classh5cpp_1_1_attributes.html#a5cca15ee675a38a8531bec2c80cabbf3',1,'h5cpp::Attributes::create(const std::string &amp;name, const T &amp;value)'],['../classh5cpp_1_1_attributes.html#a8692beeec00b14fa6d33733068cadde4',1,'h5cpp::Attributes::create(const std::string &amp;name, Dataspace space, const T *values)'],['../classh5cpp_1_1_dataset.html#aa5de68501f6480938baeae9f1a0ebe8d',1,'h5cpp::Dataset::create(Group group, const std::string &amp;name, const Datatype &amp;dtype, const Dataspace &amp;space, const Properties &amp;prop)'],['../classh5cpp_1_1_dataset.html#ab196d61e6e39bba110e719b2b202602c',1,'h5cpp::Dataset::create(Group group, const std::string &amp;name, const Dataspace &amp;space, DsCreationFlags flags=CREATE_DS_DEFAULT)']]],
   ['create_5fcreation_5fproperties',['create_creation_properties',['../classh5cpp_1_1_dataset.html#aebb867f960f63a99214c9e4156ec42ea',1,'h5cpp::Dataset']]],
   ['create_5fdataset',['create_dataset',['../namespaceh5cpp.html#ad9acec009e6a9a05488b43ca9c41e081',1,'h5cpp::create_dataset(Group group, const std::string &amp;name, const Dataspace &amp;sp, const T *data=nullptr, DsCreationFlags flags=CREATE_DS_DEFAULT)'],['../namespaceh5cpp.html#adadc0a56552bb00aec74bcc6c44e4937',1,'h5cpp::create_dataset(Group group, const std::string &amp;name, const std::vector&lt; T, A &gt; &amp;data, DsCreationFlags flags=CREATE_DS_DEFAULT)']]],
@@ -33,7 +32,7 @@ var searchData=
   ['csvrow',['CSVRow',['../class_c_s_v_row.html',1,'CSVRow'],['../class_c_s_v_row.html#abccf397691dfb9223b0ed83e3526cfeb',1,'CSVRow::CSVRow()']]],
   ['csvrow_2ecpp',['CSVRow.cpp',['../_c_s_v_row_8cpp.html',1,'']]],
   ['csvrow_2ehpp',['CSVRow.hpp',['../_c_s_v_row_8hpp.html',1,'']]],
-  ['currentfile',['currentFile',['../class_back_end.html#aca1d6fd50f5b8c0707c85f2bc9445841',1,'BackEnd::currentFile()'],['../class_back_end.html#ab0049711a7910f543293c98a576231ab',1,'BackEnd::currentFile()']]],
+  ['currentfile',['currentFile',['../class_back_end.html#aca1d6fd50f5b8c0707c85f2bc9445841',1,'BackEnd::currentFile()'],['../class_back_end.html#a892e3b042d57a245da9b0dfcec90354f',1,'BackEnd::currentFile() const ']]],
   ['currentfilechanged',['currentFileChanged',['../class_back_end.html#a27412054c6b7ba25009c0e1b2224f9c9',1,'BackEnd']]],
   ['custom_5fprint_5fcb',['custom_print_cb',['../namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866',1,'h5cpp::internal']]]
 ];

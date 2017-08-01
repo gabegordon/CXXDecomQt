@@ -91,12 +91,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a240bf570acd83f8c1b6825d0858c5b6a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a240bf570acd83f8c1b6825d0858c5b6a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_read_files.html#a240bf570acd83f8c1b6825d0858c5b6a">read</a> (T &amp;buffer, std::ifstream &amp;in)</td></tr>
-<tr class="separator:a240bf570acd83f8c1b6825d0858c5b6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad33366bcbf99ad3efad22ff4063e0a2a"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ad33366bcbf99ad3efad22ff4063e0a2a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_read_files.html#ad33366bcbf99ad3efad22ff4063e0a2a">readBuffer</a> (T &amp;buffer, std::istringstream &amp;in)</td></tr>
-<tr class="separator:ad33366bcbf99ad3efad22ff4063e0a2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afddbdd30b1c668e0d4f12bd016c5e951"><td class="memTemplParams" colspan="2">template&lt;typename B , typename F &gt; </td></tr>
+<tr class="memitem:afddbdd30b1c668e0d4f12bd016c5e951"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">read</a> (B &amp;buffer, F &amp;in)</td></tr>
+<tr class="separator:afddbdd30b1c668e0d4f12bd016c5e951"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab17a2fb53339d08a30d47333c2a783ef"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_read_files.html#ab17a2fb53339d08a30d47333c2a783ef">checkFile</a> (std::ifstream &amp;stream, const std::string &amp;name)</td></tr>
 <tr class="separator:ab17a2fb53339d08a30d47333c2a783ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -140,25 +137,24 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_read_file_8hpp_source.html#l00036">36</a> of file <a class="el" href="_read_file_8hpp_source.html">ReadFile.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (!stream || !stream.is_open())</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;Failed to open &quot;</span> + name + <span class="stringliteral">&quot; file.&quot;</span>);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            exit(0);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
+<p>Definition at line <a class="el" href="_read_file_8hpp_source.html#l00028">28</a> of file <a class="el" href="_read_file_8hpp_source.html">ReadFile.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <span class="keywordflow">if</span> (!stream || !stream.is_open())</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        {</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;            <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;Failed to open &quot;</span> + name + <span class="stringliteral">&quot; file.&quot;</span>);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;            exit(0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        }</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    }</div>
+<div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00014">LogFile.cpp:14</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a240bf570acd83f8c1b6825d0858c5b6a"></a>
+<a class="anchor" id="afddbdd30b1c668e0d4f12bd016c5e951"></a>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename T &gt; </div>
+template&lt;typename B , typename F &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -166,13 +162,13 @@ template&lt;typename T &gt; </div>
         <tr>
           <td class="memname">static void ReadFiles::read </td>
           <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
+          <td class="paramtype">B &amp;&#160;</td>
           <td class="paramname"><em>buffer</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::ifstream &amp;&#160;</td>
+          <td class="paramtype">F &amp;&#160;</td>
           <td class="paramname"><em>in</em>&#160;</td>
         </tr>
         <tr>
@@ -195,53 +191,11 @@ template&lt;typename T &gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_read_file_8hpp_source.html#l00017">17</a> of file <a class="el" href="_read_file_8hpp_source.html">ReadFile.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    }</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="ad33366bcbf99ad3efad22ff4063e0a2a"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void ReadFiles::readBuffer </td>
-          <td>(</td>
-          <td class="paramtype">T &amp;&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::istringstream &amp;&#160;</td>
-          <td class="paramname"><em>in</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_read_file_8hpp_source.html#l00023">23</a> of file <a class="el" href="_read_file_8hpp_source.html">ReadFile.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    {</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<p>Definition at line <a class="el" href="_read_file_8hpp_source.html#l00016">16</a> of file <a class="el" href="_read_file_8hpp_source.html">ReadFile.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        in.read(reinterpret_cast&lt;char *&gt;(&amp;buffer), <span class="keyword">sizeof</span>(buffer));</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    }</div>
 </div><!-- fragment -->
 </div>
 </div>

@@ -234,11 +234,11 @@ template&lt;class T&gt; </div>
 <p>Definition at line <a class="el" href="_thread_safe_listener_queue_8hpp_source.html#l00043">43</a> of file <a class="el" href="_thread_safe_listener_queue_8hpp_source.html">ThreadSafeListenerQueue.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        std::unique_lock&lt;std::mutex&gt; lock(<a class="code" href="class_thread_safe_listener_queue.html#af22d6586fa0d133e044d7e85d5e26fef">queueLock</a>);  <span class="comment">// Get mutex lock</span></div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="class_thread_safe_listener_queue.html#a2917c4b048fdaee3bfa25e7e43aae85d">q</a>.empty()) <span class="comment">// While loop checking empty to account for spurious wakeups</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordflow">while</span> (<a class="code" href="class_thread_safe_listener_queue.html#a2917c4b048fdaee3bfa25e7e43aae85d">q</a>.empty())  <span class="comment">// While loop checking empty to account for spurious wakeups</span></div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        {</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            <span class="keywordflow">if</span> (<a class="code" href="class_thread_safe_listener_queue.html#ad8f466b871d64f3c4c67dafddc954783">c</a>.wait_for(lock, std::chrono::seconds(1)) == std::cv_status::timeout)  <span class="comment">// Wait on condition var until notified, or 1 second timeout is reached</span></div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span>(!<a class="code" href="class_thread_safe_listener_queue.html#a0d1183bd4c2476e894317ab19e0bc29e">m_active</a> &amp;&amp; <a class="code" href="class_thread_safe_listener_queue.html#a2917c4b048fdaee3bfa25e7e43aae85d">q</a>.empty())</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                <span class="keywordflow">if</span> (!<a class="code" href="class_thread_safe_listener_queue.html#a0d1183bd4c2476e894317ab19e0bc29e">m_active</a> &amp;&amp; <a class="code" href="class_thread_safe_listener_queue.html#a2917c4b048fdaee3bfa25e7e43aae85d">q</a>.empty())</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                {</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                }</div>
@@ -279,7 +279,7 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Pushes a Packet pointer into the queue. Notifies one waiting listener.</p>
+<p>Pushes an element into the queue. Notifies one waiting listener.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">element</td><td>to be pushed </td></tr>

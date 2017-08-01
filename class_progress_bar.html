@@ -105,10 +105,8 @@ Collaboration diagram for ProgressBar:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a48c658755528aa77d5c5872c6edf3f73"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#a48c658755528aa77d5c5872c6edf3f73">ProgressBar</a> (const uint64_t &amp;n_, const char *description_=&quot;&quot;)</td></tr>
-<tr class="separator:a48c658755528aa77d5c5872c6edf3f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a677df3f86909de2245babe4e5e456940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#a677df3f86909de2245babe4e5e456940">SetStyle</a> (const char *unit_bar_, const char *unit_space_)</td></tr>
-<tr class="separator:a677df3f86909de2245babe4e5e456940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb9af913bd6b8d8a0aa16b4027f88691"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#aeb9af913bd6b8d8a0aa16b4027f88691">ProgressBar</a> (const uint64_t &amp;n_, const char *description_)</td></tr>
+<tr class="separator:aeb9af913bd6b8d8a0aa16b4027f88691"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9de570009a14cc9e4c78a2ee5f56430e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#a9de570009a14cc9e4c78a2ee5f56430e">Progressed</a> (const uint64_t &amp;idx_, <a class="el" href="class_back_end.html">BackEnd</a> *backend)</td></tr>
 <tr class="separator:a9de570009a14cc9e4c78a2ee5f56430e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -127,8 +125,6 @@ Private Attributes</h2></td></tr>
 <tr class="separator:a5fc7a01b048075b3dc76eec4fe95f3e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad722bf58f1d709d3cd38506a368af80d"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">tenth</a></td></tr>
 <tr class="separator:ad722bf58f1d709d3cd38506a368af80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adaa85c113022f5400fe5bcd9836c901c"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#adaa85c113022f5400fe5bcd9836c901c">counter</a></td></tr>
-<tr class="separator:adaa85c113022f5400fe5bcd9836c901c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8a36c3d4386d2c8515dad7aa0c9d4ff2"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a></td></tr>
 <tr class="separator:a8a36c3d4386d2c8515dad7aa0c9d4ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5fe04d7f2dee49bff858171911e866c"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a></td></tr>
@@ -142,7 +138,7 @@ Private Attributes</h2></td></tr>
 <div class="textblock">
 <p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00012">12</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a48c658755528aa77d5c5872c6edf3f73"></a>
+<a class="anchor" id="aeb9af913bd6b8d8a0aa16b4027f88691"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -159,7 +155,7 @@ Private Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>description_</em> = <code>&quot;&quot;</code>&#160;</td>
+          <td class="paramname"><em>description_</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -174,29 +170,27 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00015">15</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                                                                 :</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>{n_},</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a>{0},</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a>{n_/100},</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">tenth</a>{n_/100},</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_progress_bar.html#adaa85c113022f5400fe5bcd9836c901c">counter</a>{0},</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a>{description_},</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a>{<span class="keyword">true</span>}</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a> = <span class="stringliteral">&quot;=&quot;</span>;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">unit_space</a> = <span class="stringliteral">&quot; &quot;</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a> = std::strlen(<a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a>);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    }</div>
-<div class="ttc" id="class_progress_bar_html_ac5fe04d7f2dee49bff858171911e866c"><div class="ttname"><a href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">ProgressBar::unit_bar</a></div><div class="ttdeci">const char * unit_bar</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00041">ProgressBar.hpp:41</a></div></div>
-<div class="ttc" id="class_progress_bar_html_af13279be78f15fc2c33723ff564856d6"><div class="ttname"><a href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">ProgressBar::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00043">ProgressBar.hpp:43</a></div></div>
-<div class="ttc" id="class_progress_bar_html_adaa85c113022f5400fe5bcd9836c901c"><div class="ttname"><a href="class_progress_bar.html#adaa85c113022f5400fe5bcd9836c901c">ProgressBar::counter</a></div><div class="ttdeci">uint64_t counter</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00039">ProgressBar.hpp:39</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a8a36c3d4386d2c8515dad7aa0c9d4ff2"><div class="ttname"><a href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">ProgressBar::description</a></div><div class="ttdeci">const char * description</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00040">ProgressBar.hpp:40</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a5fc7a01b048075b3dc76eec4fe95f3e0"><div class="ttname"><a href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">ProgressBar::frequency_update</a></div><div class="ttdeci">uint64_t frequency_update</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00037">ProgressBar.hpp:37</a></div></div>
-<div class="ttc" id="class_progress_bar_html_aa5c12a9e11e108c8ead079f3456e9631"><div class="ttname"><a href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">ProgressBar::unit_space</a></div><div class="ttdeci">const char * unit_space</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00042">ProgressBar.hpp:42</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a0179a9da7bcab611339246f5a2086d59"><div class="ttname"><a href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">ProgressBar::desc_width</a></div><div class="ttdeci">uint64_t desc_width</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00036">ProgressBar.hpp:36</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a32feb5bfcc985616310d6d9826fef708"><div class="ttname"><a href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">ProgressBar::n</a></div><div class="ttdeci">uint64_t n</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00035">ProgressBar.hpp:35</a></div></div>
-<div class="ttc" id="class_progress_bar_html_ad722bf58f1d709d3cd38506a368af80d"><div class="ttname"><a href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">ProgressBar::tenth</a></div><div class="ttdeci">uint64_t tenth</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00038">ProgressBar.hpp:38</a></div></div>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00014">14</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                                                              :</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>{n_},</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a>{0},</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a>{n_/100},</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        <a class="code" href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">tenth</a>{n_/100},</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a>{description_},</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a>{<span class="keyword">true</span>}</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <a class="code" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a> = <span class="stringliteral">&quot;=&quot;</span>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">unit_space</a> = <span class="stringliteral">&quot; &quot;</span>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a> = std::strlen(<a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a>);</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
+<div class="ttc" id="class_progress_bar_html_ac5fe04d7f2dee49bff858171911e866c"><div class="ttname"><a href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">ProgressBar::unit_bar</a></div><div class="ttdeci">const char * unit_bar</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00035">ProgressBar.hpp:35</a></div></div>
+<div class="ttc" id="class_progress_bar_html_af13279be78f15fc2c33723ff564856d6"><div class="ttname"><a href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">ProgressBar::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00037">ProgressBar.hpp:37</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a8a36c3d4386d2c8515dad7aa0c9d4ff2"><div class="ttname"><a href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">ProgressBar::description</a></div><div class="ttdeci">const char * description</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00034">ProgressBar.hpp:34</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a5fc7a01b048075b3dc76eec4fe95f3e0"><div class="ttname"><a href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">ProgressBar::frequency_update</a></div><div class="ttdeci">uint64_t frequency_update</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00032">ProgressBar.hpp:32</a></div></div>
+<div class="ttc" id="class_progress_bar_html_aa5c12a9e11e108c8ead079f3456e9631"><div class="ttname"><a href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">ProgressBar::unit_space</a></div><div class="ttdeci">const char * unit_space</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00036">ProgressBar.hpp:36</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a0179a9da7bcab611339246f5a2086d59"><div class="ttname"><a href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">ProgressBar::desc_width</a></div><div class="ttdeci">uint64_t desc_width</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00031">ProgressBar.hpp:31</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a32feb5bfcc985616310d6d9826fef708"><div class="ttname"><a href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">ProgressBar::n</a></div><div class="ttdeci">uint64_t n</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00030">ProgressBar.hpp:30</a></div></div>
+<div class="ttc" id="class_progress_bar_html_ad722bf58f1d709d3cd38506a368af80d"><div class="ttname"><a href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">ProgressBar::tenth</a></div><div class="ttdeci">uint64_t tenth</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00033">ProgressBar.hpp:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -221,17 +215,17 @@ Private Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get width of console window based on character width.</p>
+<dl class="section return"><dt>Returns</dt><dd>Length of console window. </dd></dl>
 
-<p>Definition at line <a class="el" href="_progress_bar_8cpp_source.html#l00010">10</a> of file <a class="el" href="_progress_bar_8cpp_source.html">ProgressBar.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;{</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <span class="comment">// get console width and according adjust the length of the progress bar</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <span class="keywordtype">int</span> bar_length = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>((95 - <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a> - <a class="code" href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a>) / 2.0);</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    <span class="keywordflow">return</span> bar_length;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_progress_bar_8cpp_source.html#l00009">9</a> of file <a class="el" href="_progress_bar_8cpp_source.html">ProgressBar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;{</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <span class="keywordtype">int</span> bar_length = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>((95 - <a class="code" href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">desc_width</a> - <a class="code" href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a>) / 2.0);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> bar_length;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
 <div class="ttc" id="_progress_bar_8hpp_html_a6fb5d754f9d3dbb760a3df730f184649"><div class="ttname"><a href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a></div><div class="ttdeci">#define CHARACTER_WIDTH_PERCENTAGE</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00010">ProgressBar.hpp:10</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a0179a9da7bcab611339246f5a2086d59"><div class="ttname"><a href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">ProgressBar::desc_width</a></div><div class="ttdeci">uint64_t desc_width</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00036">ProgressBar.hpp:36</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a0179a9da7bcab611339246f5a2086d59"><div class="ttname"><a href="class_progress_bar.html#a0179a9da7bcab611339246f5a2086d59">ProgressBar::desc_width</a></div><div class="ttdeci">uint64_t desc_width</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00031">ProgressBar.hpp:31</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,120 +252,72 @@ Private Attributes</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Progress the bar. And write back the progressbar string to Qt.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">idx_</td><td>Amount to progress. </td></tr>
+    <tr><td class="paramname">backend</td><td>Qt backend. </td></tr>
+  </table>
+  </dd>
+</dl>
 
-<p>Definition at line <a class="el" href="_progress_bar_8cpp_source.html#l00019">19</a> of file <a class="el" href="_progress_bar_8cpp_source.html">ProgressBar.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">try</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="keywordflow">if</span> (idx_ &gt; <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>) <span class="keywordflow">throw</span> idx_;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        <span class="comment">// determines whether to update the progress bar from frequency_update</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <span class="keywordflow">if</span> ((idx_ !=<a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>) &amp;&amp; (idx_ &lt; <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a>) &amp;&amp; !<a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a>) <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a> += <a class="code" href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">tenth</a>;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a> = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="comment">// calculate the size of the progress bar</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordtype">int</span> bar_size = <a class="code" href="class_progress_bar.html#ad2a2ed554d62ba570e2683facc52b677">GetBarLength</a>();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// calculate percentage of progress</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">double</span> progress_percent = idx_* <a class="code" href="_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c">TOTAL_PERCENTAGE</a> / <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>;</div>
+<p>Definition at line <a class="el" href="_progress_bar_8cpp_source.html#l00022">22</a> of file <a class="el" href="_progress_bar_8cpp_source.html">ProgressBar.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">try</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    {</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span> (idx_ &gt; <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>) <span class="keywordflow">throw</span> idx_;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="comment">// determines whether to update the progress bar from frequency_update</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keywordflow">if</span> ((idx_ !=<a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>) &amp;&amp; (idx_ &lt; <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a>) &amp;&amp; !<a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a>) <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <a class="code" href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">frequency_update</a> += <a class="code" href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">tenth</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        <a class="code" href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">firstRun</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <span class="comment">// calculate the size of the progress bar</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keywordtype">int</span> bar_size = <a class="code" href="class_progress_bar.html#ad2a2ed554d62ba570e2683facc52b677">GetBarLength</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// calculate the percentage value of a unit bar</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> percent_per_unit_bar = <a class="code" href="_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c">TOTAL_PERCENTAGE</a> / bar_size;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="comment">// calculate percentage of progress</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        <span class="keywordtype">double</span> progress_percent = idx_* <a class="code" href="_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c">TOTAL_PERCENTAGE</a> / <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a>;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// display progress bar</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        std::stringstream out;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::right &lt;&lt; std::setw(12) &lt;&lt; <a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a> &lt;&lt; <span class="stringliteral">&quot; [&quot;</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> bar_length = 0; bar_length &lt;= bar_size - 1; ++bar_length)</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        {</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keywordflow">if</span> (bar_length*percent_per_unit_bar &lt; progress_percent)</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;            {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                out &lt;&lt; <a class="code" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a>;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            }</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;            {</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                out &lt;&lt; <a class="code" href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">unit_space</a>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        }</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::setw(<a class="code" href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a> + 1) &lt;&lt; std::setprecision(1) &lt;&lt; std::fixed &lt;&lt; progress_percent &lt;&lt; <span class="stringliteral">&quot;%\r&quot;</span> &lt;&lt; std::flush;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(out.str());</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    }</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">catch</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> e)</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;PROGRESS_BAR_EXCEPTION: _idx (&quot;</span> &lt;&lt; e &lt;&lt; <span class="stringliteral">&quot;) went out of bounds, greater than n (&quot;</span> &lt;&lt; <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a> &lt;&lt; <span class="stringliteral">&quot;).&quot;</span> &lt;&lt; std::endl &lt;&lt; std::flush;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// calculate the percentage value of a unit bar</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">double</span> percent_per_unit_bar = <a class="code" href="_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c">TOTAL_PERCENTAGE</a> / bar_size;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="comment">// display progress bar</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        std::stringstream out;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot; &quot;</span> &lt;&lt; std::right &lt;&lt; std::setw(12) &lt;&lt; <a class="code" href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">description</a> &lt;&lt; <span class="stringliteral">&quot; [&quot;</span>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> bar_length = 0; bar_length &lt;= bar_size - 1; ++bar_length)</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">if</span> (bar_length*percent_per_unit_bar &lt; progress_percent)</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            {</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                out &lt;&lt; <a class="code" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            {</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                out &lt;&lt; <a class="code" href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">unit_space</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        }</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        out &lt;&lt; <span class="stringliteral">&quot;]&quot;</span> &lt;&lt; std::setw(<a class="code" href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a> + 1) &lt;&lt; std::setprecision(1) &lt;&lt; std::fixed &lt;&lt; progress_percent &lt;&lt; <span class="stringliteral">&quot;%\r&quot;</span> &lt;&lt; std::flush;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(out.str());</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">catch</span> (uint64_t e)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    {</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        std::cerr &lt;&lt; <span class="stringliteral">&quot;PROGRESS_BAR_EXCEPTION: _idx (&quot;</span> &lt;&lt; e &lt;&lt; <span class="stringliteral">&quot;) went out of bounds, greater than n (&quot;</span> &lt;&lt; <a class="code" href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">n</a> &lt;&lt; <span class="stringliteral">&quot;).&quot;</span> &lt;&lt; std::endl &lt;&lt; std::flush;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
 <div class="ttc" id="_progress_bar_8hpp_html_a6fb5d754f9d3dbb760a3df730f184649"><div class="ttname"><a href="_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649">CHARACTER_WIDTH_PERCENTAGE</a></div><div class="ttdeci">#define CHARACTER_WIDTH_PERCENTAGE</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00010">ProgressBar.hpp:10</a></div></div>
-<div class="ttc" id="class_progress_bar_html_ac5fe04d7f2dee49bff858171911e866c"><div class="ttname"><a href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">ProgressBar::unit_bar</a></div><div class="ttdeci">const char * unit_bar</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00041">ProgressBar.hpp:41</a></div></div>
-<div class="ttc" id="class_progress_bar_html_af13279be78f15fc2c33723ff564856d6"><div class="ttname"><a href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">ProgressBar::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00043">ProgressBar.hpp:43</a></div></div>
-<div class="ttc" id="class_progress_bar_html_ad2a2ed554d62ba570e2683facc52b677"><div class="ttname"><a href="class_progress_bar.html#ad2a2ed554d62ba570e2683facc52b677">ProgressBar::GetBarLength</a></div><div class="ttdeci">int GetBarLength() const </div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8cpp_source.html#l00010">ProgressBar.cpp:10</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a8a36c3d4386d2c8515dad7aa0c9d4ff2"><div class="ttname"><a href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">ProgressBar::description</a></div><div class="ttdeci">const char * description</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00040">ProgressBar.hpp:40</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a5fc7a01b048075b3dc76eec4fe95f3e0"><div class="ttname"><a href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">ProgressBar::frequency_update</a></div><div class="ttdeci">uint64_t frequency_update</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00037">ProgressBar.hpp:37</a></div></div>
+<div class="ttc" id="class_progress_bar_html_ac5fe04d7f2dee49bff858171911e866c"><div class="ttname"><a href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">ProgressBar::unit_bar</a></div><div class="ttdeci">const char * unit_bar</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00035">ProgressBar.hpp:35</a></div></div>
+<div class="ttc" id="class_progress_bar_html_af13279be78f15fc2c33723ff564856d6"><div class="ttname"><a href="class_progress_bar.html#af13279be78f15fc2c33723ff564856d6">ProgressBar::firstRun</a></div><div class="ttdeci">bool firstRun</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00037">ProgressBar.hpp:37</a></div></div>
+<div class="ttc" id="class_progress_bar_html_ad2a2ed554d62ba570e2683facc52b677"><div class="ttname"><a href="class_progress_bar.html#ad2a2ed554d62ba570e2683facc52b677">ProgressBar::GetBarLength</a></div><div class="ttdeci">int GetBarLength() const </div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8cpp_source.html#l00009">ProgressBar.cpp:9</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a8a36c3d4386d2c8515dad7aa0c9d4ff2"><div class="ttname"><a href="class_progress_bar.html#a8a36c3d4386d2c8515dad7aa0c9d4ff2">ProgressBar::description</a></div><div class="ttdeci">const char * description</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00034">ProgressBar.hpp:34</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a5fc7a01b048075b3dc76eec4fe95f3e0"><div class="ttname"><a href="class_progress_bar.html#a5fc7a01b048075b3dc76eec4fe95f3e0">ProgressBar::frequency_update</a></div><div class="ttdeci">uint64_t frequency_update</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00032">ProgressBar.hpp:32</a></div></div>
 <div class="ttc" id="class_back_end_html_a133f0aa16a611460cb72b7ca15f1a28b"><div class="ttname"><a href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">BackEnd::setProgress</a></div><div class="ttdeci">void setProgress(const std::string &amp;prog)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00066">backend.cpp:66</a></div></div>
 <div class="ttc" id="_progress_bar_8hpp_html_ad230c2a0c13c552b3a64edfc9a6f1d1c"><div class="ttname"><a href="_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c">TOTAL_PERCENTAGE</a></div><div class="ttdeci">#define TOTAL_PERCENTAGE</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00009">ProgressBar.hpp:9</a></div></div>
-<div class="ttc" id="class_progress_bar_html_aa5c12a9e11e108c8ead079f3456e9631"><div class="ttname"><a href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">ProgressBar::unit_space</a></div><div class="ttdeci">const char * unit_space</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00042">ProgressBar.hpp:42</a></div></div>
-<div class="ttc" id="class_progress_bar_html_a32feb5bfcc985616310d6d9826fef708"><div class="ttname"><a href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">ProgressBar::n</a></div><div class="ttdeci">uint64_t n</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00035">ProgressBar.hpp:35</a></div></div>
-<div class="ttc" id="class_progress_bar_html_ad722bf58f1d709d3cd38506a368af80d"><div class="ttname"><a href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">ProgressBar::tenth</a></div><div class="ttdeci">uint64_t tenth</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00038">ProgressBar.hpp:38</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a677df3f86909de2245babe4e5e456940"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ProgressBar::SetStyle </td>
-          <td>(</td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>unit_bar_</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const char *&#160;</td>
-          <td class="paramname"><em>unit_space_</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_progress_bar_8cpp_source.html#l00004">4</a> of file <a class="el" href="_progress_bar_8cpp_source.html">ProgressBar.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;{</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">unit_bar</a> = unit_bar_;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <a class="code" href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">unit_space</a> = unit_space_;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;}</div>
-<div class="ttc" id="class_progress_bar_html_ac5fe04d7f2dee49bff858171911e866c"><div class="ttname"><a href="class_progress_bar.html#ac5fe04d7f2dee49bff858171911e866c">ProgressBar::unit_bar</a></div><div class="ttdeci">const char * unit_bar</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00041">ProgressBar.hpp:41</a></div></div>
-<div class="ttc" id="class_progress_bar_html_aa5c12a9e11e108c8ead079f3456e9631"><div class="ttname"><a href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">ProgressBar::unit_space</a></div><div class="ttdeci">const char * unit_space</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00042">ProgressBar.hpp:42</a></div></div>
+<div class="ttc" id="class_progress_bar_html_aa5c12a9e11e108c8ead079f3456e9631"><div class="ttname"><a href="class_progress_bar.html#aa5c12a9e11e108c8ead079f3456e9631">ProgressBar::unit_space</a></div><div class="ttdeci">const char * unit_space</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00036">ProgressBar.hpp:36</a></div></div>
+<div class="ttc" id="class_progress_bar_html_a32feb5bfcc985616310d6d9826fef708"><div class="ttname"><a href="class_progress_bar.html#a32feb5bfcc985616310d6d9826fef708">ProgressBar::n</a></div><div class="ttdeci">uint64_t n</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00030">ProgressBar.hpp:30</a></div></div>
+<div class="ttc" id="class_progress_bar_html_ad722bf58f1d709d3cd38506a368af80d"><div class="ttname"><a href="class_progress_bar.html#ad722bf58f1d709d3cd38506a368af80d">ProgressBar::tenth</a></div><div class="ttdeci">uint64_t tenth</div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00033">ProgressBar.hpp:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="adaa85c113022f5400fe5bcd9836c901c"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t ProgressBar::counter</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">private</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00039">39</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
-
-</div>
-</div>
 <a class="anchor" id="a0179a9da7bcab611339246f5a2086d59"></a>
 <div class="memitem">
 <div class="memproto">
@@ -390,7 +336,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00036">36</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00031">31</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -412,7 +358,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00040">40</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00034">34</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -434,7 +380,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00043">43</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00037">37</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -456,7 +402,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00037">37</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00032">32</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -478,7 +424,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00035">35</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00030">30</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -500,7 +446,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00038">38</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00033">33</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -522,7 +468,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00041">41</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00035">35</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>
@@ -544,7 +490,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00042">42</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_progress_bar_8hpp_source.html#l00036">36</a> of file <a class="el" href="_progress_bar_8hpp_source.html">ProgressBar.hpp</a>.</p>
 
 </div>
 </div>

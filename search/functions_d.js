@@ -1,7 +1,7 @@
 var searchData=
 [
   ['object',['Object',['../classh5cpp_1_1_object.html#a5b7e1f78a4e933dad29c052c225ff732',1,'h5cpp::Object::Object(const Object &amp;o)'],['../classh5cpp_1_1_object.html#ad33dd5f705b1ac71aea5361a73a3cc98',1,'h5cpp::Object::Object()'],['../classh5cpp_1_1_object.html#a3d6566991b8404ba9942804eeaa47c37',1,'h5cpp::Object::Object(hid_t id)'],['../classh5cpp_1_1_object.html#a763da10fc61f44b98f277eb290ace435',1,'h5cpp::Object::Object(hid_t id, internal::IncRC)']]],
-  ['ofiles',['ofiles',['../class_back_end.html#ac9066ff2e9e86bd249d2a15f6b26ebb7',1,'BackEnd']]],
+  ['ofiles',['ofiles',['../class_back_end.html#a795890d4d5c94a7af4f2c41a908d4b5a',1,'BackEnd']]],
   ['ofileschanged',['ofilesChanged',['../class_back_end.html#a72052c1cbdaf85f57f8c36ae3cf600f4',1,'BackEnd']]],
   ['open',['open',['../classh5cpp_1_1_attributes.html#a66e510b8f4055dc43acb7e0b6bb1a9fb',1,'h5cpp::Attributes::open()'],['../classh5cpp_1_1_file.html#ac1cd6ef6771a670142272d44cec13fbd',1,'h5cpp::File::open()']]],
   ['open_5fdataset',['open_dataset',['../classh5cpp_1_1_group.html#af45cbbf46d016a7908c764a6f8faa13c',1,'h5cpp::Group']]],

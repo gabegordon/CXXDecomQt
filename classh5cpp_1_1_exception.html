@@ -131,7 +131,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00142">142</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00143">143</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a80ffe595d073b120ce8ef2f79e23f1b6"></a>
 <div class="memitem">
@@ -155,18 +155,18 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00146">146</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;                                       : <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>(msg_)</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        {</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="preprocessor">#if (defined __APPLE__)</span></div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor"></span>            <span class="comment">// implement nice exception messages that need string manipulation</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor">#elif (defined _MSC_VER) || (defined __GNUG__)</span></div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor"></span>            <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>.append(<span class="stringliteral">&quot;. Error Stack:&quot;</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            H5Ewalk2(H5E_DEFAULT, H5E_WALK_DOWNWARD, &amp;<a class="code" href="namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866">internal::custom_print_cb</a>, &amp;<a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor"></span>        }</div>
-<div class="ttc" id="namespaceh5cpp_1_1internal_html_aa857d2cd8e25566d0ef2dc2b3dee0866"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866">h5cpp::internal::custom_print_cb</a></div><div class="ttdeci">static herr_t custom_print_cb(unsigned n, const H5E_error2_t *err_desc, void *client_data)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00101">hdf_wrapper.hpp:101</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00144">hdf_wrapper.hpp:144</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00147">147</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                       : <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>(msg_)</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#if (defined __APPLE__)</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;<span class="preprocessor"></span>            <span class="comment">// implement nice exception messages that need string manipulation</span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<span class="preprocessor">#elif (defined _MSC_VER) || (defined __GNUG__)</span></div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="preprocessor"></span>            <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>.append(<span class="stringliteral">&quot;. Error Stack:&quot;</span>);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            H5Ewalk2(H5E_DEFAULT, H5E_WALK_DOWNWARD, &amp;<a class="code" href="namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866">internal::custom_print_cb</a>, &amp;<a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>);</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor"></span>        }</div>
+<div class="ttc" id="namespaceh5cpp_1_1internal_html_aa857d2cd8e25566d0ef2dc2b3dee0866"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#aa857d2cd8e25566d0ef2dc2b3dee0866">h5cpp::internal::custom_print_cb</a></div><div class="ttdeci">static herr_t custom_print_cb(unsigned n, const H5E_error2_t *err_desc, void *client_data)</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00102">hdf_wrapper.hpp:102</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00145">hdf_wrapper.hpp:145</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -191,9 +191,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00155">155</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;: <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>(<span class="stringliteral">&quot;Unspecified error&quot;</span>) { assert(<span class="keyword">false</span>); }</div>
-<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00144">hdf_wrapper.hpp:144</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00156">156</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;: <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>(<span class="stringliteral">&quot;Unspecified error&quot;</span>) { assert(<span class="keyword">false</span>); }</div>
+<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00145">hdf_wrapper.hpp:145</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -224,8 +224,8 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00156">156</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;{}</div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00157">157</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -257,9 +257,9 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00157">157</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>.c_str(); }</div>
-<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00144">hdf_wrapper.hpp:144</a></div></div>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00158">158</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;{ <span class="keywordflow">return</span> <a class="code" href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">msg</a>.c_str(); }</div>
+<div class="ttc" id="classh5cpp_1_1_exception_html_a3b93ef617847fc911d84976262ca950f"><div class="ttname"><a href="classh5cpp_1_1_exception.html#a3b93ef617847fc911d84976262ca950f">h5cpp::Exception::msg</a></div><div class="ttdeci">std::string msg</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00145">hdf_wrapper.hpp:145</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,7 +282,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00144">144</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00145">145</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 
 </div>
 </div>

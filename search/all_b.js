@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['m',['m',['../class_progress_queue.html#aba53a9e1e83109bdc1e88857dafad8ee',1,'ProgressQueue']]],
   ['m_5factive',['m_active',['../class_thread_safe_listener_queue.html#a0d1183bd4c2476e894317ab19e0bc29e',1,'ThreadSafeListenerQueue']]],
   ['m_5fallapids',['m_allAPIDs',['../class_back_end.html#ad58528ee3d30dafa97a61be5dc83fc5a',1,'BackEnd::m_allAPIDs()'],['../class_database_reader.html#a2432cbc742558867d4b422f9eb783524',1,'DatabaseReader::m_allAPIDs()']]],
   ['m_5fapids',['m_APIDs',['../class_database_reader.html#a67f84c397b63292884f3ffc4415f59bb',1,'DatabaseReader::m_APIDs()'],['../class_decom.html#ab6024c218565c81f3ef635ce90a482eb',1,'Decom::m_APIDs()']]],
@@ -12,7 +11,7 @@ var searchData=
   ['m_5fdebug',['m_debug',['../class_back_end.html#a6b3f67566f6f0c5042cf3d6dd59e1e79',1,'BackEnd::m_debug()'],['../class_data_decode.html#a1cd0f2f20d41ca50bce000c8b2622f62',1,'DataDecode::m_debug()'],['../class_decom.html#a96766728bb1397ee1e4a5dff24de624a',1,'Decom::m_debug()']]],
   ['m_5fdirectory',['m_directory',['../classh5_decode.html#a398f07cf678a7a7cda54957bae354a0c',1,'h5Decode::m_directory()'],['../classpds_decode.html#a32c524a3611c40a21292e42dab956865',1,'pdsDecode::m_directory()']]],
   ['m_5fentries',['m_entries',['../class_database_reader.html#ac7ef1211c150b66b7b87b2f59e53b637',1,'DatabaseReader::m_entries()'],['../class_data_decode.html#aafce682a472de855b6b9823df3e88a40',1,'DataDecode::m_entries()'],['../class_decom.html#a5ebe992c9feb463fb68f03c853cf65b7',1,'Decom::m_entries()']]],
-  ['m_5ffiles',['m_files',['../classh5_decode.html#adc599304acc87f3e66d3646b7d12db20',1,'h5Decode']]],
+  ['m_5ffiles',['m_files',['../classh5_decode.html#adc599304acc87f3e66d3646b7d12db20',1,'h5Decode::m_files()'],['../classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51',1,'pdsDecode::m_files()']]],
   ['m_5ffirstrun',['m_firstRun',['../class_database_reader.html#aba85851e0df489f969304b1d822053db',1,'DatabaseReader']]],
   ['m_5ffoldername',['m_folderName',['../class_back_end.html#afc89995e7c171244c82445966046ff20',1,'BackEnd']]],
   ['m_5fh5',['m_H5',['../class_back_end.html#ad29f8cc4398d37220ce358f49447d34b',1,'BackEnd']]],
