@@ -59,7 +59,7 @@ void BackEnd::setPDS()
 }
 
 /**
- * Given a string containing the progressbar (or another message) convert to QString. Then signal and update Qt.
+ * Given a string containing the progressbar (or another message) convert to QString. Then signal Qt.
  *
  * @param prog String to be display.
  */
@@ -67,7 +67,7 @@ void BackEnd::setProgress(const std::string& prog)
 {
     m_progress = QString::fromStdString(prog);
     emit progressChanged();
-    QGuiApplication::sync();
+    QCoreApplication::processEvents();
 }
 
 /**
@@ -87,7 +87,6 @@ void BackEnd::setCurrentFile(const std::string& filename)
 {
     m_currentFile = QString::fromStdString(filename);
     emit currentFileChanged();
-    QGuiApplication::sync();
 }
 
 /**

@@ -34,7 +34,9 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
         uint32_t retVal = queue.listen(queueVal);
         if (retVal)
         {
-            std::istringstream input_stream(std::string(std::begin(std::get<0>(queueVal)), std::end(std::get<0>(queueVal))));
+            std::istringstream input_stream;
+            input_stream.rdbuf()->pubsetbuf(reinterpret_cast<char*>(&std::get<0>(queueVal)[0]), std::get<0>(queueVal).size());
+
             int64_t fileSize = getFileSize(input_stream);
             while (true)  // Loop until error or we reach end of file
             {

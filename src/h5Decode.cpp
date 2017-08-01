@@ -1,5 +1,4 @@
 #include <iostream>
-#include <vector>
 #include <cstdint>
 #include <set>
 #include <algorithm>
@@ -9,7 +8,6 @@
 #include <boost/filesystem.hpp>
 #include "h5Decode.hpp"
 #include "getFiles.hpp"
-#include "hdf_wrapper.hpp"
 #include "LogFile.hpp"
 #include "backend.hpp"
 #include "ProgressBar.hpp"
@@ -21,16 +19,17 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, D
 {
     m_directory = directory;
     std::set<std::string> outfileNames;
-    auto files = getFiles::filesInDirectory(m_directory, ".h5");
-    if(files.size() == 0)
+    m_files = getFiles::filesInDirectory(m_directory, ".h5");
+    if(m_files.size() == 0)
     {
         LogFile::logError("No .h5 files found");
         exit(0);
     }
 
-    for (const auto& filename : files)
+    for (const auto& filename : m_files)
     {
         h5::File h5File(filename, "r");
+        m_h5Files.emplace_back(h5File);
         h5::Group All_Data = h5File.root().open_group("All_Data");
 
         for(size_t group = 0; group < All_Data.size(); ++group)
@@ -39,9 +38,10 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, D
         }
     }
 
-    type = checkType(files.front());
+    sortFiles(m_files);
+    type = checkType(m_files.front());
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
-    std::string input =  files.front() + files.back();  // We can put this on a single line. It does not matter for Matlab
+    std::string input =  m_files.front() + m_files.back();  // We can put this on a single line. It does not matter for Matlab
     std::ofstream datesFile;
     datesFile.open("output/datesFile.dat");  // create a file with the first and last dates for matlab to use in creating a directory structure by SCID and date
     datesFile << input;
@@ -57,24 +57,16 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, D
  */
 void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
 {
-    auto files = getFiles::filesInDirectory(m_directory, ".h5");
-    if(files.size() == 0)
-    {
-        LogFile::logError("No .h5 files found");
-        exit(0);
-    }
-    sortFiles(files);
-
     Decom decomEngine(debug, entries, type);
     std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue), backend);
     decomThread.detach();
-    ProgressBar pbar(files.size(), "Parsing h5");
+    ProgressBar pbar(m_files.size(), "Parsing h5");
     uint32_t i = 0;
-    for (const auto& filename : files)
+    for (auto& h5File : m_h5Files)
     {
-        backend->setCurrentFile(filename);
+        backend->setCurrentFile(h5File.get_file_name());
         pbar.Progressed(++i, backend);
-        h5::File h5File(filename, "r");
+
         h5::Group All_Data = h5File.root().open_group("All_Data");
 
         for(size_t group = 0; group < All_Data.size(); ++group)
