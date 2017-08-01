@@ -1,10 +1,12 @@
 <map id="h5Decode" name="h5Decode">
-<area shape="rect" id="node2" href="$class_thread_safe_listener_queue.html" title="ThreadSafeListenerQueue\l\&lt; std::tuple\&lt; std::vector\l\&lt; uint8_t \&gt;, std::string \&gt; \&gt;" alt="" coords="1083,107,1258,163"/>
-<area shape="rect" id="node8" title="STL class. " alt="" coords="851,315,931,341"/>
-<area shape="rect" id="node9" title="STL class. " alt="" coords="565,307,691,349"/>
-<area shape="rect" id="node11" title="STL class. " alt="" coords="841,237,940,264"/>
-<area shape="rect" id="node12" title="STL class. " alt="" coords="559,230,697,271"/>
-<area shape="rect" id="node13" title="STL class. " alt="" coords="363,230,496,271"/>
-<area shape="rect" id="node14" title="STL class. " alt="" coords="157,237,312,264"/>
-<area shape="rect" id="node15" title="STL class. " alt="" coords="6,237,106,264"/>
+<area shape="rect" id="node3" href="$classh5cpp_1_1_file.html" title="h5cpp::File" alt="" coords="861,7,947,33"/>
+<area shape="rect" id="node4" href="$classh5cpp_1_1_object.html" title="h5cpp::Object" alt="" coords="590,7,693,33"/>
+<area shape="rect" id="node6" href="$class_thread_safe_listener_queue.html" title="ThreadSafeListenerQueue\l\&lt; std::tuple\&lt; std::vector\l\&lt; uint8_t \&gt;, std::string \&gt; \&gt;" alt="" coords="1097,159,1271,215"/>
+<area shape="rect" id="node12" title="STL class. " alt="" coords="864,364,944,391"/>
+<area shape="rect" id="node13" title="STL class. " alt="" coords="578,357,705,398"/>
+<area shape="rect" id="node16" title="STL class. " alt="" coords="855,289,953,316"/>
+<area shape="rect" id="node17" title="STL class. " alt="" coords="573,282,710,323"/>
+<area shape="rect" id="node18" title="STL class. " alt="" coords="363,282,496,323"/>
+<area shape="rect" id="node19" title="STL class. " alt="" coords="157,289,312,316"/>
+<area shape="rect" id="node20" title="STL class. " alt="" coords="6,289,106,316"/>
 </map>

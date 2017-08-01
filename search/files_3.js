@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getfiles_2eh',['getFiles.h',['../get_files_8h.html',1,'']]]
+  ['getfiles_2ehpp',['getFiles.hpp',['../get_files_8hpp.html',1,'']]]
 ];

@@ -141,7 +141,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00070">70</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00070">70</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div>
 </div>
 </div>
@@ -155,7 +155,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00071">71</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00071">71</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div>
 </div>
 </div>
@@ -169,7 +169,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00072">72</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00072">72</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div>
 </div>
 </div>
@@ -183,7 +183,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00073">73</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00073">73</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div>
 </div>
 </div>
@@ -226,7 +226,7 @@ Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00101">101</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00101">101</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">int</span> MSG_SIZE = 256;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            <span class="keyword">auto</span> *out = <span class="keyword">static_cast&lt;</span>std::string*<span class="keyword">&gt;</span>(client_data);</div>
@@ -290,7 +290,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01198">1198</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01198">1198</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01199"></a><span class="lineno"> 1199</span>&#160;        {</div>
 <div class="line"><a name="l01200"></a><span class="lineno"> 1200</span>&#160;            static_assert (<span class="keyword">sizeof</span>(T)==0, <span class="stringliteral">&quot;specialize me!&quot;</span>);</div>
 <div class="line"><a name="l01201"></a><span class="lineno"> 1201</span>&#160;            <span class="keywordflow">return</span> Datatype();</div>
@@ -321,11 +321,11 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01245">1245</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01245">1245</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01246"></a><span class="lineno"> 1246</span>&#160;        {</div>
 <div class="line"><a name="l01247"></a><span class="lineno"> 1247</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceh5cpp_1_1internal.html#abd36a8627623f25a7916d71428ecc965">get_memtype&lt;char*&gt;</a>();</div>
 <div class="line"><a name="l01248"></a><span class="lineno"> 1248</span>&#160;        }</div>
-<div class="ttc" id="namespaceh5cpp_1_1internal_html_abd36a8627623f25a7916d71428ecc965"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#abd36a8627623f25a7916d71428ecc965">h5cpp::internal::get_memtype&lt; char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01240">hdf_wrapper.h:1240</a></div></div>
+<div class="ttc" id="namespaceh5cpp_1_1internal_html_abd36a8627623f25a7916d71428ecc965"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#abd36a8627623f25a7916d71428ecc965">h5cpp::internal::get_memtype&lt; char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l01240">hdf_wrapper.hpp:1240</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -352,11 +352,11 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01235">1235</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01235">1235</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01236"></a><span class="lineno"> 1236</span>&#160;        {</div>
 <div class="line"><a name="l01237"></a><span class="lineno"> 1237</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">get_memtype&lt;const char*&gt;</a>();</div>
 <div class="line"><a name="l01238"></a><span class="lineno"> 1238</span>&#160;        }</div>
-<div class="ttc" id="namespaceh5cpp_1_1internal_html_af3811abd4ebb2a99ea29670d07029ef6"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">h5cpp::internal::get_memtype&lt; const char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; const char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01229">hdf_wrapper.h:1229</a></div></div>
+<div class="ttc" id="namespaceh5cpp_1_1internal_html_af3811abd4ebb2a99ea29670d07029ef6"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">h5cpp::internal::get_memtype&lt; const char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; const char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l01229">hdf_wrapper.hpp:1229</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -383,7 +383,7 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01190">1190</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01190">1190</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01191"></a><span class="lineno"> 1191</span>&#160;        {</div>
 <div class="line"><a name="l01192"></a><span class="lineno"> 1192</span>&#160;            <span class="comment">// writing sizeof(T)==0 seems to work for gcc. just writing false always causes an error????!</span></div>
 <div class="line"><a name="l01193"></a><span class="lineno"> 1193</span>&#160;            static_assert (<span class="keyword">sizeof</span>(T)==0, <span class="stringliteral">&quot;specialize me!&quot;</span>);</div>
@@ -415,11 +415,11 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01240">1240</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01240">1240</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01241"></a><span class="lineno"> 1241</span>&#160;        {</div>
 <div class="line"><a name="l01242"></a><span class="lineno"> 1242</span>&#160;            <span class="keywordflow">return</span> <a class="code" href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">get_memtype&lt;const char*&gt;</a>();</div>
 <div class="line"><a name="l01243"></a><span class="lineno"> 1243</span>&#160;        }</div>
-<div class="ttc" id="namespaceh5cpp_1_1internal_html_af3811abd4ebb2a99ea29670d07029ef6"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">h5cpp::internal::get_memtype&lt; const char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; const char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l01229">hdf_wrapper.h:1229</a></div></div>
+<div class="ttc" id="namespaceh5cpp_1_1internal_html_af3811abd4ebb2a99ea29670d07029ef6"><div class="ttname"><a href="namespaceh5cpp_1_1internal.html#af3811abd4ebb2a99ea29670d07029ef6">h5cpp::internal::get_memtype&lt; const char * &gt;</a></div><div class="ttdeci">Datatype get_memtype&lt; const char * &gt;()</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l01229">hdf_wrapper.hpp:1229</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -446,7 +446,7 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01229">1229</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01229">1229</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01230"></a><span class="lineno"> 1230</span>&#160;        {</div>
 <div class="line"><a name="l01231"></a><span class="lineno"> 1231</span>&#160;            Datatype dt = Datatype::copy(H5T_C_S1);</div>
 <div class="line"><a name="l01232"></a><span class="lineno"> 1232</span>&#160;            dt.set_variable_size();</div>
@@ -477,7 +477,7 @@ template&lt;&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l01386">1386</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01386">1386</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01387"></a><span class="lineno"> 1387</span>&#160;        {</div>
 <div class="line"><a name="l01388"></a><span class="lineno"> 1388</span>&#160;            dt.lock();</div>
 <div class="line"><a name="l01389"></a><span class="lineno"> 1389</span>&#160;            dt.inc_ref();</div>

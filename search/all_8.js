@@ -10,7 +10,7 @@ var searchData=
   ['init',['init',['../class_database_reader.html#a58c5d7789896918bef02829c37d8f5de',1,'DatabaseReader::init()'],['../class_decom.html#a805c4f564abad58aa82fe41acb0bbba0',1,'Decom::init()'],['../classh5_decode.html#a123303fc0ad96b2236e9c1c2a8d5a23a',1,'h5Decode::init()'],['../classpds_decode.html#a341d108791c8a53283d93a7f2d75ce6a',1,'pdsDecode::init()']]],
   ['instrumentformat',['InstrumentFormat',['../namespace_instrument_format.html',1,'']]],
   ['instrumentformat_2ecpp',['InstrumentFormat.cpp',['../_instrument_format_8cpp.html',1,'']]],
-  ['instrumentformat_2eh',['InstrumentFormat.h',['../_instrument_format_8h.html',1,'']]],
+  ['instrumentformat_2ehpp',['InstrumentFormat.hpp',['../_instrument_format_8hpp.html',1,'']]],
   ['is_5fequal',['is_equal',['../classh5cpp_1_1_datatype.html#a3d2f34589b77df33fcb4b32ce44d5c73',1,'h5cpp::Datatype']]],
   ['is_5fextent_5fequal',['is_extent_equal',['../classh5cpp_1_1_dataspace.html#ad932db6d54b824af42f6a75878d068a3',1,'h5cpp::Dataspace']]],
   ['is_5freadonly',['is_readonly',['../classh5cpp_1_1_file.html#a55792bd14743578a0e9bf9b3253717b1',1,'h5cpp::File']]],

@@ -8,5 +8,5 @@ var searchData=
   ['logerror',['logError',['../class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d',1,'LogFile']]],
   ['logfile',['LogFile',['../class_log_file.html',1,'LogFile'],['../class_log_file.html#ad11b3baf5602575c1396f726d3598188',1,'LogFile::LogFile()']]],
   ['logfile_2ecpp',['LogFile.cpp',['../_log_file_8cpp.html',1,'']]],
-  ['logfile_2eh',['LogFile.h',['../_log_file_8h.html',1,'']]]
+  ['logfile_2ehpp',['LogFile.hpp',['../_log_file_8hpp.html',1,'']]]
 ];

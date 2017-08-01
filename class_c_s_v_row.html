@@ -93,7 +93,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &quot;<a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Collaboration diagram for CSVRow:</div>
 <div class="dyncontent">
@@ -122,7 +122,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_c_s_v_row_8h_source.html#l00006">6</a> of file <a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_s_v_row_8hpp_source.html#l00006">6</a> of file <a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="abccf397691dfb9223b0ed83e3526cfeb"></a>
 <div class="memitem">
@@ -145,11 +145,11 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s_v_row_8h_source.html#l00009">9</a> of file <a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_s_v_row_8hpp_source.html#l00009">9</a> of file <a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;           :</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>{}</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    {};</div>
-<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8h_source.html#l00022">CSVRow.h:22</a></div></div>
+<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8hpp_source.html#l00022">CSVRow.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -174,7 +174,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s_v_row_8h_source.html#l00012">12</a> of file <a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_s_v_row_8hpp_source.html#l00012">12</a> of file <a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{}</div>
 </div><!-- fragment -->
 </div>
@@ -196,17 +196,17 @@ Private Attributes</h2></td></tr>
 <p>Overrides array [] operator for accessing <a class="el" href="class_c_s_v_row.html">CSVRow</a> elements.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">index</td><td>Row index that we want </td></tr>
+    <tr><td class="paramname">index</td><td>Row index that we want. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>String contained at row index </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>String contained at row index. </dd></dl>
 
 <p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00011">11</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.at(index);</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;}</div>
-<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8h_source.html#l00022">CSVRow.h:22</a></div></div>
+<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8hpp_source.html#l00022">CSVRow.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -226,40 +226,40 @@ Private Attributes</h2></td></tr>
 <p>Read a single row from CSV file. Splits on commas. Also handles commas that appear between double quotes.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">str</td><td>Stream to read from </td></tr>
+    <tr><td class="paramname">str</td><td>Stream to read from. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>void. Output is pushed into vector </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>void. Output is pushed into vector. </dd></dl>
 
-<p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00034">34</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::string line;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    std::getline(str, line);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::stringstream lineStream(line);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    std::string cell;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.clear();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">while</span> (std::getline(lineStream, line))</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    {</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *mystart = line.c_str();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">bool</span> instring{ <span class="keyword">false</span> };</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* p = mystart; *p; p++)</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        {</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;            <span class="keywordflow">if</span> (*p == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                instring = !instring;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*p == <span class="charliteral">&#39;,&#39;</span> &amp;&amp; !instring)</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.emplace_back(std::string(mystart, p - mystart));</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                mystart = p + 1;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.emplace_back(std::string(mystart));</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;}</div>
-<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8h_source.html#l00022">CSVRow.h:22</a></div></div>
+<p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00033">33</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    std::string line;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    std::getline(str, line);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    std::stringstream lineStream(line);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    std::string cell;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.clear();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">while</span> (std::getline(lineStream, line))</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *mystart = line.c_str();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> instring{ <span class="keyword">false</span> };</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keywordtype">char</span>* p = mystart; *p; p++)</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">if</span> (*p == <span class="charliteral">&#39;&quot;&#39;</span>)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                instring = !instring;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span> (*p == <span class="charliteral">&#39;,&#39;</span> &amp;&amp; !instring)</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;            {</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.emplace_back(std::string(mystart, p - mystart));</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                mystart = p + 1;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            }</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.emplace_back(std::string(mystart));</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;}</div>
+<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8hpp_source.html#l00022">CSVRow.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -276,13 +276,13 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Get <a class="el" href="class_c_s_v_row.html">CSVRow</a> data vector size.</p>
-<dl class="section return"><dt>Returns</dt><dd>Number of vector elements </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of vector elements. </dd></dl>
 
-<p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00022">22</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.size();</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;}</div>
-<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8h_source.html#l00022">CSVRow.h:22</a></div></div>
+<p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00021">21</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.size();</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
+<div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8hpp_source.html#l00022">CSVRow.hpp:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -305,12 +305,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="_c_s_v_row_8h_source.html#l00022">22</a> of file <a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a>.</p>
+<p>Definition at line <a class="el" href="_c_s_v_row_8hpp_source.html#l00022">22</a> of file <a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/travis/build/gabegordon/CXXDecomQt/include/<a class="el" href="_c_s_v_row_8h_source.html">CSVRow.h</a></li>
+<li>/home/travis/build/gabegordon/CXXDecomQt/include/<a class="el" href="_c_s_v_row_8hpp_source.html">CSVRow.hpp</a></li>
 <li>/home/travis/build/gabegordon/CXXDecomQt/src/<a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a></li>
 </ul>
 </div><!-- contents -->

@@ -97,7 +97,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &quot;<a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>&quot;</code></p>
 <div class="dynheader">
 Inheritance diagram for h5cpp::RWattribute:</div>
 <div class="dyncontent">
@@ -134,7 +134,7 @@ Private Attributes</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00390">390</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00390">390</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af7e207864d70011def7192db195d8911"></a>
 <div class="memitem">
@@ -168,10 +168,10 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00394">394</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00394">394</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;: <a class="code" href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">attr_id</a>(attr_id_), <a class="code" href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">mem_type_id</a>(mem_type_id_) {}</div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -200,14 +200,14 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classh5cpp_1_1_r_w.html#ac62acb6c92481ab3e24da7f2d595f6e7">h5cpp::RW</a>.</p>
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00402">402</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00402">402</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;        {</div>
 <div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;            herr_t err = H5Aread(<a class="code" href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">attr_id</a>, <a class="code" href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">mem_type_id</a>, buf);</div>
 <div class="line"><a name="l00405"></a><span class="lineno">  405</span>&#160;            <span class="keywordflow">if</span> (err &lt; 0)</div>
 <div class="line"><a name="l00406"></a><span class="lineno">  406</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error reading from attribute&quot;</span>);</div>
 <div class="line"><a name="l00407"></a><span class="lineno">  407</span>&#160;        }</div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -235,14 +235,14 @@ Private Attributes</h2></td></tr>
 
 <p>Implements <a class="el" href="classh5cpp_1_1_r_w.html#a2666791389429927c1f74fc776bffd8b">h5cpp::RW</a>.</p>
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00396">396</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00396">396</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;        {</div>
 <div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;            herr_t err = H5Awrite(<a class="code" href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">attr_id</a>, <a class="code" href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">mem_type_id</a>, buf);</div>
 <div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            <span class="keywordflow">if</span> (err &lt; 0)</div>
 <div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;                <span class="keywordflow">throw</span> Exception(<span class="stringliteral">&quot;error writing to attribute&quot;</span>);</div>
 <div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        }</div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
-<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8h_source.html#l00392">hdf_wrapper.h:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a37bb980d3547239037b3aeeb55fd54fa"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a37bb980d3547239037b3aeeb55fd54fa">h5cpp::RWattribute::mem_type_id</a></div><div class="ttdeci">hid_t mem_type_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
+<div class="ttc" id="classh5cpp_1_1_r_wattribute_html_a5cbe44de3e5cdee3e27d51f4b26b15ef"><div class="ttname"><a href="classh5cpp_1_1_r_wattribute.html#a5cbe44de3e5cdee3e27d51f4b26b15ef">h5cpp::RWattribute::attr_id</a></div><div class="ttdeci">hid_t attr_id</div><div class="ttdef"><b>Definition:</b> <a href="hdf__wrapper_8hpp_source.html#l00392">hdf_wrapper.hpp:392</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -265,7 +265,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00392">392</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00392">392</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 
 </div>
 </div>
@@ -287,12 +287,12 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Definition at line <a class="el" href="hdf__wrapper_8h_source.html#l00392">392</a> of file <a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a>.</p>
+<p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l00392">392</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/home/travis/build/gabegordon/CXXDecomQt/include/<a class="el" href="hdf__wrapper_8h_source.html">hdf_wrapper.h</a></li>
+<li>/home/travis/build/gabegordon/CXXDecomQt/include/<a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

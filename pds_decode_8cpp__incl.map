@@ -1,13 +1,14 @@
 <map id="/home/travis/build/gabegordon/CXXDecomQt/src/pdsDecode.cpp" name="/home/travis/build/gabegordon/CXXDecomQt/src/pdsDecode.cpp">
-<area shape="rect" id="node3" href="$pds_decode_8h.html" title="pdsDecode.h" alt="" coords="795,184,893,211"/>
-<area shape="rect" id="node17" href="$backend_8h.html" title="backend.h" alt="" coords="1159,109,1240,136"/>
-<area shape="rect" id="node23" href="$get_files_8h.html" title="getFiles.h" alt="" coords="149,259,227,285"/>
-<area shape="rect" id="node25" href="$_log_file_8h.html" title="LogFile.h" alt="" coords="1731,184,1804,211"/>
-<area shape="rect" id="node26" href="$_read_file_8h.html" title="ReadFile.h" alt="" coords="1645,109,1731,136"/>
-<area shape="rect" id="node28" href="$_progress_bar_8h.html" title="ProgressBar.h" alt="" coords="1877,109,1981,136"/>
-<area shape="rect" id="node31" href="$_decom_8h.html" title="Decom.h" alt="" coords="796,109,869,136"/>
-<area shape="rect" id="node9" href="$_data_types_8h.html" title="DataTypes.h" alt="" coords="607,333,704,360"/>
-<area shape="rect" id="node10" href="$_thread_safe_listener_queue_8h.html" title="ThreadSafeListenerQueue.h" alt="" coords="1001,259,1185,285"/>
-<area shape="rect" id="node21" href="$h5_decode_8h.html" title="h5Decode.h" alt="" coords="918,184,1009,211"/>
-<area shape="rect" id="node32" href="$_thread_pool_server_8h.html" title="ThreadPoolServer.h" alt="" coords="531,184,668,211"/>
+<area shape="rect" id="node3" href="$pds_decode_8hpp.html" title="pdsDecode.hpp" alt="" coords="831,184,943,211"/>
+<area shape="rect" id="node17" href="$backend_8hpp.html" title="backend.hpp" alt="" coords="1469,109,1565,136"/>
+<area shape="rect" id="node31" href="$get_files_8hpp.html" title="getFiles.hpp" alt="" coords="2097,259,2190,285"/>
+<area shape="rect" id="node33" href="$_log_file_8hpp.html" title="LogFile.hpp" alt="" coords="1831,184,1919,211"/>
+<area shape="rect" id="node34" href="$_read_file_8hpp.html" title="ReadFile.hpp" alt="" coords="1909,109,2007,136"/>
+<area shape="rect" id="node35" href="$_progress_bar_8hpp.html" title="ProgressBar.hpp" alt="" coords="2160,109,2278,136"/>
+<area shape="rect" id="node38" href="$_decom_8hpp.html" title="Decom.hpp" alt="" coords="1247,109,1335,136"/>
+<area shape="rect" id="node9" href="$_data_types_8hpp.html" title="DataTypes.hpp" alt="" coords="732,333,842,360"/>
+<area shape="rect" id="node10" href="$_thread_safe_listener_queue_8hpp.html" title="ThreadSafeListenerQueue.hpp" alt="" coords="459,259,657,285"/>
+<area shape="rect" id="node21" href="$h5_decode_8hpp.html" title="h5Decode.hpp" alt="" coords="1142,184,1249,211"/>
+<area shape="rect" id="node23" href="$hdf__wrapper_8hpp.html" title="hdf_wrapper.hpp" alt="" coords="1185,259,1303,285"/>
+<area shape="rect" id="node39" href="$_thread_pool_server_8hpp.html" title="ThreadPoolServer.hpp" alt="" coords="483,184,633,211"/>
 </map>
