@@ -123,8 +123,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa366c7e5b45b0578d735b07918f1f942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a09aa334a95881437e900de1e71573c26"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a09aa334a95881437e900de1e71573c26">decodeDataSegmented</a> (std::istringstream &amp;buffer, const bool omps)</td></tr>
 <tr class="separator:a09aa334a95881437e900de1e71573c26"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb5e9a1b0fb16a2a7cdd4f955a944332"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#afb5e9a1b0fb16a2a7cdd4f955a944332">decodeOMPS</a> (std::istringstream &amp;buffer, const int64_t &amp;fileSize)</td></tr>
-<tr class="separator:afb5e9a1b0fb16a2a7cdd4f955a944332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a91181c4b2b6f533ffd044e4da587c77e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a91181c4b2b6f533ffd044e4da587c77e">decodeOMPS</a> (std::istringstream &amp;buffer)</td></tr>
+<tr class="separator:a91181c4b2b6f533ffd044e4da587c77e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -138,8 +138,8 @@ Private Member Functions</h2></td></tr>
 <tr class="separator:a1c8389484138867135f09039517cc301"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b9fc8be81ce1a7407a0cf0f1e502819"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819">getNum</a> (const <a class="el" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601">DataTypes::DataType</a> &amp;dtype, const std::vector&lt; uint8_t &gt; &amp;buf, const uint32_t &amp;entryIndex)</td></tr>
 <tr class="separator:a3b9fc8be81ce1a7407a0cf0f1e502819"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a772a4e53a2ca2fa02b44b3fe7c3542af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a772a4e53a2ca2fa02b44b3fe7c3542af">getOMPSScience</a> (std::istringstream &amp;buffer, const int64_t &amp;fileSize)</td></tr>
-<tr class="separator:a772a4e53a2ca2fa02b44b3fe7c3542af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a133e41098e8e726a4fae2fc6f40730cc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a133e41098e8e726a4fae2fc6f40730cc">getOMPSScience</a> (std::istringstream &amp;buffer)</td></tr>
+<tr class="separator:a133e41098e8e726a4fae2fc6f40730cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a45ff87c2c0f54a42f70a0ec0156ec723"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">checkPackEntries</a> (<a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> &amp;pack)</td></tr>
 <tr class="separator:a45ff87c2c0f54a42f70a0ec0156ec723"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a528604e4acbb85766aa3963e97aea2d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_data_decode.html#a528604e4acbb85766aa3963e97aea2d8">decodeOne</a> (const <a class="el" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601">DataTypes::DataType</a> &amp;dtype, const uint32_t &amp;entryIndex, <a class="el" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a> &amp;num)</td></tr>
@@ -362,23 +362,23 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if we should continue parsing packet </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00466">466</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;{</div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.size() &lt; 1)  <span class="comment">// If no entries for this APID, then it is ignored</span></div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    {</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a8826e093512ef4f5106284ebea6b3d7d">packetLength</a> != 0)</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;        {</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            pack.<a class="code" href="namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f">ignored</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        }</div>
-<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        <span class="keywordflow">else</span>  <span class="comment">// Unless it is an APID that only contains header info (data length of 0)</span></div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;        {</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <a class="code" href="class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44">getHeaderData</a>(pack);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;        }</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    }</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00465">465</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;{</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.size() &lt; 1)  <span class="comment">// If no entries for this APID, then it is ignored</span></div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;    {</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a8826e093512ef4f5106284ebea6b3d7d">packetLength</a> != 0)</div>
+<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;        {</div>
+<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;            pack.<a class="code" href="namespace_data_types.html#a968e18b38c8afef9644284d07bfb6b5f">ignored</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;        }</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160;        <span class="keywordflow">else</span>  <span class="comment">// Unless it is an APID that only contains header info (data length of 0)</span></div>
+<div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;        {</div>
+<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;            <a class="code" href="class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44">getHeaderData</a>(pack);</div>
+<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;        }</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    }</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;}</div>
 <div class="ttc" id="class_data_decode_html_ae5f10a3f7b5cf92a0d09e934b66146d8"><div class="ttname"><a href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">DataDecode::m_pHeader</a></div><div class="ttdeci">DataTypes::PrimaryHeader m_pHeader</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00046">DataDecode.h:46</a></div></div>
 <div class="ttc" id="class_data_decode_html_ae82aa63a36a8db5ce0a5f87976636c44"><div class="ttname"><a href="class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44">DataDecode::getHeaderData</a></div><div class="ttdeci">void getHeaderData(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00101">DataDecode.cpp:101</a></div></div>
 <div class="ttc" id="class_data_decode_html_aafce682a472de855b6b9823df3e88a40"><div class="ttname"><a href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">DataDecode::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; &amp; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00045">DataDecode.h:45</a></div></div>
@@ -451,7 +451,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="keywordflow">return</span> pack;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;}</div>
 <div class="ttc" id="class_data_decode_html_ae5f10a3f7b5cf92a0d09e934b66146d8"><div class="ttname"><a href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">DataDecode::m_pHeader</a></div><div class="ttdeci">DataTypes::PrimaryHeader m_pHeader</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00046">DataDecode.h:46</a></div></div>
-<div class="ttc" id="class_data_decode_html_a3b9fc8be81ce1a7407a0cf0f1e502819"><div class="ttname"><a href="class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819">DataDecode::getNum</a></div><div class="ttdeci">DataTypes::Numeric getNum(const DataTypes::DataType &amp;dtype, const std::vector&lt; uint8_t &gt; &amp;buf, const uint32_t &amp;entryIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00309">DataDecode.cpp:309</a></div></div>
+<div class="ttc" id="class_data_decode_html_a3b9fc8be81ce1a7407a0cf0f1e502819"><div class="ttname"><a href="class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819">DataDecode::getNum</a></div><div class="ttdeci">DataTypes::Numeric getNum(const DataTypes::DataType &amp;dtype, const std::vector&lt; uint8_t &gt; &amp;buf, const uint32_t &amp;entryIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00308">DataDecode.cpp:308</a></div></div>
 <div class="ttc" id="class_data_decode_html_ae82aa63a36a8db5ce0a5f87976636c44"><div class="ttname"><a href="class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44">DataDecode::getHeaderData</a></div><div class="ttdeci">void getHeaderData(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00101">DataDecode.cpp:101</a></div></div>
 <div class="ttc" id="class_data_decode_html_a804a54644b083edaa2df0dffa42edca3"><div class="ttname"><a href="class_data_decode.html#a804a54644b083edaa2df0dffa42edca3">DataDecode::m_offset</a></div><div class="ttdeci">uint8_t m_offset</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00049">DataDecode.h:49</a></div></div>
 <div class="ttc" id="class_data_decode_html_a1c8389484138867135f09039517cc301"><div class="ttname"><a href="class_data_decode.html#a1c8389484138867135f09039517cc301">DataDecode::getOffset</a></div><div class="ttdeci">uint8_t getOffset()</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00115">DataDecode.cpp:115</a></div></div>
@@ -463,7 +463,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="namespace_data_types_html_ab9e05d31ce577f6b54b13b82200022ed"><div class="ttname"><a href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">DataTypes::Packet::data</a></div><div class="ttdeci">std::vector&lt; Numeric &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00047">DataTypes.h:47</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a8826e093512ef4f5106284ebea6b3d7d"><div class="ttname"><a href="namespace_data_types.html#a8826e093512ef4f5106284ebea6b3d7d">DataTypes::PrimaryHeader::packetLength</a></div><div class="ttdeci">uint32_t packetLength</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00061">DataTypes.h:61</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
-<div class="ttc" id="class_data_decode_html_a45ff87c2c0f54a42f70a0ec0156ec723"><div class="ttname"><a href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">DataDecode::checkPackEntries</a></div><div class="ttdeci">bool checkPackEntries(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00466">DataDecode.cpp:466</a></div></div>
+<div class="ttc" id="class_data_decode_html_a45ff87c2c0f54a42f70a0ec0156ec723"><div class="ttname"><a href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">DataDecode::checkPackEntries</a></div><div class="ttdeci">bool checkPackEntries(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00465">DataDecode.cpp:465</a></div></div>
 <div class="ttc" id="namespace_data_types_html_struct_data_types_1_1_numeric"><div class="ttname"><a href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00033">DataTypes.h:33</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -517,7 +517,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a> = std::get&lt;0&gt;(headers);</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keyword">auto</span> pack = <a class="code" href="class_data_decode.html#aa366c7e5b45b0578d735b07918f1f942">decodeData</a>(buffer, <a class="code" href="class_data_decode.html#a04ac1673067171bdfb00372c1dcc0fe0">segmentLastByte</a>);</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        segPack.<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>.insert(std::end(segPack.<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    } <span class="keywordflow">while</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">sequenceFlag</a> != <a class="code" href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76aa69b60b98ce23b6f903529e4a01f3b78">DataTypes::LAST</a>);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    } <span class="keywordflow">while</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">sequenceFlag</a> != <a class="code" href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76aa69b60b98ce23b6f903529e4a01f3b78">DataTypes::LAST</a> &amp;&amp; !buffer.eof());</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    <span class="keywordflow">return</span> segPack;  <span class="comment">// Return one packet containing all the data from segmented packets</span></div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;}</div>
@@ -582,24 +582,24 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00441">441</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;{</div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    uint32_t result = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">mergeBytes</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>, <a class="code" href="class_data_decode.html#a8577f9ac63b854c7cc344e01046ab1b3">m_byte2</a>, <a class="code" href="class_data_decode.html#a0df2ecc1f636eb7ab5fdbe6f5f7edd5e">m_byte3</a>, 4);</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    {</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(result);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;            num.u32 = result;</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;    {</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
-<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
-<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;    }</div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00440">440</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;{</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    uint32_t result = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">mergeBytes</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>, <a class="code" href="class_data_decode.html#a8577f9ac63b854c7cc344e01046ab1b3">m_byte2</a>, <a class="code" href="class_data_decode.html#a0df2ecc1f636eb7ab5fdbe6f5f7edd5e">m_byte3</a>, 4);</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    {</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(result);</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;            num.u32 = result;</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    }</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    {</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160;    }</div>
+<div class="line"><a name="l00457"></a><span class="lineno">  457</span>&#160;}</div>
 <div class="ttc" id="class_data_decode_html_afab65aa5db832c7357726679d2cb431c"><div class="ttname"><a href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">DataDecode::m_byte1</a></div><div class="ttdeci">uint8_t m_byte1</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00040">DataDecode.h:40</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554"><div class="ttname"><a href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00017">DataTypes.h:17</a></div></div>
 <div class="ttc" id="class_data_decode_html_a5bafc9d4826fccf5e31999af199b6caf"><div class="ttname"><a href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">DataDecode::m_initialByte</a></div><div class="ttdeci">uint8_t m_initialByte</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00039">DataDecode.h:39</a></div></div>
@@ -611,7 +611,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="afb5e9a1b0fb16a2a7cdd4f955a944332"></a>
+<a class="anchor" id="a91181c4b2b6f533ffd044e4da587c77e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -619,18 +619,8 @@ Private Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> DataDecode::decodeOMPS </td>
           <td>(</td>
           <td class="paramtype">std::istringstream &amp;&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>buffer</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const int64_t &amp;&#160;</td>
-          <td class="paramname"><em>fileSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -658,7 +648,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;</div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;    std::vector&lt;uint32_t&gt; scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  <span class="comment">// All OMPS Science APIDs</span></div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;    <span class="keywordflow">if</span> (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), <a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a917a2e108bcfc660e6c588de4697a44b">APID</a>) != std::end(scienceAPIDS))</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_data_decode.html#a772a4e53a2ca2fa02b44b3fe7c3542af">getOMPSScience</a>(buffer, fileSize);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="class_data_decode.html#a133e41098e8e726a4fae2fc6f40730cc">getOMPSScience</a>(buffer);</div>
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">sequenceFlag</a> == <a class="code" href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76a4fe5c8b66c5a142f59748927553e68d6">DataTypes::STANDALONE</a>)  <span class="comment">// If standalone, then do standard decode</span></div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;    {</div>
@@ -674,7 +664,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;        {</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;            uint16_t segPacketCount = 0;</div>
 <div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;            <a class="code" href="class_data_decode.html#a04ac1673067171bdfb00372c1dcc0fe0">segmentLastByte</a> = 0;</div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">while</span> (segPacketCount != contCount + 1)</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;            <span class="keywordflow">while</span> (segPacketCount != contCount + 1 &amp;&amp; !buffer.eof())</div>
 <div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;            {</div>
 <div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;                <span class="keywordflow">if</span> (segPacketCount != 0)  <span class="comment">//  Skip parsing headers for first packet, as we have already done so</span></div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;                {</div>
@@ -698,7 +688,7 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="class_data_decode_html_a1cd0f2f20d41ca50bce000c8b2622f62"><div class="ttname"><a href="class_data_decode.html#a1cd0f2f20d41ca50bce000c8b2622f62">DataDecode::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00048">DataDecode.h:48</a></div></div>
 <div class="ttc" id="namespace_byte_manipulation_html_a54d88705cd4cfdf61578dfdb6b496b86"><div class="ttname"><a href="namespace_byte_manipulation.html#a54d88705cd4cfdf61578dfdb6b496b86">ByteManipulation::swapEndian</a></div><div class="ttdeci">T swapEndian(const T &amp;val)</div><div class="ttdef"><b>Definition:</b> <a href="_byte_manipulation_8h_source.html#l00013">ByteManipulation.h:13</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a917a2e108bcfc660e6c588de4697a44b"><div class="ttname"><a href="namespace_data_types.html#a917a2e108bcfc660e6c588de4697a44b">DataTypes::PrimaryHeader::APID</a></div><div class="ttdeci">uint32_t APID</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00059">DataTypes.h:59</a></div></div>
-<div class="ttc" id="class_data_decode_html_a772a4e53a2ca2fa02b44b3fe7c3542af"><div class="ttname"><a href="class_data_decode.html#a772a4e53a2ca2fa02b44b3fe7c3542af">DataDecode::getOMPSScience</a></div><div class="ttdeci">DataTypes::Packet getOMPSScience(std::istringstream &amp;buffer, const int64_t &amp;fileSize)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00248">DataDecode.cpp:248</a></div></div>
+<div class="ttc" id="class_data_decode_html_a133e41098e8e726a4fae2fc6f40730cc"><div class="ttname"><a href="class_data_decode.html#a133e41098e8e726a4fae2fc6f40730cc">DataDecode::getOMPSScience</a></div><div class="ttdeci">DataTypes::Packet getOMPSScience(std::istringstream &amp;buffer)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00248">DataDecode.cpp:248</a></div></div>
 <div class="ttc" id="class_data_decode_html_a09aa334a95881437e900de1e71573c26"><div class="ttname"><a href="class_data_decode.html#a09aa334a95881437e900de1e71573c26">DataDecode::decodeDataSegmented</a></div><div class="ttdeci">DataTypes::Packet decodeDataSegmented(std::istringstream &amp;buffer, const bool omps)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00170">DataDecode.cpp:170</a></div></div>
 <div class="ttc" id="namespace_data_types_html_aff8a980d2c0f7ad1b7ed03da51a72b76a4fe5c8b66c5a142f59748927553e68d6"><div class="ttname"><a href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76a4fe5c8b66c5a142f59748927553e68d6">DataTypes::STANDALONE</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00011">DataTypes.h:11</a></div></div>
 <div class="ttc" id="class_data_decode_html_a04ac1673067171bdfb00372c1dcc0fe0"><div class="ttname"><a href="class_data_decode.html#a04ac1673067171bdfb00372c1dcc0fe0">DataDecode::segmentLastByte</a></div><div class="ttdeci">uint32_t segmentLastByte</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00043">DataDecode.h:43</a></div></div>
@@ -758,23 +748,23 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00361">361</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;{</div>
-<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)  <span class="comment">// If no bit range, then use whole byte</span></div>
-<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;    {</div>
-<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;            num.i32 = <a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>;</div>
-<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;            num.u32 = <a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    }</div>
-<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    <span class="keywordflow">else</span>  <span class="comment">// Otherwise extract specific bit(s)</span></div>
-<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;    {</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;            num.i32 = <a class="code" href="namespace_byte_manipulation.html#aca8b5b8e98955f94982787400e2e8595">ByteManipulation::extract8Signed</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper + 1));</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#a2b5b92a5bbf0619d3555cec959731432">ByteManipulation::extract8</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
-<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;    }</div>
-<div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00360">360</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;{</div>
+<div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)  <span class="comment">// If no bit range, then use whole byte</span></div>
+<div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    {</div>
+<div class="line"><a name="l00364"></a><span class="lineno">  364</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;            num.i32 = <a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>;</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;            num.u32 = <a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>;</div>
+<div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;    }</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">else</span>  <span class="comment">// Otherwise extract specific bit(s)</span></div>
+<div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    {</div>
+<div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;            num.i32 = <a class="code" href="namespace_byte_manipulation.html#aca8b5b8e98955f94982787400e2e8595">ByteManipulation::extract8Signed</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper + 1));</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#a2b5b92a5bbf0619d3555cec959731432">ByteManipulation::extract8</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;    }</div>
+<div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;}</div>
 <div class="ttc" id="namespace_data_types_html_a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554"><div class="ttname"><a href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00017">DataTypes.h:17</a></div></div>
 <div class="ttc" id="namespace_byte_manipulation_html_aca8b5b8e98955f94982787400e2e8595"><div class="ttname"><a href="namespace_byte_manipulation.html#aca8b5b8e98955f94982787400e2e8595">ByteManipulation::extract8Signed</a></div><div class="ttdeci">int32_t extract8Signed(const uint8_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</div><div class="ttdef"><b>Definition:</b> <a href="_byte_manipulation_8cpp_source.html#l00067">ByteManipulation.cpp:67</a></div></div>
 <div class="ttc" id="class_data_decode_html_a5bafc9d4826fccf5e31999af199b6caf"><div class="ttname"><a href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">DataDecode::m_initialByte</a></div><div class="ttdeci">uint8_t m_initialByte</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00039">DataDecode.h:39</a></div></div>
@@ -831,24 +821,24 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00414">414</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;{</div>
-<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    uint32_t result = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">mergeBytes</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>, <a class="code" href="class_data_decode.html#a8577f9ac63b854c7cc344e01046ab1b3">m_byte2</a>, <a class="code" href="class_data_decode.html#a0df2ecc1f636eb7ab5fdbe6f5f7edd5e">m_byte3</a>, 3);</div>
-<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
-<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;    {</div>
-<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(result);</div>
-<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;            num.u32 = result;</div>
-<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    }</div>
-<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    {</div>
-<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
-<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;    }</div>
-<div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00413">413</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00414"></a><span class="lineno">  414</span>&#160;{</div>
+<div class="line"><a name="l00415"></a><span class="lineno">  415</span>&#160;    uint32_t result = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">mergeBytes</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>, <a class="code" href="class_data_decode.html#a8577f9ac63b854c7cc344e01046ab1b3">m_byte2</a>, <a class="code" href="class_data_decode.html#a0df2ecc1f636eb7ab5fdbe6f5f7edd5e">m_byte3</a>, 3);</div>
+<div class="line"><a name="l00416"></a><span class="lineno">  416</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
+<div class="line"><a name="l00417"></a><span class="lineno">  417</span>&#160;    {</div>
+<div class="line"><a name="l00418"></a><span class="lineno">  418</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(result);</div>
+<div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;            num.u32 = result;</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    }</div>
+<div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160;    {</div>
+<div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00426"></a><span class="lineno">  426</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int32_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
+<div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">ByteManipulation::extract32</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
+<div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160;    }</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;}</div>
 <div class="ttc" id="class_data_decode_html_afab65aa5db832c7357726679d2cb431c"><div class="ttname"><a href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">DataDecode::m_byte1</a></div><div class="ttdeci">uint8_t m_byte1</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00040">DataDecode.h:40</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554"><div class="ttname"><a href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00017">DataTypes.h:17</a></div></div>
 <div class="ttc" id="class_data_decode_html_a5bafc9d4826fccf5e31999af199b6caf"><div class="ttname"><a href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">DataDecode::m_initialByte</a></div><div class="ttdeci">uint8_t m_initialByte</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00039">DataDecode.h:39</a></div></div>
@@ -908,24 +898,24 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>N/A </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00387">387</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;{</div>
-<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    uint16_t result = <a class="code" href="namespace_byte_manipulation.html#a834408615d563a144bcc5b00d98e4e39">mergeBytes16</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>);</div>
-<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
-<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;    {</div>
-<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(result);</div>
-<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;            num.u32 = result;</div>
-<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    }</div>
-<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;    {</div>
-<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
-<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ab8c3d1d731a1819a95e2dddd05351f42">ByteManipulation::extract16</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
-<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ab8c3d1d731a1819a95e2dddd05351f42">ByteManipulation::extract16</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
-<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;    }</div>
-<div class="line"><a name="l00404"></a><span class="lineno">  404</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00386">386</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00387"></a><span class="lineno">  387</span>&#160;{</div>
+<div class="line"><a name="l00388"></a><span class="lineno">  388</span>&#160;    uint16_t result = <a class="code" href="namespace_byte_manipulation.html#a834408615d563a144bcc5b00d98e4e39">mergeBytes16</a>(<a class="code" href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">m_initialByte</a>, <a class="code" href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">m_byte1</a>);</div>
+<div class="line"><a name="l00389"></a><span class="lineno">  389</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper == 0 &amp;&amp; <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower == 0)</div>
+<div class="line"><a name="l00390"></a><span class="lineno">  390</span>&#160;    {</div>
+<div class="line"><a name="l00391"></a><span class="lineno">  391</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00392"></a><span class="lineno">  392</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(result);</div>
+<div class="line"><a name="l00393"></a><span class="lineno">  393</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00394"></a><span class="lineno">  394</span>&#160;            num.u32 = result;</div>
+<div class="line"><a name="l00395"></a><span class="lineno">  395</span>&#160;    }</div>
+<div class="line"><a name="l00396"></a><span class="lineno">  396</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00397"></a><span class="lineno">  397</span>&#160;    {</div>
+<div class="line"><a name="l00398"></a><span class="lineno">  398</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)</div>
+<div class="line"><a name="l00399"></a><span class="lineno">  399</span>&#160;            num.i32 = <span class="keyword">static_cast&lt;</span>int16_t<span class="keyword">&gt;</span>(<a class="code" href="namespace_byte_manipulation.html#ab8c3d1d731a1819a95e2dddd05351f42">ByteManipulation::extract16</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1));</div>
+<div class="line"><a name="l00400"></a><span class="lineno">  400</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00401"></a><span class="lineno">  401</span>&#160;            num.u32 = <a class="code" href="namespace_byte_manipulation.html#ab8c3d1d731a1819a95e2dddd05351f42">ByteManipulation::extract16</a>(result, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower, (<a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitUpper - <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).bitLower) + 1);</div>
+<div class="line"><a name="l00402"></a><span class="lineno">  402</span>&#160;    }</div>
+<div class="line"><a name="l00403"></a><span class="lineno">  403</span>&#160;}</div>
 <div class="ttc" id="class_data_decode_html_afab65aa5db832c7357726679d2cb431c"><div class="ttname"><a href="class_data_decode.html#afab65aa5db832c7357726679d2cb431c">DataDecode::m_byte1</a></div><div class="ttdeci">uint8_t m_byte1</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00040">DataDecode.h:40</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554"><div class="ttname"><a href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00017">DataTypes.h:17</a></div></div>
 <div class="ttc" id="class_data_decode_html_a5bafc9d4826fccf5e31999af199b6caf"><div class="ttname"><a href="class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf">DataDecode::m_initialByte</a></div><div class="ttdeci">uint8_t m_initialByte</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00039">DataDecode.h:39</a></div></div>
@@ -1112,50 +1102,50 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Numerical value for entry </dd></dl>
 
-<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00309">309</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;{</div>
-<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a> num;</div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601afc484ad000497bcec6f402381cc34ba2">DataTypes::FLOAT</a>)</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    {</div>
-<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        num.f64 = <a class="code" href="class_data_decode.html#a295a6cb11d7b007adda573df3ce962ad">getFloat</a>(buf, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex));</div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <span class="keywordflow">return</span> num;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    }</div>
-<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;    {</div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="class_data_decode.html#a9b3e0e5b468f858783ec37e682e3c630">m_numBytes</a>)</div>
-<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        {</div>
-<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1acb033824fb97f64e6959bffe95634cbf">ONE</a>:  <span class="comment">// One byte</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        {</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <a class="code" href="class_data_decode.html#a528604e4acbb85766aa3963e97aea2d8">decodeOne</a>(dtype, entryIndex, num);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        }</div>
-<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a91d85845da438237d8488fd7e5963714">TWO</a>:</div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        {</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <a class="code" href="class_data_decode.html#af2f0c5cf1faa8da25e149427346f9c15">decodeTwo</a>(dtype, entryIndex, num);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        }</div>
-<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a25b93e6b2003be7130dfa1329b13180d">THREE</a>:</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        {</div>
-<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <a class="code" href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">decodeThree</a>(dtype, entryIndex, num);</div>
-<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        }</div>
-<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a00995beff43d0d2ed37c1cefd1829799">FOUR</a>:</div>
-<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        {</div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <a class="code" href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">decodeThree</a>(dtype, entryIndex, num);</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;            <span class="keywordflow">break</span>;</div>
+<p>Definition at line <a class="el" href="_data_decode_8cpp_source.html#l00308">308</a> of file <a class="el" href="_data_decode_8cpp_source.html">DataDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;{</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;    <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a> num;</div>
+<div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;    <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601afc484ad000497bcec6f402381cc34ba2">DataTypes::FLOAT</a>)</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;    {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        num.f64 = <a class="code" href="class_data_decode.html#a295a6cb11d7b007adda573df3ce962ad">getFloat</a>(buf, <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex));</div>
+<div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;    }</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;    {</div>
+<div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="keywordflow">switch</span> (<a class="code" href="class_data_decode.html#a9b3e0e5b468f858783ec37e682e3c630">m_numBytes</a>)</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        {</div>
+<div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1acb033824fb97f64e6959bffe95634cbf">ONE</a>:  <span class="comment">// One byte</span></div>
+<div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        {</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;            <a class="code" href="class_data_decode.html#a528604e4acbb85766aa3963e97aea2d8">decodeOne</a>(dtype, entryIndex, num);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        }</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a91d85845da438237d8488fd7e5963714">TWO</a>:</div>
+<div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        {</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;            <a class="code" href="class_data_decode.html#af2f0c5cf1faa8da25e149427346f9c15">decodeTwo</a>(dtype, entryIndex, num);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        }</div>
+<div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a25b93e6b2003be7130dfa1329b13180d">THREE</a>:</div>
+<div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        {</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;            <a class="code" href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">decodeThree</a>(dtype, entryIndex, num);</div>
+<div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        }</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a00995beff43d0d2ed37c1cefd1829799">FOUR</a>:</div>
+<div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        {</div>
+<div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;            <a class="code" href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">decodeThree</a>(dtype, entryIndex, num);</div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        }</div>
 <div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        }</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        }</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)  <span class="comment">// Tag for what type the union contains</span></div>
-<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;            num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959">DataTypes::Numeric::I32</a>;</div>
-<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;        <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;            num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        num.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> = <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).mnemonic;</div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;        <span class="keywordflow">return</span> num;</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;    }</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;}</div>
-<div class="ttc" id="class_data_decode_html_af2f0c5cf1faa8da25e149427346f9c15"><div class="ttname"><a href="class_data_decode.html#af2f0c5cf1faa8da25e149427346f9c15">DataDecode::decodeTwo</a></div><div class="ttdeci">void decodeTwo(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00387">DataDecode.cpp:387</a></div></div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        <span class="keywordflow">if</span> (dtype == <a class="code" href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a>)  <span class="comment">// Tag for what type the union contains</span></div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959">DataTypes::Numeric::I32</a>;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160;            num.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>;</div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;</div>
+<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;        num.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> = <a class="code" href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">m_entries</a>.at(entryIndex).mnemonic;</div>
+<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;        <span class="keywordflow">return</span> num;</div>
+<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    }</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;}</div>
+<div class="ttc" id="class_data_decode_html_af2f0c5cf1faa8da25e149427346f9c15"><div class="ttname"><a href="class_data_decode.html#af2f0c5cf1faa8da25e149427346f9c15">DataDecode::decodeTwo</a></div><div class="ttdeci">void decodeTwo(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00386">DataDecode.cpp:386</a></div></div>
 <div class="ttc" id="class_data_decode_html_a532e492a353aa3218722fad9626b8fd1a25b93e6b2003be7130dfa1329b13180d"><div class="ttname"><a href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a25b93e6b2003be7130dfa1329b13180d">DataDecode::THREE</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00013">DataDecode.h:13</a></div></div>
 <div class="ttc" id="class_data_decode_html_a295a6cb11d7b007adda573df3ce962ad"><div class="ttname"><a href="class_data_decode.html#a295a6cb11d7b007adda573df3ce962ad">DataDecode::getFloat</a></div><div class="ttdeci">float getFloat(const std::vector&lt; uint8_t &gt; &amp;buf, const DataTypes::Entry &amp;currEntry)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00068">DataDecode.cpp:68</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554"><div class="ttname"><a href="namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601ae98e6333f62b4841d6905a45d32cd554">DataTypes::SIGNED</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00017">DataTypes.h:17</a></div></div>
@@ -1165,10 +1155,10 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="class_data_decode_html_a9b3e0e5b468f858783ec37e682e3c630"><div class="ttname"><a href="class_data_decode.html#a9b3e0e5b468f858783ec37e682e3c630">DataDecode::m_numBytes</a></div><div class="ttdeci">Bytes m_numBytes</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00050">DataDecode.h:50</a></div></div>
 <div class="ttc" id="class_data_decode_html_aafce682a472de855b6b9823df3e88a40"><div class="ttname"><a href="class_data_decode.html#aafce682a472de855b6b9823df3e88a40">DataDecode::m_entries</a></div><div class="ttdeci">std::vector&lt; DataTypes::Entry &gt; &amp; m_entries</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00045">DataDecode.h:45</a></div></div>
 <div class="ttc" id="class_data_decode_html_a532e492a353aa3218722fad9626b8fd1acb033824fb97f64e6959bffe95634cbf"><div class="ttname"><a href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1acb033824fb97f64e6959bffe95634cbf">DataDecode::ONE</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00011">DataDecode.h:11</a></div></div>
-<div class="ttc" id="class_data_decode_html_aee7bb3a825c712bf194ecf8c14fe140f"><div class="ttname"><a href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">DataDecode::decodeThree</a></div><div class="ttdeci">void decodeThree(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00414">DataDecode.cpp:414</a></div></div>
+<div class="ttc" id="class_data_decode_html_aee7bb3a825c712bf194ecf8c14fe140f"><div class="ttname"><a href="class_data_decode.html#aee7bb3a825c712bf194ecf8c14fe140f">DataDecode::decodeThree</a></div><div class="ttdeci">void decodeThree(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00413">DataDecode.cpp:413</a></div></div>
 <div class="ttc" id="class_data_decode_html_a532e492a353aa3218722fad9626b8fd1a00995beff43d0d2ed37c1cefd1829799"><div class="ttname"><a href="class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a00995beff43d0d2ed37c1cefd1829799">DataDecode::FOUR</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00014">DataDecode.h:14</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee"><div class="ttname"><a href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00035">DataTypes.h:35</a></div></div>
-<div class="ttc" id="class_data_decode_html_a528604e4acbb85766aa3963e97aea2d8"><div class="ttname"><a href="class_data_decode.html#a528604e4acbb85766aa3963e97aea2d8">DataDecode::decodeOne</a></div><div class="ttdeci">void decodeOne(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00361">DataDecode.cpp:361</a></div></div>
+<div class="ttc" id="class_data_decode_html_a528604e4acbb85766aa3963e97aea2d8"><div class="ttname"><a href="class_data_decode.html#a528604e4acbb85766aa3963e97aea2d8">DataDecode::decodeOne</a></div><div class="ttdeci">void decodeOne(const DataTypes::DataType &amp;dtype, const uint32_t &amp;entryIndex, DataTypes::Numeric &amp;num)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00360">DataDecode.cpp:360</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a26bbf846b92697a25699d5a7892a4826"><div class="ttname"><a href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">DataTypes::Numeric::mnem</a></div><div class="ttdeci">std::string mnem</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00036">DataTypes.h:36</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959"><div class="ttname"><a href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959">DataTypes::Numeric::I32</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00035">DataTypes.h:35</a></div></div>
 <div class="ttc" id="namespace_data_types_html_struct_data_types_1_1_numeric"><div class="ttname"><a href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00033">DataTypes.h:33</a></div></div>
@@ -1214,7 +1204,7 @@ Private Attributes</h2></td></tr>
 </div><!-- fragment -->
 </div>
 </div>
-<a class="anchor" id="a772a4e53a2ca2fa02b44b3fe7c3542af"></a>
+<a class="anchor" id="a133e41098e8e726a4fae2fc6f40730cc"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -1225,18 +1215,8 @@ Private Attributes</h2></td></tr>
           <td class="memname"><a class="el" href="namespace_data_types.html#struct_data_types_1_1_packet">DataTypes::Packet</a> DataDecode::getOMPSScience </td>
           <td>(</td>
           <td class="paramtype">std::istringstream &amp;&#160;</td>
-          <td class="paramname"><em>buffer</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>buffer</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const int64_t &amp;&#160;</td>
-          <td class="paramname"><em>fileSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -1279,29 +1259,28 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;        std::vector&lt;uint8_t&gt; tmpbuf(<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a8826e093512ef4f5106284ebea6b3d7d">packetLength</a>);</div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        buffer.read(reinterpret_cast&lt;char*&gt;(tmpbuf.data()), tmpbuf.size());  <span class="comment">// read bytes</span></div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;        scbuf.insert(std::end(scbuf), std::make_move_iterator(std::begin(tmpbuf)), std::make_move_iterator(std::end(tmpbuf)));</div>
-<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;        <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(std::to_string(buffer.tellg()) + <span class="stringliteral">&quot;,&quot;</span> + std::to_string(fileSize));</div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;    } <span class="keywordflow">while</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">sequenceFlag</a> != <a class="code" href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76aa69b60b98ce23b6f903529e4a01f3b78">DataTypes::LAST</a> &amp;&amp; buffer.tellg() &lt; fileSize);</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;</div>
-<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">checkPackEntries</a>(segPack))</div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        <span class="keywordflow">return</span> segPack;</div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
-<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;    <span class="keywordtype">size_t</span> scsize = scbuf.size();</div>
-<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;</div>
-<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> byte = 0; byte &lt; scsize; byte += 4)</div>
-<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;    {</div>
-<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a> pixel;</div>
-<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;        <span class="keywordflow">if</span>(byte + 3 &gt;= scsize)  <span class="comment">// Break needed here to not go out of bounds on pad byte</span></div>
-<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;            <span class="keywordflow">break</span>;</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        pixel.u32 = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">ByteManipulation::mergeBytes</a>(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        pixel.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> = <span class="stringliteral">&quot;Pixel&quot;</span>;</div>
-<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        pixel.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>;</div>
-<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        segPack.<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>.emplace_back(pixel);</div>
-<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    }</div>
-<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;    <span class="keywordflow">return</span> segPack;</div>
-<div class="line"><a name="l00300"></a><span class="lineno">  300</span>&#160;}</div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;    } <span class="keywordflow">while</span> (<a class="code" href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">m_pHeader</a>.<a class="code" href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">sequenceFlag</a> != <a class="code" href="namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76aa69b60b98ce23b6f903529e4a01f3b78">DataTypes::LAST</a> &amp;&amp; !buffer.eof());</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;    <span class="keywordflow">if</span> (!<a class="code" href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">checkPackEntries</a>(segPack))</div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;        <span class="keywordflow">return</span> segPack;</div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;</div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;    <span class="keywordtype">size_t</span> scsize = scbuf.size();</div>
+<div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;</div>
+<div class="line"><a name="l00288"></a><span class="lineno">  288</span>&#160;    <span class="keywordflow">for</span>(<span class="keywordtype">size_t</span> byte = 0; byte &lt; scsize; byte += 4)</div>
+<div class="line"><a name="l00289"></a><span class="lineno">  289</span>&#160;    {</div>
+<div class="line"><a name="l00290"></a><span class="lineno">  290</span>&#160;        <a class="code" href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a> pixel;</div>
+<div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;        <span class="keywordflow">if</span>(byte + 3 &gt;= scsize)  <span class="comment">// Break needed here to not go out of bounds on pad byte</span></div>
+<div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;            <span class="keywordflow">break</span>;</div>
+<div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;        pixel.u32 = <a class="code" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">ByteManipulation::mergeBytes</a>(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;        pixel.<a class="code" href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">mnem</a> = <span class="stringliteral">&quot;Pixel&quot;</span>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;        pixel.<a class="code" href="namespace_data_types.html#aa904ec5c10f8d8b21beacbf43e018e24">tag</a> = <a class="code" href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a>;</div>
+<div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;        segPack.<a class="code" href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">data</a>.emplace_back(pixel);</div>
+<div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;    }</div>
+<div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;    <span class="keywordflow">return</span> segPack;</div>
+<div class="line"><a name="l00299"></a><span class="lineno">  299</span>&#160;}</div>
 <div class="ttc" id="namespace_header_decode_html_a0138ce6b3a08d132531ab6afff40e986"><div class="ttname"><a href="namespace_header_decode.html#a0138ce6b3a08d132531ab6afff40e986">HeaderDecode::decodeHeaders</a></div><div class="ttdeci">std::tuple&lt; DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool &gt; decodeHeaders(std::istringstream &amp;buffer, const bool &amp;debug)</div><div class="ttdef"><b>Definition:</b> <a href="_header_decode_8cpp_source.html#l00022">HeaderDecode.cpp:22</a></div></div>
 <div class="ttc" id="class_data_decode_html_ae5f10a3f7b5cf92a0d09e934b66146d8"><div class="ttname"><a href="class_data_decode.html#ae5f10a3f7b5cf92a0d09e934b66146d8">DataDecode::m_pHeader</a></div><div class="ttdeci">DataTypes::PrimaryHeader m_pHeader</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00046">DataDecode.h:46</a></div></div>
-<div class="ttc" id="class_data_decode_html_a3b9fc8be81ce1a7407a0cf0f1e502819"><div class="ttname"><a href="class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819">DataDecode::getNum</a></div><div class="ttdeci">DataTypes::Numeric getNum(const DataTypes::DataType &amp;dtype, const std::vector&lt; uint8_t &gt; &amp;buf, const uint32_t &amp;entryIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00309">DataDecode.cpp:309</a></div></div>
+<div class="ttc" id="class_data_decode_html_a3b9fc8be81ce1a7407a0cf0f1e502819"><div class="ttname"><a href="class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819">DataDecode::getNum</a></div><div class="ttdeci">DataTypes::Numeric getNum(const DataTypes::DataType &amp;dtype, const std::vector&lt; uint8_t &gt; &amp;buf, const uint32_t &amp;entryIndex)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00308">DataDecode.cpp:308</a></div></div>
 <div class="ttc" id="class_data_decode_html_ae82aa63a36a8db5ce0a5f87976636c44"><div class="ttname"><a href="class_data_decode.html#ae82aa63a36a8db5ce0a5f87976636c44">DataDecode::getHeaderData</a></div><div class="ttdeci">void getHeaderData(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00101">DataDecode.cpp:101</a></div></div>
 <div class="ttc" id="class_data_decode_html_a1cd0f2f20d41ca50bce000c8b2622f62"><div class="ttname"><a href="class_data_decode.html#a1cd0f2f20d41ca50bce000c8b2622f62">DataDecode::m_debug</a></div><div class="ttdeci">bool m_debug</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8h_source.html#l00048">DataDecode.h:48</a></div></div>
 <div class="ttc" id="class_data_decode_html_a5e7ec78055810bf7947fe0cb2325c2f2"><div class="ttname"><a href="class_data_decode.html#a5e7ec78055810bf7947fe0cb2325c2f2">DataDecode::loadData</a></div><div class="ttdeci">bool loadData(const std::vector&lt; uint8_t &gt; &amp;bufs, const DataTypes::Entry &amp;currEntry)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00023">DataDecode.cpp:23</a></div></div>
@@ -1315,10 +1294,9 @@ Private Attributes</h2></td></tr>
 <div class="ttc" id="namespace_data_types_html_ab9e05d31ce577f6b54b13b82200022ed"><div class="ttname"><a href="namespace_data_types.html#ab9e05d31ce577f6b54b13b82200022ed">DataTypes::Packet::data</a></div><div class="ttdeci">std::vector&lt; Numeric &gt; data</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00047">DataTypes.h:47</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a8826e093512ef4f5106284ebea6b3d7d"><div class="ttname"><a href="namespace_data_types.html#a8826e093512ef4f5106284ebea6b3d7d">DataTypes::PrimaryHeader::packetLength</a></div><div class="ttdeci">uint32_t packetLength</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00061">DataTypes.h:61</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee"><div class="ttname"><a href="namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba931728b789fe52247120b588e9a31eee">DataTypes::Numeric::U32</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00035">DataTypes.h:35</a></div></div>
-<div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00016">LogFile.cpp:16</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a228afbe91344c738ec793d7770a59d66"><div class="ttname"><a href="namespace_data_types.html#a228afbe91344c738ec793d7770a59d66">DataTypes::PrimaryHeader::sequenceFlag</a></div><div class="ttdeci">SequenceFlag sequenceFlag</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00058">DataTypes.h:58</a></div></div>
 <div class="ttc" id="namespace_data_types_html_a26bbf846b92697a25699d5a7892a4826"><div class="ttname"><a href="namespace_data_types.html#a26bbf846b92697a25699d5a7892a4826">DataTypes::Numeric::mnem</a></div><div class="ttdeci">std::string mnem</div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00036">DataTypes.h:36</a></div></div>
-<div class="ttc" id="class_data_decode_html_a45ff87c2c0f54a42f70a0ec0156ec723"><div class="ttname"><a href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">DataDecode::checkPackEntries</a></div><div class="ttdeci">bool checkPackEntries(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00466">DataDecode.cpp:466</a></div></div>
+<div class="ttc" id="class_data_decode_html_a45ff87c2c0f54a42f70a0ec0156ec723"><div class="ttname"><a href="class_data_decode.html#a45ff87c2c0f54a42f70a0ec0156ec723">DataDecode::checkPackEntries</a></div><div class="ttdeci">bool checkPackEntries(DataTypes::Packet &amp;pack)</div><div class="ttdef"><b>Definition:</b> <a href="_data_decode_8cpp_source.html#l00465">DataDecode.cpp:465</a></div></div>
 <div class="ttc" id="namespace_data_types_html_struct_data_types_1_1_numeric"><div class="ttname"><a href="namespace_data_types.html#struct_data_types_1_1_numeric">DataTypes::Numeric</a></div><div class="ttdef"><b>Definition:</b> <a href="_data_types_8h_source.html#l00033">DataTypes.h:33</a></div></div>
 </div><!-- fragment -->
 </div>

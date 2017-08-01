@@ -18,6 +18,7 @@ var searchData=
   ['set_5fvariable_5fsize',['set_variable_size',['../classh5cpp_1_1_datatype.html#ad1518d54129271d107451499151208e9',1,'h5cpp::Datatype']]],
   ['setapids',['setAPIDs',['../class_back_end.html#ac70d765171baaa9d030f2f0167fb6434',1,'BackEnd']]],
   ['setcurrentfile',['setCurrentFile',['../class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5',1,'BackEnd']]],
+  ['setfinished',['setFinished',['../class_back_end.html#a283d557a466135a1ef2436747eab3b15',1,'BackEnd']]],
   ['setfoldername',['setFolderName',['../class_back_end.html#a0007e248da8316e42c6f07be173602f5',1,'BackEnd']]],
   ['seth5',['setH5',['../class_back_end.html#aca6b060fd1893e7e58b6232f8a01a1b7',1,'BackEnd']]],
   ['setinactive',['setInactive',['../class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56',1,'ThreadSafeListenerQueue']]],

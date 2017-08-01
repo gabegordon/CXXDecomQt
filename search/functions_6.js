@@ -34,7 +34,7 @@ var searchData=
   ['getheadersandentries',['getHeadersAndEntries',['../class_decom.html#a678c5543c799d136e90846779fbc8a13',1,'Decom']]],
   ['getnum',['getNum',['../class_data_decode.html#a3b9fc8be81ce1a7407a0cf0f1e502819',1,'DataDecode']]],
   ['getoffset',['getOffset',['../class_data_decode.html#a1c8389484138867135f09039517cc301',1,'DataDecode']]],
-  ['getompsscience',['getOMPSScience',['../class_data_decode.html#a772a4e53a2ca2fa02b44b3fe7c3542af',1,'DataDecode']]],
+  ['getompsscience',['getOMPSScience',['../class_data_decode.html#a133e41098e8e726a4fae2fc6f40730cc',1,'DataDecode']]],
   ['getselectedapids',['getSelectedAPIDs',['../class_back_end.html#a9752a6ca14c24f524f2de3f47740ee30',1,'BackEnd']]],
   ['getstream',['getStream',['../classpds_decode.html#a0c08ba85336d0e2a4545bf8c4e681a38',1,'pdsDecode']]],
   ['group',['Group',['../classh5cpp_1_1_group.html#aac8bd9ab59d0ad7253f739302a69405d',1,'h5cpp::Group::Group(hid_t loc_id, const char *name, hid_t gapl_id, internal::TagOpen)'],['../classh5cpp_1_1_group.html#a6615f0b02abeaa4edc59f83eb9e1bd2b',1,'h5cpp::Group::Group(hid_t loc_id, const char *name, hid_t lcpl_id, hid_t gcpl_id, hid_t gapl_id, internal::TagCreate)'],['../classh5cpp_1_1_group.html#aaeadd371586b6eeb75b503c5fa35c3d5',1,'h5cpp::Group::Group()'],['../classh5cpp_1_1_group.html#a0b2f2d4803e9568ccde59b3b5db713b1',1,'h5cpp::Group::Group(hid_t id)']]]
