@@ -6,13 +6,14 @@
 #include <iterator>
 #include <thread>
 #include <boost/algorithm/string.hpp>
-#include "h5Decode.h"
-#include "getFiles.h"
-#include "hdf_wrapper.h"
-#include "LogFile.h"
-#include "backend.h"
-#include "ProgressBar.h"
-#include "Decom.h"
+#include <boost/filesystem.hpp>
+#include "h5Decode.hpp"
+#include "getFiles.hpp"
+#include "hdf_wrapper.hpp"
+#include "LogFile.hpp"
+#include "backend.hpp"
+#include "ProgressBar.hpp"
+#include "Decom.hpp"
 
 namespace h5 = h5cpp;
 
@@ -160,8 +161,9 @@ void h5Decode::sortFiles(std::vector<std::string>& files)
 
 DataTypes::SCType h5Decode::checkType(const std::string& filename)
 {
+    boost::filesystem::path filepath(filename);  // Convert to boost path so that we can strip the path info
     std::vector<std::string> splitstring;
-    boost::split(splitstring, filename, boost::is_any_of("_"));
+    boost::split(splitstring, filepath.stem().string(), boost::is_any_of("_"));
     if(splitstring.at(1) == "npp")
         return DataTypes::SCType::NPP;
     else if(splitstring.at(1) == "j01")

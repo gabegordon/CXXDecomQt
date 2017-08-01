@@ -1,32 +1,31 @@
 #pragma once
 
 #include <string>
-#include <unordered_map>
 #include <fstream>
-#include <tuple>
 #include <set>
-#include "DataTypes.h"
-#include "ThreadSafeListenerQueue.h"
+#include <vector>
+#include <unordered_map>
+#include "DataTypes.hpp"
+#include "ThreadSafeListenerQueue.hpp"
 
 class BackEnd;
 
-class h5Decode
+class pdsDecode
 {
   public:
-  h5Decode() :
-    m_directory{},
-    m_outfiles{}
+  pdsDecode() :
+    m_directory{}
     {}
 
-    virtual ~h5Decode() {}
+    virtual ~pdsDecode() {}
 
-    std::set<std::string> getFileTypeNames(const std::string& directory, DataTypes::SCType& type);
+    std::set<std::string> getFileTypeNames(const std::string& directory);
     void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type);
   private:
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;
     ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>> m_queue;
 
-    void sortFiles(std::vector<std::string>& files);
-    DataTypes::SCType checkType(const std::string& filename);
+    std::ofstream& getStream(const std::string& outfilename);
+    std::string getFileName(const std::string& filename);
 };

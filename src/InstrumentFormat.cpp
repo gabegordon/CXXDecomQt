@@ -4,10 +4,10 @@
 #include <string>
 #include <memory>
 #include <unordered_map>
-#include "ProgressBar.h"
-#include "InstrumentFormat.h"
-#include "CSVRow.h"
-#include "ReadFile.h"
+#include "ProgressBar.hpp"
+#include "InstrumentFormat.hpp"
+#include "CSVRow.hpp"
+#include "ReadFile.hpp"
 
 struct atms_pack
 {

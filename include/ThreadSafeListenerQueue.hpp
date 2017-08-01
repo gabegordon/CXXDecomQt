@@ -6,7 +6,7 @@
 #include <condition_variable>
 #include <chrono>
 #include <iostream>
-#include "DataTypes.h"
+#include "DataTypes.hpp"
 
 template<class T>
 class ThreadSafeListenerQueue

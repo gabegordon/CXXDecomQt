@@ -2,8 +2,8 @@
 #include <iomanip>
 #include <memory>
 #include <iostream>
-#include "ThreadPoolServer.h"
-#include "LogFile.h"
+#include "ThreadPoolServer.hpp"
+#include "LogFile.hpp"
 
 /**
  * Writer thread's main loop. Thread waits until it can pull a packet from the queue and then writes the packet contents to an output file.

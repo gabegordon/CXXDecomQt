@@ -2,7 +2,7 @@
  *
 <pre>
 \section sec1 Dependencies
--gcc>=5
+-gcc>=7
 -libhdf5
 -boost>=1.58 (static)
 -Qt>=5.7

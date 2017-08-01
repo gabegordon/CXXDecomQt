@@ -1,5 +1,5 @@
-#include "ProgressBar.h"
-#include "backend.h"
+#include "ProgressBar.hpp"
+#include "backend.hpp"
 
 void ProgressBar::SetStyle(const char* unit_bar_, const char* unit_space_)
 {

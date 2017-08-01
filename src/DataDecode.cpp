@@ -5,24 +5,22 @@
 #include <algorithm>
 #include <iterator>
 #include <boost/interprocess/streams/bufferstream.hpp>
-#include "HeaderDecode.h"
-#include "DataDecode.h"
-#include "ByteManipulation.h"
-#include "ReadFile.h"
-#include "LogFile.h"
-
-using namespace ByteManipulation;
+#include "HeaderDecode.hpp"
+#include "DataDecode.hpp"
+#include "ByteManipulation.hpp"
+#include "ReadFile.hpp"
+#include "LogFile.hpp"
 
 /**
  * Loads bytes from buffer vector based on entry length and use offset to account for database entries included header bytes.
  *
- * @param buf Vector containing binary data
- * @param currEntry Entry we are using to decode
- * @return True if successful. False if outside vector bounds
+ * @param buf Vector containing binary data.
+ * @param currEntry Entry we are using to decode.
+ * @return True if successful. False if outside vector bounds.
  */
 bool DataDecode::loadData(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry)
 {
-    if(currEntry.byte - m_offset >= buf.size())
+    if (currEntry.byte - m_offset >= buf.size())
         return false;
     m_initialByte = buf.at(currEntry.byte - m_offset);
 
@@ -61,13 +59,12 @@ bool DataDecode::loadData(const std::vector<uint8_t>& buf, const DataTypes::Entr
 /**
  * Special function to handle loading all bytes for a floating point entry.
  *
- * @param buf Vector containing binary data
- * @param currEntry Entry we are using to decode
- * @return Final floating point value
+ * @param buf Vector containing binary data.
+ * @param currEntry Entry we are using to decode.
+ * @return Final floating point value.
  */
 float DataDecode::getFloat(const std::vector<uint8_t>& buf, const DataTypes::Entry& currEntry)
 {
-
     m_initialByte = buf.at(currEntry.byte - m_offset);
     uint8_t b1, b2, b3, b4, b5, b6, b7;
     if (currEntry.length == 64)
@@ -79,7 +76,7 @@ float DataDecode::getFloat(const std::vector<uint8_t>& buf, const DataTypes::Ent
         b5 = buf.at(currEntry.byte - m_offset + 5);
         b6 = buf.at(currEntry.byte - m_offset + 6);
         b7 = buf.at(currEntry.byte - m_offset + 7);
-        uint64_t result = mergeBytes64(m_initialByte, b1, b2, b3, b4, b5, b6, b7);
+        uint64_t result = ByteManipulation::mergeBytes64(m_initialByte, b1, b2, b3, b4, b5, b6, b7);
         return static_cast<float>(result);
     }
     else  // Length is 32
@@ -87,7 +84,7 @@ float DataDecode::getFloat(const std::vector<uint8_t>& buf, const DataTypes::Ent
         b1 = buf.at(currEntry.byte - m_offset + 1);
         b2 = buf.at(currEntry.byte - m_offset + 2);
         b3 = buf.at(currEntry.byte - m_offset + 3);
-        uint32_t result = mergeBytes(m_initialByte,b1,b2,b3,4);
+        uint32_t result = ByteManipulation::mergeBytes(m_initialByte, b1, b2, b3, 4);
         return static_cast<float>(result);
     }
 }
@@ -95,8 +92,7 @@ float DataDecode::getFloat(const std::vector<uint8_t>& buf, const DataTypes::Ent
 /**
  * Set packet data from headers.
  *
- * @param pack Packet to be set
- * @return N/A
+ * @param pack Packet to be set.
  */
 void DataDecode::getHeaderData(DataTypes::Packet& pack)
 {
@@ -108,17 +104,19 @@ void DataDecode::getHeaderData(DataTypes::Packet& pack)
 }
 
 /**
- * Get correct offset based on input data type (Offset refers to starting byte:bit values listed in database)
+ * Get correct offset based on input data type (Offset refers to starting byte:bit values listed in database).
  *
- * @return Unsigned 32-bit integer offset
+ * @return Unsigned 32-bit integer offset.
  */
 uint8_t DataDecode::getOffset()
 {
     if (m_pHeader.secondaryHeader)
+    {
         if (m_Instrument == "OMPS")
             return 20;
         else
             return 14;
+    }
     else
         return 6;
 }
@@ -126,9 +124,9 @@ uint8_t DataDecode::getOffset()
 /**
  * Main decode function. Handles decoding all entries for current APID.
  *
- * @param infile File to read binary data from
- * @param index Index to begin from (used only in segmented packets)
- * @return Packet containing all data from binary stream
+ * @param buffer Stream to read binary data from.
+ * @param index Index to begin from (used only in segmented packets).
+ * @return Packet containing all data from binary stream.
  */
 DataTypes::Packet DataDecode::decodeData(std::istringstream& buffer, const uint32_t& index)
 {
@@ -164,8 +162,9 @@ DataTypes::Packet DataDecode::decodeData(std::istringstream& buffer, const uint3
 /**
  * Handles decoding segmented functions. Acts as a wrapper function for standard decodeData function. Builds one large packet until encountering LAST flag.
  *
- * @param infile File to read from
- * @return Single packet containing all segmented packets
+ * @param buffer Stream to read from.
+ * @param omps If omps supersegmented, then handle differently.
+ * @return Single packet containing all segmented packets.
  */
 DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, const bool omps)
 {
@@ -192,8 +191,8 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, co
 /**
  * Special OMPS decode function. Handles OMPS extra header. Uses standard dataDecode as underlying decode method.
  *
- * @param infile File to read from
- * @return Single packet containing all [segmented] packets
+ * @param buffer Stream to read from.
+ * @return Single packet containing all [segmented] packets.
  */
 DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
 {
@@ -209,7 +208,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
 
     std::vector<uint32_t> scienceAPIDS = {560, 561, 592, 593, 608, 609, 616, 617};  // All OMPS Science APIDs
-    if (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), m_pHeader.APID) != std::end(scienceAPIDS))
+    if (std::find(std::begin(scienceAPIDS), std::end(scienceAPIDS), m_pHeader.APID) != std::end(scienceAPIDS))  // OMPS Science requires special decom
         return getOMPSScience(buffer);
 
     if (m_pHeader.sequenceFlag == DataTypes::STANDALONE)  // If standalone, then do standard decode
@@ -226,13 +225,12 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
         {
             uint16_t segPacketCount = 0;
             segmentLastByte = 0;
-            while (segPacketCount != contCount + 1 && !buffer.eof())
+            while (segPacketCount != contCount + 1 && !buffer.eof())  // Loop until we have reached the expected number of segment packets
             {
                 if (segPacketCount != 0)  //  Skip parsing headers for first packet, as we have already done so
                 {
                     std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
                     m_pHeader = std::get<0>(headers);
-                    m_pHeader.packetLength -= 4;
                     uint64_t ompsHeader;
                     ReadFiles::readBuffer(ompsHeader, buffer);
                 }
@@ -245,6 +243,12 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
     return segPack;
 }
 
+/**
+ * Function for parsing omps science APIDs. Needed for extracting
+ *
+ * @param buffer
+ * @return
+ */
 DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 {
     DataTypes::Packet segPack;
@@ -299,10 +303,10 @@ DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 
     size_t scsize = scbuf.size();
 
-    for(size_t byte = 0; byte < scsize; byte += 4)
+    for (size_t byte = 0; byte < scsize; byte += 4)
     {
         DataTypes::Numeric pixel;
-        if(byte + 3 >= scsize)  // Break needed here to not go out of bounds on pad byte
+        if (byte + 3 >= scsize)  // Break needed here to not go out of bounds on pad byte
             break;
         pixel.u32 = ByteManipulation::mergeBytes(scbuf.at(byte), scbuf.at(byte+1), scbuf.at(byte+2), scbuf.at(byte+3), 4);
         pixel.mnem = "Pixel";
@@ -399,7 +403,7 @@ void DataDecode::decodeOne(const DataTypes::DataType& dtype, const uint32_t& ent
  */
 void DataDecode::decodeTwo(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num)
 {
-    uint16_t result = mergeBytes16(m_initialByte, m_byte1);
+    uint16_t result = ByteManipulation::mergeBytes16(m_initialByte, m_byte1);
     if (m_entries.at(entryIndex).bitUpper == 0 && m_entries.at(entryIndex).bitLower == 0)
     {
         if (dtype == DataTypes::SIGNED)
@@ -426,7 +430,7 @@ void DataDecode::decodeTwo(const DataTypes::DataType& dtype, const uint32_t& ent
  */
 void DataDecode::decodeThree(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num)
 {
-    uint32_t result = mergeBytes(m_initialByte, m_byte1, m_byte2, m_byte3, 3);
+    uint32_t result = ByteManipulation::mergeBytes(m_initialByte, m_byte1, m_byte2, m_byte3, 3);
     if (m_entries.at(entryIndex).bitUpper == 0 && m_entries.at(entryIndex).bitLower == 0)
     {
         if (dtype == DataTypes::SIGNED)
@@ -453,7 +457,7 @@ void DataDecode::decodeThree(const DataTypes::DataType& dtype, const uint32_t& e
  */
 void DataDecode::decodeFour(const DataTypes::DataType& dtype, const uint32_t& entryIndex, DataTypes::Numeric& num)
 {
-    uint32_t result = mergeBytes(m_initialByte, m_byte1, m_byte2, m_byte3, 4);
+    uint32_t result = ByteManipulation::mergeBytes(m_initialByte, m_byte1, m_byte2, m_byte3, 4);
     if (m_entries.at(entryIndex).bitUpper == 0 && m_entries.at(entryIndex).bitLower == 0)
     {
         if (dtype == DataTypes::SIGNED)

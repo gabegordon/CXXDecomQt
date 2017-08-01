@@ -4,8 +4,8 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
-#include "ThreadSafeListenerQueue.h"
-#include "DataTypes.h"
+#include "ThreadSafeListenerQueue.hpp"
+#include "DataTypes.hpp"
 
 class ThreadPoolServer
 {

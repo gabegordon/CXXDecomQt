@@ -1,7 +1,7 @@
 #pragma once
 #include <fstream>
 #include <sstream>
-#include "DataTypes.h"
+#include "DataTypes.hpp"
 
 class DataDecode
 {

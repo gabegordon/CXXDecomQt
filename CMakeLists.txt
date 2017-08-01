@@ -90,7 +90,7 @@ if(STATIC_QT)
 endif()
 
 file(GLOB SOURCES "src/[A-z]*.cpp")
-file(GLOB INCLUDES "include/[A-z]*.h")
+file(GLOB INCLUDES "include/[A-z]*.hpp")
 add_executable(${PROJECT_NAME} ${EXE_TYPE} "qml.qrc" ${SOURCES} ${INCLUDES})
 
 target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)

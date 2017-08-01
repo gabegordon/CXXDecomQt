@@ -1,10 +1,10 @@
 #include <iostream>
 #include <bitset>
 #include <tuple>
-#include "HeaderDecode.h"
-#include "ReadFile.h"
-#include "ByteManipulation.h"
-#include "LogFile.h"
+#include "HeaderDecode.hpp"
+#include "ReadFile.hpp"
+#include "ByteManipulation.hpp"
+#include "LogFile.hpp"
 
 namespace HeaderDecode
 {

@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
-#include "DataTypes.h"
+#include "DataTypes.hpp"
 
 class DatabaseReader
 {

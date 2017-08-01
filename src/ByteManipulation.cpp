@@ -1,6 +1,6 @@
 #include <string>
 #include <bitset>
-#include "ByteManipulation.h"
+#include "ByteManipulation.hpp"
 
 namespace ByteManipulation {
 

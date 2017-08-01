@@ -1,7 +1,7 @@
 #pragma once
 #include <tuple>
 #include <sstream>
-#include "DataTypes.h"
+#include "DataTypes.hpp"
 
 namespace HeaderDecode
 {

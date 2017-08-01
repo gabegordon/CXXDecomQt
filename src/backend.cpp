@@ -1,10 +1,8 @@
-#include <iostream>
 #include <QGuiApplication>
 #include <algorithm>
 #include <boost/algorithm/string.hpp>
-#include "backend.h"
-#include "DatabaseReader.h"
-
+#include "backend.hpp"
+#include "DatabaseReader.hpp"
 
 BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
@@ -22,7 +20,7 @@ BackEnd::BackEnd(QObject* parent) :
 /**
  * Sets foldername member based on QML file selector.
  *
- * @param folderName Folder path
+ * @param folderName Folder path.
  */
 void BackEnd::setFolderName(const QString& folderName)
 {
@@ -32,17 +30,28 @@ void BackEnd::setFolderName(const QString& folderName)
     m_folderName = folderName;
 }
 
+/**
+ * Sets selectedAPIDs to comma separated string entered by user.
+ *
+ * @param apids APID string.
+ */
 void BackEnd::setAPIDs(const QString& apids)
 {
     m_selectedAPIDs = apids;
 }
 
+/**
+ * Toggles H5 decode on, and PDS decode off.
+ */
 void BackEnd::setH5()
 {
     m_H5 = true;
     m_PDS = false;
 }
 
+/**
+ * Toggles H5 decode on, and PDS decode off.
+ */
 void BackEnd::setPDS()
 {
     m_PDS = true;
@@ -50,9 +59,9 @@ void BackEnd::setPDS()
 }
 
 /**
- * Given a string containing the progressbar convert to QString. Then signal and update Qt.
+ * Given a string containing the progressbar (or another message) convert to QString. Then signal and update Qt.
  *
- * @param prog String to be display
+ * @param prog String to be display.
  */
 void BackEnd::setProgress(const std::string& prog)
 {
@@ -61,11 +70,19 @@ void BackEnd::setProgress(const std::string& prog)
     QGuiApplication::sync();
 }
 
+/**
+ * Sends finished signal qt to display exit button for user.
+ */
 void BackEnd::setFinished()
 {
     emit finished();
 }
 
+/**
+ * Displays the name of the current file being decommed in the GUI.
+ *
+ * @param filename Filename string to display.
+ */
 void BackEnd::setCurrentFile(const std::string& filename)
 {
     m_currentFile = QString::fromStdString(filename);
@@ -73,14 +90,18 @@ void BackEnd::setCurrentFile(const std::string& filename)
     QGuiApplication::sync();
 }
 
+/**
+ * Toggles APID filtering.
+ */
 void BackEnd::toggleAllAPIDs()
 {
     m_allAPIDs = !m_allAPIDs;
 }
 
 /**
- * Given user selected of packet files, add to list of selected files.
- * @param packetFile File to add
+ * Given user selected packet file, add to list of selected files.
+ *
+ * @param packetFile File to add.
  */
 void BackEnd::addPacketFile(const QString &packetFile)
 {
@@ -89,7 +110,7 @@ void BackEnd::addPacketFile(const QString &packetFile)
 
 /**
  * Remove packet file if user deselects a file.
- * @param packetFile File to remove
+ * @param packetFile File to remove.
  */
 void BackEnd::removePacketFile(const QString &packetFile)
 {
@@ -97,7 +118,7 @@ void BackEnd::removePacketFile(const QString &packetFile)
 }
 
 /**
- * Getter function for pkt files. Allows Qt to display list of possible packet files.
+ * Getter function for files. Allows Qt to display list of possible packet files.
  *
  * @return List of file names
  */
@@ -105,13 +126,16 @@ QStringList BackEnd::ofiles()
 {
     QStringList tQList;
 
-    for(const std::string& s : m_ofiles)
+    for (const std::string& s : m_ofiles)
     {
         tQList.append(QString::fromStdString(s));
     }
     return tQList;
 }
 
+/**
+ * Getter function (for Qt) for the current file being decommed.
+ */
 QString BackEnd::currentFile()
 {
     return m_currentFile;
@@ -123,7 +147,7 @@ QString BackEnd::progress()
 }
 
 /**
- * Passes user selected folder to decode and parses all files in the directory.
+ * Gets lists of possible files to decom. Passes to Qt for user selection.
  */
 void BackEnd::getFiles()
 {
@@ -132,12 +156,12 @@ void BackEnd::getFiles()
 
     std::string folderName;
 #ifdef __linux__
-    folderName = m_folderName.toStdString().substr(7);  // Remove "file:///" from filename
+    folderName = m_folderName.toStdString().substr(7);  // Remove "file://" from filename
 #else
-    folderName = m_folderName.toStdString().substr(8);
+    folderName = m_folderName.toStdString().substr(8);  // On Windows remove "file:///"
 #endif
 
-    if(m_H5)
+    if (m_H5)
     {
         m_ofiles = m_h5Dec.getFileTypeNames(folderName, m_type);
     }
@@ -153,7 +177,7 @@ void BackEnd::getFiles()
  */
 void BackEnd::runDecom()
 {
-    if(m_ofiles.size() == 0)
+    if (m_ofiles.size() == 0)
         return;
     DatabaseReader dr(m_allAPIDs, m_type, getSelectedAPIDs());  // Read databases
     if (m_H5)
@@ -162,11 +186,10 @@ void BackEnd::runDecom()
         m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type);
 }
 
-
 /**
  * Converts QString of APIDs to vector of integers.
  *
- * @return Vector containing the apids
+ * @return Vector containing the apids.
  */
 std::vector<uint32_t> BackEnd::getSelectedAPIDs()
 {
@@ -178,7 +201,7 @@ std::vector<uint32_t> BackEnd::getSelectedAPIDs()
 
     std::vector<std::string> splitstring;
     boost::split(splitstring, apidString, boost::is_any_of(","));
-    for(const auto& apid: splitstring)
+    for (const auto& apid : splitstring)
     {
         apids.emplace_back(std::stoul(apid));
     }

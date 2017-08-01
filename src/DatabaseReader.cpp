@@ -2,11 +2,11 @@
 #include <algorithm>
 #include <string>
 #include <vector>
-#include "DatabaseReader.h"
-#include "DataTypes.h"
-#include "CSVRow.h"
-#include "ReadFile.h"
-#include "LogFile.h"
+#include "DatabaseReader.hpp"
+#include "DataTypes.hpp"
+#include "CSVRow.hpp"
+#include "ReadFile.hpp"
+#include "LogFile.hpp"
 
 /**
  * Overide stream operator for reading from our CSVRow class.

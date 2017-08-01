@@ -6,15 +6,15 @@
 #include <memory>
 #include <bitset>
 #include <sstream>
-#include "Decom.h"
-#include "ProgressBar.h"
-#include "ByteManipulation.h"
-#include "HeaderDecode.h"
-#include "DataDecode.h"
-#include "InstrumentFormat.h"
-#include "ReadFile.h"
-#include "LogFile.h"
-#include "backend.h"
+#include "Decom.hpp"
+#include "ProgressBar.hpp"
+#include "ByteManipulation.hpp"
+#include "HeaderDecode.hpp"
+#include "DataDecode.hpp"
+#include "InstrumentFormat.hpp"
+#include "ReadFile.hpp"
+#include "LogFile.hpp"
+#include "backend.hpp"
 
 /**
  * Decom engine initializer. Main event loop for calling all Decom helper functions. Stops reading upon reaching end of input file. Writes data once finished reading.

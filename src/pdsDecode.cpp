@@ -1,11 +1,11 @@
 #include <boost/algorithm/string.hpp>
-#include "pdsDecode.h"
-#include "backend.h"
-#include "getFiles.h"
-#include "LogFile.h"
-#include "ReadFile.h"
-#include "ProgressBar.h"
-#include "Decom.h"
+#include "pdsDecode.hpp"
+#include "backend.hpp"
+#include "getFiles.hpp"
+#include "LogFile.hpp"
+#include "ReadFile.hpp"
+#include "ProgressBar.hpp"
+#include "Decom.hpp"
 
 std::set<std::string> pdsDecode::getFileTypeNames(const std::string& directory)
 {

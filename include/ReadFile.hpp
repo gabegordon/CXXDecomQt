@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "LogFile.h"
+#include "LogFile.hpp"
 
 namespace ReadFiles
 {

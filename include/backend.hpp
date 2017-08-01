@@ -6,8 +6,8 @@
 #include <string>
 #include <vector>
 #include <set>
-#include "h5Decode.h"
-#include "pdsDecode.h"
+#include "h5Decode.hpp"
+#include "pdsDecode.hpp"
 
 class BackEnd : public QObject
 {
@@ -45,7 +45,6 @@ signals:
     void finished();
 
 private:
-    QString m_userName;
     QString m_folderName;
     bool m_allAPIDs;
     std::set<std::string> m_ofiles;
@@ -58,6 +57,7 @@ private:
     bool m_PDS;
     h5Decode m_h5Dec;
     pdsDecode m_pdsDec;
-    std::vector<uint32_t> getSelectedAPIDs();
     DataTypes::SCType m_type;
+
+    std::vector<uint32_t> getSelectedAPIDs();
 };

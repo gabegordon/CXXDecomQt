@@ -10,7 +10,7 @@
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "backend.h"
+#include "backend.hpp"
 
 int main(int argc, char *argv[])
 {

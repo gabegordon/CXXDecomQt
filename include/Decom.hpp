@@ -6,8 +6,8 @@
 #include <tuple>
 #include <string>
 #include <sstream>
-#include "DataTypes.h"
-#include "ThreadPoolServer.h"
+#include "DataTypes.hpp"
+#include "ThreadPoolServer.hpp"
 
 class BackEnd;
 
