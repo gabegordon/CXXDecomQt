@@ -24,9 +24,9 @@ int main(int argc, char *argv[])
 
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<BackEnd>("io.qt.backend", 1, 0, "BackEnd");
+    qmlRegisterType<BackEnd>("io.qt.backend", 1, 0, "BackEnd");  // Expose backend class to QML
 
     QQmlApplicationEngine engine;
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    return app.exec();
+    return app.exec();  // Start Qt event loop
 }

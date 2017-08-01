@@ -22,7 +22,7 @@ class h5Decode
 
     virtual ~h5Decode() {}
 
-    std::set<std::string> getFileTypeNames(const std::string& directory, DataTypes::SCType& type);
+    std::set<std::string> getFileTypeNames(const std::string& directory, BackEnd* backend);
     void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type);
   private:
     std::string m_directory;
@@ -31,6 +31,6 @@ class h5Decode
     std::vector<h5cpp::File> m_h5Files;
     std::vector<std::string> m_files;
 
-    void sortFiles(std::vector<std::string>& files);
+    void sortFiles();
     DataTypes::SCType checkType(const std::string& filename);
 };

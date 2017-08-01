@@ -5,6 +5,7 @@
 #include <set>
 #include <vector>
 #include <unordered_map>
+#include <tuple>
 #include "DataTypes.hpp"
 #include "ThreadSafeListenerQueue.hpp"
 
@@ -25,6 +26,7 @@ class pdsDecode
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;
     ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>> m_queue;
+    std::vector<std::string> m_files;
 
     std::ofstream& getStream(const std::string& outfilename);
     std::string getFileName(const std::string& filename);

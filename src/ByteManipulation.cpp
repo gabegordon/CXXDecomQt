@@ -98,10 +98,10 @@ int32_t extract32Signed(const uint32_t& val, const uint32_t& start, const uint32
 /**
  * Extract a range of bits from eight bytes.
  *
- * @param val 64-bit integer to extract from
- * @param start Starting bit (inclusive)
- * @param len Number of bits to extract
- * @return Extracted bits (signed)
+ * @param val 64-bit integer to extract from.
+ * @param start Starting bit (inclusive).
+ * @param len Number of bits to extract.
+ * @return Extracted bits (signed).
  */
 int64_t extract64Signed(const uint64_t& val, const uint32_t& start, const uint32_t& len)
 {
@@ -111,12 +111,12 @@ int64_t extract64Signed(const uint64_t& val, const uint32_t& start, const uint32
 /**
  * Merge a variable number of bytes into a larger format.
  *
- * @param initialByte Unsigned 8-bit integer
- * @param extraByte1  Unsigned 8-bit integer
- * @param extraByte2  Unsigned 8-bit integer
- * @param extraByte3  Unsigned 8-bit integer
- * @param num Either 3 or 4, denotes whether merging 3 bytes or 4 bytes
- * @return Unsigned 32-bit integer containing the merged bytes
+ * @param initialByte Unsigned 8-bit integer.
+ * @param extraByte1  Unsigned 8-bit integer.
+ * @param extraByte2  Unsigned 8-bit integer.
+ * @param extraByte3  Unsigned 8-bit integer.
+ * @param num Either 3 or 4, denotes whether merging 3 bytes or 4 bytes.
+ * @return Unsigned 32-bit integer containing the merged bytes.
  */
 uint32_t mergeBytes(const uint8_t& initialByte, const uint8_t& extraByte1, const uint8_t& extraByte2, const uint8_t& extraByte3, const uint32_t& num)
 {
@@ -139,15 +139,15 @@ uint32_t mergeBytes(const uint8_t& initialByte, const uint8_t& extraByte1, const
 /**
  * Merge eight bytes into a single 64-bit integer.
  *
- * @param b0 Unsigned 8-bit integer
- * @param b1 Unsigned 8-bit integer
- * @param b2 Unsigned 8-bit integer
- * @param b3 Unsigned 8-bit integer
- * @param b4 Unsigned 8-bit integer
- * @param b5 Unsigned 8-bit integer
- * @param b6 Unsigned 8-bit integer
- * @param b7 Unsigned 8-bit integer
- * @return Unsigned 64-bit integer containing the merged bytes
+ * @param b0 Unsigned 8-bit integer.
+ * @param b1 Unsigned 8-bit integer.
+ * @param b2 Unsigned 8-bit integer.
+ * @param b3 Unsigned 8-bit integer.
+ * @param b4 Unsigned 8-bit integer.
+ * @param b5 Unsigned 8-bit integer.
+ * @param b6 Unsigned 8-bit integer.
+ * @param b7 Unsigned 8-bit integer.
+ * @return Unsigned 64-bit integer containing the merged bytes.
  */
 uint64_t mergeBytes64(const uint8_t& b0, const uint8_t& b1, const uint8_t& b2, const uint8_t& b3, const uint8_t& b4, const uint8_t& b5, const uint8_t& b6, const uint8_t& b7)
 {
@@ -166,9 +166,9 @@ uint64_t mergeBytes64(const uint8_t& b0, const uint8_t& b1, const uint8_t& b2, c
 /**
  * Merge two bytes into a single 16-bit integer.
  *
- * @param initialByte Unsigned 8-bit integer
- * @param extraByte1 Unsigned 8-bit integer
- * @return Unsigned 16-bit integer containing thw merged bytes
+ * @param initialByte Unsigned 8-bit integer.
+ * @param extraByte1 Unsigned 8-bit integer.
+ * @return Unsigned 16-bit integer containing thw merged bytes.
  */
 uint32_t mergeBytes16(const uint8_t& initialByte, const uint8_t& extraByte1)
 {

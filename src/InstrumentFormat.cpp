@@ -33,9 +33,9 @@ namespace InstrumentFormat
 /**
  * Overide stream operator for reading from our CSVRow class.
  *
- * @param str Stream to read from
- * @param data Our CSVRow object
- * @return Stream containing row
+ * @param str Stream to read from.
+ * @param data Our CSVRow object.
+ * @return Stream containing row.
  */
 std::istream& operator >> (std::istream& str, CSVRow& data)
 {
@@ -46,8 +46,7 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
 /**
  * Handles accumulating data from between scans and writing it to file.
  *
- * @param buf Buffer of atms_pack read in from output file
- * @return N/A
+ * @param buf Buffer of atms_pack read in from output file.
  */
 void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
 {
@@ -121,8 +120,6 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
 
 /**
  * Read ATMS science data in so that it can be properly formatted.
- *
- * @return N/A
  */
 void formatATMS(BackEnd* backend)
 {

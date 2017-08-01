@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wunused-parameter"
 /*
   Copyright (c) 2015 Michael Welter
 

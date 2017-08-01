@@ -200,9 +200,9 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
     uint16_t versionNum = 0;
     uint8_t contCount = 0;
     uint8_t contFlag = 0;
-    ReadFiles::readBuffer(versionNum, buffer);
-    ReadFiles::readBuffer(contCount, buffer);
-    ReadFiles::readBuffer(contFlag, buffer);
+    ReadFiles::read(versionNum, buffer);
+    ReadFiles::read(contCount, buffer);
+    ReadFiles::read(contFlag, buffer);
     versionNum = ByteManipulation::swapEndian(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
@@ -232,7 +232,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
                     std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
                     m_pHeader = std::get<0>(headers);
                     uint64_t ompsHeader;
-                    ReadFiles::readBuffer(ompsHeader, buffer);
+                    ReadFiles::read(ompsHeader, buffer);
                 }
                 DataTypes::Packet tmpPack = decodeDataSegmented(buffer, true);
                 segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(tmpPack.data)), std::make_move_iterator(std::end(tmpPack.data)));
@@ -303,7 +303,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 
     size_t scsize = scbuf.size();
 
-    for (size_t byte = 0; byte < scsize; byte += 4)
+    for (size_t byte = 0; byte < scsize; byte += 4)  // Loop through every 4 bytes for our 32-bit pixels
     {
         DataTypes::Numeric pixel;
         if (byte + 3 >= scsize)  // Break needed here to not go out of bounds on pad byte

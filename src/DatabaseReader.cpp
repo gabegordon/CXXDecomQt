@@ -11,9 +11,9 @@
 /**
  * Overide stream operator for reading from our CSVRow class.
  *
- * @param str Stream to read from
- * @param data Our CSVRow object
- * @return Stream containing row
+ * @param str Stream to read from.
+ * @param data Our CSVRow object.
+ * @return Stream containing row.
  */
 std::istream& operator >> (std::istream& str, CSVRow& data)
 {
@@ -23,12 +23,10 @@ std::istream& operator >> (std::istream& str, CSVRow& data)
 
 /**
  * Helper function to read all necessary databases.
- *
- * @return N/A
  */
 void DatabaseReader::init()
 {
-    switch(m_type)
+    switch (m_type)
     {
     case DataTypes::SCType::NPP:
     {
@@ -64,28 +62,28 @@ void DatabaseReader::init()
 /**
  * Extracts byte and bit integers out of byte:bit string from database column.
  *
- * @param bytebit "byte:bit" string read from database
- * @param i_byte Unsigned 32-bit integer to be set by function
- * @param i_bitLower Unsigned 32-bit integer to be set by function
- * @param i_bitUpper Unsigned 32-bit integer to be set by function
- * @return None. Parameters serve as the return value
+ * @param bytebit "byte:bit" string read from database.
+ * @param i_byte Unsigned 32-bit integer to be set by function.
+ * @param i_bitLower Unsigned 32-bit integer to be set by function.
+ * @param i_bitUpper Unsigned 32-bit integer to be set by function.
+ * @return None. Parameters serve as the return value.
  */
-void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t& i_bitLower, uint32_t& i_bitUpper) const
+void DatabaseReader::getByteBit(std::string* bytebit, uint32_t* i_byte, uint32_t* i_bitLower, uint32_t* i_bitUpper) const
 {
-    bytebit.erase(0, 1); // Remove leading /
-    bytebit.erase(std::remove_if(bytebit.begin(), bytebit.end(), isspace), bytebit.end());  // Remove any whitespace from the string
-    std::string s_byte = bytebit.substr(0, 4);
+    bytebit->erase(0, 1);  // Remove leading /
+    bytebit->erase(std::remove_if(bytebit->begin(), bytebit->end(), isspace), bytebit->end());  // Remove any whitespace from the string
+    std::string s_byte = bytebit->substr(0, 4);
     try
     {
-        i_byte = std::stoi(s_byte);
+        *i_byte = std::stoi(s_byte);
     }
     catch(...)
     {
-        LogFile::logError("stoi failed for i_byte: " + bytebit);
+        LogFile::logError("stoi failed for i_byte: " + *bytebit);
     }
-    if (bytebit.length() > 4)  // If longer than 4, then we have a bit range
+    if (bytebit->length() > 4)  // If longer than 4, then we have a bit range
     {
-        std::string s_bit = bytebit.substr(5);  // Substring to end of string
+        std::string s_bit = bytebit->substr(5);  // Substring to end of string
         if (s_bit.length() > 1)
         {
             size_t found;
@@ -93,12 +91,12 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
             {
                 try
                 {
-                    i_bitLower = std::stoi(s_bit.substr(0, found));
-                    i_bitUpper = std::stoi(s_bit.substr(found + 1));
+                    *i_bitLower = std::stoi(s_bit.substr(0, found));
+                    *i_bitUpper = std::stoi(s_bit.substr(found + 1));
                 }
                 catch(...)
                 {
-                    LogFile::logError("stoi failed for i_bitLower or i_bitUpper: " + bytebit);
+                    LogFile::logError("stoi failed for i_bitLower or i_bitUpper: " + *bytebit);
                 }
             }
         }
@@ -106,11 +104,11 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
         {
             try
             {
-                i_bitLower = std::stoi(s_bit);
+                *i_bitLower = std::stoi(s_bit);
             }
             catch (...)
             {
-                LogFile::logError("i_bitLower stoi failed with: " + bytebit);
+                LogFile::logError("i_bitLower stoi failed with: " + *bytebit);
             }
             i_bitUpper = i_bitLower;
         }
@@ -121,8 +119,7 @@ void DatabaseReader::getByteBit(std::string& bytebit, uint32_t& i_byte, uint32_t
 /**
  * Read a database file. Generate a DataTypes::Entry struct for each row.
  *
- * @param filename Database file to open
- * @return N/A
+ * @param filename Database file to open.
  */
 void DatabaseReader::readDatabase(const std::string& filename)
 {
@@ -132,7 +129,7 @@ void DatabaseReader::readDatabase(const std::string& filename)
     CSVRow dataRow;
     while (database >> dataRow)
     {
-        if (m_firstRun) //Skip header row
+        if (m_firstRun)  // Skip header row
         {
             m_firstRun = false;
             continue;
@@ -155,7 +152,7 @@ void DatabaseReader::readDatabase(const std::string& filename)
             LogFile::logError("i_APID stoul failed for: " + s_APID);
         }
 
-        if(!m_allAPIDs)  // If filtering APIDs
+        if (!m_allAPIDs)  // If filtering APIDs
         {
             if (std::find(m_APIDs.begin(), m_APIDs.end(), i_APID) == m_APIDs.end())  // If not found in selected vector
             {
@@ -170,7 +167,7 @@ void DatabaseReader::readDatabase(const std::string& filename)
         uint32_t i_byte = 0;
         uint32_t i_bitLower = 0;
         uint32_t i_bitUpper = 0;
-        getByteBit(bytebit, i_byte, i_bitLower, i_bitUpper);
+        getByteBit(&bytebit, &i_byte, &i_bitLower, &i_bitUpper);
 
         tmp.byte = i_byte;
         tmp.bitLower = i_bitLower;
@@ -189,8 +186,6 @@ void DatabaseReader::readDatabase(const std::string& filename)
 
 /**
  * Debug function to print what contents were read from the database.
- *
- * @return N/A
  */
 void DatabaseReader::printDataBase() const
 {

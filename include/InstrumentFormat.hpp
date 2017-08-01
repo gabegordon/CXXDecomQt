@@ -1,3 +1,5 @@
+#pragma once
+
 #include "backend.hpp"
 
 namespace InstrumentFormat

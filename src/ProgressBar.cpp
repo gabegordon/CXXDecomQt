@@ -1,21 +1,24 @@
 #include "ProgressBar.hpp"
 #include "backend.hpp"
 
-void ProgressBar::SetStyle(const char* unit_bar_, const char* unit_space_)
-{
-    unit_bar = unit_bar_;
-    unit_space = unit_space_;
-}
-
+/**
+ * Get width of console window based on character width.
+ *
+ * @return Length of console window.
+ */
 int ProgressBar::GetBarLength() const
 {
-    // get console width and according adjust the length of the progress bar
-
     int bar_length = static_cast<int>((95 - desc_width - CHARACTER_WIDTH_PERCENTAGE) / 2.0);
 
     return bar_length;
 }
 
+/**
+ * Progress the bar. And write back the progressbar string to Qt.
+ *
+ * @param idx_ Amount to progress.
+ * @param backend Qt backend.
+ */
 void ProgressBar::Progressed(const uint64_t& idx_, BackEnd* backend)
 {
     try
@@ -53,7 +56,7 @@ void ProgressBar::Progressed(const uint64_t& idx_, BackEnd* backend)
         out << "]" << std::setw(CHARACTER_WIDTH_PERCENTAGE + 1) << std::setprecision(1) << std::fixed << progress_percent << "%\r" << std::flush;
         backend->setProgress(out.str());
     }
-    catch (unsigned long e)
+    catch (uint64_t e)
     {
         std::cerr << "PROGRESS_BAR_EXCEPTION: _idx (" << e << ") went out of bounds, greater than n (" << n << ")." << std::endl << std::flush;
     }

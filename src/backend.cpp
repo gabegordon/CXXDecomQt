@@ -73,7 +73,7 @@ void BackEnd::setProgress(const std::string& prog)
 /**
  * Sends finished signal qt to display exit button for user.
  */
-void BackEnd::setFinished()
+void BackEnd::setFinished() const
 {
     emit finished();
 }
@@ -87,6 +87,16 @@ void BackEnd::setCurrentFile(const std::string& filename)
 {
     m_currentFile = QString::fromStdString(filename);
     emit currentFileChanged();
+}
+
+/**
+ * Sets satellite type.
+ *
+ * @param type Type to be set.
+ */
+void BackEnd::setType(const DataTypes::SCType& type)
+{
+    m_type = type;
 }
 
 /**
@@ -121,7 +131,7 @@ void BackEnd::removePacketFile(const QString &packetFile)
  *
  * @return List of file names
  */
-QStringList BackEnd::ofiles()
+QStringList BackEnd::ofiles() const
 {
     QStringList tQList;
 
@@ -135,12 +145,12 @@ QStringList BackEnd::ofiles()
 /**
  * Getter function (for Qt) for the current file being decommed.
  */
-QString BackEnd::currentFile()
+QString BackEnd::currentFile() const
 {
     return m_currentFile;
 }
 
-QString BackEnd::progress()
+QString BackEnd::progress() const
 {
     return m_progress;
 }
@@ -162,7 +172,7 @@ void BackEnd::getFiles()
 
     if (m_H5)
     {
-        m_ofiles = m_h5Dec.getFileTypeNames(folderName, m_type);
+        m_ofiles = m_h5Dec.getFileTypeNames(folderName, this);
     }
     else
     {

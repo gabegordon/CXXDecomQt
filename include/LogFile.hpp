@@ -1,10 +1,10 @@
 #pragma once
 #include <fstream>
+#include <string>
 
 class LogFile
 {
   public:
-
     static void logError(const std::string& message);
 
   private:

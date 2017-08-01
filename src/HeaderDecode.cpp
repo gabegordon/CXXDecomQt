@@ -15,9 +15,9 @@ bool isValid = false;
 /**
  * Wrapper function to call primary and secondary decoder functions. Also checks if header is valid.
  *
- * @param infile File to read from
- * @param debug Print debug info flag
- * @return Tuple containing headers and valid flag
+ * @param infile File to read from.
+ * @param debug Print debug info flag.
+ * @return Tuple containing headers and valid flag.
  */
 std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHeaders(std::istringstream& buffer, const bool& debug)
 {
@@ -36,8 +36,7 @@ std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHea
 /**
  * Debug function that prints header contents.
  *
- * @param ph Header to print
- * @return N/A
+ * @param ph Header to print.
  */
 void debugPrinter(const DataTypes::PrimaryHeader& ph)
 {
@@ -47,17 +46,17 @@ void debugPrinter(const DataTypes::PrimaryHeader& ph)
 /**
  * Function to handle primary header decoding.
  *
- * @param infile File to read from
- * @param debug Debug flag
- * @return PrimaryHeader struct
+ * @param infile File to read from.
+ * @param debug Debug flag.
+ * @return PrimaryHeader struct.
  */
 DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& debug)
 {
     DataTypes::PrimaryHeader ph = p_defaults;
     uint32_t firstFourBytes;
     uint16_t fifthSixByte;
-    ReadFiles::readBuffer(firstFourBytes, buffer);
-    ReadFiles::readBuffer(fifthSixByte, buffer);
+    ReadFiles::read(firstFourBytes, buffer);
+    ReadFiles::read(fifthSixByte, buffer);
     firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
     fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
     // Set CCSDS from bits 0-3
@@ -98,8 +97,8 @@ DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& d
 /**
  * Function to handle secondary header decoding.
  *
- * @param infile File to read from
- * @return SecondaryHeader struct
+ * @param infile File to read from.
+ * @return SecondaryHeader struct.
  */
 DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
 {
@@ -110,9 +109,9 @@ DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
         uint32_t millis;
         uint16_t micros;
 
-        ReadFiles::readBuffer(day, buffer);
-        ReadFiles::readBuffer(millis, buffer);
-        ReadFiles::readBuffer(micros, buffer);
+        ReadFiles::read(day, buffer);
+        ReadFiles::read(millis, buffer);
+        ReadFiles::read(micros, buffer);
 
         sh.day = ByteManipulation::swapEndian(day);
         sh.millis = ByteManipulation::swapEndian(millis);
@@ -121,7 +120,7 @@ DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
         {
             // If first segmented packet, then bits 0-7 are segment count
             uint16_t packetSegments;
-            ReadFiles::readBuffer(packetSegments, buffer);
+            ReadFiles::read(packetSegments, buffer);
             packetSegments = ByteManipulation::swapEndian(packetSegments);
             sh.segments = ByteManipulation::extract16(packetSegments, 0, 8);
         }
@@ -130,10 +129,9 @@ DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
 }
 
 /**
- * Checks if primary header contains valid information.
+ * Checks if primary header contains valid information. (CCSDS Packet bounds)
  *
- * @param pheader Header to check
- * @return N/A
+ * @param pheader Header to check.
  */
 void checkValidHeader(const DataTypes::PrimaryHeader& pheader)
 {

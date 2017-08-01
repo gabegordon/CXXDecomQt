@@ -6,21 +6,14 @@
 
 namespace ReadFiles
 {
-    template <typename T>
+template <typename B, typename F>
     /**
      * Templated read function. Reads Type T from stream.
      *
      * @param buffer Data type to read into
      * @param in Stream to read from
-     * @return N/A
      */
-    static inline void read(T& buffer, std::ifstream& in)
-    {
-        in.read(reinterpret_cast<char *>(&buffer), sizeof(buffer));
-    }
-
-    template <typename T>
-    static inline void readBuffer(T& buffer, std::istringstream& in)
+    static inline void read(B& buffer, F& in)
     {
         in.read(reinterpret_cast<char *>(&buffer), sizeof(buffer));
     }
@@ -31,7 +24,6 @@ namespace ReadFiles
      *
      * @param stream Stream to check
      * @param name Name to print out for debugging purposes
-     * @return N/A
      */
     static inline void checkFile(std::ifstream& stream, const std::string& name)
     {

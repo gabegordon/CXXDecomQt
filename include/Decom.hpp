@@ -23,16 +23,16 @@ class Decom
     m_debug{debug},
     m_headers{},
     m_type{type}
-    {};
+    {}
     virtual ~Decom() {}
 
-    void init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue, BackEnd* backend);
+    void init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>* queue, BackEnd* backend);
 
   private:
     void getEntries(const uint32_t& APID);
     void formatInstruments(BackEnd* backend) const;
     void storeAPID(const uint32_t& APID);
-    int64_t getFileSize(std::istringstream& buffer);
+    int64_t getFileSize(std::istringstream& buffer) const;
     DataTypes::Packet decodeData(std::istringstream& buffer, const std::string& instrument);
     bool getHeadersAndEntries(std::istringstream& buffer);
 

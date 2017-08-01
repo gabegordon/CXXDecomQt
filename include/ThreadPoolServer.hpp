@@ -18,7 +18,7 @@ class ThreadPoolServer
 
     void exec(std::unique_ptr<DataTypes::Packet> pack, const std::string& instrument);
     void join();
-    void ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>& queue, const std::string& instrument, const uint32_t apid);
+    void ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>* queue, const std::string& instrument, const uint32_t apid);
 
   private:
     std::unordered_map<uint32_t, ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>> m_queues;

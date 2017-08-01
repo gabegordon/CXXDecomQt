@@ -15,12 +15,19 @@
 
 namespace h5 = h5cpp;
 
-std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, DataTypes::SCType& type)
+/**
+ * Returns list of choices for decom. Passed to Qt for user selection.
+ *
+ * @param directory Directory to look in for files.
+ * @param backend Qt backend pointer for setting satellite type.
+ * @return Set containing the file options.
+ */
+std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, BackEnd* backend)
 {
     m_directory = directory;
     std::set<std::string> outfileNames;
-    m_files = getFiles::filesInDirectory(m_directory, ".h5");
-    if(m_files.size() == 0)
+    m_files = getFiles::filesInDirectory(m_directory, ".h5");  // Get all matching files
+    if (m_files.size() == 0)
     {
         LogFile::logError("No .h5 files found");
         exit(0);
@@ -32,14 +39,14 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, D
         m_h5Files.emplace_back(h5File);
         h5::Group All_Data = h5File.root().open_group("All_Data");
 
-        for(size_t group = 0; group < All_Data.size(); ++group)
+        for (size_t group = 0; group < All_Data.size(); ++group)
         {
-            outfileNames.emplace(All_Data.get_link_name(group));
+            outfileNames.emplace(All_Data.get_link_name(group));  // Get internal file name from h5 file
         }
     }
 
-    sortFiles(m_files);
-    type = checkType(m_files.front());
+    sortFiles();
+    backend->setType(checkType(m_files.front()));
     // This creates a file called datesFile.dat so that matlab can see the dates and SCIDs in the output txt
     std::string input =  m_files.front() + m_files.back();  // We can put this on a single line. It does not matter for Matlab
     std::ofstream datesFile;
@@ -50,26 +57,31 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, D
     return outfileNames;
 }
 
+
 /**
- * Main h5 decode function. Reads all h5's in folder and writes packet files.
+ * Main h5Decode/Decom function. Read h5 files contents into vectors, which are then passed by queue to a thread resposible for running the Decom class.
  *
- * @return set of files written
+ * @param backend Pointer to Qt backend for callbacks and status updates.
+ * @param selectedFiles List of user selected files, used for skipping unselected files.
+ * @param debug Debug flag.
+ * @param entries Database entries to be passed to the Decom class.
+ * @param type Satellite type.
  */
 void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
 {
-    Decom decomEngine(debug, entries, type);
-    std::thread decomThread(&Decom::init, decomEngine, std::ref(m_queue), backend);
+    Decom decomEngine(debug, entries, type);  // Create Decom object
+    std::thread decomThread(&Decom::init, decomEngine, &m_queue, backend);  // Start Decom init function in a another thread
     decomThread.detach();
     ProgressBar pbar(m_files.size(), "Parsing h5");
     uint32_t i = 0;
-    for (auto& h5File : m_h5Files)
+    for (auto& h5File : m_h5Files)  // For each h5 file
     {
-        backend->setCurrentFile(h5File.get_file_name());
+        backend->setCurrentFile(h5File.get_file_name());  // Notify backend of the name of the file we are parsing
         pbar.Progressed(++i, backend);
 
         h5::Group All_Data = h5File.root().open_group("All_Data");
 
-        for(size_t group = 0; group < All_Data.size(); ++group)
+        for (size_t group = 0; group < All_Data.size(); ++group)
         {
             std::string APgroupString = All_Data.get_link_name(group);
             std::string instrument;
@@ -87,26 +99,24 @@ void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFi
                 {
                     h5::Dataset RawAP = APgroup.open_dataset(APgroup.get_link_name(AP));
                     std::vector<uint8_t> data;
-                    h5::read_dataset<uint8_t>(RawAP, data);
+                    h5::read_dataset<uint8_t>(RawAP, data);  // Read h5 data into vector of bytes
 
                     int32_t apStorageOffset = static_cast<int32_t>(data.at(51)) + (static_cast<int32_t>(data.at(50)) * 256) + (static_cast<int32_t>(data.at(49)) * 65536) + (static_cast<int32_t>(data.at(48)) * 16777216);  // location from RDR Static Header table in CDFCB Vol 2
-                    allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));
+                    allData.insert(std::end(allData), std::make_move_iterator(std::begin(data) + apStorageOffset), std::make_move_iterator(std::end(data)));  // Move local vector into allData
                 }
-                m_queue.push(std::make_tuple(allData, instrument));
+                m_queue.push(std::make_tuple(allData, instrument));  // Pass the h5 file contents to Decom
             }
         }
         h5File.close();
     }
     backend->setProgress("Waiting for writer threads to finish.");
-    m_queue.setInactive();
+    m_queue.setInactive();  // Notify Decom that no more h5 files will be pushed onto the queue
 }
 
 /**
- * @brief Sorts h5 files
- *
- * @param files Vector of files to sort
+ * Sorts h5 files based on time.
  */
-void h5Decode::sortFiles(std::vector<std::string>& files)
+void h5Decode::sortFiles()
 {
     auto sortLambda = [] (const std::string& a, const std::string& b) -> bool
                       {
@@ -120,18 +130,18 @@ void h5Decode::sortFiles(std::vector<std::string>& files)
                           std::string bmin;
                           std::string asec;
                           std::string bsec;
-                          for (const auto& s: astrings)
+                          for (const auto& s : astrings)
                           {
-                              if (s.substr(0,2) == "d2")  // Year of d2xxx
+                              if (s.substr(0, 2) == "d2")  // Year of d2xxx
                                   aday = s;
                               if (s.at(0) == 't')
                                   amin = s;
                               if (s.at(0) == 'e')
                                   asec = s;
                           }
-                          for (const auto& s: bstrings)
+                          for (const auto& s : bstrings)
                           {
-                              if (s.substr(0,2) == "d2")  // Year of d2xxx
+                              if (s.substr(0, 2) == "d2")  // Year of d2xxx
                                   bday = s;
                               if (s.at(0) == 't')
                                   bmin = s;
@@ -148,21 +158,27 @@ void h5Decode::sortFiles(std::vector<std::string>& files)
                                   return asec < bsec;
                           }
                       };
-    std::sort(std::begin(files), std::end(files), sortLambda);
+    std::sort(std::begin(m_files), std::end(m_files), sortLambda);
 }
 
+/**
+ * Given a h5 filename, extract the mission type (NPP, J01, etc.).
+ *
+ * @param filename Path of the file to check.
+ * @return Enum containg satellite type.
+ */
 DataTypes::SCType h5Decode::checkType(const std::string& filename)
 {
     boost::filesystem::path filepath(filename);  // Convert to boost path so that we can strip the path info
     std::vector<std::string> splitstring;
-    boost::split(splitstring, filepath.stem().string(), boost::is_any_of("_"));
-    if(splitstring.at(1) == "npp")
+    boost::split(splitstring, filepath.stem().string(), boost::is_any_of("_"));  // Split string on the underscore
+    if (splitstring.at(1) == "npp")
         return DataTypes::SCType::NPP;
-    else if(splitstring.at(1) == "j01")
+    else if (splitstring.at(1) == "j01")
         return DataTypes::SCType::J1;
-    else if(splitstring.at(1) == "j02")
+    else if (splitstring.at(1) == "j02")
         return DataTypes::SCType::J2;
-    else if(splitstring.at(1) == "j03")
+    else if (splitstring.at(1) == "j03")
         return DataTypes::SCType::J3;
     else
         return DataTypes::SCType::J4;

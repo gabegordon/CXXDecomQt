@@ -21,11 +21,12 @@ public:
 
     void setProgress(const std::string& prog);
     void setCurrentFile(const std::string& filename);
-    void setFinished();
+    void setFinished() const;
+    void setType(const DataTypes::SCType& type);
 
-    QString currentFile();
-    QStringList ofiles();
-    QString progress();
+    QString currentFile() const;
+    QStringList ofiles() const;
+    QString progress() const;
 
 public slots:
     void getFiles();
@@ -42,7 +43,7 @@ signals:
     void ofilesChanged();
     void currentFileChanged();
     void progressChanged();
-    void finished();
+    void finished() const;
 
 private:
     QString m_folderName;

@@ -22,7 +22,7 @@ class ThreadSafeListenerQueue
     ~ThreadSafeListenerQueue() {}
 
 /**
- * Pushes a Packet pointer into the queue. Notifies one waiting listener.
+ * Pushes an element into the queue. Notifies one waiting listener.
  *
  * @param element to be pushed
  * @return N/A
@@ -43,11 +43,11 @@ class ThreadSafeListenerQueue
     uint32_t listen(T& queueVal)
     {
         std::unique_lock<std::mutex> lock(queueLock);  // Get mutex lock
-        while (q.empty()) // While loop checking empty to account for spurious wakeups
+        while (q.empty())  // While loop checking empty to account for spurious wakeups
         {
             if (c.wait_for(lock, std::chrono::seconds(1)) == std::cv_status::timeout)  // Wait on condition var until notified, or 1 second timeout is reached
             {
-                if(!m_active && q.empty())
+                if (!m_active && q.empty())
                 {
                     return 0;
                 }

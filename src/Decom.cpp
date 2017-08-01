@@ -4,38 +4,34 @@
 #include <cstdlib>
 #include <string>
 #include <memory>
-#include <bitset>
 #include <sstream>
 #include "Decom.hpp"
-#include "ProgressBar.hpp"
-#include "ByteManipulation.hpp"
 #include "HeaderDecode.hpp"
 #include "DataDecode.hpp"
 #include "InstrumentFormat.hpp"
-#include "ReadFile.hpp"
 #include "LogFile.hpp"
 #include "backend.hpp"
 
 /**
- * Decom engine initializer. Main event loop for calling all Decom helper functions. Stops reading upon reaching end of input file. Writes data once finished reading.
+ * Decom engine initializer. Main event loop for calling all Decom helper functions. Stops reading upon reaching end of input stream. Passes data read in to a writer thread via queue.
  * Handles instrument formatting after writing (if necessary).
  *
- * @param infile File to read from
- * @return N/A
+ * @param queue Thread-safe queue containg byte vectors the h5reader pushes into the queue.
+ * @param backend Pointer to Qt backend class for writing status messages.
  */
 
-void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>& queue, BackEnd* backend)
+void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>* queue, BackEnd* backend)
 {
     ThreadPoolServer pool;  // Create thread pool that we will be passing our packets to
 
     while (true)
     {
         std::tuple<std::vector<uint8_t>, std::string> queueVal;
-        uint32_t retVal = queue.listen(queueVal);
+        uint32_t retVal = queue->listen(queueVal);  // Listen on queue until we receieve data from h5Decode
         if (retVal)
         {
             std::istringstream input_stream;
-            input_stream.rdbuf()->pubsetbuf(reinterpret_cast<char*>(&std::get<0>(queueVal)[0]), std::get<0>(queueVal).size());
+            input_stream.rdbuf()->pubsetbuf(reinterpret_cast<char*>(&std::get<0>(queueVal)[0]), std::get<0>(queueVal).size());  // Transform vector into input string stream.
 
             int64_t fileSize = getFileSize(input_stream);
             while (true)  // Loop until error or we reach end of file
@@ -54,7 +50,7 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
         else
         {
             pool.join();  // Wait for writer threads to join
-            formatInstruments(backend); // Check if we need to format instrument data
+            formatInstruments(backend);  // Check if we need to format instrument data
             backend->setFinished();
             break;
         }
@@ -64,8 +60,7 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
 /**
  * Finds database entries that match our current APID.
  *
- * @param APID APID to search for
- * @return N/A
+ * @param APID APID to search for.
  */
 void Decom::getEntries(const uint32_t& APID)
 {
@@ -98,19 +93,18 @@ void Decom::getEntries(const uint32_t& APID)
 /**
  * Handles any special formatting requirements for instrument science data.
  *
- * @return N/A
+ * @param backend Qt backend pointer allowing instrumentformat functions to print progress messages.
  */
 void Decom::formatInstruments(BackEnd* backend) const
 {
-    if(m_APIDs.count(528))  // 528 is ATMS science apid
+    if (m_APIDs.count(528))  // 528 is ATMS science apid
         InstrumentFormat::formatATMS(backend);
 }
 
 /**
  * Stores set of all APIDs that we have processed.
  *
- * @param APID APID to store
- * @return N/A
+ * @param APID APID to store.
  */
 void Decom::storeAPID(const uint32_t& APID)
 {
@@ -120,9 +114,10 @@ void Decom::storeAPID(const uint32_t& APID)
 /**
  * Finds filesize by seeking to end of file and getting file pointer position.
  *
- * @return fileSize
+ * @param buffer Stream to get size of.
+ * @return fileSize.
  */
-int64_t Decom::getFileSize(std::istringstream& buffer)
+int64_t Decom::getFileSize(std::istringstream& buffer) const
 {
     buffer.seekg(0, std::ios::end);  // Seek to end to get filesize
     int64_t fileSize = buffer.tellg();
@@ -133,7 +128,7 @@ int64_t Decom::getFileSize(std::istringstream& buffer)
 /**
  * Create DataDecode object and call correct function for decoding data.
  *
- * @return Packet struct containing the data
+ * @return Packet struct containing the data.
  */
 DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::string& instrument)
 {
@@ -157,7 +152,8 @@ DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::strin
  * Calls decodeHeaders function and stores result in member variable.
  * Once complete finds matching entries.
  *
- * @return False on invalid header
+ * @param buffer Stream containing the binary data.
+ * @return False on invalid header.
  */
 bool Decom::getHeadersAndEntries(std::istringstream& buffer)
 {

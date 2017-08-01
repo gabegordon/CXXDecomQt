@@ -8,12 +8,11 @@
 /**
  * Writer thread's main loop. Thread waits until it can pull a packet from the queue and then writes the packet contents to an output file.
  *
- * @param queue ThreadSafeQueue containing parsed packets
- * @param instrument Instrument string for output file naming purposes
- * @param apid APID for output file naming purposes
- * @return N/A
+ * @param queue ThreadSafeQueue containing parsed packets.
+ * @param instrument Instrument string for output file naming purposes.
+ * @param apid APID for output file naming purposes.
  */
-void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>& queue, const std::string& instrument, const uint32_t apid)
+void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>* queue, const std::string& instrument, const uint32_t apid)
 {
     std::ofstream outfile("output/" + instrument + "_" + std::to_string(apid) + ".txt");
     bool firstRun = true;
@@ -21,7 +20,7 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTy
     while (true)  // Loop until return due to empty queue
     {
         std::unique_ptr<DataTypes::Packet> queueVal;
-        uint32_t retVal = queue.listen(queueVal);
+        uint32_t retVal = queue->listen(queueVal);
         if (retVal)  // retVal is 1 on success
         {
             if (firstRun)
@@ -61,26 +60,21 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTy
 /**
  * Moves a Packet pointer into the corresponding queue and creates new thread if we have a new APID
  *
- * @param pack unique_ptr pointing to packet
- * @return N/A
+ * @param pack unique_ptr pointing to packet.
  */
 void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack, const std::string& instrument)
 {
-    if(!pack)
+    if (pack->ignored)
     {
         return;
     }
-    if(pack->ignored)
-    {
-        return;
-    }
-    else if (m_queues.count(pack->apid))
+    else if (m_queues.count(pack->apid))  // If we already have a queue for this APID
     {
         m_queues[pack->apid].push(std::move(pack));
     }
-    else
+    else  // Otherwise create new queue and thread
     {
-        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, std::ref(m_queues[pack->apid]), std::ref(instrument), pack->apid));
+        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, &m_queues[pack->apid], std::ref(instrument), pack->apid));
         m_queues[pack->apid].push(std::move(pack));
     }
 }
@@ -88,8 +82,6 @@ void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack, const std::
 /**
  * Called by Decom once the input file is finished being parsed. Waits for writers threads to finish (Empty queue and timeout)
  * Also closes output files.
- *
- * @return N/A
  */
 void ThreadPoolServer::join()
 {
