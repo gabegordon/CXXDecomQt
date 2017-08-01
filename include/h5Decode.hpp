@@ -23,7 +23,7 @@ class h5Decode
     virtual ~h5Decode() {}
 
     std::set<std::string> getFileTypeNames(const std::string& directory, BackEnd* backend);
-    void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type);
+    void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& bigEndian);
   private:
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;

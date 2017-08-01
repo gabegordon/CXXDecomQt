@@ -14,7 +14,8 @@ BackEnd::BackEnd(QObject* parent) :
     m_PDS{false},
     m_h5Dec{},
     m_pdsDec{},
-    m_type{DataTypes::SCType::J1}
+    m_type{DataTypes::SCType::J1},
+    m_bigEndian{true}
 {}
 
 /**
@@ -108,6 +109,14 @@ void BackEnd::toggleAllAPIDs()
 }
 
 /**
+ * Toggles Endian swapping.
+ */
+void BackEnd::toggleEndian()
+{
+    m_bigEndian = !m_bigEndian;
+}
+
+/**
  * Given user selected packet file, add to list of selected files.
  *
  * @param packetFile File to add.
@@ -190,9 +199,9 @@ void BackEnd::runDecom()
         return;
     DatabaseReader dr(m_allAPIDs, m_type, getSelectedAPIDs());  // Read databases
     if (m_H5)
-        m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type);
+        m_h5Dec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type, m_bigEndian);
     else
-        m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type);
+        m_pdsDec.init(this, m_packetFiles, m_debug, dr.getEntries(), m_type, m_bigEndian);
 }
 
 /**

@@ -36,6 +36,7 @@ public slots:
     void setFolderName(const QString& folderName);
     void setAPIDs(const QString& apids);
     void toggleAllAPIDs();
+    void toggleEndian();
     void setH5();
     void setPDS();
 
@@ -59,6 +60,7 @@ private:
     h5Decode m_h5Dec;
     pdsDecode m_pdsDec;
     DataTypes::SCType m_type;
+    bool m_bigEndian;
 
     std::vector<uint32_t> getSelectedAPIDs();
 };

@@ -21,7 +21,7 @@ class pdsDecode
     virtual ~pdsDecode() {}
 
     std::set<std::string> getFileTypeNames(const std::string& directory);
-    void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type);
+    void init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& BigEndian);
   private:
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;

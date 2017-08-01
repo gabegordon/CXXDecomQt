@@ -183,10 +183,18 @@ ApplicationWindow {
             text: "Run Decom"
             scale: 2
             onClicked: {
+                endianSwap.visible = false
                 backend.getFiles()
                 apidSelect.open()
             }
         }
+    }
+
+    Switch {
+        id: endianSwap
+        text: "Big Endian"
+        checked: true
+        onClicked: backend.toggleEndian()
     }
 
     FileDialog {

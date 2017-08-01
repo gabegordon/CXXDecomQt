@@ -179,7 +179,7 @@ DataTypes::Packet DataDecode::decodeDataSegmented(std::istringstream& buffer, co
 
     do  // Continue getting headers and data, and appending it until we reach LAST packet segment
     {
-        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
+        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug, m_bigEndian);
         m_pHeader = std::get<0>(headers);
         auto pack = decodeData(buffer, segmentLastByte);
         segPack.data.insert(std::end(segPack.data), std::make_move_iterator(std::begin(pack.data)), std::make_move_iterator(std::end(pack.data)));
@@ -229,7 +229,7 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
             {
                 if (segPacketCount != 0)  //  Skip parsing headers for first packet, as we have already done so
                 {
-                    std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
+                    std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug, m_bigEndian);
                     m_pHeader = std::get<0>(headers);
                     uint64_t ompsHeader;
                     ReadFiles::read(ompsHeader, buffer);
@@ -290,7 +290,7 @@ DataTypes::Packet DataDecode::getOMPSScience(std::istringstream& buffer)
 
     do  // Loop through all middle and last packets
     {
-        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug);
+        std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> headers = HeaderDecode::decodeHeaders(buffer, m_debug, m_bigEndian);
         m_pHeader = std::get<0>(headers);
 
         std::vector<uint8_t> tmpbuf(m_pHeader.packetLength);

@@ -16,13 +16,14 @@ typedef uint8_t BYTE;
 class Decom
 {
   public:
-  Decom(const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type) :
+    Decom(const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& bigEndian) :
     m_mapEntries{},
     m_entries{entries},
     m_progress{0},
     m_debug{debug},
     m_headers{},
-    m_type{type}
+    m_type{type},
+    m_bigEndian{bigEndian}
     {}
     virtual ~Decom() {}
 
@@ -45,4 +46,5 @@ class Decom
     std::set<uint32_t> m_APIDs;
     std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> m_headers;
     DataTypes::SCType m_type;
+    bool m_bigEndian;
 };

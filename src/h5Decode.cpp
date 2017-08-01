@@ -66,10 +66,11 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, B
  * @param debug Debug flag.
  * @param entries Database entries to be passed to the Decom class.
  * @param type Satellite type.
+ * @param bigEndian Endian format of input data.
  */
-void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
+void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& bigEndian)
 {
-    Decom decomEngine(debug, entries, type);  // Create Decom object
+    Decom decomEngine(debug, entries, type, bigEndian);  // Create Decom object
     std::thread decomThread(&Decom::init, decomEngine, &m_queue, backend);  // Start Decom init function in a another thread
     decomThread.detach();
     ProgressBar pbar(m_files.size(), "Parsing h5");

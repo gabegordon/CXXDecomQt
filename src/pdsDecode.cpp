@@ -53,10 +53,11 @@ std::set<std::string> pdsDecode::getFileTypeNames(const std::string& directory)
  * @param debug Debug flag.
  * @param entries Database entries to be passed to the Decom class.
  * @param type Satellite type.
+ * @param bigEndian Endian format of input data.
  */
-void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type)
+void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedFiles, const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& bigEndian)
 {
-    Decom decomEngine(debug, entries, type);
+    Decom decomEngine(debug, entries, type, bigEndian);
     std::thread decomThread(&Decom::init, decomEngine, &m_queue, backend);
     ProgressBar pbar(m_files.size(), "Parsing PDS");
     uint32_t i = 0;

@@ -132,7 +132,7 @@ int64_t Decom::getFileSize(std::istringstream& buffer) const
  */
 DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::string& instrument)
 {
-    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_type};  // Create new dataDecode object and pass headers/instrument info
+    DataDecode dc{std::get<0>(m_headers), std::get<1>(m_headers), m_mapEntries[std::get<0>(m_headers).APID], m_debug, instrument, m_type, m_bigEndian};  // Create new dataDecode object and pass headers/instrument info
 
     if (instrument == "OMPS")  // If omps then use special function
     {
@@ -157,7 +157,7 @@ DataTypes::Packet Decom::decodeData(std::istringstream& buffer, const std::strin
  */
 bool Decom::getHeadersAndEntries(std::istringstream& buffer)
 {
-    m_headers = HeaderDecode::decodeHeaders(buffer, m_debug);  // Decode headers
+    m_headers = HeaderDecode::decodeHeaders(buffer, m_debug, m_bigEndian);  // Decode headers
 
     if (!std::get<2>(m_headers))  // If header is invalid
         return false;

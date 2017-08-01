@@ -17,12 +17,13 @@ bool isValid = false;
  *
  * @param infile File to read from.
  * @param debug Print debug info flag.
+ * @param bigEndian Endian format of input data.
  * @return Tuple containing headers and valid flag.
  */
-std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHeaders(std::istringstream& buffer, const bool& debug)
+std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> decodeHeaders(std::istringstream& buffer, const bool& debug, const bool& bigEndian)
 {
-    auto ph = decodePrimary(buffer, debug);
-    auto sh = decodeSecondary(buffer);
+    auto ph = decodePrimary(buffer, debug, bigEndian);
+    auto sh = decodeSecondary(buffer, bigEndian);
 
     if (!isValid)
     {
@@ -48,9 +49,10 @@ void debugPrinter(const DataTypes::PrimaryHeader& ph)
  *
  * @param infile File to read from.
  * @param debug Debug flag.
+ * @param bigEndian Endian format of input data.
  * @return PrimaryHeader struct.
  */
-DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& debug)
+DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& debug, const bool& bigEndian)
 {
     DataTypes::PrimaryHeader ph = p_defaults;
     uint32_t firstFourBytes;
@@ -98,9 +100,10 @@ DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& d
  * Function to handle secondary header decoding.
  *
  * @param infile File to read from.
+ * @param bigEndian Endian format of input data.
  * @return SecondaryHeader struct.
  */
-DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer)
+DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer, const bool& bigEndian)
 {
     DataTypes::SecondaryHeader sh = s_defaults;
     if (sh_flag)  // If secondary header flag is set
