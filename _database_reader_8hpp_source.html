@@ -99,11 +99,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;  <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="class_database_reader.html#a58c6d0e37203ea55b951cbd54a268bed">    9</a></span>&#160;  <a class="code" href="class_database_reader.html#a58c6d0e37203ea55b951cbd54a268bed">DatabaseReader</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span>&amp; allAPIDs, <span class="keyword">const</span> <a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">DataTypes::SCType</a>&amp; type, <span class="keyword">const</span> std::vector&lt;uint32_t&gt;&amp; selectedAPIDs) :</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <a class="code" href="class_database_reader.html#a67f84c397b63292884f3ffc4415f59bb">m_APIDs</a>{selectedAPIDs},</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="class_database_reader.html#ac7ef1211c150b66b7b87b2f59e53b637">m_entries</a>{},</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="class_database_reader.html#aba85851e0df489f969304b1d822053db">m_firstRun</a>{<span class="keyword">true</span>},</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    <a class="code" href="class_database_reader.html#a2432cbc742558867d4b422f9eb783524">m_allAPIDs</a>{allAPIDs},</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    <a class="code" href="class_database_reader.html#af7d9c97834ee148421ce95a5e356511a">m_type</a>{type}</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;      <a class="code" href="class_database_reader.html#a67f84c397b63292884f3ffc4415f59bb">m_APIDs</a>(selectedAPIDs),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;      <a class="code" href="class_database_reader.html#ac7ef1211c150b66b7b87b2f59e53b637">m_entries</a>(),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;      <a class="code" href="class_database_reader.html#aba85851e0df489f969304b1d822053db">m_firstRun</a>(true),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;      <a class="code" href="class_database_reader.html#a2432cbc742558867d4b422f9eb783524">m_allAPIDs</a>(allAPIDs),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;      <a class="code" href="class_database_reader.html#af7d9c97834ee148421ce95a5e356511a">m_type</a>(type)</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;        <a class="code" href="class_database_reader.html#a58c5d7789896918bef02829c37d8f5de">init</a>();</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    }</div>

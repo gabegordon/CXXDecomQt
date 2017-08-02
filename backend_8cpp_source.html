@@ -98,16 +98,16 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="class_back_end.html#ab6fe52b22e676d3809bcea4f94960a91">    7</a></span>&#160;<a class="code" href="class_back_end.html#ab6fe52b22e676d3809bcea4f94960a91">BackEnd::BackEnd</a>(<a class="code" href="class_q_object.html">QObject</a>* parent) :</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <a class="code" href="class_q_object.html">QObject</a>(parent),</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    m_folderName{},</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    m_allAPIDs{<span class="keyword">false</span>},</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    m_ofiles{},</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_debug{<span class="keyword">false</span>},</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_H5{<span class="keyword">false</span>},</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_PDS{<span class="keyword">false</span>},</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_h5Dec{},</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_pdsDec{},</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_type{<a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">DataTypes::SCType::J1</a>},</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_bigEndian{<span class="keyword">true</span>}</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    m_folderName(),</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    m_allAPIDs(false),</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    m_ofiles(),</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    m_debug(false),</div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    m_H5(false),</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    m_PDS(false),</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    m_h5Dec(),</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_pdsDec(),</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_type(DataTypes::<a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3">SCType</a>::<a class="code" href="namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a1946b8582f63f95ce8d2825ca402d125">J1</a>),</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    m_bigEndian(true)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{}</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_back_end.html#a0007e248da8316e42c6f07be173602f5">   26</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="class_back_end.html#a0007e248da8316e42c6f07be173602f5">BackEnd::setFolderName</a>(<span class="keyword">const</span> QString&amp; folderName)</div>

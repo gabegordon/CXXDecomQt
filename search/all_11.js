@@ -36,5 +36,6 @@ var searchData=
   ['standalone',['STANDALONE',['../namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76a4fe5c8b66c5a142f59748927553e68d6',1,'DataTypes']]],
   ['storeapid',['storeAPID',['../class_decom.html#a2b5ced5211af94762cb787aecb9e9d1a',1,'Decom']]],
   ['stripped_5ftype',['stripped_type',['../namespaceh5cpp.html#a9eb73a039ad34f3001d296f2ab19ae2d',1,'h5cpp::h5traits_of']]],
-  ['swapendian',['swapEndian',['../namespace_byte_manipulation.html#a54d88705cd4cfdf61578dfdb6b496b86',1,'ByteManipulation']]]
+  ['swapendian',['swapEndian',['../namespace_byte_manipulation.html#a54d88705cd4cfdf61578dfdb6b496b86',1,'ByteManipulation']]],
+  ['swapendianfloat',['swapEndianFloat',['../namespace_byte_manipulation.html#ac3a9731b1f6d3f3b934f23dd9991365d',1,'ByteManipulation']]]
 ];
