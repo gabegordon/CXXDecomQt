@@ -154,8 +154,6 @@ ApplicationWindow {
     }
 
     Column {
-        anchors.verticalCenterOffset: 0
-        anchors.horizontalCenterOffset: 0
         spacing: 80
         anchors.centerIn: parent
 
@@ -163,6 +161,7 @@ ApplicationWindow {
             id: fileDialogButton
             text: "Select h5 folder"
             scale: 2
+			anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
                 backend.setH5()
                 fileDialog.visible = true
@@ -172,6 +171,7 @@ ApplicationWindow {
         Button {
             text: "Select PDS folder"
             scale: 2
+			anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
                 backend.setPDS()
                 fileDialog.visible = true
@@ -182,6 +182,7 @@ ApplicationWindow {
             id: h5DecodeButton
             text: "Run Decom"
             scale: 2
+			anchors.horizontalCenter: parent.horizontalCenter
             onClicked: {
                 endianSwap.visible = false
                 backend.getFiles()
