@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hdf5_5fwrapper_5fspecialize_5ftype',['HDF5_WRAPPER_SPECIALIZE_TYPE',['../hdf__wrapper_8hpp.html#aaeb0102f356ee04af666a4c85489d77e',1,'hdf_wrapper.hpp']]]
+  ['character_5fwidth_5fpercentage',['CHARACTER_WIDTH_PERCENTAGE',['../_progress_bar_8hpp.html#a6fb5d754f9d3dbb760a3df730f184649',1,'ProgressBar.hpp']]]
 ];

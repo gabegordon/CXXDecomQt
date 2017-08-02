@@ -100,7 +100,7 @@ Collaboration diagram for pdsDecode:</div>
 <div class="dyncontent">
 <div class="center"><img src="classpds_decode__coll__graph.png" border="0" usemap="#pds_decode_coll__map" alt="Collaboration graph"/></div>
 <map name="pds_decode_coll__map" id="pds_decode_coll__map">
-<area shape="rect" id="node2" href="class_thread_safe_listener_queue.html" title="ThreadSafeListenerQueue\l\&lt; std::tuple\&lt; std::vector\l\&lt; uint8_t \&gt;, std::string \&gt; \&gt;" alt="" coords="1083,107,1258,163"/><area shape="rect" id="node8" title="STL class. " alt="" coords="851,324,931,351"/><area shape="rect" id="node9" title="STL class. " alt="" coords="565,317,691,358"/><area shape="rect" id="node12" title="STL class. " alt="" coords="841,237,940,264"/><area shape="rect" id="node13" title="STL class. " alt="" coords="559,230,697,271"/><area shape="rect" id="node14" title="STL class. " alt="" coords="363,230,496,271"/><area shape="rect" id="node15" title="STL class. " alt="" coords="157,237,312,264"/><area shape="rect" id="node16" title="STL class. " alt="" coords="6,237,106,264"/></map>
+<area shape="rect" id="node2" href="class_thread_safe_listener_queue.html" title="ThreadSafeListenerQueue\l\&lt; std::tuple\&lt; std::vector\l\&lt; uint8_t \&gt;, std::string \&gt; \&gt;" alt="" coords="1286,169,1461,225"/><area shape="rect" id="node3" href="classstd_1_1condition__variable.html" title="std::condition_variable" alt="" coords="1003,53,1155,80"/><area shape="rect" id="node4" href="classstd_1_1condition__variable__any.html" title="std::condition_variable_any" alt="" coords="702,53,882,80"/><area shape="rect" id="node6" href="classstd_1_1recursive__mutex.html" title="std::recursive_mutex" alt="" coords="419,56,563,83"/><area shape="rect" id="node13" title="STL class. " alt="" coords="1039,387,1119,413"/><area shape="rect" id="node14" title="STL class. " alt="" coords="729,379,855,421"/><area shape="rect" id="node17" title="STL class. " alt="" coords="1029,300,1128,327"/><area shape="rect" id="node18" title="STL class. " alt="" coords="723,293,861,334"/><area shape="rect" id="node19" title="STL class. " alt="" coords="424,293,557,334"/><area shape="rect" id="node20" title="STL class. " alt="" coords="157,300,312,327"/><area shape="rect" id="node21" title="STL class. " alt="" coords="6,300,106,327"/></map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -225,14 +225,14 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Filename string. </dd></dl>
 
-<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00098">98</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;{</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    boost::split(splitstring, filename, boost::is_any_of(<span class="stringliteral">&quot;/&quot;</span>));  <span class="comment">// Split file path delimeters</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    std::string name_without_path = splitstring.back();  <span class="comment">// Name will be at the end of the path</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> name_without_path.substr(0, 8);  <span class="comment">// First 8 characters is description without date</span></div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00103">103</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;{</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    std::vector&lt;std::string&gt; splitstring;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    boost::split(splitstring, filename, boost::is_any_of(<span class="stringliteral">&quot;/&quot;</span>));  <span class="comment">// Split file path delimeters</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    std::string name_without_path = splitstring.back();  <span class="comment">// Name will be at the end of the path</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordflow">return</span> name_without_path.substr(0, 8);  <span class="comment">// First 8 characters is description without date</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -258,42 +258,42 @@ Private Attributes</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Set containing the file options. </dd></dl>
 
-<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00016">16</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;{</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <a class="code" href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">m_directory</a> = directory;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    std::set&lt;std::string&gt; outfileNames;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a> = <a class="code" href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">getFiles::filesInDirectory</a>(<a class="code" href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">m_directory</a>, <span class="stringliteral">&quot;.PDS&quot;</span>);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>.size() == 0)</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;No .pds files found&quot;</span>);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        exit(0);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>)</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        std::ifstream infile(filename, std::ios::binary);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;        uint8_t firstByte = 0;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a>(firstByte, infile);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;        <span class="keywordflow">if</span> (firstByte == 0)  <span class="comment">// If firstbyte is zeroed then it is a header file that we can ignore.</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;            infile.close();</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        }</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">else</span></div>
+<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00021">21</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <a class="code" href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">m_directory</a> = directory;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    std::set&lt;std::string&gt; outfileNames;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a> = <a class="code" href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">getFiles::filesInDirectory</a>(<a class="code" href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">m_directory</a>, <span class="stringliteral">&quot;.PDS&quot;</span>);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keywordflow">if</span> (<a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>.size() == 0)</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <a class="code" href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a>(<span class="stringliteral">&quot;No .pds files found&quot;</span>);</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        exit(0);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>)</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        std::ifstream infile(filename, std::ios::binary);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        uint8_t firstByte = 0;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a>(firstByte, infile);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">if</span> (firstByte == 0)  <span class="comment">// If firstbyte is zeroed then it is a header file that we can ignore.</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            std::string outfilename = <a class="code" href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">getFileName</a>(filename);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            outfileNames.emplace(outfilename);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            infile.close();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;}</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;            infile.close();</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            std::string outfilename = <a class="code" href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">getFileName</a>(filename);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            outfileNames.emplace(outfilename);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;            infile.close();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> outfileNames;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="ttc" id="namespaceget_files_html_a713b4fb9062678985a12d9352a398193"><div class="ttname"><a href="namespaceget_files.html#a713b4fb9062678985a12d9352a398193">getFiles::filesInDirectory</a></div><div class="ttdeci">static std::vector&lt; std::string &gt; filesInDirectory(const std::string &amp;folder, const std::string &amp;type)</div><div class="ttdef"><b>Definition:</b> <a href="get_files_8hpp_source.html#l00029">getFiles.hpp:29</a></div></div>
 <div class="ttc" id="namespace_read_files_html_afddbdd30b1c668e0d4f12bd016c5e951"><div class="ttname"><a href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a></div><div class="ttdeci">static void read(B &amp;buffer, F &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00016">ReadFile.hpp:16</a></div></div>
 <div class="ttc" id="classpds_decode_html_add119a26e40eb3a7ab5acf9e641f2d51"><div class="ttname"><a href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">pdsDecode::m_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_files</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8hpp_source.html#l00029">pdsDecode.hpp:29</a></div></div>
 <div class="ttc" id="class_log_file_html_a7369d7779c3fdf08a971bc8c3b4be55d"><div class="ttname"><a href="class_log_file.html#a7369d7779c3fdf08a971bc8c3b4be55d">LogFile::logError</a></div><div class="ttdeci">static void logError(const std::string &amp;message)</div><div class="ttdef"><b>Definition:</b> <a href="_log_file_8cpp_source.html#l00014">LogFile.cpp:14</a></div></div>
-<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00098">pdsDecode.cpp:98</a></div></div>
+<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00103">pdsDecode.cpp:103</a></div></div>
 <div class="ttc" id="classpds_decode_html_a32c524a3611c40a21292e42dab956865"><div class="ttname"><a href="classpds_decode.html#a32c524a3611c40a21292e42dab956865">pdsDecode::m_directory</a></div><div class="ttdeci">std::string m_directory</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8hpp_source.html#l00026">pdsDecode.hpp:26</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -382,49 +382,49 @@ Private Attributes</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00058">58</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;{</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type, bigEndian);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a>, decomEngine, &amp;<a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>, backend);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(<a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>.size(), <span class="stringliteral">&quot;Parsing PDS&quot;</span>);</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    uint32_t i = 0;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">setCurrentFile</a>(filename);</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        pbar.Progressed(++i, backend);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        std::ifstream infile(filename, std::ios::binary);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        uint8_t firstByte = 0;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <a class="code" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a>(firstByte, infile);</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <span class="keywordflow">if</span> (firstByte == 0)  <span class="comment">// If firstbyte is zeroed then it is a header file that we can ignore.</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        {</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            infile.close();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        }</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">else</span></div>
+<p>Definition at line <a class="el" href="pds_decode_8cpp_source.html#l00063">63</a> of file <a class="el" href="pds_decode_8cpp_source.html">pdsDecode.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;{</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <a class="code" href="class_decom.html">Decom</a> decomEngine(debug, entries, type, bigEndian);</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    std::thread decomThread(&amp;<a class="code" href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a>, decomEngine, &amp;<a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>, backend);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <a class="code" href="class_progress_bar.html">ProgressBar</a> pbar(<a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>.size(), <span class="stringliteral">&quot;Parsing PDS&quot;</span>);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    uint32_t i = 0;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span>&amp; filename : <a class="code" href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">m_files</a>)</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    {</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        backend-&gt;<a class="code" href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">setCurrentFile</a>(filename);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        pbar.Progressed(++i, backend);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        std::ifstream infile(filename, std::ios::binary);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        uint8_t firstByte = 0;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a>(firstByte, infile);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (firstByte == 0)  <span class="comment">// If firstbyte is zeroed then it is a header file that we can ignore.</span></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">if</span> (std::find(std::begin(selectedFiles), std::end(selectedFiles), <a class="code" href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">getFileName</a>(filename)) != std::end(selectedFiles))</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            {</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                infile.seekg(0, std::ios::beg);  <span class="comment">// Go back to start of the file</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                std::vector&lt;uint8_t&gt; contents((std::istreambuf_iterator&lt;char&gt;(infile)), std::istreambuf_iterator&lt;char&gt;());</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">push</a>(std::make_tuple(contents, <span class="stringliteral">&quot;CERES&quot;</span>));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            infile.close();</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(<span class="stringliteral">&quot;Waiting for writer threads to finish.&quot;</span>);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">setInactive</a>();  <span class="comment">// Notify Decom that no more h5 files will be pushed onto the queue</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;            infile.close();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        }</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">if</span> (std::find(std::begin(selectedFiles), std::end(selectedFiles), <a class="code" href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">getFileName</a>(filename)) != std::end(selectedFiles))</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                infile.seekg(0, std::ios::beg);  <span class="comment">// Go back to start of the file</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                std::vector&lt;uint8_t&gt; contents((std::istreambuf_iterator&lt;char&gt;(infile)), std::istreambuf_iterator&lt;char&gt;());</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">push</a>(std::make_tuple(contents, <span class="stringliteral">&quot;CERES&quot;</span>));</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;            infile.close();</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    backend-&gt;<a class="code" href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">setProgress</a>(<span class="stringliteral">&quot;Waiting for writer threads to finish.&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <a class="code" href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">m_queue</a>.<a class="code" href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">setInactive</a>();  <span class="comment">// Notify Decom that no more h5 files will be pushed onto the queue</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}</div>
 <div class="ttc" id="class_progress_bar_html"><div class="ttname"><a href="class_progress_bar.html">ProgressBar</a></div><div class="ttdef"><b>Definition:</b> <a href="_progress_bar_8hpp_source.html#l00012">ProgressBar.hpp:12</a></div></div>
 <div class="ttc" id="class_decom_html_ad40e9ea5962892637b5c5cca4a44012f"><div class="ttname"><a href="class_decom.html#ad40e9ea5962892637b5c5cca4a44012f">Decom::init</a></div><div class="ttdeci">void init(ThreadSafeListenerQueue&lt; std::tuple&lt; std::vector&lt; uint8_t &gt;, std::string &gt;&gt; *queue, BackEnd *backend)</div><div class="ttdef"><b>Definition:</b> <a href="_decom_8cpp_source.html#l00023">Decom.cpp:23</a></div></div>
 <div class="ttc" id="class_back_end_html_a133f0aa16a611460cb72b7ca15f1a28b"><div class="ttname"><a href="class_back_end.html#a133f0aa16a611460cb72b7ca15f1a28b">BackEnd::setProgress</a></div><div class="ttdeci">void setProgress(const std::string &amp;prog)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00067">backend.cpp:67</a></div></div>
-<div class="ttc" id="class_thread_safe_listener_queue_html_a1d6a3a5f293e51cc9c741f786519cc56"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">ThreadSafeListenerQueue::setInactive</a></div><div class="ttdeci">void setInactive()</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00072">ThreadSafeListenerQueue.hpp:72</a></div></div>
+<div class="ttc" id="class_thread_safe_listener_queue_html_a1d6a3a5f293e51cc9c741f786519cc56"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a1d6a3a5f293e51cc9c741f786519cc56">ThreadSafeListenerQueue::setInactive</a></div><div class="ttdeci">void setInactive()</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00077">ThreadSafeListenerQueue.hpp:77</a></div></div>
 <div class="ttc" id="classpds_decode_html_a87550b6f7300070efd0d517a19de0167"><div class="ttname"><a href="classpds_decode.html#a87550b6f7300070efd0d517a19de0167">pdsDecode::m_queue</a></div><div class="ttdeci">ThreadSafeListenerQueue&lt; std::tuple&lt; std::vector&lt; uint8_t &gt;, std::string &gt; &gt; m_queue</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8hpp_source.html#l00028">pdsDecode.hpp:28</a></div></div>
 <div class="ttc" id="class_back_end_html_ab1ec70a8193ef7248e3fc69de3410da5"><div class="ttname"><a href="class_back_end.html#ab1ec70a8193ef7248e3fc69de3410da5">BackEnd::setCurrentFile</a></div><div class="ttdeci">void setCurrentFile(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="backend_8cpp_source.html#l00087">backend.cpp:87</a></div></div>
 <div class="ttc" id="namespace_read_files_html_afddbdd30b1c668e0d4f12bd016c5e951"><div class="ttname"><a href="namespace_read_files.html#afddbdd30b1c668e0d4f12bd016c5e951">ReadFiles::read</a></div><div class="ttdeci">static void read(B &amp;buffer, F &amp;in)</div><div class="ttdef"><b>Definition:</b> <a href="_read_file_8hpp_source.html#l00016">ReadFile.hpp:16</a></div></div>
-<div class="ttc" id="class_thread_safe_listener_queue_html_a74170aa2add229dc638e7dedd82128a9"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">ThreadSafeListenerQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;element)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00030">ThreadSafeListenerQueue.hpp:30</a></div></div>
+<div class="ttc" id="class_thread_safe_listener_queue_html_a74170aa2add229dc638e7dedd82128a9"><div class="ttname"><a href="class_thread_safe_listener_queue.html#a74170aa2add229dc638e7dedd82128a9">ThreadSafeListenerQueue::push</a></div><div class="ttdeci">void push(T &amp;&amp;element)</div><div class="ttdef"><b>Definition:</b> <a href="_thread_safe_listener_queue_8hpp_source.html#l00035">ThreadSafeListenerQueue.hpp:35</a></div></div>
 <div class="ttc" id="classpds_decode_html_add119a26e40eb3a7ab5acf9e641f2d51"><div class="ttname"><a href="classpds_decode.html#add119a26e40eb3a7ab5acf9e641f2d51">pdsDecode::m_files</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_files</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8hpp_source.html#l00029">pdsDecode.hpp:29</a></div></div>
-<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00098">pdsDecode.cpp:98</a></div></div>
+<div class="ttc" id="classpds_decode_html_a7c1e4c3f2d30ae4934a82078387f6756"><div class="ttname"><a href="classpds_decode.html#a7c1e4c3f2d30ae4934a82078387f6756">pdsDecode::getFileName</a></div><div class="ttdeci">std::string getFileName(const std::string &amp;filename)</div><div class="ttdef"><b>Definition:</b> <a href="pds_decode_8cpp_source.html#l00103">pdsDecode.cpp:103</a></div></div>
 <div class="ttc" id="class_decom_html"><div class="ttname"><a href="class_decom.html">Decom</a></div><div class="ttdef"><b>Definition:</b> <a href="_decom_8hpp_source.html#l00016">Decom.hpp:16</a></div></div>
 </div><!-- fragment -->
 </div>

@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['recursive_5fdirectory_5frange',['recursive_directory_range',['../structrecursive__directory__range.html',1,'']]],
-  ['rw',['RW',['../classh5cpp_1_1_r_w.html',1,'h5cpp']]],
-  ['rwattribute',['RWattribute',['../classh5cpp_1_1_r_wattribute.html',1,'h5cpp']]],
-  ['rwdataset',['RWdataset',['../classh5cpp_1_1_r_wdataset.html',1,'h5cpp']]]
+  ['qobject',['QObject',['../class_q_object.html',1,'']]]
 ];
