@@ -203,7 +203,8 @@ DataTypes::Packet DataDecode::decodeOMPS(std::istringstream& buffer)
     ReadFiles::read(versionNum, buffer);
     ReadFiles::read(contCount, buffer);
     ReadFiles::read(contFlag, buffer);
-    versionNum = ByteManipulation::swapEndian(versionNum);
+    if(m_bigEndian)
+        versionNum = ByteManipulation::swapEndian(versionNum);
 
     m_pHeader.packetLength -= 4;  // Subtract four from length to account for versionNum, contCount, and contFlag
 

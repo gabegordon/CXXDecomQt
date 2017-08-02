@@ -7,11 +7,11 @@ class DatabaseReader
 {
   public:
   DatabaseReader(const bool& allAPIDs, const DataTypes::SCType& type, const std::vector<uint32_t>& selectedAPIDs) :
-    m_APIDs{selectedAPIDs},
-    m_entries{},
-    m_firstRun{true},
-    m_allAPIDs{allAPIDs},
-    m_type{type}
+      m_APIDs(selectedAPIDs),
+      m_entries(),
+      m_firstRun(true),
+      m_allAPIDs(allAPIDs),
+      m_type(type)
     {
         init();
     }

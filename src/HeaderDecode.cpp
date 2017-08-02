@@ -59,8 +59,11 @@ DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& d
     uint16_t fifthSixByte;
     ReadFiles::read(firstFourBytes, buffer);
     ReadFiles::read(fifthSixByte, buffer);
-    firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
-    fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
+    if(bigEndian)
+    {
+        firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
+        fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
+    }
     // Set CCSDS from bits 0-3
     ph.CCSDS = ByteManipulation::extract32(firstFourBytes, 0, 3);
 
@@ -101,7 +104,7 @@ DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& d
  *
  * @param infile File to read from.
  * @param bigEndian Endian format of input data.
- * @return SecondaryHeader struct.
+ * @retun SecondaryHeader struct.
  */
 DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer, const bool& bigEndian)
 {
@@ -116,15 +119,19 @@ DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer, const boo
         ReadFiles::read(millis, buffer);
         ReadFiles::read(micros, buffer);
 
-        sh.day = ByteManipulation::swapEndian(day);
-        sh.millis = ByteManipulation::swapEndian(millis);
-        sh.micros = ByteManipulation::swapEndian(micros);
+        if(bigEndian)
+        {
+            sh.day = ByteManipulation::swapEndian(day);
+            sh.millis = ByteManipulation::swapEndian(millis);
+            sh.micros = ByteManipulation::swapEndian(micros);
+        }
         if (seq_flag == DataTypes::FIRST)
         {
             // If first segmented packet, then bits 0-7 are segment count
             uint16_t packetSegments;
             ReadFiles::read(packetSegments, buffer);
-            packetSegments = ByteManipulation::swapEndian(packetSegments);
+            if(bigEndian)
+                packetSegments = ByteManipulation::swapEndian(packetSegments);
             sh.segments = ByteManipulation::extract16(packetSegments, 0, 8);
         }
     }

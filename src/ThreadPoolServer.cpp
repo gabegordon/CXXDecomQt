@@ -4,6 +4,7 @@
 #include <iostream>
 #include "ThreadPoolServer.hpp"
 #include "LogFile.hpp"
+#include "ByteManipulation.hpp"
 
 /**
  * Writer thread's main loop. Thread waits until it can pull a packet from the queue and then writes the packet contents to an output file.
@@ -12,7 +13,7 @@
  * @param instrument Instrument string for output file naming purposes.
  * @param apid APID for output file naming purposes.
  */
-void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>* queue, const std::string& instrument, const uint32_t apid)
+void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTypes::Packet>>* queue, const std::string& instrument, const uint32_t& apid, const bool& bigEndian)
 {
     std::ofstream outfile("output/" + instrument + "_" + std::to_string(apid) + ".txt");
     bool firstRun = true;
@@ -35,13 +36,31 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTy
             }
 
             outfile << std::setw(15) << queueVal->day << "," << std::setw(15) << queueVal->millis << "," << std::setw(15) << queueVal->micros << "," << std::setw(15) << queueVal->sequenceCount << ",";  // Write time and sequenceCount
-            for (const DataTypes::Numeric& num : queueVal->data)  // Loop through packet data and write to file
+            for (DataTypes::Numeric& num : queueVal->data)  // Loop through packet data and write to file
             {
                 switch (num.tag)  // Switch on data type
                 {
-                case DataTypes::Numeric::I32: outfile << std::setw(15) << std::right << num.i32; break;
-                case DataTypes::Numeric::U32: outfile << std::setw(15) << std::right << num.u32; break;
-                case DataTypes::Numeric::F64: outfile << std::setw(15) << std::right << num.f64; break;
+                case DataTypes::Numeric::I32:
+                {
+                    if(!bigEndian)
+                        num.i32 = ByteManipulation::swapEndian(num.i32);
+                    outfile << std::setw(15) << std::right << num.i32;
+                    break;
+                }
+                case DataTypes::Numeric::U32:
+                {
+                    if(!bigEndian)
+                        num.u32 = ByteManipulation::swapEndian(num.u32);
+                    outfile << std::setw(15) << std::right << num.u32;
+                    break;
+                }
+                case DataTypes::Numeric::F64:
+                {
+                    if(!bigEndian)
+                        num.f64 = ByteManipulation::swapEndianFloat(num.f64);
+                    outfile << std::setw(15) << std::right << num.f64;
+                    break;
+                }
                 default: break;
                 }
                 outfile << ",";
@@ -74,7 +93,7 @@ void ThreadPoolServer::exec(std::unique_ptr<DataTypes::Packet> pack, const std::
     }
     else  // Otherwise create new queue and thread
     {
-        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, &m_queues[pack->apid], std::ref(instrument), pack->apid));
+        m_threads.emplace_back(std::thread(&ThreadPoolServer::ThreadMain, this, &m_queues[pack->apid], std::ref(instrument), std::ref(pack->apid), std::ref(m_bigEndian)));
         m_queues[pack->apid].push(std::move(pack));
     }
 }

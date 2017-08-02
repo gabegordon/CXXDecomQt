@@ -6,16 +6,16 @@
 
 BackEnd::BackEnd(QObject* parent) :
     QObject(parent),
-    m_folderName{},
-    m_allAPIDs{false},
-    m_ofiles{},
-    m_debug{false},
-    m_H5{false},
-    m_PDS{false},
-    m_h5Dec{},
-    m_pdsDec{},
-    m_type{DataTypes::SCType::J1},
-    m_bigEndian{true}
+    m_folderName(),
+    m_allAPIDs(false),
+    m_ofiles(),
+    m_debug(false),
+    m_H5(false),
+    m_PDS(false),
+    m_h5Dec(),
+    m_pdsDec(),
+    m_type(DataTypes::SCType::J1),
+    m_bigEndian(true)
 {}
 
 /**

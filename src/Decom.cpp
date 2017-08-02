@@ -22,7 +22,7 @@
 
 void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>>* queue, BackEnd* backend)
 {
-    ThreadPoolServer pool;  // Create thread pool that we will be passing our packets to
+    ThreadPoolServer pool(m_bigEndian);  // Create thread pool that we will be passing our packets to
 
     while (true)
     {

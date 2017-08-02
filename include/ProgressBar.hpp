@@ -12,12 +12,12 @@ class BackEnd;
 class ProgressBar {
 public:
     ProgressBar(const uint64_t& n_, const char* description_) :
-        n{n_},
-        desc_width{0},
-        frequency_update{n_/100},
-        tenth{n_/100},
-        description{description_},
-        firstRun{true}
+        n(n_),
+        desc_width(0),
+        frequency_update(n_/100),
+        tenth(n_/100),
+        description(description_),
+        firstRun(true)
     {
         unit_bar = "=";
         unit_space = " ";

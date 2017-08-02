@@ -16,8 +16,8 @@ class h5Decode
 {
   public:
   h5Decode() :
-    m_directory{},
-    m_outfiles{}
+      m_directory(),
+      m_outfiles()
     {}
 
     virtual ~h5Decode() {}

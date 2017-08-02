@@ -15,19 +15,19 @@ class DataDecode
     };
 
     DataDecode(const DataTypes::PrimaryHeader& ph, const DataTypes::SecondaryHeader& sh, std::vector<DataTypes::Entry>& entries, const bool debug, const std::string& instrument, const DataTypes::SCType& type, const bool& bigEndian) :
-    m_initialByte{},
-    m_byte1{},
-    m_byte2{},
-    m_byte3{},
-    segmentLastByte{0},
-    m_Instrument{instrument},
-    m_entries{entries},
-    m_pHeader{ph},
-    m_sHeader{sh},
-    m_debug{debug},
-    m_offset{},
-    m_type{type},
-    m_bigEndian{bigEndian}
+        m_initialByte(),
+        m_byte1(),
+        m_byte2(),
+        m_byte3(),
+        segmentLastByte(),
+        m_Instrument(instrument),
+        m_entries(entries),
+        m_pHeader(ph),
+        m_sHeader(sh),
+        m_debug(debug),
+        m_offset(),
+        m_type(type),
+        m_bigEndian(bigEndian)
     {}
 
     virtual ~DataDecode() {}

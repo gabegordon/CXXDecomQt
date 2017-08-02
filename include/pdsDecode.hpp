@@ -15,7 +15,7 @@ class pdsDecode
 {
   public:
   pdsDecode() :
-    m_directory{}
+      m_directory()
     {}
 
     virtual ~pdsDecode() {}
