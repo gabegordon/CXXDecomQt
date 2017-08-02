@@ -111,15 +111,19 @@ And Build:
 For Windows</h1>
 <pre>First download and install MSYS2 from:
 <a href="http://www.msys2.org">http://www.msys2.org</a>
-Run MSYS2 and get upgrades
+Run MSYS2 and get upgrades:
 </p>
 <div class="fragment"><div class="line">pacman -Syu </div>
 </div><!-- fragment --><p>
-Obtain Pre-Built Qt binary files
+Obtain Pre-Built Qt binary files:
 </p>
 <div class="fragment"><div class="line">pacman -S mingw-w64-x86_64-qt5 </div>
 </div><!-- fragment --><p>
 Ensure mingw64 is in PATH.
+Comment out:</p>
+<div class="fragment"><div class="line">_GLIBCXX_HAS_GTHREADS 1 </div>
+</div><!-- fragment --><p>
+From <a href="file:@code">file:@code</a> {.sh} &lt;msys2 install="" dir&gt;=""&gt;++\7.1.0-w64-mingw32<code></code>++config.h 
 Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>

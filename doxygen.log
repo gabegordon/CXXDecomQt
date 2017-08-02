@@ -212,6 +212,13 @@ Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/Databa
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/DataDecode.hpp...
 Generating docs for file /home/travis/build/gabegordon/CXXDecomQt/include/DataTypes.hpp...
 Generating docs f/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:10: warning: Found unknown command `\endsection'
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: Unsupported xml/html tag <msys2> found
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: Found unknown command `\mingw64'
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: expected whitespace after c command
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: Found unknown command `\x86_64'
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: Found unknown command `\bits'
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: expected whitespace after ++config command
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:29: warning: unexpected command endcode
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
