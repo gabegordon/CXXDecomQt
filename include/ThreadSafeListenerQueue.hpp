@@ -3,7 +3,12 @@
 #include <queue>
 #include <memory>
 #include <mutex>
+#ifdef __MINGW64__
+#include "mingwmutex.hpp"
+#include "mingwcondition_variable.hpp"
+#else
 #include <condition_variable>
+#endif
 #include <chrono>
 #include <iostream>
 #include "DataTypes.hpp"

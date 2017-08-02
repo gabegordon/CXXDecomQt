@@ -1,3 +1,8 @@
+#ifdef __MINGW64__
+#include <mingwthread.hpp>
+#else
+#include <thread>
+#endif
 #include <boost/algorithm/string.hpp>
 #include "pdsDecode.hpp"
 #include "backend.hpp"

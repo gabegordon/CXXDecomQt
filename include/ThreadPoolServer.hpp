@@ -1,6 +1,9 @@
 #pragma once
-
+#ifdef __MINGW64__
+#include <mingwthread.hpp>
+#else
 #include <thread>
+#endif
 #include <string>
 #include <vector>
 #include <unordered_map>

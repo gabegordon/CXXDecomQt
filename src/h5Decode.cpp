@@ -3,7 +3,11 @@
 #include <set>
 #include <algorithm>
 #include <iterator>
+#ifdef __MINGW64__
+#include <mingwthread.hpp>
+#else
 #include <thread>
+#endif
 #include <boost/algorithm/string.hpp>
 #include <boost/filesystem.hpp>
 #include "h5Decode.hpp"

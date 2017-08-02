@@ -4,7 +4,7 @@
 \section sec1 Dependencies
 -gcc>=7
 -libhdf5
--boost>=1.58 (static)
+-boost>=1.58 (built statically)
 -Qt>=5.7
 -cmake
 \endsection
