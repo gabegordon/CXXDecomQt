@@ -121,7 +121,7 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
 /**
  * Read ATMS science data in so that it can be properly formatted.
  */
-void formatATMS(BackEnd* backend)
+void formatATMS(BackEnd* backend)  // TODO Buffered R/W
 {
     CSVRow atms_row;
     std::ifstream m_infile;

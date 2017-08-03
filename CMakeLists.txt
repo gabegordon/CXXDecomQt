@@ -50,4 +50,34 @@ file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.hpp")
 add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 
-target_link_libraries(${PROJECT_NAME} ${LINKER_FLAGS} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
+target_link_libraries(${PROJECT_NAME} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
+
+option(BUILD_TESTS "Determines whether to build tests." ON)
+if(BUILD_TESTS)
+
+  set(DECOM_TEST_SOURCES
+    tests/TestDecom.cpp
+    )
+
+  enable_testing()
+
+  include(ExternalProject)
+  set(GB_FETCH_EXTERNAL_CATCH GIT_REPOSITORY https://github.com/philsquared/Catch.git)
+
+  ExternalProject_Add(Catch-External
+    PREFIX ${CMAKE_BINARY_DIR}/external/Catch
+    ${GB_FETCH_EXTERNAL_CATCH}
+    CONFIGURE_COMMAND ""
+    BUILD_COMMAND ""
+    INSTALL_COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/external/Catch/src/Catch-External/single_include/catch.hpp
+    ${CMAKE_BINARY_DIR}/external/Catch/include/catch.hpp
+    )
+  add_library(Catch INTERFACE)
+  add_dependencies(Catch Catch-External)
+  target_include_directories(Catch INTERFACE ${CMAKE_BINARY_DIR}/external/Catch/include)
+
+  add_executable(Decom_Test ${DECOM_TEST_SOURCES})
+  target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
+  add_test(NAME TestDecom COMMAND Decom_Test)
+
+endif()

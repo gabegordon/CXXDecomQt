@@ -37,8 +37,7 @@ void Decom::init(ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::s
             int64_t fileSize = getFileSize(input_stream);
             while (true)  // Loop until error or we reach end of file
             {
-                m_progress = input_stream.tellg();  // Get current progress
-                if (input_stream.eof() || m_progress >= fileSize)  // If reached end of file
+                if (input_stream.eof() || input_stream.tellg() >= fileSize)  // If reached end of file
                     break;
                 if (!getHeadersAndEntries(input_stream))  // If invalid header
                     break;

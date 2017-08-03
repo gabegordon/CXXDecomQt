@@ -19,7 +19,6 @@ class Decom
     Decom(const bool& debug, const std::vector<DataTypes::Entry>& entries, const DataTypes::SCType& type, const bool& bigEndian) :
         m_mapEntries(),
         m_entries(entries),
-        m_progress(0),
         m_debug(debug),
         m_headers(),
         m_type(type),
@@ -39,8 +38,8 @@ class Decom
 
     std::unordered_map<uint32_t, std::vector<DataTypes::Entry>> m_mapEntries;
     std::vector<DataTypes::Entry> m_entries;
-    int64_t m_progress;
     bool m_debug;
+
     std::vector<uint32_t> m_missingAPIDs;
     std::set<uint32_t> m_APIDs;
     std::tuple<DataTypes::PrimaryHeader, DataTypes::SecondaryHeader, bool> m_headers;

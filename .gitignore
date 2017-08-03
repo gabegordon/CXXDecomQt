@@ -75,3 +75,4 @@ build/*
 doxygen/config2
 doxygen/html
 test
+*.org
