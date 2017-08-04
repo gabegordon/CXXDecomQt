@@ -36,7 +36,14 @@ addons:
       - libhdf5-7
       - build-essential
       - libgl1-mesa-dev
-      - qt59-meta-full
+      - qt59-meta-minimal
+      - qt59base
+      - qt59declarative
+      - qt59graphicaleffects
+      - qt59imageformats
+      - qt59quickcontrols
+      - qt59quickcontrols2
+      - qt59svg
       - lcov
 
 script:
@@ -60,7 +67,8 @@ script:
 after_success:
   - cd $TRAVIS_BUILD_DIR
   - lcov --directory . --capture --output-file coverage.info # capture coverage info
-  - lcov --list coverage.info #debug info
+  - lcov --remove coverage.info '/usr/*' --output-file coverage.info # filter out system
+
   - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
   - chmod +x generateDocumentationAndDeploy.sh
   - ./generateDocumentationAndDeploy.sh
