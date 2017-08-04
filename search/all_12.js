@@ -77,7 +77,7 @@ var searchData=
   ['specialproperties',['SpecialProperties',['../struct_catch_1_1_test_case_info.html#a39b232f74b4a7a6f2183b96759027eac',1,'Catch::TestCaseInfo']]],
   ['standalone',['STANDALONE',['../namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76a4fe5c8b66c5a142f59748927553e68d6',1,'DataTypes']]],
   ['start',['start',['../class_catch_1_1_timer.html#a0a56e879e43f36c102bf9ea8b5fc8b72',1,'Catch::Timer']]],
-  ['startswith',['startsWith',['../namespace_catch.html#a695f62327be0676e046291eeaae15110',1,'Catch::startsWith(std::string const &amp;s, std::string const &amp;prefix)'],['../namespace_catch.html#acad23751846ac23d0f379e34f5adebb1',1,'Catch::startsWith(std::string const &amp;s, char prefix)'],['../namespace_catch_1_1_matchers.html#a97c9ee09a70378ca7e8c6f9f01b0d6d1',1,'Catch::Matchers::StartsWith()']]],
+  ['startswith',['StartsWith',['../namespace_catch_1_1_matchers.html#a97c9ee09a70378ca7e8c6f9f01b0d6d1',1,'Catch::Matchers::StartsWith()'],['../namespace_catch.html#a695f62327be0676e046291eeaae15110',1,'Catch::startsWith(std::string const &amp;s, std::string const &amp;prefix)'],['../namespace_catch.html#acad23751846ac23d0f379e34f5adebb1',1,'Catch::startsWith(std::string const &amp;s, char prefix)']]],
   ['startswithmatcher',['StartsWithMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.html#a7b86f258bdbd131a6e7bcd94a8977325',1,'Catch::Matchers::StdString::StartsWithMatcher']]],
   ['startswithmatcher',['StartsWithMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_starts_with_matcher.html',1,'Catch::Matchers::StdString']]],
   ['storeapid',['storeAPID',['../class_decom.html#a2b5ced5211af94762cb787aecb9e9d1a',1,'Decom']]],

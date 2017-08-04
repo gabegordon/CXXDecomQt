@@ -99,16 +99,12 @@ Functions</h2></td></tr>
 <tr class="separator:ab8c3d1d731a1819a95e2dddd05351f42"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5d5a9804b82f9c4e01c892815bcc0f0"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#ac5d5a9804b82f9c4e01c892815bcc0f0">extract32</a> (const uint32_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
 <tr class="separator:ac5d5a9804b82f9c4e01c892815bcc0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a666ddfc8a614da1e289b470f6137c9d8"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a666ddfc8a614da1e289b470f6137c9d8">extract64</a> (const uint64_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
-<tr class="separator:a666ddfc8a614da1e289b470f6137c9d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aca8b5b8e98955f94982787400e2e8595"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#aca8b5b8e98955f94982787400e2e8595">extract8Signed</a> (const uint8_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
 <tr class="separator:aca8b5b8e98955f94982787400e2e8595"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9ba09cc39dad39528f02e1ce6f7848e"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#ac9ba09cc39dad39528f02e1ce6f7848e">extract16Signed</a> (const uint16_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
 <tr class="separator:ac9ba09cc39dad39528f02e1ce6f7848e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1214227b3609bc2a3093f6362447723"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#ad1214227b3609bc2a3093f6362447723">extract32Signed</a> (const uint32_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
 <tr class="separator:ad1214227b3609bc2a3093f6362447723"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f9829431720e79275b31c4ce7798041"><td class="memItemLeft" align="right" valign="top">int64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a0f9829431720e79275b31c4ce7798041">extract64Signed</a> (const uint64_t &amp;val, const uint32_t &amp;start, const uint32_t &amp;len)</td></tr>
-<tr class="separator:a0f9829431720e79275b31c4ce7798041"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e78a08ed490628f45232777b6b6a231"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#a9e78a08ed490628f45232777b6b6a231">mergeBytes</a> (const uint8_t &amp;initialByte, const uint8_t &amp;extraByte1, const uint8_t &amp;extraByte2, const uint8_t &amp;extraByte3, const uint32_t &amp;num)</td></tr>
 <tr class="separator:a9e78a08ed490628f45232777b6b6a231"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aabdc36dfca828b5463b19d07d43de069"><td class="memItemLeft" align="right" valign="top">uint64_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_byte_manipulation.html#aabdc36dfca828b5463b19d07d43de069">mergeBytes64</a> (const uint8_t &amp;b0, const uint8_t &amp;b1, const uint8_t &amp;b2, const uint8_t &amp;b3, const uint8_t &amp;b4, const uint8_t &amp;b5, const uint8_t &amp;b6, const uint8_t &amp;b7)</td></tr>
@@ -207,10 +203,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Extracted bits (signed) </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00102">102</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;16&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00089">89</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;16&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -301,104 +297,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Extracted bits (signed) </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00115">115</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;{</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;32&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a666ddfc8a614da1e289b470f6137c9d8"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">uint64_t ByteManipulation::extract64 </td>
-          <td>(</td>
-          <td class="paramtype">const uint64_t &amp;&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint32_t &amp;&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint32_t &amp;&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Extract a range of bits from eight bytes.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>Unsigned 64-bit integer to extract from </td></tr>
-    <tr><td class="paramname">start</td><td>Starting bit (inclusive) </td></tr>
-    <tr><td class="paramname">len</td><td>Number of bits to extract </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Extracted bits </dd></dl>
-
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00076">76</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> std::stoul((std::bitset&lt;64&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a class="anchor" id="a0f9829431720e79275b31c4ce7798041"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int64_t ByteManipulation::extract64Signed </td>
-          <td>(</td>
-          <td class="paramtype">const uint64_t &amp;&#160;</td>
-          <td class="paramname"><em>val</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint32_t &amp;&#160;</td>
-          <td class="paramname"><em>start</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const uint32_t &amp;&#160;</td>
-          <td class="paramname"><em>len</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Extract a range of bits from eight bytes.</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">val</td><td>64-bit integer to extract from. </td></tr>
-    <tr><td class="paramname">start</td><td>Starting bit (inclusive). </td></tr>
-    <tr><td class="paramname">len</td><td>Number of bits to extract. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Extracted bits (signed). </dd></dl>
-
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00128">128</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;{</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <span class="keywordflow">return</span> std::stoll((std::bitset&lt;64&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00102">102</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;{</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;32&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -489,10 +391,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Extracted bits (signed) </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00089">89</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;8&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00076">76</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;{</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordflow">return</span> std::stol((std::bitset&lt;8&gt;(val).to_string().substr(start, len)), <span class="keyword">nullptr</span>, 2);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -550,23 +452,23 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unsigned 32-bit integer containing the merged bytes. </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00143">143</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;{</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;    std::string b1 = std::bitset&lt;8&gt;(initialByte).to_string();</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    std::string b2 = std::bitset&lt;8&gt;(extraByte1).to_string();</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;    std::string b3 = std::bitset&lt;8&gt;(extraByte2).to_string();</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;    std::string b4 = std::bitset&lt;8&gt;(extraByte3).to_string();</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;    std::string s_result;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">if</span> (num &gt; 3)</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    {</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        s_result = b1 + b2 + b3 + b4;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    }</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;        s_result = b1 + b2 + b3;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    }</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    <span class="keywordflow">return</span> std::stoul(s_result, <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00117">117</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;{</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    std::string b1 = std::bitset&lt;8&gt;(initialByte).to_string();</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    std::string b2 = std::bitset&lt;8&gt;(extraByte1).to_string();</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    std::string b3 = std::bitset&lt;8&gt;(extraByte2).to_string();</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    std::string b4 = std::bitset&lt;8&gt;(extraByte3).to_string();</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    std::string s_result;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span> (num &gt; 3)</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        s_result = b1 + b2 + b3 + b4;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        s_result = b1 + b2 + b3;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    }</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">return</span> std::stoul(s_result, <span class="keyword">nullptr</span>, 2);</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -603,10 +505,10 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unsigned 16-bit integer containing thw merged bytes. </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00195">195</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;{</div>
-<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;    <span class="keywordflow">return</span> (initialByte &lt;&lt; 8) | extraByte1;</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00169">169</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;{</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;    <span class="keywordflow">return</span> (initialByte &lt;&lt; 8) | extraByte1;</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -685,19 +587,19 @@ Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Unsigned 64-bit integer containing the merged bytes. </dd></dl>
 
-<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00174">174</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
-<div class="fragment"><div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;{</div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    std::string b0s = std::bitset&lt;8&gt;(b0).to_string();</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;    std::string b1s = std::bitset&lt;8&gt;(b1).to_string();</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;    std::string b2s = std::bitset&lt;8&gt;(b2).to_string();</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;    std::string b3s = std::bitset&lt;8&gt;(b3).to_string();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    std::string b4s = std::bitset&lt;8&gt;(b4).to_string();</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    std::string b5s = std::bitset&lt;8&gt;(b5).to_string();</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    std::string b6s = std::bitset&lt;8&gt;(b6).to_string();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    std::string b7s = std::bitset&lt;8&gt;(b7).to_string();</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;    std::string s_result = b0s + b1s + b2s + b3s + b4s + b5s + b6s + b7s;</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    <span class="keywordflow">return</span> std::stoull(s_result, <span class="keyword">nullptr</span>, 2);</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;}</div>
+<p>Definition at line <a class="el" href="_byte_manipulation_8cpp_source.html#l00148">148</a> of file <a class="el" href="_byte_manipulation_8cpp_source.html">ByteManipulation.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;{</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    std::string b0s = std::bitset&lt;8&gt;(b0).to_string();</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;    std::string b1s = std::bitset&lt;8&gt;(b1).to_string();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    std::string b2s = std::bitset&lt;8&gt;(b2).to_string();</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    std::string b3s = std::bitset&lt;8&gt;(b3).to_string();</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    std::string b4s = std::bitset&lt;8&gt;(b4).to_string();</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    std::string b5s = std::bitset&lt;8&gt;(b5).to_string();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    std::string b6s = std::bitset&lt;8&gt;(b6).to_string();</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    std::string b7s = std::bitset&lt;8&gt;(b7).to_string();</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    std::string s_result = b0s + b1s + b2s + b3s + b4s + b5s + b6s + b7s;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="keywordflow">return</span> std::stoull(s_result, <span class="keyword">nullptr</span>, 2);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;}</div>
 </div><!-- fragment -->
 </div>
 </div>

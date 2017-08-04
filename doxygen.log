@@ -943,5 +943,5 @@ Patching output file 135/138
 Patching output file 136/138
 Patching output file 137/138
 Patching output file 138/138
-lookup cache used 4833/65536 hits=37714 misses=5255
+lookup cache used 4831/65536 hits=37611 misses=5253
 finished...
