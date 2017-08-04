@@ -24,15 +24,11 @@ uint32_t extract16(const uint16_t& val, const uint32_t& start, const uint32_t& l
 
 uint32_t extract32(const uint32_t& val, const uint32_t& start, const uint32_t& len);
 
-uint64_t extract64(const uint64_t& val, const uint32_t& start, const uint32_t& len);
-
 int32_t extract8Signed(const uint8_t& val, const uint32_t& start, const uint32_t& len);
 
 int32_t extract16Signed(const uint16_t& val, const uint32_t& start, const uint32_t& len);
 
 int32_t extract32Signed(const uint32_t& val, const uint32_t& start, const uint32_t& len);
-
-int64_t extract64Signed(const uint64_t& val, const uint32_t& start, const uint32_t& len);
 
 uint32_t mergeBytes(const uint8_t& initialByte, const uint8_t& extraByte1, const uint8_t& extraByte2, const uint8_t& extraByte3, const uint32_t& num);
 
