@@ -70,7 +70,7 @@ if(BUILD_TESTS)
   target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
   add_test(NAME TestDecom COMMAND Decom_Test)
 
-  if(CMAKE_COMPILER_IS_GNUCXX)
+  if($ENV{TRAVIS})
     set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
     include(CodeCoverage)
     setup_target_for_coverage(Decom_Coverage Decom_Test coverage)

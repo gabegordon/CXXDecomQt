@@ -44,9 +44,12 @@ addons:
       - qt59quickcontrols
       - qt59quickcontrols2
       - qt59svg
-      - lcov
 
 script:
+  - git clone https://github.com/linux-test-project/lcov.git
+  - cd lcov
+  - make install
+  - cd ..
   - wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.bz2
   - tar --bzip2 -xf boost_1_64_0.tar.bz2
   - cd boost_1_64_0
