@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['continueonfailure',['ContinueOnFailure',['../namespace_catch.html#a3396cad6e2259af326b3aae93e23e9d8aa18c94bd60c5614e17a84c2ced3bbfd5',1,'Catch::ResultDisposition']]],
   ['create_5fds_5f0',['CREATE_DS_0',['../namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34acb4ccb5f69554dcc8f30416fd792ead6',1,'h5cpp']]],
   ['create_5fds_5fchunked',['CREATE_DS_CHUNKED',['../namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34abd80e1b941df00b77d33fa06eda2424a',1,'h5cpp']]],
   ['create_5fds_5fcompressed',['CREATE_DS_COMPRESSED',['../namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34aa83395a73946441922b32df2d880ce35',1,'h5cpp']]],

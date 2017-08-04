@@ -1,0 +1,9 @@
+<map id="Catch::BinaryExpression&lt; LhsT, Op, RhsT &gt;" name="Catch::BinaryExpression&lt; LhsT, Op, RhsT &gt;">
+<area shape="rect" id="node2" href="$struct_catch_1_1_decomposed_expression.html" title="Catch::DecomposedExpression" alt="" coords="478,121,684,148"/>
+<area shape="rect" id="node3" href="$class_catch_1_1_result_builder.html" title="Catch::ResultBuilder" alt="" coords="639,344,781,371"/>
+<area shape="rect" id="node4" href="$struct_catch_1_1_assertion_result_data.html" title="Catch::AssertionResultData" alt="" coords="248,244,435,271"/>
+<area shape="rect" id="node6" title="STL class. " alt="" coords="121,121,200,148"/>
+<area shape="rect" id="node7" title="STL class. " alt="" coords="98,6,224,47"/>
+<area shape="rect" id="node9" href="$struct_catch_1_1_assertion_info.html" title="Catch::AssertionInfo" alt="" coords="785,244,927,271"/>
+<area shape="rect" id="node10" href="$struct_catch_1_1_source_line_info.html" title="Catch::SourceLineInfo" alt="" coords="873,121,1025,148"/>
+</map>

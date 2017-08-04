@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getfiles',['getFiles',['../namespaceget_files.html',1,'']]]
+  ['datatypes',['DataTypes',['../namespace_data_types.html',1,'']]]
 ];

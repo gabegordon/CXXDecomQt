@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sctype',['SCType',['../namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3',1,'DataTypes']]],
-  ['sequenceflag',['SequenceFlag',['../namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76',1,'DataTypes']]]
+  ['datatype',['DataType',['../namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601',1,'DataTypes']]],
+  ['dscreationflags',['DsCreationFlags',['../namespaceh5cpp.html#a490c8d9159164b43aee98d117dfecb34',1,'h5cpp']]]
 ];

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['total_5fpercentage',['TOTAL_PERCENTAGE',['../_progress_bar_8hpp.html#ad230c2a0c13c552b3a64edfc9a6f1d1c',1,'ProgressBar.hpp']]]
+  ['fail',['FAIL',['../catch_8hpp.html#a292ad803e75cf5ca00676b8595513ace',1,'catch.hpp']]],
+  ['fail_5fcheck',['FAIL_CHECK',['../catch_8hpp.html#a65436c6b2a78e5a775090dd005c93a78',1,'catch.hpp']]]
 ];

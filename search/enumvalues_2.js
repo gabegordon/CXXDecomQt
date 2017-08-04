@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['i32',['I32',['../namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba8f111e9bd6a1ca3e5277a7625edaf959',1,'DataTypes::Numeric']]]
+  ['exception',['Exception',['../namespace_catch.html#a624e1ee3661fcf6094ceef1f654601efaa9107b7836cc7590ca668002f76d27c7',1,'Catch::ResultWas']]],
+  ['explicitfailure',['ExplicitFailure',['../namespace_catch.html#a624e1ee3661fcf6094ceef1f654601efacecfc052e2499499b13304249303cc36',1,'Catch::ResultWas']]],
+  ['expressionfailed',['ExpressionFailed',['../namespace_catch.html#a624e1ee3661fcf6094ceef1f654601efa5e7126b8458dc1376ac870a719f7873f',1,'Catch::ResultWas']]]
 ];

@@ -248,9 +248,10 @@ template&lt;size_t n&gt; </div>
 <p>Definition at line <a class="el" href="hdf__wrapper_8hpp_source.html#l01339">1339</a> of file <a class="el" href="hdf__wrapper_8hpp_source.html">hdf_wrapper.hpp</a>.</p>
 <div class="fragment"><div class="line"><a name="l01340"></a><span class="lineno"> 1340</span>&#160;        {</div>
 <div class="line"><a name="l01341"></a><span class="lineno"> 1341</span>&#160;            std::vector&lt;const char*&gt; s(memspace.get_npoints());</div>
-<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;s.size(); ++i) s[i] = values[i];  <span class="comment">// because i don&#39;t know how to deal with an array of static char-arrays</span></div>
+<div class="line"><a name="l01342"></a><span class="lineno"> 1342</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;s.size(); ++i) s[i] = <a class="code" href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">values</a>[i];  <span class="comment">// because i don&#39;t know how to deal with an array of static char-arrays</span></div>
 <div class="line"><a name="l01343"></a><span class="lineno"> 1343</span>&#160;            rw.write(&amp;s[0]);</div>
 <div class="line"><a name="l01344"></a><span class="lineno"> 1344</span>&#160;        }</div>
+<div class="ttc" id="namespace_catch_1_1_generators_html_a7a2c5bebb3c06c5b0ca05a80289b9eb1"><div class="ttname"><a href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">Catch::Generators::values</a></div><div class="ttdeci">CompositeGenerator&lt; T &gt; values(T val1, T val2)</div><div class="ttdef"><b>Definition:</b> <a href="catch_8hpp_source.html#l02607">catch.hpp:2607</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

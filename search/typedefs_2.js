@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['iterator',['iterator',['../structrecursive__directory__range.html#a0326cf4679994839f5998ab9f4c855e9',1,'recursive_directory_range']]]
+  ['exceptiontranslatefunction',['exceptionTranslateFunction',['../namespace_catch.html#ae1727c8cadfc5ad8b43dff651cd2f8b0',1,'Catch']]],
+  ['exceptiontranslators',['ExceptionTranslators',['../namespace_catch.html#ae0442a3627f91437716106138b5f540b',1,'Catch']]]
 ];

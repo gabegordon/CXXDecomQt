@@ -231,11 +231,12 @@ struct h5cpp::h5traits&lt; std::string &gt;</h3>
 <div class="line"><a name="l01313"></a><span class="lineno"> 1313</span>&#160;            rw.read(&amp;buffers[0]);</div>
 <div class="line"><a name="l01314"></a><span class="lineno"> 1314</span>&#160;            <span class="keywordflow">for</span> (hssize_t i = 0; i &lt; n; ++i)</div>
 <div class="line"><a name="l01315"></a><span class="lineno"> 1315</span>&#160;            {</div>
-<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                values[i].assign(buffers[i]);</div>
+<div class="line"><a name="l01316"></a><span class="lineno"> 1316</span>&#160;                <a class="code" href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">values</a>[i].assign(buffers[i]);</div>
 <div class="line"><a name="l01317"></a><span class="lineno"> 1317</span>&#160;            }</div>
 <div class="line"><a name="l01318"></a><span class="lineno"> 1318</span>&#160;            <span class="comment">// release the stuff that hdf5 allocated</span></div>
 <div class="line"><a name="l01319"></a><span class="lineno"> 1319</span>&#160;            H5Dvlen_reclaim(memtype.get_id(), memspace.get_id(), H5P_DEFAULT, &amp;buffers[0]);</div>
 <div class="line"><a name="l01320"></a><span class="lineno"> 1320</span>&#160;        }</div>
+<div class="ttc" id="namespace_catch_1_1_generators_html_a7a2c5bebb3c06c5b0ca05a80289b9eb1"><div class="ttname"><a href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">Catch::Generators::values</a></div><div class="ttdeci">CompositeGenerator&lt; T &gt; values(T val1, T val2)</div><div class="ttdef"><b>Definition:</b> <a href="catch_8hpp_source.html#l02607">catch.hpp:2607</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -282,9 +283,10 @@ struct h5cpp::h5traits&lt; std::string &gt;</h3>
 <div class="line"><a name="l01296"></a><span class="lineno"> 1296</span>&#160;            hssize_t n = memspace.get_npoints();</div>
 <div class="line"><a name="l01297"></a><span class="lineno"> 1297</span>&#160;            assert(n &gt;= 1);</div>
 <div class="line"><a name="l01298"></a><span class="lineno"> 1298</span>&#160;            std::vector&lt;const char*&gt; s(n);</div>
-<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; ++i) s[i] = values[i].c_str();</div>
+<div class="line"><a name="l01299"></a><span class="lineno"> 1299</span>&#160;            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0; i&lt;n; ++i) s[i] = <a class="code" href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">values</a>[i].c_str();</div>
 <div class="line"><a name="l01300"></a><span class="lineno"> 1300</span>&#160;            rw.write(&amp;s[0]);</div>
 <div class="line"><a name="l01301"></a><span class="lineno"> 1301</span>&#160;        }</div>
+<div class="ttc" id="namespace_catch_1_1_generators_html_a7a2c5bebb3c06c5b0ca05a80289b9eb1"><div class="ttname"><a href="namespace_catch_1_1_generators.html#a7a2c5bebb3c06c5b0ca05a80289b9eb1">Catch::Generators::values</a></div><div class="ttdeci">CompositeGenerator&lt; T &gt; values(T val1, T val2)</div><div class="ttdef"><b>Definition:</b> <a href="catch_8hpp_source.html#l02607">catch.hpp:2607</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

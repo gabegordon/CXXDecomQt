@@ -1,3 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$namespaceh5cpp_1_1internal.html#structh5cpp_1_1internal_1_1_inc_r_c" title="h5cpp::internal::IncRC" alt="" coords="6,5,159,32"/>
+<area shape="rect" id="node1" href="$struct_catch_1_1_i_exception_translator.html" title="Catch::IExceptionTranslator" alt="" coords="6,12,191,39"/>
+<area shape="rect" id="node2" href="$class_catch_1_1_exception_translator_registrar_1_1_exception_translator.html" title="Catch::ExceptionTranslator\lRegistrar::ExceptionTranslator\&lt; T \&gt;" alt="" coords="241,5,471,46"/>
 </map>

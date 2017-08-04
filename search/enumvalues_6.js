@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['nill',['NILL',['../namespace_data_types.html#a59662e1d481e0fe14076418c8b3b714ba4414a57a0db7096abf9ad4bdafa2cb51',1,'DataTypes::Numeric::NILL()'],['../namespace_data_types.html#a2b6a16988e8ecbed83d193ad09ae2601a3f9d53ef43c3f18f9183fa145ce915ad',1,'DataTypes::NILL()']]],
-  ['npp',['NPP',['../namespace_data_types.html#aed151f9e3dd0e4603ecf5a3961eca7e3a550849a3929a0be00451568d902542ec',1,'DataTypes']]]
+  ['last',['LAST',['../namespace_data_types.html#aff8a980d2c0f7ad1b7ed03da51a72b76aa69b60b98ce23b6f903529e4a01f3b78',1,'DataTypes']]]
 ];

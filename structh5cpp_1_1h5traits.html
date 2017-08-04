@@ -104,9 +104,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a78be142e3f3ced6e6cb05ef6b6756236"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa1bfadde0935f7318982024cc7d4f846"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#aa1bfadde0935f7318982024cc7d4f846">get_disktype</a> ()</td></tr>
 <tr class="separator:aa1bfadde0935f7318982024cc7d4f846"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a86dc33778c9bfe871377116972dbcd1e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">write</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, const <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> &amp;memtype, const <a class="el" href="classh5cpp_1_1_dataspace.html">Dataspace</a> &amp;memspace, const T *values)</td></tr>
+<tr class="memitem:a86dc33778c9bfe871377116972dbcd1e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#a86dc33778c9bfe871377116972dbcd1e">write</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, const <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> &amp;memtype, const <a class="el" href="classh5cpp_1_1_dataspace.html">Dataspace</a> &amp;memspace, const <a class="el" href="class_catch_1_1_t.html">T</a> *values)</td></tr>
 <tr class="separator:a86dc33778c9bfe871377116972dbcd1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad3ff66e0e713df33a34185900c38304"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">read</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, T *values)</td></tr>
+<tr class="memitem:aad3ff66e0e713df33a34185900c38304"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structh5cpp_1_1h5traits.html#aad3ff66e0e713df33a34185900c38304">read</a> (<a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;rw, <a class="el" href="class_catch_1_1_t.html">T</a> *values)</td></tr>
 <tr class="separator:aad3ff66e0e713df33a34185900c38304"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -126,7 +126,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; T &gt;::get_disktype </td>
+          <td class="memname">static <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; <a class="el" href="class_catch_1_1_t.html">T</a> &gt;::get_disktype </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -156,7 +156,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; T &gt;::get_memtype </td>
+          <td class="memname">static <a class="el" href="classh5cpp_1_1_datatype.html">Datatype</a> <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; <a class="el" href="class_catch_1_1_t.html">T</a> &gt;::get_memtype </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -186,7 +186,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; T &gt;::read </td>
+          <td class="memname">static void <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; <a class="el" href="class_catch_1_1_t.html">T</a> &gt;::read </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;&#160;</td>
           <td class="paramname"><em>rw</em>, </td>
@@ -194,7 +194,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">T *&#160;</td>
+          <td class="paramtype"><a class="el" href="class_catch_1_1_t.html">T</a> *&#160;</td>
           <td class="paramname"><em>values</em>&#160;</td>
         </tr>
         <tr>
@@ -227,7 +227,7 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; T &gt;::write </td>
+          <td class="memname">static void <a class="el" href="structh5cpp_1_1h5traits.html">h5cpp::h5traits</a>&lt; <a class="el" href="class_catch_1_1_t.html">T</a> &gt;::write </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classh5cpp_1_1_r_w.html">RW</a> &amp;&#160;</td>
           <td class="paramname"><em>rw</em>, </td>
@@ -247,7 +247,7 @@ template&lt;class T &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const T *&#160;</td>
+          <td class="paramtype">const <a class="el" href="class_catch_1_1_t.html">T</a> *&#160;</td>
           <td class="paramname"><em>values</em>&#160;</td>
         </tr>
         <tr>
