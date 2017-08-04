@@ -3,9 +3,8 @@ cmake_minimum_required(VERSION 2.8.12)
 project(CXXDecomQt)
 
 # Find includes in the build directories
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_BUILD_TYPE release)
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -Wall -pedantic -pthread -g -O0 -fprofile-arcs -ftest-coverage")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra -Ofast -march=native")
 # Generate compile commands for IDE autocomplete
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -43,14 +42,15 @@ include_directories(
 set(DECOM_LINK_LIBS
   ${Boost_LIBRARIES}
   ${HDF5_LIBRARIES}
-  ${QT_LIBRARIES}
+  ${QT5_LIBS}
   )
 
 file(GLOB SOURCES "src/[A-z]*.cpp")
 file(GLOB INCLUDES "include/[A-z]*.hpp")
-add_executable(${PROJECT_NAME} "qml.qrc" ${SOURCES} ${INCLUDES})
 
-target_link_libraries(${PROJECT_NAME} ${QT5_LIBS} ${DECOM_LINK_LIBS} pthread)
+add_executable(${PROJECT_NAME} "qml/qml.qrc" ${SOURCES} ${INCLUDES})
+
+target_link_libraries(${PROJECT_NAME} ${DECOM_LINK_LIBS} pthread)
 
 option(BUILD_TESTS "Determines whether to build tests." ON)
 if(BUILD_TESTS)
@@ -65,8 +65,14 @@ if(BUILD_TESTS)
   add_library(Catch INTERFACE)
   target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 
-  add_executable(Decom_Test ${DECOM_TEST_SOURCES})
+  list(REMOVE_ITEM SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+  add_executable(Decom_Test ${DECOM_TEST_SOURCES} ${SOURCES} ${INCLUDES})
   target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
   add_test(NAME TestDecom COMMAND Decom_Test)
 
+  if(CMAKE_COMPILER_IS_GNUCXX)
+    set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
+    include(CodeCoverage)
+    setup_target_for_coverage(Decom_Coverage Decom_Test coverage)
+  endif()
 endif()

@@ -14,7 +14,7 @@ Clone latest:
 Create build directory:
 \code{.sh}  cd CXXDecomQt && mkdir build && cd build \endcode
 Generate Makefile:
-\code{.sh} cmake .. \endcode
+\code{.sh} cmake -DCMAKE_BUILD_TYPE=Release .. \endcode
 And Build:
 \code{.sh} cmake --build . \endcode
 \section sec4 For Windows
@@ -32,7 +32,7 @@ Clone latest:
 Create build directory:
 \code{.sh} cd CXXDecomQt && mkdir build && cd build \endcode
 Run CMake:
-\code{.sh} cmake -G"MinGW Makefiles" .. \endcode
+\code{.sh} cmake -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release .. \endcode
 Build:
 \code{.sh} cmake --build . \endcode
 Copy deps folder contents into the executable directory to run.

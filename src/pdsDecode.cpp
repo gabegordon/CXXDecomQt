@@ -64,6 +64,7 @@ void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedF
 {
     Decom decomEngine(debug, entries, type, bigEndian);
     std::thread decomThread(&Decom::init, decomEngine, &m_queue, backend);
+    decomThread.detach();
     ProgressBar pbar(m_files.size(), "Parsing PDS");
     uint32_t i = 0;
     for (const auto& filename : m_files)
