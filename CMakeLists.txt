@@ -60,21 +60,10 @@ if(BUILD_TESTS)
     )
 
   enable_testing()
-
-  include(ExternalProject)
-  set(GB_FETCH_EXTERNAL_CATCH GIT_REPOSITORY https://github.com/philsquared/Catch.git)
-
-  ExternalProject_Add(Catch-External
-    PREFIX ${CMAKE_BINARY_DIR}/external/Catch
-    ${GB_FETCH_EXTERNAL_CATCH}
-    CONFIGURE_COMMAND ""
-    BUILD_COMMAND ""
-    INSTALL_COMMAND ${CMAKE_COMMAND} -E copy ${CMAKE_BINARY_DIR}/external/Catch/src/Catch-External/single_include/catch.hpp
-    ${CMAKE_BINARY_DIR}/external/Catch/include/catch.hpp
-    )
+  # Prepare "Catch" library for other executables
+  set(CATCH_INCLUDE_DIR ${CMAKE_BINARY_DIR}/include/catch)
   add_library(Catch INTERFACE)
-  add_dependencies(Catch Catch-External)
-  target_include_directories(Catch INTERFACE ${CMAKE_BINARY_DIR}/external/Catch/include)
+  target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 
   add_executable(Decom_Test ${DECOM_TEST_SOURCES})
   target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
