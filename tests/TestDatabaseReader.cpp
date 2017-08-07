@@ -24,7 +24,7 @@ TEST_CASE("DatabaseReader Checks")
 
         results = dr.getEntries();
         DataTypes::Entry result = results.at(0);
-        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 81, 0, 2, 3, false};
+        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 6, 0, 2, 3, false};
         REQUIRE(result == expected);
     }
     SECTION("Database APID Filter Included")
@@ -35,7 +35,7 @@ TEST_CASE("DatabaseReader Checks")
 
         results = dr.getEntries();
         DataTypes::Entry result = results.at(0);
-        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 81, 0, 2, 3, false};
+        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 6, 0, 2, 3, false};
         REQUIRE(result == expected);
     }
     SECTION("Database APID Filter Ignored")
@@ -46,7 +46,7 @@ TEST_CASE("DatabaseReader Checks")
 
         results = dr.getEntries();
         DataTypes::Entry result = results.at(0);
-        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 81, 0, 2, 3, true};
+        DataTypes::Entry expected = {"TEST2", DataTypes::UNSIGNED, 0, 6, 0, 2, 3, true};
         REQUIRE(result == expected);
 
     }

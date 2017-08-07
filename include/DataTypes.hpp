@@ -49,6 +49,13 @@ struct Numeric
         int32_t i32;
         float f64;
     };
+
+#ifdef UNIT_TESTING
+    bool operator==(const Numeric& rhs) const
+    {
+        return (mnem == rhs.mnem) && (u32 == rhs.u32);
+    }
+#endif
 };
 
 struct Packet
