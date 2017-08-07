@@ -87,6 +87,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
 <a href="class_c_s_v_row-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CSVRow Class Reference</div>  </div>
@@ -119,6 +120,11 @@ Public Member Functions</h2></td></tr>
 Private Attributes</h2></td></tr>
 <tr class="memitem:a6ccfa2b79438ff191e0973c2e8f5fe1a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a></td></tr>
 <tr class="separator:a6ccfa2b79438ff191e0973c2e8f5fe1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:ac2c0b2d1ccc5f44ad4a24f6411cc1d34"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_c_s_v_row.html#ac2c0b2d1ccc5f44ad4a24f6411cc1d34">operator&gt;&gt;</a> (std::istream &amp;str, <a class="el" href="class_c_s_v_row.html">CSVRow</a> &amp;data)</td></tr>
+<tr class="separator:ac2c0b2d1ccc5f44ad4a24f6411cc1d34"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -283,6 +289,57 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">m_data</a>.size();</div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div>
 <div class="ttc" id="class_c_s_v_row_html_a6ccfa2b79438ff191e0973c2e8f5fe1a"><div class="ttname"><a href="class_c_s_v_row.html#a6ccfa2b79438ff191e0973c2e8f5fe1a">CSVRow::m_data</a></div><div class="ttdeci">std::vector&lt; std::string &gt; m_data</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8hpp_source.html#l00022">CSVRow.hpp:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Function Documentation</h2>
+<a class="anchor" id="ac2c0b2d1ccc5f44ad4a24f6411cc1d34"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream&amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>str</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_c_s_v_row.html">CSVRow</a> &amp;&#160;</td>
+          <td class="paramname"><em>data</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Overide stream operator for reading from our <a class="el" href="class_c_s_v_row.html">CSVRow</a> class.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">str</td><td>Stream to read from. </td></tr>
+    <tr><td class="paramname">data</td><td>Our <a class="el" href="class_c_s_v_row.html">CSVRow</a> object. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Stream containing row. </dd></dl>
+
+<p>Definition at line <a class="el" href="_c_s_v_row_8cpp_source.html#l00068">68</a> of file <a class="el" href="_c_s_v_row_8cpp_source.html">CSVRow.cpp</a>.</p>
+<div class="fragment"><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;{</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    data.<a class="code" href="class_c_s_v_row.html#a14b9ac6d9ffb01a7b05ea903cfd04eeb">readNextRow</a>(str);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> str;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}</div>
+<div class="ttc" id="class_c_s_v_row_html_a14b9ac6d9ffb01a7b05ea903cfd04eeb"><div class="ttname"><a href="class_c_s_v_row.html#a14b9ac6d9ffb01a7b05ea903cfd04eeb">CSVRow::readNextRow</a></div><div class="ttdeci">void readNextRow(std::istream &amp;str)</div><div class="ttdef"><b>Definition:</b> <a href="_c_s_v_row_8cpp_source.html#l00033">CSVRow.cpp:33</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

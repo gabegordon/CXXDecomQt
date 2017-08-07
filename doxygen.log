@@ -377,7 +377,7 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:107: warning: Found unknown command `\retun'
 /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:103: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian) are not documented:
   parameter 'buffer'
-/home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:47: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:34: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
   parameter 'backend'
 , IsEqualTo >...
 Generating docs for compound Catch::Internal::Evaluator< T1, T2, IsNotEqualTo >...
@@ -943,5 +943,5 @@ Patching output file 135/138
 Patching output file 136/138
 Patching output file 137/138
 Patching output file 138/138
-lookup cache used 4831/65536 hits=37611 misses=5253
+lookup cache used 4830/65536 hits=37608 misses=5252
 finished...
