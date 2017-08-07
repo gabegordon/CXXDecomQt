@@ -57,3 +57,16 @@ void CSVRow::readNextRow(std::istream& str)
         m_data.emplace_back(std::string(mystart));
     }
 }
+
+/**
+ * Overide stream operator for reading from our CSVRow class.
+ *
+ * @param str Stream to read from.
+ * @param data Our CSVRow object.
+ * @return Stream containing row.
+ */
+std::istream& operator >> (std::istream& str, CSVRow& data)
+{
+    data.readNextRow(str);
+    return str;
+}

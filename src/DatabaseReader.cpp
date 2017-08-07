@@ -4,22 +4,9 @@
 #include <vector>
 #include "DatabaseReader.hpp"
 #include "DataTypes.hpp"
-#include "CSVRow.hpp"
 #include "ReadFile.hpp"
 #include "LogFile.hpp"
-
-/**
- * Overide stream operator for reading from our CSVRow class.
- *
- * @param str Stream to read from.
- * @param data Our CSVRow object.
- * @return Stream containing row.
- */
-std::istream& operator >> (std::istream& str, CSVRow& data)
-{
-    data.readNextRow(str);
-    return str;
-}
+#include "CSVRow.hpp"
 
 /**
  * Helper function to read all necessary databases.

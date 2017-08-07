@@ -32,6 +32,7 @@ class DatabaseReader
     void getByteBit(std::string* bytebit, uint32_t* i_byte, uint32_t* i_bitLower, uint32_t* i_bitUpper) const;
     void printDataBase() const;
     bool bannedAPID(const std::string& mnem) const;
+
     const struct DataTypes::Entry defaults = {
         "", DataTypes::NILL, 0, 0, 0, 0, 0, false
     };

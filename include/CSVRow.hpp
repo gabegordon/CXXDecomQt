@@ -17,7 +17,7 @@ class CSVRow
 
     void readNextRow(std::istream& str);
 
-
+    friend std::istream& operator >> (std::istream& str, CSVRow& data);
   private:
     std::vector<std::string> m_data;
 };

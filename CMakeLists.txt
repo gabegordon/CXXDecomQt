@@ -55,18 +55,17 @@ target_link_libraries(${PROJECT_NAME} ${DECOM_LINK_LIBS} pthread)
 option(BUILD_TESTS "Determines whether to build tests." ON)
 if(BUILD_TESTS)
 
-  set(DECOM_TEST_SOURCES
-    tests/TestDecom.cpp
-    )
 
+  file(GLOB TEST_SOURCES "tests/[A-z]*.cpp")
   enable_testing()
   # Prepare "Catch" library for other executables
   set(CATCH_INCLUDE_DIR ${CMAKE_BINARY_DIR}/include/catch)
   add_library(Catch INTERFACE)
   target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
 
+  # Remove the real main from our sources list so that it doesn't conflict with Catch's main
   list(REMOVE_ITEM SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
-  add_executable(Decom_Test ${DECOM_TEST_SOURCES} ${SOURCES} ${INCLUDES})
+  add_executable(Decom_Test ${TEST_SOURCES} ${SOURCES} ${INCLUDES})
   target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
   add_test(NAME TestDecom COMMAND Decom_Test)
 

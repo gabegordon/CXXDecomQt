@@ -37,4 +37,4 @@ uint64_t mergeBytes64(const uint8_t& b0, const uint8_t& b1, const uint8_t& b2, c
 uint32_t mergeBytes16(const uint8_t& initialByte, const uint8_t& extraByte1);
 
 
-    }
+}

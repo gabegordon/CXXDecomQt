@@ -31,19 +31,6 @@ namespace InstrumentFormat
 {
 
 /**
- * Overide stream operator for reading from our CSVRow class.
- *
- * @param str Stream to read from.
- * @param data Our CSVRow object.
- * @return Stream containing row.
- */
-std::istream& operator >> (std::istream& str, CSVRow& data)
-{
-    data.readNextRow(str);
-    return str;
-}
-
-/**
  * Handles accumulating data from between scans and writing it to file.
  *
  * @param buf Buffer of atms_pack read in from output file.
