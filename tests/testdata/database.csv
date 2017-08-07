@@ -1,0 +1,3 @@
+Mnemonic,Type,Packet,bit_byte
+TEST1,U8,APID0013,/0212
+TEST2,D3,APID0000,/0081:0-2

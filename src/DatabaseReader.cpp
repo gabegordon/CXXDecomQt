@@ -13,6 +13,11 @@
  */
 void DatabaseReader::init()
 {
+    #ifdef UNIT_TESTING
+    readDatabase("../../tests/testdata/database.csv");
+    return;
+    #endif
+
     switch (m_type)
     {
     case DataTypes::SCType::NPP:
