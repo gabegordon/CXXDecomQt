@@ -46,8 +46,6 @@ addons:
       - qt59svg
 
 script:
-  - git clone https://github.com/linux-test-project/lcov.git
-  - cd lcov
   - sudo make install
   - cd ..
   - wget https://dl.bintray.com/boostorg/release/1.64.0/source/boost_1_64_0.tar.bz2
@@ -63,14 +61,10 @@ script:
   - gcc -v && g++ -v && cmake --version
   # Run your build commands next
   - mkdir -p build && cd build
-  - cmake -DCMAKE_BUILD_TYPE=Debug -DBoost_INCLUDE_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0 -DBoost_LIBRARY_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0/stage/lib -DCMAKE_PREFIX_PATH=/opt/qt59 ..
+  - cmake -DCMAKE_BUILD_TYPE=Release -DBoost_INCLUDE_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0 -DBoost_LIBRARY_DIR=/home/travis/build/gabegordon/CXXDecomQt/boost_1_64_0/stage/lib -DCMAKE_PREFIX_PATH=/opt/qt59 ..
   - make
-  - make Decom_Coverage
 
 after_success:
   - cd $TRAVIS_BUILD_DIR
-  - lcov --directory . --capture --output-file coverage.info # capture coverage info
-  - lcov --remove coverage.info '/usr/*' '*/tests/*' '*/include/*' --output-file coverage.info # filter out system
-  - bash <(curl -s https://codecov.io/bash) || echo "Codecov did not collect coverage reports"
   - chmod +x generateDocumentationAndDeploy.sh
   - ./generateDocumentationAndDeploy.sh

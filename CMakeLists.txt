@@ -4,7 +4,6 @@ project(CXXDecomQt)
 
 # Find includes in the build directories
 set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS} -Wall -pedantic -pthread -g -O0 -fprofile-arcs -ftest-coverage")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS} -std=c++14 -g -Wall -Wextra -Ofast -march=native")
 # Generate compile commands for IDE autocomplete
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -54,24 +53,17 @@ target_link_libraries(${PROJECT_NAME} ${DECOM_LINK_LIBS} pthread)
 
 option(BUILD_TESTS "Determines whether to build tests." ON)
 if(BUILD_TESTS)
-
-
+  add_definitions(-DUNIT_TESTING)
   file(GLOB TEST_SOURCES "tests/[A-z]*.cpp")
   enable_testing()
   # Prepare "Catch" library for other executables
   set(CATCH_INCLUDE_DIR ${CMAKE_BINARY_DIR}/include/catch)
   add_library(Catch INTERFACE)
   target_include_directories(Catch INTERFACE ${CATCH_INCLUDE_DIR})
-
+  include_directories(tests)
   # Remove the real main from our sources list so that it doesn't conflict with Catch's main
   list(REMOVE_ITEM SOURCES ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
   add_executable(Decom_Test ${TEST_SOURCES} ${SOURCES} ${INCLUDES})
   target_link_libraries(Decom_Test ${DECOM_LINK_LIBS} Catch pthread)
   add_test(NAME TestDecom COMMAND Decom_Test)
-
-  if($ENV{TRAVIS})
-    set(CMAKE_MODULE_PATH ${PROJECT_SOURCE_DIR}/CMakeModules)
-    include(CodeCoverage)
-    setup_target_for_coverage(Decom_Coverage Decom_Test coverage)
-  endif()
 endif()
