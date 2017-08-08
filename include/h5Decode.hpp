@@ -28,7 +28,6 @@ class h5Decode
     std::string m_directory;
     std::unordered_map<std::string, std::ofstream> m_outfiles;
     ThreadSafeListenerQueue<std::tuple<std::vector<uint8_t>, std::string>> m_queue;
-    std::vector<h5cpp::File> m_h5Files;
     std::vector<std::string> m_files;
 
     void sortFiles();

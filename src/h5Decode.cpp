@@ -10,6 +10,7 @@
 #endif
 #include <boost/algorithm/string.hpp>
 #include <boost/filesystem.hpp>
+#include "hdf_wrapper.hpp"
 #include "h5Decode.hpp"
 #include "getFiles.hpp"
 #include "LogFile.hpp"
@@ -40,13 +41,13 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, B
     for (const auto& filename : m_files)
     {
         h5::File h5File(filename, "r");
-        m_h5Files.emplace_back(h5File);
         h5::Group All_Data = h5File.root().open_group("All_Data");
 
         for (size_t group = 0; group < All_Data.size(); ++group)
         {
             outfileNames.emplace(All_Data.get_link_name(group));  // Get internal file name from h5 file
         }
+        h5File.close();
     }
 
     sortFiles();
@@ -79,8 +80,10 @@ void h5Decode::init(BackEnd* backend, const std::vector<std::string>& selectedFi
     decomThread.detach();
     ProgressBar pbar(m_files.size(), "Parsing h5");
     uint32_t i = 0;
-    for (auto& h5File : m_h5Files)  // For each h5 file
+    for (const auto& filename : m_files)
     {
+        h5::File h5File(filename, "r");
+
         backend->setCurrentFile(h5File.get_file_name());  // Notify backend of the name of the file we are parsing
         pbar.Progressed(++i, backend);
 
