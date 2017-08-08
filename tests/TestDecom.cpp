@@ -1,7 +1,7 @@
 #include "catch/catch.hpp"
 #include "DatabaseReader.hpp"
 #include "DataDecode.hpp"
-#include <iostream>
+#include "DataTypes.hpp"
 
 bool operator==(const DataTypes::Packet& lhs, const DataTypes::Packet& rhs)
 {
