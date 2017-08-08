@@ -1,8 +1,7 @@
 <map id="/home/travis/build/gabegordon/CXXDecomQt/include/InstrumentFormat.hpp" name="/home/travis/build/gabegordon/CXXDecomQt/include/InstrumentFormat.hpp">
-<area shape="rect" id="node2" href="$backend_8hpp.html" title="backend.hpp" alt="" coords="516,109,612,136"/>
-<area shape="rect" id="node9" href="$h5_decode_8hpp.html" title="h5Decode.hpp" alt="" coords="1056,184,1163,211"/>
-<area shape="rect" id="node29" href="$pds_decode_8hpp.html" title="pdsDecode.hpp" alt="" coords="1413,184,1525,211"/>
-<area shape="rect" id="node13" href="$_data_types_8hpp.html" title="DataTypes.hpp" alt="" coords="1570,333,1680,360"/>
-<area shape="rect" id="node14" href="$_thread_safe_listener_queue_8hpp.html" title="ThreadSafeListenerQueue.hpp" alt="" coords="1081,259,1279,285"/>
-<area shape="rect" id="node21" href="$hdf__wrapper_8hpp.html" title="hdf_wrapper.hpp" alt="" coords="574,259,692,285"/>
+<area shape="rect" id="node2" href="$backend_8hpp.html" title="backend.hpp" alt="" coords="293,109,389,136"/>
+<area shape="rect" id="node9" href="$h5_decode_8hpp.html" title="h5Decode.hpp" alt="" coords="523,184,629,211"/>
+<area shape="rect" id="node21" href="$pds_decode_8hpp.html" title="pdsDecode.hpp" alt="" coords="785,184,897,211"/>
+<area shape="rect" id="node13" href="$_data_types_8hpp.html" title="DataTypes.hpp" alt="" coords="506,333,616,360"/>
+<area shape="rect" id="node14" href="$_thread_safe_listener_queue_8hpp.html" title="ThreadSafeListenerQueue.hpp" alt="" coords="971,259,1169,285"/>
 </map>
