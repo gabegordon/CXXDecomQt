@@ -211,7 +211,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:10: warning: Found unknown command `\endsection'
+/home/travis/build/gabegordon/CXXDecomQt/doxygen/compiling.dox:9: warning: Found unknown command `\endsection'
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
