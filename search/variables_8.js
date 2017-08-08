@@ -29,7 +29,6 @@ var searchData=
   ['m_5fguardexception',['m_guardException',['../class_catch_1_1_result_builder.html#a7266a8afe5c2980b78c0d450a6396e24',1,'Catch::ResultBuilder']]],
   ['m_5fh5',['m_H5',['../class_back_end.html#ad29f8cc4398d37220ce358f49447d34b',1,'BackEnd']]],
   ['m_5fh5dec',['m_h5Dec',['../class_back_end.html#abba7952dde523a5d2adfba22681c9c9c',1,'BackEnd']]],
-  ['m_5fh5files',['m_h5Files',['../classh5_decode.html#a44cceee461a3aebbffc5f5775c24f918',1,'h5Decode']]],
   ['m_5fheaders',['m_headers',['../class_decom.html#afd3dc03db9b3cfea696a5af98cca8e63',1,'Decom']]],
   ['m_5finfo',['m_info',['../class_catch_1_1_assertion_result.html#a3e7236f73a51d6fc8bb9dfdefcee7772',1,'Catch::AssertionResult::m_info()'],['../struct_catch_1_1_message_builder.html#a979f1c2b36d78f80ee275bfa5ba0209f',1,'Catch::MessageBuilder::m_info()'],['../class_catch_1_1_scoped_message.html#ae6e1476f389cc6e1586f033b3747b27b',1,'Catch::ScopedMessage::m_info()'],['../class_catch_1_1_section.html#a22f54832b33b341ae5a78807a6219af6',1,'Catch::Section::m_info()']]],
   ['m_5finitialbyte',['m_initialByte',['../class_data_decode.html#a5bafc9d4826fccf5e31999af199b6caf',1,'DataDecode']]],

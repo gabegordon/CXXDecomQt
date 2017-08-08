@@ -23,7 +23,7 @@ var searchData=
   ['sectionendinfo',['SectionEndInfo',['../struct_catch_1_1_section_end_info.html',1,'Catch']]],
   ['sectionendinfo',['SectionEndInfo',['../struct_catch_1_1_section_end_info.html#abc9381c7c22b6907317ec985ccaa6713',1,'Catch::SectionEndInfo']]],
   ['sectioninfo',['SectionInfo',['../struct_catch_1_1_section_info.html',1,'Catch']]],
-  ['sectioninfo',['SectionInfo',['../struct_catch_1_1_section_info.html#a27aff3aaf8b6611f3651b17111a272c6',1,'Catch::SectionInfo::SectionInfo()'],['../struct_catch_1_1_section_end_info.html#a2d44793392cb83735d086d726822abe9',1,'Catch::SectionEndInfo::sectionInfo()']]],
+  ['sectioninfo',['sectionInfo',['../struct_catch_1_1_section_end_info.html#a2d44793392cb83735d086d726822abe9',1,'Catch::SectionEndInfo::sectionInfo()'],['../struct_catch_1_1_section_info.html#a27aff3aaf8b6611f3651b17111a272c6',1,'Catch::SectionInfo::SectionInfo()']]],
   ['sectionstarted',['sectionStarted',['../struct_catch_1_1_i_result_capture.html#a5b76ed52badcb64cf374202e12b81a03',1,'Catch::IResultCapture']]],
   ['seedrng',['seedRng',['../namespace_catch.html#a161400810eb0995394d6d8d3cae821ad',1,'Catch']]],
   ['segmentlastbyte',['segmentLastByte',['../class_data_decode.html#a04ac1673067171bdfb00372c1dcc0fe0',1,'DataDecode']]],

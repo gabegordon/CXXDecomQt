@@ -23,7 +23,7 @@ var searchData=
   ['progressbar_2ehpp',['ProgressBar.hpp',['../_progress_bar_8hpp.html',1,'']]],
   ['progresschanged',['progressChanged',['../class_back_end.html#afdfa68ec20e58e0dc3b517a10e69c443',1,'BackEnd']]],
   ['progressed',['Progressed',['../class_progress_bar.html#a9de570009a14cc9e4c78a2ee5f56430e',1,'ProgressBar']]],
-  ['properties',['Properties',['../classh5cpp_1_1_properties.html#ac807b7216df73b805286ae8e0b322299',1,'h5cpp::Properties::Properties()'],['../struct_catch_1_1_test_case_info.html#afc1e84bd7a2e180895a06d9131302af0',1,'Catch::TestCaseInfo::properties()']]],
+  ['properties',['properties',['../struct_catch_1_1_test_case_info.html#afc1e84bd7a2e180895a06d9131302af0',1,'Catch::TestCaseInfo::properties()'],['../classh5cpp_1_1_properties.html#ac807b7216df73b805286ae8e0b322299',1,'h5cpp::Properties::Properties()']]],
   ['properties',['Properties',['../classh5cpp_1_1_properties.html',1,'h5cpp']]],
   ['ptr',['Ptr',['../class_catch_1_1_ptr.html',1,'Catch']]],
   ['ptr',['Ptr',['../class_catch_1_1_ptr.html#a6108f0195595ee9d7a411daea810beaf',1,'Catch::Ptr::Ptr()'],['../class_catch_1_1_ptr.html#aacec063a79cd142e39040a31c6b3c40b',1,'Catch::Ptr::Ptr(T *p)'],['../class_catch_1_1_ptr.html#ac629dd8ebe5763a37bb89e6c1d6a1771',1,'Catch::Ptr::Ptr(Ptr const &amp;other)']]],

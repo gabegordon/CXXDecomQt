@@ -35,7 +35,7 @@ var searchData=
   ['three',['THREE',['../class_data_decode.html#a532e492a353aa3218722fad9626b8fd1a25b93e6b2003be7130dfa1329b13180d',1,'DataDecode']]],
   ['threwexception',['ThrewException',['../namespace_catch.html#a624e1ee3661fcf6094ceef1f654601efa3bb56296483947280cf7fa1ad074ab45',1,'Catch::ResultWas']]],
   ['throwlogicerror',['throwLogicError',['../namespace_catch.html#a702b612f683d154c466ea8297ed4a20d',1,'Catch']]],
-  ['throws',['Throws',['../struct_catch_1_1_test_case_info.html#a39b232f74b4a7a6f2183b96759027eaca4704adf89ed7f7ad653d08f99813a974',1,'Catch::TestCaseInfo::Throws()'],['../struct_catch_1_1_test_case_info.html#a19fb4f0b755956eee8a1fecf713fb7ca',1,'Catch::TestCaseInfo::throws() const ']]],
+  ['throws',['throws',['../struct_catch_1_1_test_case_info.html#a19fb4f0b755956eee8a1fecf713fb7ca',1,'Catch::TestCaseInfo::throws() const '],['../struct_catch_1_1_test_case_info.html#a39b232f74b4a7a6f2183b96759027eaca4704adf89ed7f7ad653d08f99813a974',1,'Catch::TestCaseInfo::Throws()']]],
   ['timed_5fmutex',['timed_mutex',['../classstd_1_1timed__mutex.html#a5468a0c0b8cb4bd36ea37c82a2376f62',1,'std::timed_mutex']]],
   ['timed_5fmutex',['timed_mutex',['../classstd_1_1timed__mutex.html',1,'std']]],
   ['timer',['Timer',['../class_catch_1_1_timer.html#af09b7cd7a40af71f4704262afb31558a',1,'Catch::Timer']]],
