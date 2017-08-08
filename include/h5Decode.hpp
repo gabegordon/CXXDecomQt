@@ -8,7 +8,6 @@
 #include <vector>
 #include "DataTypes.hpp"
 #include "ThreadSafeListenerQueue.hpp"
-#include "hdf_wrapper.hpp"
 
 class BackEnd;
 

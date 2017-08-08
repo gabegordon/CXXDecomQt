@@ -1,6 +1,6 @@
 /** @mainpage h5 %Decom Utility
-    This is a tool designed to parse .h5 (RDR) files containing Science or HK data. \n
-    It takes an input folder of .h5 files and outputs CSVs for each APID contained within the input directory's h5 files. \n
+    This is a tool designed to parse .h5 or .PDS (RDR) files containing Science or HK data. \n
+    It takes an input folder of files and outputs CSVs for each APID contained within the input directory's files. \n
     These CSVs contain human-readable data. For each data field in the APID a corresponding column is generated in the CSV file. \n
     \n
     Instructions for Running can be found [here](@ref running) \n

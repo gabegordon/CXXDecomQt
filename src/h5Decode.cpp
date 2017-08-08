@@ -62,7 +62,6 @@ std::set<std::string> h5Decode::getFileTypeNames(const std::string& directory, B
     return outfileNames;
 }
 
-
 /**
  * Main h5Decode/Decom function. Read h5 files contents into vectors, which are then passed by queue to a thread resposible for running the Decom class.
  *
