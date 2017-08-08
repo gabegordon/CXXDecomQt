@@ -42,9 +42,9 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
     ProgressBar writeProgress(bufSize, "Write ATMS");
 
     std::vector<out_pack> outpacks(22);  // Create vector of outpackets (1 for each ATMS channel)
-    std::vector<float> scans(104);   // Create vector for scan angles (104 per complete scan)
+    std::vector<float> scans(104);   // Create vector for scan angles (105 per complete scan)
     std::vector<std::ofstream> outfiles(22);  // Create of streams (1 for each ATMS channnel)
-
+    uint16_t scanCounter = 1;
     while (i < bufSize)  // Loop until we reach end of buffer
     {
         writeProgress.Progressed(i, backend);
@@ -60,17 +60,23 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
         scans.at(0) = buf.at(i).scanangle;
         i++;  // Get scan angle and chans of new scan flag location, and then increment i so that next loop does not stop immediately
 
-        uint16_t scanCounter = 1;
+        scanCounter = 1;
         for (uint64_t k = i; k < bufSize; k++)
         {
-            if (scanCounter > 103)
-                break;
             if (buf.at(k).sos_sync == 0)
             {
                 for (uint16_t l = 0; l < 22; l++)  // For each channel get angle and counts
                 {
-                    outpacks.at(l).chans.at(scanCounter) = (buf.at(k).chans.at(l));
-                    scans.at(scanCounter) = (buf.at(k).scanangle);
+                    try
+                    {
+                        scans.at(scanCounter) = (buf.at(k).scanangle);
+                        outpacks.at(l).chans.at(scanCounter) = (buf.at(k).chans.at(l));
+                    }
+                    catch(...)
+                    {
+                        LogFile::logError("Possible gap in data at row " + std::to_string(k));
+                        break;
+                    }
                 }
                 scanCounter++;
             }
@@ -80,9 +86,6 @@ void writeChans(const std::vector<atms_pack>& buf, BackEnd* backend)
                 break;
             }
         }
-
-        if (scanCounter < 103)  // If we didnt get a full scan
-            continue;
 
         for (uint16_t channelNumber = 1; channelNumber < 23; channelNumber++)  // Write to files
         {
