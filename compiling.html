@@ -82,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><pre>
 </pre><h1><a class="anchor" id="sec1"></a>
-Dependencies</h1>
+GUI Interaction</h1>
 <pre>-gcc&gt;=7
 -libhdf5
 -boost&gt;=1.58 (built statically)
@@ -90,7 +90,7 @@ Dependencies</h1>
 -cmake
 
 </pre><h1><a class="anchor" id="sec2"></a>
-For Linux</h1>
+Decom</h1>
 <pre>Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
@@ -119,11 +119,13 @@ Obtain Pre-Built Qt binary files:
 </p>
 <div class="fragment"><div class="line">pacman -S mingw-w64-x86_64-qt5 </div>
 </div><!-- fragment --><p>
-Ensure mingw64 is in PATH.
-Comment out:</p>
+Open the following file:
+</p>
+<div class="fragment"><div class="line">&lt;msys2 install dir&gt;\mingw64\include\c++\7.1.0\x86_64-w64-mingw32\bits\c++config.h </div>
+</div><!-- fragment --><p>
+And comment out:</p>
 <div class="fragment"><div class="line">_GLIBCXX_HAS_GTHREADS 1 </div>
 </div><!-- fragment --><p>
-From <a href="file:@code">file:@code</a> {.sh} &lt;msys2 install="" dir&gt;=""&gt;++\7.1.0-w64-mingw32<code></code>++config.h 
 Clone latest:
 </p>
 <div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
@@ -132,7 +134,7 @@ Create build directory:
 </p>
 <div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
 </div><!-- fragment --><p>
-Run CMake:
+Ensure mingw64 is in PATH and run CMake:
 </p>
 <div class="fragment"><div class="line">cmake -G<span class="stringliteral">&quot;MinGW Makefiles&quot;</span> -DCMAKE_BUILD_TYPE=Release .. </div>
 </div><!-- fragment --><p>

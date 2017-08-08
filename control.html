@@ -81,13 +81,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><pre>
-   -BackEnd serves as the interface between Qt and the rest of the code.
-   -Once user is done selecting folder, then h5Decom is called.
-   -Once complete, we now have .pkt (binary) files to use <a class="el" href="class_decom.html">Decom</a> on.
-   -Before doing so, we load the databases the describe data locations using <a class="el" href="class_database_reader.html">DatabaseReader</a>
-   -Then, <a class="el" href="class_decom.html">Decom</a> runs for the remainder of execution.
+</pre><h1><a class="anchor" id="sec1"></a>
+GUI Interaction</h1>
+<pre>   -BackEnd serves as the interface between Qt and the rest of the code.
+   -User selects a folder containing their data, then <a class="el" href="classh5_decode.html">h5Decode</a> or <a class="el" href="classpds_decode.html">pdsDecode</a> is used to get a listing of potential candidates for <a class="el" href="class_decom.html">Decom</a>.
+   -User is prompted to make selections from these candidates.
+   -Users is prompted to make selections for APID filtering.
+   -Once complete, we load the databases the describe data locations using <a class="el" href="class_database_reader.html">DatabaseReader</a>
+   -Then, <a class="el" href="classh5_decode.html">h5Decode</a> or <a class="el" href="classpds_decode.html">pdsDecode</a> runs.
+</pre><h1><a class="anchor" id="sec2"></a>
+Decom</h1>
+<pre>        <a class="el" href="classh5_decode.html">h5Decode</a> or <a class="el" href="classpds_decode.html">pdsDecode</a>:
+                 -Starts a thread to run the <a class="el" href="class_decom.html">Decom</a> class and passes it a ThreadSafeQueue.
+                 -Reads each file from the selected directory (matching user candidates) and passes a vector to the queue mentioned previously.
+                 -Once done reading/passing all files, waits for signal from <a class="el" href="class_decom.html">Decom</a> thread that it has also finished.
         <a class="el" href="class_decom.html">Decom</a>:
-                 -Decom loops until reaching the end of the file.
+                 -Pulls byte-vectors from queue until the queue is empty.
+                 -For each vector, loops until reaching the end of the vector.
                  -On each iteration headers are decoded <a class="el" href="namespace_header_decode.html">HeaderDecode</a>.
                  -Then, using that information (APID/Length) from headers, we <a class="el" href="class_data_decode.html">DataDecode</a>.
                  -If the packet is segmented, <a class="el" href="class_data_decode.html">DataDecode</a> may loop several times and call <a class="el" href="namespace_header_decode.html">HeaderDecode</a> on its own.
@@ -99,6 +109,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
         Post-Processing:
                  -At this point we are done parsing and writing all packets.
                  -If we parsed science data that needs special formatting it is done now. (<a class="el" href="namespace_instrument_format.html">InstrumentFormat</a>)
+        Completition:
+                 -At this point, the <a class="el" href="class_decom.html">Decom</a> thread notifies <a class="el" href="class_back_end.html">BackEnd</a> and the user is notifed that the decom has completed.
 </pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
