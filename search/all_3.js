@@ -74,7 +74,7 @@ var searchData=
   ['containsmatcher',['ContainsMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.html#acc892883c8409e34b28c9b39d4ef1fe3',1,'Catch::Matchers::StdString::ContainsMatcher::ContainsMatcher()'],['../struct_catch_1_1_matchers_1_1_vector_1_1_contains_matcher.html#ad8e92c8399be6dce75bb5702cdfab700',1,'Catch::Matchers::Vector::ContainsMatcher::ContainsMatcher()']]],
   ['containsmatcher',['ContainsMatcher',['../struct_catch_1_1_matchers_1_1_std_string_1_1_contains_matcher.html',1,'Catch::Matchers::StdString']]],
   ['continueonfailure',['ContinueOnFailure',['../namespace_catch.html#a3396cad6e2259af326b3aae93e23e9d8aa18c94bd60c5614e17a84c2ced3bbfd5',1,'Catch::ResultDisposition']]],
-  ['control_20flow_20of_20h5decom',['Control Flow of h5Decom',['../control.html',1,'']]],
+  ['control_20flow_20of_20decom',['Control Flow of Decom',['../control.html',1,'']]],
   ['control_2edox',['control.dox',['../control_8dox.html',1,'']]],
   ['convert',['convert',['../struct_catch_1_1_detail_1_1_string_maker_base.html#a8eb9f635dc413a5758e22614bafaf1a3',1,'Catch::Detail::StringMakerBase::convert()'],['../struct_catch_1_1_detail_1_1_string_maker_base_3_01true_01_4.html#af9b5fdf7fddd8c5c873caa819e5f00f6',1,'Catch::Detail::StringMakerBase&lt; true &gt;::convert()'],['../struct_catch_1_1_string_maker_3_01_t_01_5_01_4.html#a2adbc75c99d71b8323f4052bcb0815c9',1,'Catch::StringMaker&lt; T * &gt;::convert()'],['../struct_catch_1_1_string_maker_3_01_r_01_c_1_1_5_01_4.html#af69c15e0b406e945777137fe4a333731',1,'Catch::StringMaker&lt; R C::* &gt;::convert()']]],
   ['copy',['copy',['../classh5cpp_1_1_datatype.html#a1436ac1dce553c84672e40209da9583e',1,'h5cpp::Datatype']]],
