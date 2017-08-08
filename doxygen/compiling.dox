@@ -24,14 +24,14 @@ Run MSYS2 and get upgrades:
 \code{.sh} pacman -Syu \endcode
 Obtain Pre-Built Qt binary files:
 \code{.sh} pacman -S mingw-w64-x86_64-qt5 \endcode
-Ensure mingw64 is in PATH.
-Comment out: \code{.sh} _GLIBCXX_HAS_GTHREADS 1 \endcode
-From file: \code{.sh} <msys2 install dir>\mingw64\include\c++\7.1.0\x86_64-w64-mingw32\bits\c++config.h \endcode
+Open the following file:
+\code{.sh} <msys2 install dir>\mingw64\include\c++\7.1.0\x86_64-w64-mingw32\bits\c++config.h \endcode
+And comment out: \code{.sh} _GLIBCXX_HAS_GTHREADS 1 \endcode
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
 Create build directory:
 \code{.sh} cd CXXDecomQt && mkdir build && cd build \endcode
-Run CMake:
+Ensure mingw64 is in PATH and run CMake:
 \code{.sh} cmake -G"MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release .. \endcode
 Build:
 \code{.sh} cmake --build . \endcode

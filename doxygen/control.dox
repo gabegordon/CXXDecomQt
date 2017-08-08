@@ -1,13 +1,21 @@
 /*! \page control Control Flow of h5Decom
  *
 <pre>
+\section sec1 GUI Interaction
  * -BackEnd serves as the interface between Qt and the rest of the code.
- * -Once user is done selecting folder, then h5Decom is called.
- * -Once complete, we now have .pkt (binary) files to use Decom on.
- * -Before doing so, we load the databases the describe data locations using DatabaseReader
- * -Then, Decom runs for the remainder of execution.
+ * -User selects a folder containing their data, then h5Decode or pdsDecode is used to get a listing of potential candidates for Decom.
+ * -User is prompted to make selections from these candidates.
+ * -Users is prompted to make selections for APID filtering.
+ * -Once complete, we load the databases the describe data locations using DatabaseReader
+ * -Then, h5Decode or pdsDecode runs.
+ \section sec2 Decom
+ *      h5Decode or pdsDecode:
+ *               -Starts a thread to run the Decom class and passes it a ThreadSafeQueue.
+ *               -Reads each file from the selected directory (matching user candidates) and passes a vector to the queue mentioned previously.
+ *               -Once done reading/passing all files, waits for signal from Decom thread that it has also finished.
  *      Decom:
- *               -Decom loops until reaching the end of the file.
+ *               -Pulls byte-vectors from queue until the queue is empty.
+ *               -For each vector, loops until reaching the end of the vector.
  *               -On each iteration headers are decoded HeaderDecode.
  *               -Then, using that information (APID/Length) from headers, we DataDecode.
  *               -If the packet is segmented, DataDecode may loop several times and call HeaderDecode on its own.
@@ -19,5 +27,7 @@
  *      Post-Processing:
  *               -At this point we are done parsing and writing all packets.
  *               -If we parsed science data that needs special formatting it is done now. (InstrumentFormat)
+ *      Completition:
+ *               -At this point, the Decom thread notifies BackEnd and the user is notifed that the %decom has completed.
 </pre>
 */

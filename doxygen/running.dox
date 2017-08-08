@@ -1,15 +1,15 @@
-/*! \page running Running h5Decom
+/*! \page running Running Decom
  *
 <pre>
  * -Ensure you have the latest version of the software.
  * -Ensure CXXDecomQt.exe is in a folder with its dependencies.
  * -Launch CXXDecomQt.exe.
- * -Select a folder with your .h5 files.
- * -Run %h5Decode.
+ * -Select a folder with your .h5 or .PDS files.
+ * -Run Decom.
  * -Either:
  *       -Select All APIDs.
  *       -Or enter a list of APIDs that you want (comma-separated).
- * -Select the dataset you want to use.
+ * -Select the dataset(s) you want to use.
  * -Wait for the decom to complete.
  * -Done!
 </pre>
