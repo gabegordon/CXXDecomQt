@@ -26,8 +26,7 @@ ApplicationWindow {
 
     Label {
         id: title
-        x: 491
-        y: 44
+        anchors { horizontalCenter: parent.horizontalCenter; top: parent.top; topMargin: 80 }
         text: "Decom Utility"
         font.pixelSize: 32
         font.bold: true
@@ -57,6 +56,7 @@ ApplicationWindow {
                     anchors.left: parent.left
                     text: modelData
                     onClicked: cb.checked ? backend.addPacketFile(modelData) : backend.removePacketFile(modelData)
+                    font.pixelSize: 20
                 }
             }
         }
