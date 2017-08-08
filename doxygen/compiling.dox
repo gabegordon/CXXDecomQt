@@ -1,14 +1,13 @@
 /*! \page  compiling  Compiling h5Decom
- *
 <pre>
-\section sec1 Dependencies
+\section com1 Dependencies
 -gcc>=7
 -libhdf5
 -boost>=1.58 (built statically)
 -Qt>=5.7
 -cmake
 \endsection
-\section sec2 For Linux
+\section com2 For Linux
 Clone latest:
 \code{.sh} git clone https://github.com/gabegordon/CXXDecomQt \endcode
 Create build directory:
@@ -17,7 +16,7 @@ Generate Makefile:
 \code{.sh} cmake -DCMAKE_BUILD_TYPE=Release .. \endcode
 And Build:
 \code{.sh} cmake --build . \endcode
-\section sec4 For Windows
+\section com3 For Windows
 First download and install MSYS2 from:
 http://www.msys2.org
 Run MSYS2 and get upgrades:

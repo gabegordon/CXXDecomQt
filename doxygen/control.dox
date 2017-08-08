@@ -1,14 +1,14 @@
 /*! \page control Control Flow of h5Decom
  *
 <pre>
-\section sec1 GUI Interaction
+\section con1 GUI Interaction
  * -BackEnd serves as the interface between Qt and the rest of the code.
  * -User selects a folder containing their data, then h5Decode or pdsDecode is used to get a listing of potential candidates for Decom.
  * -User is prompted to make selections from these candidates.
  * -Users is prompted to make selections for APID filtering.
  * -Once complete, we load the databases the describe data locations using DatabaseReader
  * -Then, h5Decode or pdsDecode runs.
- \section sec2 Decom
+ \section con2 Decom
  *      h5Decode or pdsDecode:
  *               -Starts a thread to run the Decom class and passes it a ThreadSafeQueue.
  *               -Reads each file from the selected directory (matching user candidates) and passes a vector to the queue mentioned previously.
