@@ -215,7 +215,7 @@ QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
 QGDict::hashAsciiKey: Invalid null key
-/home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp:80: warning: The following parameters of ThreadPoolServer::exec(std::unique_ptr< DataTypes::Packet > pack, const std::string &instrument) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp:74: warning: The following parameters of ThreadPoolServer::exec(std::unique_ptr< DataTypes::Packet > pack, const std::string &instrument) are not documented:
   parameter 'instrument'
 /home/travis/build/gabegordon/CXXDecomQt/src/ThreadPoolServer.cpp:10: warning: The following parameters of ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue< std::unique_ptr< DataTypes::Packet >> *queue, const std::string &instrument, const uint32_t &apid, const bool &bigEndian) are not documented:
   parameter 'bigEndian'
@@ -366,9 +366,9 @@ QGDict::hashAsciiKey: Invalid null key
 /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug, const bool &bigEndian)
 /home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:48: warning: The following parameters of HeaderDecode::decodePrimary(std::istringstream &buffer, const bool &debug, const bool &bigEndian) are not documented:
   parameter 'buffer'
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:103: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian)
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:107: warning: Found unknown command `\retun'
-/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:103: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian) are not documented:
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:121: warning: argument 'infile' of command @param is not found in the argument list of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian)
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:125: warning: Found unknown command `\retun'
+/home/travis/build/gabegordon/CXXDecomQt/src/HeaderDecode.cpp:121: warning: The following parameters of HeaderDecode::decodeSecondary(std::istringstream &buffer, const bool &bigEndian) are not documented:
   parameter 'buffer'
 /home/travis/build/gabegordon/CXXDecomQt/src/InstrumentFormat.cpp:34: warning: The following parameters of InstrumentFormat::writeChans(const std::vector< atms_pack > &buf, BackEnd *backend) are not documented:
   parameter 'backend'
@@ -936,5 +936,5 @@ Patching output file 135/138
 Patching output file 136/138
 Patching output file 137/138
 Patching output file 138/138
-lookup cache used 4829/65536 hits=37606 misses=5247
+lookup cache used 4827/65536 hits=37678 misses=5245
 finished...
