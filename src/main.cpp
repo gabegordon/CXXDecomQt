@@ -7,6 +7,8 @@
     Instructions for Compiling can be found [here](@ref compiling) \n
     Simple description of control flow [here](@ref control) \n
 */
+// TODO Buffer ATMS Instrument Format Read/Write.
+// TODO Find a way to detect instrument type from PDS files.
 
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>

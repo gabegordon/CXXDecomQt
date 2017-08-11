@@ -42,22 +42,16 @@ void ThreadPoolServer::ThreadMain(ThreadSafeListenerQueue<std::unique_ptr<DataTy
                 {
                 case DataTypes::Numeric::I32:
                 {
-                    if(!bigEndian)
-                        num.i32 = ByteManipulation::swapEndian(num.i32);
                     outfile << std::setw(15) << std::right << num.i32;
                     break;
                 }
                 case DataTypes::Numeric::U32:
                 {
-                    if(!bigEndian)
-                        num.u32 = ByteManipulation::swapEndian(num.u32);
                     outfile << std::setw(15) << std::right << num.u32;
                     break;
                 }
                 case DataTypes::Numeric::F64:
                 {
-                    if(!bigEndian)
-                        num.f64 = ByteManipulation::swapEndianFloat(num.f64);
                     outfile << std::setw(15) << std::right << num.f64;
                     break;
                 }

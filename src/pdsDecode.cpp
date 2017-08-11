@@ -86,7 +86,7 @@ void pdsDecode::init(BackEnd* backend, const std::vector<std::string>& selectedF
             {
                 infile.seekg(0, std::ios::beg);  // Go back to start of the file
                 std::vector<uint8_t> contents((std::istreambuf_iterator<char>(infile)), std::istreambuf_iterator<char>());
-                m_queue.push(std::make_tuple(contents, "CERES"));
+                m_queue.push(std::make_tuple(contents, "ATMS"));
             }
             infile.close();
         }

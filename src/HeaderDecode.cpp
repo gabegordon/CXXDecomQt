@@ -55,35 +55,52 @@ void debugPrinter(const DataTypes::PrimaryHeader& ph)
 DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& debug, const bool& bigEndian)
 {
     DataTypes::PrimaryHeader ph = p_defaults;
-    uint32_t firstFourBytes;
-    uint16_t fifthSixByte;
-    ReadFiles::read(firstFourBytes, buffer);
-    ReadFiles::read(fifthSixByte, buffer);
     if(bigEndian)
     {
+        uint32_t firstFourBytes;
+        uint16_t fifthSixByte;
+        ReadFiles::read(firstFourBytes, buffer);
+        ReadFiles::read(fifthSixByte, buffer);
+
         firstFourBytes = ByteManipulation::swapEndian(firstFourBytes);
         fifthSixByte = ByteManipulation::swapEndian(fifthSixByte);
+        // Set CCSDS from bits 0-3
+        ph.CCSDS = ByteManipulation::extract32(firstFourBytes, 0, 3);
+
+        // Set secondaryHeader from bit 4
+        ph.secondaryHeader = ByteManipulation::extract32(firstFourBytes, 4, 1);
+        sh_flag = ph.secondaryHeader;
+
+        // Set APID from bits 4-15
+        ph.APID = ByteManipulation::extract32(firstFourBytes, 5, 11);
+
+        // Set sequenceFlag from bits 16-17
+        ph.sequenceFlag = static_cast<DataTypes::SequenceFlag>(ByteManipulation::extract32(firstFourBytes, 16, 2));
+        seq_flag = ph.sequenceFlag;
+
+        // Set packetSequence from bits 18-31
+        ph.packetSequence = ByteManipulation::extract32(firstFourBytes, 18, 14);
+
+        // Set packetLength from entire byte
+        ph.packetLength = fifthSixByte + 1;
     }
-    // Set CCSDS from bits 0-3
-    ph.CCSDS = ByteManipulation::extract32(firstFourBytes, 0, 3);
-
-    // Set secondaryHeader from bit 4
-    ph.secondaryHeader = ByteManipulation::extract32(firstFourBytes, 4, 1);
-    sh_flag = ph.secondaryHeader;
-
-    // Set APID from bits 4-15
-    ph.APID = ByteManipulation::extract32(firstFourBytes, 5, 11);
-
-    // Set sequenceFlag from bits 16-17
-    ph.sequenceFlag = static_cast<DataTypes::SequenceFlag>(ByteManipulation::extract32(firstFourBytes, 16, 2));
-    seq_flag = ph.sequenceFlag;
-
-    // Set packetSequence from bits 18-31
-    ph.packetSequence = ByteManipulation::extract32(firstFourBytes, 18, 14);
-
-    // Set packetLength from entire byte
-    ph.packetLength = fifthSixByte + 1;
-
+    else
+    {
+        uint16_t b0b1;
+        uint16_t b2b3;
+        uint16_t fifthSixByte;
+        ReadFiles::read(b0b1, buffer);
+        ReadFiles::read(b2b3, buffer);
+        ReadFiles::read(fifthSixByte, buffer);
+        ph.CCSDS = ByteManipulation::extract16(b0b1, 0, 3);
+        ph.secondaryHeader = ByteManipulation::extract16(b0b1, 4, 1);
+        sh_flag = ph.secondaryHeader;
+        ph.APID = ByteManipulation::extract16(b0b1, 5, 11);
+        ph.sequenceFlag = static_cast<DataTypes::SequenceFlag>(ByteManipulation::extract16(b2b3, 0, 2));
+        seq_flag = ph.sequenceFlag;
+        ph.packetSequence = ByteManipulation::extract16(b2b3, 2, 14);
+        ph.packetLength = fifthSixByte + 1;
+    }
     if (debug)
         debugPrinter(ph);
 
@@ -97,6 +114,7 @@ DataTypes::PrimaryHeader decodePrimary(std::istringstream& buffer, const bool& d
     }
     checkValidHeader(ph);
     return ph;
+
 }
 
 /**
@@ -124,6 +142,12 @@ DataTypes::SecondaryHeader decodeSecondary(std::istringstream& buffer, const boo
             sh.day = ByteManipulation::swapEndian(day);
             sh.millis = ByteManipulation::swapEndian(millis);
             sh.micros = ByteManipulation::swapEndian(micros);
+        }
+        else
+        {
+            sh.day = day;
+            sh.millis = millis;
+            sh.micros = micros;
         }
         if (seq_flag == DataTypes::FIRST)
         {
