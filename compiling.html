@@ -109,40 +109,7 @@ And Build:
 </div><!-- fragment -->
 </pre><h1><a class="anchor" id="com3"></a>
 For Windows</h1>
-<pre>First download and install MSYS2 from:
-<a href="http://www.msys2.org">http://www.msys2.org</a>
-Run MSYS2 and get upgrades:
-</p>
-<div class="fragment"><div class="line">pacman -Syu </div>
-</div><!-- fragment --><p>
-Obtain Pre-Built Qt binary files:
-</p>
-<div class="fragment"><div class="line">pacman -S mingw-w64-x86_64-qt5 </div>
-</div><!-- fragment --><p>
-Open the following file:
-</p>
-<div class="fragment"><div class="line">&lt;msys2 install dir&gt;\mingw64\include\c++\7.1.0\x86_64-w64-mingw32\bits\c++config.h </div>
-</div><!-- fragment --><p>
-And comment out:</p>
-<div class="fragment"><div class="line">_GLIBCXX_HAS_GTHREADS 1 </div>
-</div><!-- fragment --><p>
-Clone latest:
-</p>
-<div class="fragment"><div class="line">git clone https:<span class="comment">//github.com/gabegordon/CXXDecomQt </span></div>
-</div><!-- fragment --><p>
-Create build directory:
-</p>
-<div class="fragment"><div class="line">cd CXXDecomQt &amp;&amp; mkdir build &amp;&amp; cd build </div>
-</div><!-- fragment --><p>
-Ensure mingw64 is in PATH and run CMake:
-</p>
-<div class="fragment"><div class="line">cmake -G<span class="stringliteral">&quot;MinGW Makefiles&quot;</span> -DCMAKE_BUILD_TYPE=Release .. </div>
-</div><!-- fragment --><p>
-Build:
-</p>
-<div class="fragment"><div class="line">cmake --build . </div>
-</div><!-- fragment --><p>
-Copy deps folder contents into the executable directory to run.
+<pre>Instructions can be found <a href="instructions.pdf">here</a> 
 </pre> </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
