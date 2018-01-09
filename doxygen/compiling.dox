@@ -17,6 +17,6 @@ Generate Makefile:
 And Build:
 \code{.sh} cmake --build . \endcode
 \section com3 For Windows
-Instructions can be found [here](doxygen/instructions.pdf) 
+Instructions can be found [here](https://github.com/gabegordon/CXXDecomQt/blob/master/doxygen/instructions.pdf) 
 </pre>
 */
